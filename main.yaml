@@ -15,7 +15,7 @@ info:
 components:
   schemas: 
     Organization:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero-Data-Model/main/organization.yaml#/organization"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/organization.yaml#/organization"
     Project:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero-Data-Model/main/project.yaml#/project"
     Owner:
