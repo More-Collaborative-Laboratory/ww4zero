@@ -1,7 +1,7 @@
-machine:
-  title: Machine
+action:
+  title: Action
   type: object
-  description: Machine cnc1, nesting1, manual cut1
+  description: Machine cnc1, nesting1, manual cut1 #tambem assemblagem das partes e envio da encomenda?
   properties:
     id:
       description: Machine Type
