@@ -27,7 +27,7 @@ components:
     Part:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero-Data-Model/main/part.yaml#/part"
     Action:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero-Data-Model/main/action.yaml#/action"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/action.yaml#/action"
     Assembly:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero-Data-Model/main/assembly.yaml#/assembly"
     Expedition:
