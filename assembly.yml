@@ -1,0 +1,79 @@
+assembly:
+  title: Assembly
+  type: object
+  description: Indicates when a assembly process is completed
+  properties:
+    id:
+      description: Assembly parts from a project
+      type: string
+      format: uri
+      example: urn:ngsi-ld:assembly:[]
+      x-ngsi:
+        type: Property
+
+    startTime: 
+      description: Date and hour on wich the assembly starts
+      type: dateTime
+      example: '25-03-2022 10:00'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/startDate"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    endTime: 
+      description: Date and hour on wich the assembly ends
+      type: dateTime
+      example: '27-03-2022 10:00'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/endDate"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    status: 
+      description: Indicates the status of the project's assembly
+        * `1` - em espera para iniciar
+        * `2` - em testes
+        * `3` - testado e embalado
+      type: number  #/ enum?
+      enum: 
+        - '1'
+        - '2'
+        - '3'
+      example: '3'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/status"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    avaregeTime: #da para subtrair o tempo de fim ao tempod inicial? 
+      description: value in euros
+      type: number
+      example: '15 000'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/amount"
+        uri-prefix: "https://projetww4zero.pt/dataModel/"
+        type: Property
+
+    belongsTo:
+      anyOf:
+        - description: 'Relationship property: Identifier the urn of project name'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier project Name'
+          format: uri
+          type: string
+      description: 'Identification of the projet to which this assembly corresponds'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/belongsTo"  #pode ser assim igual ao budget?
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Relationship
+
+                
+  required:
+    - id
+    - amount
+    - madeFor
+    - aprovalDate
+    - belongsTo

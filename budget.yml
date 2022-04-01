@@ -1,0 +1,65 @@
+budgeting:
+  title: Budgeting
+  type: object
+  description: Describes a client's budgeting
+  properties:
+    id:
+      description: Budgeting Identifier
+      type: string
+      format: uri
+      example: urn:ngsi-ld:Budgeting:[]
+      x-ngsi:
+        type: Property
+        
+    amount: 
+      description: value in euros
+      type: number
+      example: '15 000'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/amount"
+        uri-prefix: "https://projetww4zero.pt/dataModel/"
+        type: Property
+        
+    madeFor:  #urn Project
+      description: The project recipient
+      type: string
+      example: Mueble-C-WC
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/madeFor"
+        uri-prefix: "https://projetww4zero.pt/dataModel/"
+        type: Property
+
+    aprovedDate: 
+      description: Date on wich the budget was approved
+      type: dateTime
+      example: '14-03-2022 16:06'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/aprovedDate"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+
+    belongsTo:
+      anyOf:
+        - description: 'Relationship property: Identifier the urn of project name'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier project Name'
+          format: uri
+          type: string
+      description: 'Identification of the projet Name that this budget will be attached'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/belongsTo"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        model: https://schema.org/URL #leva ou nao leva?
+        type: Relationship
+
+                
+  required:
+    - id
+    - amount
+    - madeFor
+    - aprovalDate
+    - belongsTo

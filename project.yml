@@ -1,0 +1,196 @@
+ project:
+      title: Project
+      type: object
+      description: Contains the information of a project
+      properties:
+        id:
+          description: Project's id Identifier
+          type: string
+          format: uri
+          example: urn:ngsi-ld:Project:[uuid]
+          x-ngsi:
+            type: Property
+            
+        name: 
+          description: Project's name
+          type: string
+          example: MUEBLE-WC
+          x-ngsi:
+            uri: "https://schema.org/name"
+            uri-prefix: "https://schema.org/"
+            model: https://schema.org/name
+            type: Property
+
+        category: #movel wc, movel cozinha, movel 
+          description: Movel type
+          type: string
+          example: Movel cozinha
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/category"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+         nestingTag: #numero das etiquetas em função das da lista de corte
+          anyOf:
+            - description: 'Relationship property: Identifier nesting's tags coming from cut list'
+              maxLength: 256
+              minLength: 1
+              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+              type: string
+            - description: 'Relationship property: Identifier nesting's tags coming from cut list'
+              format: uri
+              type: string
+          description: 'Identification of the final's Tags that will be printed in Nesting location'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/nestingTag"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            model: https://schema.org/URL
+            type: Relationship
+
+        
+        status:  #list ou enum 
+          description: Indicates the actual worker's station
+            * `waiting` - Project's budget approved
+            * `working` - Project's parts are already in the factory's floor
+            * `finished` - Project's parts are all done
+            * `assembly` - Project's parts are being assembled in the test zone 
+            * `expedition` - The request from a client is already out from the factory
+          type: string
+          enum: 
+            - Waiting
+            - working
+            - finished
+            - assembly
+            - expedition
+          example: expedition
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/status"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+       
+        producedAt:  #organization Mofreita
+          anyOf:
+            - description: 'Relationship property: Identifier workers's name associated to the project's name'
+              maxLength: 256
+              minLength: 1
+              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+              type: string
+            - description: 'Relationship property: Identifier workers's name associated to the project's name'
+              format: uri
+              type: string
+          description: 'Identification of the Operator's Name thar are working in the project's Name'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/producedAt"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            model: https://schema.org/URL
+            type: Relationship
+
+        
+        orderBy:   #client
+          anyOf:
+            - description: 'Relationship property: Identifier the Name of a client's Project'
+              maxLength: 256
+              minLength: 1
+              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+              type: string
+            - description: 'Relationship property: Identifier client's project'
+              format: uri
+              type: string
+          description: 'Identification of the Client's Name associated to the Project in status exeution'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/orderBy"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            model: https://schema.org/URL
+            type: Relationship
+
+        budget:   #orçamentação
+          anyOf:
+            - description: 'Relationship property: Identifier the budget's Project associated by Project's Name'
+              maxLength: 256
+              minLength: 1
+              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+              type: string
+            - description: 'Relationship property: Identifier the budget's Project associated by Project's Name'
+              format: uri
+              type: string
+          description: 'Identification of the budget's Project associated '
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/budgetr"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            model: https://schema.org/URL
+            type: Relationship
+
+        
+        consumable:  #excel2json consumíveis
+          anyOf:
+            - description: 'Relationship property: Identification of the Consumables's Project coming from cut list'
+              maxLength: 256
+              minLength: 1
+              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+              type: string
+            - description: 'Relationship property: Identifier format of any NGSI entity'
+              format: uri
+              type: string
+          description: 'Identification of the Consumables's Project coming from cut list'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/consumable"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            model: https://schema.org/URL
+            type: Relationship
+
+        part:  #peças a serem feitas - excel2json lista de corte
+          anyOf:
+            - description: 'Relationship property: Identifier parts of a project coming from cut list'
+              maxLength: 256
+              minLength: 1
+              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+              type: string
+            - description: 'Relationship property: Identifier parts of a project coming from cut list'
+              format: uri
+              type: string
+          description: 'Identification of the Project's parts'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/part"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            model: https://schema.org/URL
+            type: Relationship
+
+        
+        assemblyBy:   #workers
+          anyOf:
+            - description: Identification of the Part's Project assembled by employee'
+              maxLength: 256
+              minLength: 1
+              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+              type: string
+            - description: 'Relationship property: Identifier that the request is in the assembly stage'
+              format: uri
+              type: string
+          description: 'Identification of the Part's Project assembled by employee.'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/assemblyBy"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            model: https://schema.org/URL
+            type: Relationship
+
+        expedition:   # projectID
+          anyOf:
+            - description: 'Identification of the furniture that is being sent'
+              maxLength: 256
+              minLength: 1
+              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+              type: string
+            - description: 'Relationship property: Identifier that the request is left from the factory'
+              format: uri
+              type: string
+          description: 'Identification of the location to where the furniture is sent'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/expedition"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            model: https://schema.org/URL
+            type: Relationship
+
+
+        required:
+        - id
+        - name
