@@ -1,5 +1,5 @@
-budgeting:
-  title: Budgeting
+budget:
+  title: Budget
   type: object
   description: Describes a client's budgeting
   properties:

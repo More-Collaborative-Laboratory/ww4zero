@@ -17,21 +17,23 @@ components:
     Organization:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/organization.yaml#/organization"
     Project:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero-Data-Model/main/project.yaml#/project"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/project.yaml#/project"
     Owner:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero-Data-Model/main/owner.yaml#/owner"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/owner.yaml#/owner"
     Worker:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero-Data-Model/main/worker.yaml#/worker"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml#/worker"
     Consumable:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero-Data-Model/main/consumable.yaml#/consumable"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/consumable"
     Part:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero-Data-Model/main/part.yaml#/part"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/part"
     Action:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/action.yaml#/action"
     Assembly:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero-Data-Model/main/assembly.yaml#/assembly"
-    Expedition:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero-Data-Model/main/expedition.yaml#/expedition"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml#/assembly"
+    budget:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml#/expedition"
+    expedition:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/expeditionDate"
 
     
 paths:
