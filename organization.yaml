@@ -60,7 +60,7 @@ organization:
         streetAddress:
           description: Street name
           type: string         
-          example: Rua de São Bento
+          example: Rua de S. Bento
           x-ngsi:
             uri: "https://schema.org/streetAddress"
             uri-prefix: "https://schema.org/"
@@ -121,62 +121,6 @@ organization:
         model: https://schema.org/telephone
         type: Property
 
-    address:
-      description: The client's address
-      type: object
-      title: Address
-      properties:
-        streetAddress:
-          description: Street name
-          type: string         
-          example: Rua de São Bento, 55, 4º Esq.
-          x-ngsi:
-            uri: "https://schema.org/streetAddress"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/streetAddress
-            type: Property
-        postalCode:
-          description: Postal code
-          type: string
-          example: 1249-068
-          x-ngsi:
-            uri: "https://schema.org/postalCode"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/postalCode
-            type: Property              
-        addressLocality:
-          description: Name of the city or location
-          type: string
-          example: Lisboa
-          x-ngsi:
-            uri: "https://schema.org/addressLocality"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/addressLocality
-            type: Property             
-        addressRegion:
-          description: Region (Concelho) of the city's location
-          type: string
-          example: Bragança
-          x-ngsi:
-            uri: "https://schema.org/addressRegion"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/addressRegion
-            type: Property             
-        addressCountry:
-          description: Country where the company has its headquarters
-          type: string
-          example: Portugal
-          x-ngsi:
-            uri: "https://schema.org/addressCountry"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/addressCountry
-            type: Property
-      x-ngsi:
-        uri: "https://schema.org/address"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/address
-        type: Property
-        
     location:
       description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'
       oneOf:
