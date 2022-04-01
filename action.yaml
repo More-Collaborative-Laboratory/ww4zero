@@ -1,0 +1,103 @@
+machine:
+  title: Machine
+  type: object
+  description: Machine cnc1, nesting1, manual cut1
+  properties:
+    id:
+      description: Machine Type
+      type: string
+      format: uri
+      example: urn:ngsi-ld:Machine:[uuid]
+      x-ngsi:
+        type: Property    
+
+    startTime: 
+      description: Date and hour when the button start was pressed
+      type: dateTime
+      example: '25-03-2022 10:00'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/startDate"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    endTime: 
+      description: Date and hour when the button confirmation of end of making parts #nao esta bem
+      type: dateTime
+      example: '27-03-2022 10:00'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/endDate"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    status: 
+        description: Indicates in wich stage are the parts of corresponding machine type
+            * `waiting` - Information already arrived the machine but is wait for start-button
+            * `active` - The parts to be made in this station is already start #para saber a percentagem do trabalho realizado?
+            * `finished` - The parts belong to the station refered to a project are completed
+        type: string 
+        enum: 
+            - waiting
+            - active
+            - finished
+        example: CNC1 Status-ON Date- 25/03/2022 Hour-9h, CNC1 Status-OFF Date- 25/03/2022 Hour-11 Minuts-22
+        x-ngsi:
+          uri: "http://projectoww4zero.pt/dataModel/machineType" #machineType
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+      machyneType: #tipo de maquinas para executarem o trabalho
+        description: Defines a specific machine station
+            * `CNC.1` - CNC Working
+            * `NESTING1` - NESTING Working
+            * `MANUALCUT` - MANUALCUT Working
+        type: string 
+        enum: 
+            - CNC1STATE
+            - NESTING1STATE
+            - MANUALCUT1STATE
+        example: CNC1 Working 
+        x-ngsi:
+          uri: "http://projectoww4zero.pt/dataModel/machineType" 
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+
+    executedBy:
+        anyOf:
+            - description: 'Relationship property: Identifier the Worker that is active in this task'
+              maxLength: 256
+              minLength: 1
+              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+              type: string
+            - description: 'Relationship property: Identifier format of any worker entity'
+              format: uri
+              type: string
+        description: 'Identification worker that made the part'
+        x-ngsi:
+          uri: "http://projectww4zero/dataModel/executedBy"
+          uri-prefix: "http://projectww4zero/dataModel/"
+          type: Relationship
+
+    executedIn:
+        anyOf:
+            - description: 'Relationship property: Identifier the made part'
+              maxLength: 256
+              minLength: 1
+              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+              type: string
+            - description: 'Relationship property: Identifier format of any part entity'
+              format: uri
+              type: string
+        description: 'Identification of the part made'
+        x-ngsi:
+          uri: "http://projectww4zero/dataModel/executedIn"
+          uri-prefix: "http://projectww4zero/dataModel/"
+          type: Relationship
+
+
+  required:
+    - id
+    - measurementVariable1
+    - measurementVariable2
+    - measurementValue
+    - belongsTo
