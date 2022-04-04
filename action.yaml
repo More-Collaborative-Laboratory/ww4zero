@@ -45,7 +45,7 @@ action:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
 
-      machyneType: #tipo de maquinas para executarem o trabalho
+    machyneType: #tipo de maquinas para executarem o trabalho
         description: Defines a specific machine station
             * `CNC.1` - CNC Working
             * `NESTING1` - NESTING Working
