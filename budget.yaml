@@ -13,19 +13,19 @@ budget:
         
     amount: 
       description: Value in euros
-      type: number
+      type: string
       example: '15 000'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/amount"
         uri-prefix: "https://projetww4zero.pt/dataModel/"
         type: Property
 
-    aprovalDate: 
-      description: Date when the budget was approved
+    approvalTime: 
+      description: Saves date and time information when the budget was approved
       type: dateTime
-      example: '14-03-2022 16:06'
+      example: '25-03-2022 10:00'
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/aprovalDate"
+        uri: "https://projectww4zero.pt/dataModel/approvalTime"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
