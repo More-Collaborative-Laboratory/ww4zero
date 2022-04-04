@@ -41,7 +41,7 @@ action:
         - finished
       example: 'CNC1 Status-ON Date- 25/03/2022 Hour-9h, CNC1 Status-OFF Date- 25/03/2022 Hour-11 Minuts-22'
       x-ngsi:
-        uri: "http://projectoww4zero.pt/dataModel/machineType" #machineType
+        uri: "http://projectoww4zero.pt/dataModel/machineStatus" #machine status
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
