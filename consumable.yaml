@@ -14,7 +14,7 @@ consumable:
     name: 
       description: Identifie the consumable Name 
       type: string
-      example: corrediça 
+      example: corrediça
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/name"
         uri-prefix: "https://projetww4zero.pt/dataModel/"
@@ -29,24 +29,23 @@ consumable:
         uri-prefix: "https://projetww4zero.pt/dataModel/"
         type: Property
 
-    status:  #1, 2 e 3
-      description: Defines the possibilities of working hours
-        * `1` - aguarda separação # informação enviada para tablet mas ainda nao aberta
+    status: 
+      description: Indicates the status of an order
+        * `1` -aguarda separação # informação enviada para tablet mas ainda nao aberta
         * `2` - em separação #aberta a informação para separação de material por projeto
         * `3` - separado e aguarda levantamento #quando chega ao último item da lista de seapração imprime QR Code
         * `4` - em chão-de-fábrica
-      type: number
+      type: number  
       enum: 
         - '1'
         - '2'
         - '3'
         - '4'
-      example: '3'
+      example: '2'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/status"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property  #list ou eunm? ou so precisa 1vez?
-
+        type: Property
 
     belongsTo:
       anyOf:
@@ -55,15 +54,14 @@ consumable:
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: Identifier consumables's name and amount for a determined project
+        - description: 'Relationship property: Identifier consumables's name and amount for a determined project'
           format: uri
           type: string
       description: 'Identification of the projet's Name that this consumables will attached to'
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/belongsTo"
+        uri: "https://projectww4zero.pt/dataModel/belongsTo"  
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
-
                 
   required:
     - id
