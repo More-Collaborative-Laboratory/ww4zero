@@ -29,22 +29,23 @@ consumable:
         uri-prefix: "https://projetww4zero.pt/dataModel/"
         type: Property
 
-    belongsTo:
-      anyOf:
-        - description: 'Relationship property: Identifier consumables's properties belonging to a project'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifier consumables's name and amount for a determined project'
-          format: uri
-          type: string
-      description: 'Identification of the projet's Name that this consumables will attached to'
+    status: 
+      description: Indicates the status of an order
+        * '1' -aguarda separação # informação enviada para tablet mas ainda nao aberta
+        * '2' - em separação #aberta a informação para separação de material por projeto
+        * '3' - separado e aguarda levantamento #quando chega ao último item da lista de seapração imprime QR Code
+        * '4' - em chão-de-fábrica
+      type: number  
+      enum: 
+        - '1'
+        - '2'
+        - '3'
+        - '4'
+      example: '2'
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/belongsTo"  
+        uri: "https://projectww4zero.pt/dataModel/status"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
-                
+        type: Property
 
   required:
     - id
