@@ -97,3 +97,5 @@ action:
 
   required:
     - id
+    - startTime
+    - status
