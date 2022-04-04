@@ -20,5 +20,15 @@ consumable:
         uri-prefix: "https://projetww4zero.pt/dataModel/"
         type: Property
 
+    amount: 
+      description: Identifier the consumable amount
+      type: number
+      example: '5'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/amount"
+        uri-prefix: "https://projetww4zero.pt/dataModel/"
+        type: Property
+
+
   required:
     - id
