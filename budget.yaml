@@ -58,4 +58,4 @@ budget:
     - id
     - amount
     - madeFor
-    - aprovalDate
+    - aprovedDate
