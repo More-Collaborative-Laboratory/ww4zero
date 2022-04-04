@@ -29,6 +29,25 @@ consumable:
         uri-prefix: "https://projetww4zero.pt/dataModel/"
         type: Property
 
+    status: 
+      description: Indicates the status of the order
+        * '1' - waits for separation order
+        * '2' - In separating fase
+        * '3' - waits for someone from factory-flor to take the separeted order
+        * '4' - Already on flor-factory
+      type: number
+      enum: 
+        - '1'
+        - '2'
+        - '3'
+        - '4'
+      example: '2'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/status"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+
 
   required:
     - id
