@@ -49,7 +49,7 @@ consumable:
 
     belongsTo:
       anyOf:
-        - description: 'Relationship property: Identifier consumables's properties belonging to a project'
+        - description: 'Relationship property: Identifier consumables's properties that belong to a project'
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
@@ -62,7 +62,6 @@ consumable:
         uri: "https://projectww4zero.pt/dataModel/belongsTo"  
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
-
 
   required:
     - id
