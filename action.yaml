@@ -52,10 +52,10 @@ action:
         * `MANUALCUT` - MANUALCUT Working
       type: string 
       enum: 
-        - CNC1STATE
+        - CNC1STATE #vai ser necessário concatenar informação?
         - NESTING1STATE
         - MANUALCUT1STATE
-      example: CNC1 Working 
+      example: 'CNC1 Working' 
       x-ngsi:
         uri: "http://projectoww4zero.pt/dataModel/machineType" 
         uri-prefix: "https://projectww4zero.pt/dataModel/"
