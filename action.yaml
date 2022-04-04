@@ -31,14 +31,14 @@ action:
 
     status: 
       description: Indicates in wich stage are the parts of corresponding machine type
-          * `waiting` - Information already arrived the machine but is wait for start-button
-          * `active` - The parts to be made in this station is already start #para saber a percentagem do trabalho realizado?
-          * `finished` - The parts belong to the station refered to a project are completed
+        * `waiting` - Information already arrived the machine but is wait for start-button
+        * `active` - The parts to be made in this station is already start #para saber a percentagem do trabalho realizado?
+        * `finished` - The parts belong to the station refered to a project are completed
       type: string 
       enum: 
-          - waiting
-          - active
-          - finished
+        - waiting
+        - active
+        - finished
       example: CNC1 Status-ON Date- 25/03/2022 Hour-9h, CNC1 Status-OFF Date- 25/03/2022 Hour-11 Minuts-22
       x-ngsi:
         uri: "http://projectoww4zero.pt/dataModel/machineType" #machineType
@@ -46,15 +46,15 @@ action:
         type: Property
 
     machyneType: #tipo de maquinas para executarem o trabalho
-      description: Defines a specific machine station
-          * `CNC.1` - CNC Working
-          * `NESTING1` - NESTING Working
-          * `MANUALCUT` - MANUALCUT Working
+      description: 'Defines a specific machine station'
+        * `CNC.1` - CNC Working
+        * `NESTING1` - NESTING Working
+        * `MANUALCUT` - MANUALCUT Working
       type: string 
       enum: 
-          - CNC1STATE
-          - NESTING1STATE
-          - MANUALCUT1STATE
+        - CNC1STATE
+        - NESTING1STATE
+        - MANUALCUT1STATE
       example: CNC1 Working 
       x-ngsi:
         uri: "http://projectoww4zero.pt/dataModel/machineType" 
@@ -80,14 +80,14 @@ action:
 
     executedIn:
       anyOf:
-          - description: 'Relationship property: Identifier the made part'
-            maxLength: 256
-            minLength: 1
-            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-            type: string
-          - description: 'Relationship property: Identifier format of any part entity'
-            format: uri
-            type: string
+        - description: 'Relationship property: Identifier the made part'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier format of any part entity'
+          format: uri
+          type: string
       description: 'Identification of the part made'
       x-ngsi:
         uri: "http://projectww4zero/dataModel/executedIn"
