@@ -19,15 +19,6 @@ budget:
         uri: "https://projectww4zero.pt/dataModel/amount"
         uri-prefix: "https://projetww4zero.pt/dataModel/"
         type: Property
-        
-    madeFor:  #urn Project
-      description: The Name of the correspondent project
-      type: string
-      example: Mueble C WC
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/madeFor"
-        uri-prefix: "https://projetww4zero.pt/dataModel/"
-        type: Property
 
     aprovalDate: 
       description: Date when the budget was approved
@@ -38,7 +29,23 @@ budget:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
+    madeFor:
+      anyOf:
+        - description: 'Relationship property: Identifier the name of the project'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier the name of the project'
+          format: uri
+          type: string
+      description: 'Identification the project that this budget belongs to'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/madeFor"  
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Relationship
 
 
   required:
     - id
+    - madeFor
