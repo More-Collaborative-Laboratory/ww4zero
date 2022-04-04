@@ -1,7 +1,7 @@
 budget:
   title: Budget
   type: object
-  description: Describes a client's budgeting
+  description: Describes a clients budgeting
   properties:
     id:
       description: Budgeting Identifier
