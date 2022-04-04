@@ -97,7 +97,3 @@ action:
 
   required:
     - id
-    - measurementVariable1
-    - measurementVariable2
-    - measurementValue
-    - belongsTo
