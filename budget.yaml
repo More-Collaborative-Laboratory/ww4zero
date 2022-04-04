@@ -39,22 +39,6 @@ budget:
         type: Property
 
 
-    belongsTo:
-      anyOf:
-        - description: 'Relationship property: Identifier the urn of project name'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifier project Name'
-          format: uri
-          type: string
-      description: 'Identification of the projet Name that this budget will be attached'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/belongsTo"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        model: https://schema.org/URL #leva ou nao leva?
-        type: Relationship
 
                 
   required:
@@ -62,4 +46,3 @@ budget:
     - amount
     - madeFor
     - aprovalDate
-    - belongsTo
