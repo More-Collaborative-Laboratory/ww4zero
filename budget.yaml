@@ -12,7 +12,7 @@ budget:
         type: Property
         
     amount: 
-      description: value in euros
+      description: Value in euros
       type: number
       example: '15 000'
       x-ngsi:
@@ -21,20 +21,20 @@ budget:
         type: Property
         
     madeFor:  #urn Project
-      description: The project recipient
+      description: The Name of the correspondent project
       type: string
-      example: Mueble-C-WC
+      example: Mueble C WC
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/madeFor"
         uri-prefix: "https://projetww4zero.pt/dataModel/"
         type: Property
 
-    aprovedDate: 
-      description: Date on wich the budget was approved
+    aprovalDate: 
+      description: Date when the budget was approved
       type: dateTime
       example: '14-03-2022 16:06'
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/aprovedDate"
+        uri: "https://projectww4zero.pt/dataModel/aprovalDate"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
@@ -42,6 +42,3 @@ budget:
 
   required:
     - id
-    - amount
-    - madeFor
-    - aprovedDate
