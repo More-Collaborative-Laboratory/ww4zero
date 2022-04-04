@@ -29,8 +29,6 @@ consumable:
         uri-prefix: "https://projetww4zero.pt/dataModel/"
         type: Property
 
-
-
     belongsTo:
       anyOf:
         - description: 'Relationship property: Identifier consumables's properties belonging to a project'
