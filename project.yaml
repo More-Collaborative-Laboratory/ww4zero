@@ -30,6 +30,25 @@
             uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
 
+ status:  #list ou enum 
+          description: Indicates the actual workers station
+            * `waiting` - Project's budget approved
+            * `working` - Project's parts are already in the factory's floor
+            * `finished` - Project's parts are all done
+            * `assembly` - Project's parts are being assembled in the test zone 
+            * `expedition` - The request from a client is already out from the factory
+          type: string
+          enum: 
+            - Waiting
+            - working
+            - finished
+            - assembly
+            - expedition
+          example: expedition
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/status"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
 
 
         required:
