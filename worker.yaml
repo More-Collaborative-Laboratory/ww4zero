@@ -145,11 +145,6 @@
       required:
         - id
         - givenName
-        - ssnId
-        - taxId
-        - workerShif
-        - functionPerformed
-        - e-mail
-        - password
+ 
 
-         example: urn:ngsi-ld:FactoryManager:workerNbr
+         #example: urn:ngsi-ld:FactoryManager:workerNbr
