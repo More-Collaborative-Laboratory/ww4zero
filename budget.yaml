@@ -1,16 +1,16 @@
 budget:
   title: Budget
   type: object
-  description: Describes a clients budgeting
+  description: Clients Budget #tambem assemblagem das partes e envio da encomenda?
   properties:
     id:
-      description: Budgeting Identifier
+      description: Budget Identifier
       type: string
       format: uri
-      example: urn:ngsi-ld:Budgeting:[]
+      example: urn:ngsi-ld:Budget:[]
       x-ngsi:
-        type: Property
-        
+        type: Property    
+
 
 
   required:
