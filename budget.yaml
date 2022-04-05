@@ -11,15 +11,6 @@ budget:
       x-ngsi:
         type: Property
         
-    amount: 
-      description: Value in euros
-      type: number
-      example: '15 000'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/amount"
-        uri-prefix: "https://projetww4zero.pt/dataModel/"
-        type: Property
-
 
 
   required:
