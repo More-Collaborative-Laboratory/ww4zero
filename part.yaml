@@ -85,6 +85,40 @@ part:
             uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
 
+        length: 
+          description: Identifies the specific part's length coming from cut list
+          type: string
+          example: MC_MUEBLETV_A2_RIPA_TRAS
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/lenght"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+        width: 
+          description: 'Identifies the specific part's width coming from cut list'
+          type: number
+          example: MC_MUEBLETV_A2_RIPA_TRAS
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/width"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+        belongsTo:
+          anyOf:
+            - description: 'Relationship property: Identifier the project's name that parts belong to'
+              maxLength: 256
+              minLength: 1
+              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+              type: string
+            - description: 'Relationship property: associates the characteristics of a part belonging to the project name'
+              format: uri
+              type: string
+          description: 'Identification of the project name that parts belong to'
+          x-ngsi:
+            uri: "https://projetobioma.pt/dataModel/belongsTo"
+            uri-prefix: "https://projetobioma.pt/dataModel/"
+            model: https://schema.org/URL
+            type: Relationship
 
 
 
