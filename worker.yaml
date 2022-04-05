@@ -37,7 +37,7 @@ worker:
         pattern: '^\d{9}$'
         example: 254545879
         x-ngsi:
-          uri: "https://schema.org/taxID"
+          uri: "https://schema.org/taxId"
           uri-prefix: "https://schema.org/"
           model: https://schema.org/Person
           type: Property
@@ -141,7 +141,7 @@ worker:
 
     required:
       - id
-      - giveName
+      - givenName
 
 
         #example: urn:ngsi-ld:FactoryManager:workerNbr
