@@ -64,6 +64,26 @@ part:
             uri: "https://projectww4zero.pt/dataModel/woodName"
             uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
+ 
+        thickness: 
+          description: Indicates the actual worker's station
+            * `10` - 10 mm thickness
+            * `16` - 16 mm thickness
+            * `19` - 19 mm thickness
+            * `20` - 20 mm thickness
+            * `21` - 21 mm thickness            
+          type: number
+          enum: 
+            - '10'
+            - '16'
+            - '19'
+            - '20'
+            - '21'
+          example: Designer
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/thickness"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
 
 
 
