@@ -116,22 +116,22 @@ worker:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Relationship
 
-
       assemblyFor:
         anyOf:
-          - description: 'Relationship property: Identifier format of any NGSI entity'
+          - description: 'Relationship property: Identifier the project each assembly belongs to'
             maxLength: 256
             minLength: 1
             pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
             type: string
-          - description: 'Relationship property: Identifier format of any NGSI entity'
+          - description: 'Relationship property: assymbly for wich project is corresponding'
             format: uri
             type: string
-        description: 'Identification of the Part's Project assembled by employ.'
+        description: 'Identification of the project what the assembly refers of '
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/assemblyFor"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Relationship
+
 
 
     required:
