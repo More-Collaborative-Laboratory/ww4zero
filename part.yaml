@@ -87,19 +87,10 @@ part:
 
         length: 
           description: Identifies the specific part's length coming from cut list
-          type: string
-          example: MC_MUEBLETV_A2_RIPA_TRAS
+          type: number
+          example: '12' mm
           x-ngsi:
             uri: "https://projectww4zero.pt/dataModel/lenght"
-            uri-prefix: "https://projectww4zero.pt/dataModel/"
-            type: Property
-
-        width: 
-          description: 'Identifies the specific part's width coming from cut list'
-          type: number
-          example: MC_MUEBLETV_A2_RIPA_TRAS
-          x-ngsi:
-            uri: "https://projectww4zero.pt/dataModel/width"
             uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
 
