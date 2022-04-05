@@ -83,6 +83,23 @@ worker:
           type: Property
 
 
+      workerShif:  #turno de trabalho 
+        description: Defines the possibilities of working hours
+          * `Morning` - Shift from 8am until 5pm
+          * `Afternoon` - Shift from 5pm until 0am
+          * `Night` - Shift from 0am until 8am
+        type: string
+        enum: 
+          - Morning
+          - Afternoon
+          - Night
+        example: Morning
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/workerShift"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+
     required:
       - id
       - givenName
