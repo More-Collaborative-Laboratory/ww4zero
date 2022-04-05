@@ -52,15 +52,6 @@ worker:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
       
-      functionWorker: # mais genérico para outros projetos
-        description: The tasks and functions performed by the worker
-        type: string
-        example: CNC Operator
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/functionWorker"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property       
-
 
     required:
       - id
