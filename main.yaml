@@ -35,7 +35,7 @@ components:
     expedition:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/expeditionDate"
 
-    
+
 paths:
   /ngsi-ld/v1/entities:
     get:

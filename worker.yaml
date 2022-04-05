@@ -141,7 +141,7 @@ worker:
 
     required:
       - id
-      - givenName
+      - giveName
 
 
         #example: urn:ngsi-ld:FactoryManager:workerNbr
