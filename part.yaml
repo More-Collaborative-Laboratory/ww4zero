@@ -85,6 +85,24 @@ part:
             uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
 
+        length:
+          description: Identifies the specific parts length coming from cut list in mm
+          type: number
+          example: '12'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/length"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+        width:
+          description: Identifies the specific parts width coming from cut list in mm
+          type: number
+          example: '11'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/width"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
 
       required:
         - id
