@@ -53,6 +53,36 @@ worker:
           type: Property
       
 
+       
+      functionPerformed:  #funções na fábrica 
+        description: Indicates the actual worker's station
+          * `CNC` - CNC Operator
+          * `Nesting` - Nesting Operator
+          * `Manual-Cut` - Manual Cut Operator
+          * `Assembly` - Assembly Operator
+          * `Manager` - Factory manager
+          * `Designer` - Designer Department
+          * `Budgeting` - Badgeting Department
+          * `Warehouse` - Warehouse Department (consumables and wood's stock)
+          * `Other` - Other Operation, like merchandise distributor
+        type: string
+        enum: 
+          - CNC
+          - Nesting
+          - Manual Cut
+          - Assembly
+          - Manager
+          - Designer
+          - Budgeting
+          - Warehouse
+          - Other
+        example: Designer
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/functionPerformed"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+
     required:
       - id
       - givenName
