@@ -34,4 +34,4 @@
 
         required:
         - id
-        - name
+        - givename
