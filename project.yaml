@@ -4,7 +4,7 @@
       description: Contains the information of a project
       properties:
         id:
-          description: Project's id Identifier
+          description: Projects id Identifier
           type: string
           format: uri
           example: urn:ngsi-ld:Project:[uuid]
