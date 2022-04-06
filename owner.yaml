@@ -1,7 +1,7 @@
  owner:
       title: Owner
       type: object
-      description: Identifies a clinet (Owner of a project+)
+      description: Identifies a clinet (Owner of a project)
       properties:
         id:
           description: Client Identifier

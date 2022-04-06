@@ -50,21 +50,6 @@ project:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
 
-      nestingTag: #numero das etiquetas em função das da lista de corte
-      anyOf:
-        - description: 'Relationship property: Identifier nestings tags coming from cut list'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifier nestings tags coming from cut list'
-          format: uri
-          type: string
-      description: 'Identification of the finals Tags that will be printed in Nesting location'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/nestingTag"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
 
 
       required:
