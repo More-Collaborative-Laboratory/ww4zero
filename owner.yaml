@@ -16,8 +16,8 @@
           type: boolean
           example: True
           x-ngsi:
-            uri: "http://morecolab.pt/pi/monAgroclimatica/dataModel/clientTypeInstitution"
-            uri-prefix: "http://morecolab.pt/pi/monAgroclimatica/dataModel/"
+            uri: "https://projectww4zero.pt/dataModel/clientTypeInstitution"
+            uri-prefix: "https://projectww4zero/dataModel/"
 
         legalName: 
           description: Institution legal name

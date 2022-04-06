@@ -158,7 +158,7 @@ project:
             type: string
         description: 'Identification assembled parts belong to some project made for some worker'
         x-ngsi:
-          uri: "https://proctww4zero.pt/dataModel/assemblyBy"
+          uri: "https://projectww4zero.pt/dataModel/assemblyBy"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Relationship
 
