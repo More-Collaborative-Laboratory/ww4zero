@@ -16,9 +16,9 @@ organization:
       type: string
       example: MOFREITA
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/legalName"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        model: https://schema.org/legalName
+        uri: "https://schema.org/legalName"
+        uri-prefix: "https://schema.org"
+        model: https://schema.org/Organization
         type: Property
         
     taxId:

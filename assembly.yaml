@@ -13,7 +13,8 @@ assembly:
 
     startTime: 
       description: Date and hour on wich the assembly starts
-      type: dateTime
+      type: string
+      format: DateTime
       example: '25-03-2022 10:00'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/startDate"
@@ -22,7 +23,8 @@ assembly:
 
     endTime: 
       description: Date and hour on wich the assembly ends
-      type: DateTime
+      type: string
+      format: DateTime
       example: '27-03-2022 10:00'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/endDate"
@@ -45,14 +47,6 @@ assembly:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
-    avaregeTime: #da para subtrair o tempo de fim ao tempod inicial? 
-      description: value in euros
-      type: number
-      example: '15 000'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/amount"
-        uri-prefix: "https://projetww4zero.pt/dataModel/"
-        type: Property
 
     belongsTo:
       anyOf:

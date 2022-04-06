@@ -26,7 +26,7 @@
           x-ngsi:
             uri: "https://schema.org/legalName"
             uri-prefix: "https://schema.org/"
-            model: https://schema.org/legalName
+            model: https://schema.org/Organization
             type: Property
 
         givenName: 

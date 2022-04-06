@@ -11,12 +11,12 @@ project:
         x-ngsi:
           type: Property
           
-      givename: 
+      name: 
         description: Project name
         type: string
         example: MUEBLE-WC
         x-ngsi:
-          uri: "https://schema.org/givename"
+          uri: "https://schema.org/name"
           uri-prefix: "https://schema.org/"
           model: https://schema.org/name
           type: Property
@@ -180,6 +180,6 @@ project:
           type: Relationship
 
 
-      required:
-      - id
-      - givename
+    required:
+    - id
+    - name

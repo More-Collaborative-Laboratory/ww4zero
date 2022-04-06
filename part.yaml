@@ -12,13 +12,14 @@ part:
             type: Property
 
         name: 
-          description: Identifies the part's name that belongs to a specific project
-          type: string
-          example: MC_MUEBLETV_A2_RIPA_TRAS
-          x-ngsi:
-            uri: "https://projectww4zero.pt/dataModel/name"
-            uri-prefix: "https://projectww4zero.pt/dataModel/"
-            type: Property
+        description: Part name
+        type: string
+        example: MUEBLE-Ripa
+        x-ngsi:
+          uri: "https://schema.org/name"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/name
+          type: Property
             
         nestingFlag:
           description: Name of the material coming from cut list that needs to go through this station
