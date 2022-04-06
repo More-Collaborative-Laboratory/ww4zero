@@ -11,6 +11,16 @@ budget:
       x-ngsi:
         type: Property    
 
+    name: 
+    description: Budget name
+    type: string
+    example: sr vitor
+    x-ngsi:
+      uri: "https://schema.org/name"
+      uri-prefix: "https://schema.org/"
+      model: https://schema.org/name
+      type: Property
+
     amount: 
       description: Value in euros
       type: number
@@ -22,7 +32,8 @@ budget:
 
     approvedDate: 
       description: Saves date and time information when the budget was approved
-      type: DateTime
+      type: string
+      format: DateTime
       example: '25-03-2022 10:00'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/approvalTime"

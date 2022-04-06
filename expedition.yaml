@@ -16,7 +16,7 @@ expeditionDate:
       description: Date and hour when the order left the factory in direction to the Owner
       type: string
       format: DateTime
-      example: '25-03-2022 10:00'
+      example: '2022-04-06T00:00:00.000Z'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/expeditionTime"
         uri-prefix: "https://projectww4zero.pt/dataModel/"

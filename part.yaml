@@ -12,14 +12,14 @@ part:
             type: Property
 
         name: 
-        description: Part name
-        type: string
-        example: MUEBLE-Ripa
-        x-ngsi:
-          uri: "https://schema.org/name"
-          uri-prefix: "https://schema.org/"
-          model: https://schema.org/name
-          type: Property
+          description: Part name
+          type: string
+          example: MUEBLE-Ripa
+          x-ngsi:
+            uri: "https://schema.org/name"
+            uri-prefix: "https://schema.org/"
+            model: https://schema.org/name
+            type: Property
             
         nestingFlag:
           description: Name of the material coming from cut list that needs to go through this station
