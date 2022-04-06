@@ -12,14 +12,14 @@ budget:
         type: Property    
 
     name: 
-    description: Budget name
-    type: string
-    example: sr vitor
-    x-ngsi:
-      uri: "https://schema.org/name"
-      uri-prefix: "https://schema.org/"
-      model: https://schema.org/name
-      type: Property
+      description: Budget name
+      type: string
+      example: sr vitor
+      x-ngsi:
+        uri: "https://schema.org/name"
+        uri-prefix: "https://schema.org/"
+        model: https://schema.org/name
+        type: Property
 
     amount: 
       description: Value in euros
