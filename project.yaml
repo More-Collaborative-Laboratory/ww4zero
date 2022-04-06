@@ -62,8 +62,121 @@ project:
             type: string
         description: 'Identification of the final tag to past in wood part originated on nesting station'
         x-ngsi:
-          uri: "https://projetobioma.pt/dataModel/nestingTag"
-          uri-prefix: "https://projetobioma.pt/dataModel/"
+          uri: "https://projectww4zero.pt/dataModel/nestingTag"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship
+
+      producedAt:
+        anyOf:
+          - description: 'Relationship property: Identifies the operator envolved in the produced stations'
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: 'Relationship property: linking the workers and the project giveName'
+            format: uri
+            type: string
+        description: 'Identification of the operators giveName that are working in specific project Name'
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/producedAt"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship
+
+      orderBy:
+        anyOf:
+          - description: 'Relationship property: Identifies the Owner giveName or familyName or taxID that the project belongs to'
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: 'Relationship property: Identifies a project by the associated giveName from the owner'
+            format: uri
+            type: string
+        description: 'Identification of the owner name associated to the project with status in execution'
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/orderBy"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship
+
+      budget:
+        anyOf:
+          - description: 'Relationship property: Identifies the value of the requested project by the owner'
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: 'Relationship property: indicates the value of a project'
+            format: uri
+            type: string
+        description: 'Identification of the final value for the owner by corresponding project Name'
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/budget"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship
+
+      consumable:
+        anyOf:
+          - description: 'Relationship property: Identifies list of consumables corresponding to a determinated project'
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: 'Relationship property: consumable list from cut list'
+            format: uri
+            type: string
+        description: 'Identification of all nedded consumable for specific project'
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/consumable"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship
+
+      part:
+        anyOf:
+          - description: 'Relationship property: Indicates the name of all parts corresponding to a specific project'
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: 'Relationship property: number and names for the parts comming from cut list for specific project'
+            format: uri
+            type: string
+        description: 'Identification of the parts for a specific project comming from cut list'
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/part"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship
+
+      assemblyBy:
+        anyOf:
+          - description: 'Relationship property: Identifies wich parts were assembled by a specific worker'
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: 'Relationship property: parts of a project assembled by work giveName or familyName'
+            format: uri
+            type: string
+        description: 'Identification assembled parts belong to some project made for some worker'
+        x-ngsi:
+          uri: "https://proctww4zero.pt/dataModel/assemblyBy"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship
+
+
+      expedition:
+        anyOf:
+          - description: 'Relationship property: Identifies project name that is already going from the factory to the owner address'
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: 'Relationship property: indicates that all the process of some order is going for some address'
+            format: uri
+            type: string
+        description: 'Identification the addres that will recieve the oreder name'
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/expedition"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Relationship
 
 

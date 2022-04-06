@@ -116,8 +116,8 @@ part:
               type: string
           description: 'Identification of the project name that parts belong to'
           x-ngsi:
-            uri: "https://projetobioma.pt/dataModel/belongsTo"
-            uri-prefix: "https://projetobioma.pt/dataModel/"
+            uri: "https://projectww4zero.pt/dataModel/belongsTo"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Relationship
 
 
