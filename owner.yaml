@@ -157,7 +157,6 @@
 
       required:
         - id
-        - clientTypeInstitution
         - taxId
         - address
         - email

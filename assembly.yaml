@@ -22,7 +22,7 @@ assembly:
 
     endTime: 
       description: Date and hour on wich the assembly ends
-      type: dateTime
+      type: DateTime
       example: '27-03-2022 10:00'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/endDate"
@@ -73,7 +73,5 @@ assembly:
                 
   required:
     - id
-    - amount
-    - madeFor
-    - aprovalDate
+    - status
     - belongsTo

@@ -14,7 +14,7 @@ expeditionDate:
 
     expeditionTime: 
       description: Date and hour when the order left the factory in direction to the Owner
-      type: dateTime
+      type: DateTime
       example: '25-03-2022 10:00'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/expeditionTime"
@@ -51,7 +51,5 @@ expeditionDate:
                 
   required:
     - id
-    - amount
-    - madeFor
-    - aprovalDate
+    - expedionTime
     - belongsTo

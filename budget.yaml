@@ -22,7 +22,7 @@ budget:
 
     approvedDate: 
       description: Saves date and time information when the budget was approved
-      type: dateTime
+      type: DateTime
       example: '25-03-2022 10:00'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/approvalTime"
@@ -47,5 +47,5 @@ budget:
 
   required:
     - id
-    - aprovalDate
+    - approvedDate
     - madeFor

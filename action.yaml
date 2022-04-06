@@ -13,7 +13,7 @@ action:
 
     startTime: 
       description: Saves date and time information when the start button is pressed
-      type: dateTime
+      type: DateTime
       example: '25-03-2022 10:00'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/startDate"
@@ -22,7 +22,7 @@ action:
 
     endTime: 
       description: Saves date and time information when the finish button is pressed
-      type: dateTime
+      type: DateTime
       example: '27-03-2022 10:00'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/endDate"
