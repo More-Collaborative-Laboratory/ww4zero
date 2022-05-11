@@ -11,8 +11,8 @@ part:
           x-ngsi:
             type: Property
 
-        name: #ref_peça
-          description: Identifies the part's name that belongs to a specific project
+        name:
+          description: Identifies the part's name that belongs to a specific project - REF_PEÇA (A)
           type: string
           example:  MC_MUEBLETV_A2_RIPA_TRAS
           x-ngsi:
@@ -20,8 +20,8 @@ part:
             uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
 
-        sort: #tipo
-          description: Identifies the part's type that belongs to a specific project
+        sort: 
+          description: Identifies the part's type that belongs to a specific project - Tipo (B)
           type: string
           example:  'Painel'
           x-ngsi:
@@ -47,8 +47,8 @@ part:
             uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
 
-        tag: #etiqueta
-          description: Identifies the part tag number
+        tag: 
+          description: Identifies the part tag number - ETIQ
           type: number
           example: '18'
           x-ngsi:
