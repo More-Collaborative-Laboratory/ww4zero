@@ -7,20 +7,55 @@ part:
           description: Identifies the part's name of a project
           type: string
           format: uri
-          example: MC_MUEBLETV_A2_GAV_ESQ_LAT_ESQ
+          example:  urn:ngsi-ld:id:[MC_MUEBLETV_A2_RIPA_TRAS]
           x-ngsi:
             type: Property
 
-        name: 
-          description: Part name
+        name: #ref_peça
+          description: Identifies the part's name that belongs to a specific project
           type: string
-          example: MUEBLE-Ripa
+          example:  MC_MUEBLETV_A2_RIPA_TRAS
           x-ngsi:
-            uri: "https://schema.org/name"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/name
+            uri: "https://projectww4zero.pt/dataModel/name"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
-            
+
+        sort: #tipo
+          description: Identifies the part's type that belongs to a specific project
+          type: string
+          example:  'Painel'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/sort"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+        material:
+          description: Identifies the part's material name 
+          type: string
+          example: painel
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/material"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+        amount:
+          description: Identifies the number of pieces to be made
+          type: number
+          example: '1'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/amount"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+        tag: #etiqueta
+          description: Identifies the part tag number
+          type: number
+          example: '18'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/tag"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
         nestingFlag:
           description: Name of the material coming from cut list that needs to go through this station
           type: string
@@ -48,24 +83,6 @@ part:
             uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
 
-        woodName: 
-          description: Indicates the actual worker's station
-            * `painel` - painel type
-            * `mdf` - MDF type
-            * `carvalho` - carvalho type
-            * `cerejeira` - cerejeira type
-          type: string  #/ enum?
-          enum: 
-            - painel
-            - mdf
-            - carvalho
-            - cerejeira
-          example: carvalho
-          x-ngsi:
-            uri: "https://projectww4zero.pt/dataModel/woodName"
-            uri-prefix: "https://projectww4zero.pt/dataModel/"
-            type: Property
- 
         thickness: 
           description: Indicates the actual worker's station
             * `10` - 10 mm thickness
@@ -80,34 +97,148 @@ part:
             - '19'
             - '20'
             - '21'
-          example: Designer
+          example: '16'
           x-ngsi:
             uri: "https://projectww4zero.pt/dataModel/thickness"
             uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
 
-        length:
-          description: Identifies the specific parts length coming from cut list in mm
+        length: 
+          description: Identifies the specific part's length in milimeters coming from cut list
           type: number
-          example: '12'
+          example: '2978'
           x-ngsi:
-            uri: "https://projectww4zero.pt/dataModel/length"
+            uri: "https://projectww4zero.pt/dataModel/lenght"
             uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
 
-        width:
-          description: Identifies the specific parts width coming from cut list in mm
+        width: 
+          description: 'Identifies the specific part's width coming from cut list'
           type: number
-          example: '11'
+          example: '300'
           x-ngsi:
             uri: "https://projectww4zero.pt/dataModel/width"
             uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property 
+
+        f2: 
+          description: 'Identifies the specific part's surface where holes should be drilled'
+          type: number
+          example: '12'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/f2"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property 
+
+
+        f3: 
+          description: 'Identifies the specific part's surface where holes should be drilled'
+          type: number
+          example: '30'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/f3"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property 
+
+
+        f4: 
+          description: 'Identifies the specific part's surface where holes should be drilled'
+          type: number
+          example: '30'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/f4"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property 
+
+        f5: 
+          description: 'Identifies the specific part's surface where holes should be drilled'
+          type: number
+          example: '0'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/f5"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property 
+
+        veio:
+          description: 'Indicates the direction of wood grain'
+            * `X` - 10 mm thickness
+            * `Y` - 16 mm thickness       
+          type: string
+          enum: 
+            - 'X'
+            - 'Y'
+          example: 'X'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/veio"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
 
+        orla2:
+          description: 'Identifies a specific part that needs to go through the orla2 station'
+          type: string
+          example: 'X'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/orla2"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+        orla3:
+          description: 'Identifies a specific part that needs to go through the orla3 station'
+          type: string
+          example: 'X'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/orla3"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+        orla4:
+          description: 'Identifies a specific part that needs to go through the orla4 station'
+          type: string
+          example: 'X'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/orla4"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+        orla5:
+          description: 'Identifies a specific part that needs to go through the orla5 station'
+          type: string
+          example: 'X'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/orla5"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+        comments:
+          description: Additional indications
+          type: string
+          example: adicionar superfície anti-derrapante
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/comments"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+        opcnc: 
+          description: 'Identifies a specific part that needs to go through the cnc operations station'
+          type: string
+          example: X
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/opcnc"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property 
+
+        weight: 
+          description: 'Identifies the specific part's weight coming from cut list in kilograma'
+          type: number
+          example: '1.5'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/weight"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property 
 
         belongsTo:
           anyOf:
-            - description: 'Relationship property: Identifier the projects name that parts belong to'
+            - description: 'Relationship property: Identifier the project's name that parts belong to'
               maxLength: 256
               minLength: 1
               pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
@@ -117,10 +248,22 @@ part:
               type: string
           description: 'Identification of the project name that parts belong to'
           x-ngsi:
-            uri: "https://projectww4zero.pt/dataModel/belongsTo"
-            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            uri: "https://projetobioma.pt/dataModel/belongsTo"
+            uri-prefix: "https://projetobioma.pt/dataModel/"
+            model: https://schema.org/URL
             type: Relationship
+
+
 
 
       required:
         - id
+        - name
+        - sort
+        - amount
+        - thickness
+        - length
+        - width
+        - cncFlag
+        - nestingFlag
+        - belongsTo
