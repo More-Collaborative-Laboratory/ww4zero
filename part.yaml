@@ -113,7 +113,7 @@ part:
             type: Property
 
         width: 
-          description: 'Identifies the specific part's width coming from cut list'
+          description: Identifies the specific part's width coming from cut list
           type: number
           example: '300'
           x-ngsi:
@@ -122,7 +122,7 @@ part:
             type: Property 
 
         f2: 
-          description: 'Identifies the specific part's surface where holes should be drilled'
+          description: Identifies the specific part's surface where holes should be drilled
           type: number
           example: '12'
           x-ngsi:
@@ -132,7 +132,7 @@ part:
 
 
         f3: 
-          description: 'Identifies the specific part's surface where holes should be drilled'
+          description: Identifies the specific part's surface where holes should be drilled
           type: number
           example: '30'
           x-ngsi:
@@ -142,7 +142,7 @@ part:
 
 
         f4: 
-          description: 'Identifies the specific part's surface where holes should be drilled'
+          description: Identifies the specific part's surface where holes should be drilled
           type: number
           example: '30'
           x-ngsi:
@@ -151,7 +151,7 @@ part:
             type: Property 
 
         f5: 
-          description: 'Identifies the specific part's surface where holes should be drilled'
+          description: Identifies the specific part's surface where holes should be drilled
           type: number
           example: '0'
           x-ngsi:
@@ -160,7 +160,7 @@ part:
             type: Property 
 
         veio:
-          description: 'Indicates the direction of wood grain'
+          description: Indicates the direction of wood grain'
             * `X` - 10 mm thickness
             * `Y` - 16 mm thickness       
           type: string
@@ -174,7 +174,7 @@ part:
             type: Property
 
         orla2:
-          description: 'Identifies a specific part that needs to go through the orla2 station'
+          description: Identifies a specific part that needs to go through the orla2 station
           type: string
           example: 'X'
           x-ngsi:
@@ -183,7 +183,7 @@ part:
             type: Property
 
         orla3:
-          description: 'Identifies a specific part that needs to go through the orla3 station'
+          description: Identifies a specific part that needs to go through the orla3 station
           type: string
           example: 'X'
           x-ngsi:
@@ -192,7 +192,7 @@ part:
             type: Property
 
         orla4:
-          description: 'Identifies a specific part that needs to go through the orla4 station'
+          description: Identifies a specific part that needs to go through the orla4 station
           type: string
           example: 'X'
           x-ngsi:
@@ -201,7 +201,7 @@ part:
             type: Property
 
         orla5:
-          description: 'Identifies a specific part that needs to go through the orla5 station'
+          description: Identifies a specific part that needs to go through the orla5 station
           type: string
           example: 'X'
           x-ngsi:
@@ -219,7 +219,7 @@ part:
             type: Property
 
         opcnc: 
-          description: 'Identifies a specific part that needs to go through the cnc operations station'
+          description: Identifies a specific part that needs to go through the cnc operations station
           type: string
           example: X
           x-ngsi:
@@ -228,7 +228,7 @@ part:
             type: Property 
 
         weight: 
-          description: 'Identifies the specific part's weight coming from cut list in kilograma'
+          description: Identifies the specific part's weight coming from cut list in kilograma
           type: number
           example: '1.5'
           x-ngsi:
