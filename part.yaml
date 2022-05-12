@@ -1,7 +1,7 @@
 part:
     title: Worker
     type: object
-    description: Identifies a worker within an organization
+    description: Identifies the part-name that belongs to a specific project - REF PEÇA (A) - 
     properties:
       id:
         description: Worker Identifier
