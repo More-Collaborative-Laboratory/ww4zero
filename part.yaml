@@ -1,7 +1,7 @@
 part:
   title: Part
   type: object
-  description: Identifies a constituent parts of a project ssssss
+  description: Identifies a constituent parts of a project wwww
   properties:
     id:
       description: Identifies the part's name of a project
@@ -17,69 +17,6 @@ part:
       example:  MC_MUEBLETV_A2_RIPA_TRAS
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/name"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    sort: 
-      description: Identifies the part's type that belongs to a specific project - TIPO (B)
-      type: string
-      example:  'Painel'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/sort"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    material:
-      description: Identifies the part's material name 
-      type: string
-      example: painel
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/material"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    amount:
-      description: Identifies the number of pieces to be made
-      type: number
-      example: '1'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/amount"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    tag: 
-      description: Identifies the part tag number - Etiqueta
-      type: number
-      example: '18'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/tag"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    nestingFlag:
-      description: Name of the material coming from cut list that needs to go through this station
-      type: string
-      example: MC_MUEBLETV_A1_PAINEL3
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/nestingFlag"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-    
-    cncFlag:
-      description: Name of the material coming from cut list that needs to go through this station
-      type: string
-      example: MC_MUEBLETV_A1_PAINEL3
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/cncFlag"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-                
-    manualFlag:
-      description: Name of the material coming from cut list that needs to go through this station
-      type: string
-      example: MC_MUEBLETV_A2_RIPA_TRAS
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/manualFlag"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
@@ -104,5 +41,4 @@ part:
             
 required:
 - id
-- expedionTime
 - belongsTo
