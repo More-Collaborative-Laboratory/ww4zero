@@ -182,15 +182,6 @@ part:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
 
-      orla5:
-        description: ORLA5 (S)
-        type: string
-        example: X
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/orla5"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
-
       weight:
         description: PESO (U)
         type: number
