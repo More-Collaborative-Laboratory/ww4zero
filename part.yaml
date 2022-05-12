@@ -7,7 +7,7 @@ part:
         description: Unic Identifier of a Part of a Project
         type: string
         format: uri
-        example: urn:ngsi-ld:id:1223 #porquê Nbr?
+        example: urn:ngsi-ld:id:1223 
         x-ngsi:
           type: Property
           
@@ -19,7 +19,22 @@ part:
           uri: "https://projectww4zero.pt/dataModel/partName"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
-    
+
+      belongsTo:
+        anyOf:
+          - description: 'Relationship property: Identifies the project to wich the part belongs'
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: 'Relationship property: indicates the project to wich the part belongs '
+            format: uri
+            type: string
+        description: 'Identifies the project to wich the part belongs'
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/belongsTo"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship    
     
     required:
      - id
