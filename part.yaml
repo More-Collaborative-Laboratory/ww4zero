@@ -20,9 +20,6 @@ part:
         uri-prefix: "https://schema.org/"
         model: https://schema.org/name
         type: Property
-
-
-
-            
-required:
-- id
+       
+  required:
+  - id
