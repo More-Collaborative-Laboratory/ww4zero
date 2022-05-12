@@ -21,33 +21,6 @@ part:
           model: https://schema.org/name
           type: Property
 
-      sort: 
-        description: Identifies the part's type that belongs to a specific project - Tipo (B)
-        type: string
-        example: Painel
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/sort"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
-
-      material: 
-        description: Identifies the part's material name - Material (C)
-        type: string
-        example: Painel
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/material"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
-
-     
-      amount:
-        description: Identifies the number of pieces to be made
-        type: number
-        example: '1'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/amount"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
 
 
       belongsTo:
@@ -73,6 +46,3 @@ part:
     required:
       - id
       - name
-      - sort
-      - amount
-      - belongsTo
