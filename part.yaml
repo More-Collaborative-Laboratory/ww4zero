@@ -1,42 +1,24 @@
 part:
-    title: Part
+    title: Worker
     type: object
-    description: Identifies a constituent parts of a project aaaa
+    description: Identifies a worker within an organization
     properties:
       id:
-        description: Identifies the part's name of a project
+        description: Worker Identifier
         type: string
         format: uri
-        example:  urn:ngsi-ld:id:[MC_MUEBLETV_A2_RIPA_TRAS]
+        example: urn:ngsi-ld:Worker:workerNbr #porquê Nbr?
         x-ngsi:
           type: Property
-
-    name: 
-      description: Identifies the part's name that belongs to a specific project - REF PEÇA (A)
-      type: string
-      example:  MC_MUEBLETV_A2_RIPA_TRAS
-      x-ngsi:
-        uri: "https://schema.org/name"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/name
-        type: Property
-
-
-    belongsTo:
-      anyOf:
-        - description: 'Relationship property: Identifier the project's name that parts belong to'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: associates the characteristics of a part belonging to the project name'
-          format: uri
-          type: string
-      description: 'Identification of the project name that parts belong to'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/belongsTo"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
-
+          
+      givenName:
+        description: Worker first name
+        type: string
+        example: Keanu
+        x-ngsi:
+          uri: "https://schema.org/givenName"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/Person
+          type: Property
   required:
   - id
