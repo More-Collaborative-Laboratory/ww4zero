@@ -1,48 +1,48 @@
 part:
-    title: Part
-    type: object
-    description: Identifies a constituent parts of a project
-    properties:
-      id:
-        description: Identifies the part's name of a project
-        type: string
-        format: uri
-        example:  urn:ngsi-ld:id:[MC_MUEBLETV_A2_RIPA_TRAS]
-        x-ngsi:
-          type: Property
+  title: Part
+  type: object
+  description: Identifies a constituent parts of a project
+  properties:
+    id:
+      description: Identifies the part's name of a project
+      type: string
+      format: uri
+      example:  urn:ngsi-ld:id:[MC_MUEBLETV_A2_RIPA_TRAS]
+      x-ngsi:
+        type: Property
 
-      name: 
-        description: Part name
-        type: string
-        example: MC_MUEBLETV_A2_GAV_DIR_FUNDO -REF PEÇA (A)
-        x-ngsi:
-          uri: "https://schema.org/name"
-          uri-prefix: "https://schema.org/"
-          model: https://schema.org/name
-          type: Property
-
-
-
-      belongsTo:
-        anyOf:
-          - description: 'Relationship property: Identifier the project's name that parts belong to'
-            maxLength: 256
-            minLength: 1
-            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-            type: string
-          - description: 'Relationship property: associates the characteristics of a part belonging to the project name'
-            format: uri
-            type: string
-        description: 'Identification of the project name that parts belong to'
-        x-ngsi:
-          uri: "https://projetobioma.pt/dataModel/belongsTo"
-          uri-prefix: "https://projetobioma.pt/dataModel/"
-          model: https://schema.org/URL
-          type: Relationship
+    name: 
+      description: Part name
+      type: string
+      example: MC_MUEBLETV_A2_GAV_DIR_FUNDO -REF PEÇA (A)
+      x-ngsi:
+        uri: "https://schema.org/name"
+        uri-prefix: "https://schema.org/"
+        model: https://schema.org/name
+        type: Property
 
 
 
+    belongsTo:
+      anyOf:
+        - description: 'Relationship property: Identifier the project's name that parts belong to'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: associates the characteristics of a part belonging to the project name'
+          format: uri
+          type: string
+      description: 'Identification of the project name that parts belong to'
+      x-ngsi:
+        uri: "https://projetobioma.pt/dataModel/belongsTo"
+        uri-prefix: "https://projetobioma.pt/dataModel/"
+        model: https://schema.org/URL
+        type: Relationship
 
-    required:
-      - id
-      - name
+
+
+
+  required:
+    - id
+    - name
