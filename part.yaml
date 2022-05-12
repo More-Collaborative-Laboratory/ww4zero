@@ -20,5 +20,5 @@ part:
           uri-prefix: "https://schema.org/"
           model: https://schema.org/Person
           type: Property
-  required:
-  - id
+      required:
+     - id
