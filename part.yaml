@@ -16,8 +16,9 @@ part:
       type: string
       example:  MC_MUEBLETV_A2_RIPA_TRAS
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/name"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        uri: "https://schema.org/name"
+        uri-prefix: "https://schema.org/"
+        model: https://schema.org/name
         type: Property
 
     belongsTo:
@@ -41,4 +42,3 @@ part:
             
 required:
 - id
-- belongsTo
