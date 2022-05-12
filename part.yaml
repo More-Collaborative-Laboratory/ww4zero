@@ -20,6 +20,15 @@ part:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
 
+      sort:
+        description: TIPO (B)
+        type: string
+        example: Painel
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/sort"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
       belongsTo:
         anyOf:
           - description: 'Relationship property: Identifies the project to wich the part belongs'
