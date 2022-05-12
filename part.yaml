@@ -1,7 +1,7 @@
-expeditionDate:
+part:
   title: Expedition
   type: object
-  description: Indicates when an order has been shiped
+  description: Indicates when an order has been shiped sssssss
   properties:
     id:
       description: Refers to the date of dispatch of the order
