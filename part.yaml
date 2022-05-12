@@ -97,7 +97,7 @@ part:
         type: string
         example: X
         x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/cnclag"
+          uri: "https://projectww4zero.pt/dataModel/cncFlag"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
 
