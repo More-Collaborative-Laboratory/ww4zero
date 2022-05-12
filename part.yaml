@@ -1,56 +1,108 @@
 part:
-  title: Expedition
+  title: Part
   type: object
-  description: Indicates when an order has been shiped sssssss
+  description: Identifies a constituent parts of a project
   properties:
     id:
-      description: Refers to the date of dispatch of the order
+      description: Identifies the part's name of a project
       type: string
       format: uri
-      example: urn:ngsi-ld:expedition:[]
+      example:  urn:ngsi-ld:id:[MC_MUEBLETV_A2_RIPA_TRAS]
       x-ngsi:
         type: Property
 
-
-    expeditionTime: 
-      description: Date and hour when the order left the factory in direction to the Owner
+    name: 
+      description: Identifies the part's name that belongs to a specific project - REF PEÇA (A)
       type: string
-      format: DateTime
-      example: '2022-04-06T00:00:00.000Z'
+      example:  MC_MUEBLETV_A2_RIPA_TRAS
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/expeditionTime"
+        uri: "https://projectww4zero.pt/dataModel/name"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
-
-
-    deliveryFlag: 
-      description: Indicates if the order arrived to the destination
-      type: boolean
-      example: '0' #0- on going, 1- arrived to destination
+    sort: 
+      description: Identifies the part's type that belongs to a specific project - TIPO (B)
+      type: string
+      example:  'Painel'
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/deliveryFlag"
+        uri: "https://projectww4zero.pt/dataModel/sort"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    material:
+      description: Identifies the part's material name 
+      type: string
+      example: painel
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/material"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    amount:
+      description: Identifies the number of pieces to be made
+      type: number
+      example: '1'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/amount"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    tag: 
+      description: Identifies the part tag number - Etiqueta
+      type: number
+      example: '18'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/tag"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    nestingFlag:
+      description: Name of the material coming from cut list that needs to go through this station
+      type: string
+      example: MC_MUEBLETV_A1_PAINEL3
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/nestingFlag"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+    
+    cncFlag:
+      description: Name of the material coming from cut list that needs to go through this station
+      type: string
+      example: MC_MUEBLETV_A1_PAINEL3
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/cncFlag"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+                
+    manualFlag:
+      description: Name of the material coming from cut list that needs to go through this station
+      type: string
+      example: MC_MUEBLETV_A2_RIPA_TRAS
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/manualFlag"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
     belongsTo:
       anyOf:
-        - description: 'Relationship property: Identifier the urn of project name' #por este caminho consegue-se saber-se o nome do owner?
+        - description: 'Relationship property: Identifier the project's name that parts belong to'
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: Identifier project Name'
+        - description: 'Relationship property: associates the characteristics of a part belonging to the project name'
           format: uri
           type: string
-      description: 'Identification if the order is arrived the destination'
+      description: 'Identification of the project name that parts belong to'
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/belongsTo"  #pode ser assim igual ao budget e do assembly?
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        uri: "https://projetobioma.pt/dataModel/belongsTo"
+        uri-prefix: "https://projetobioma.pt/dataModel/"
+        model: https://schema.org/URL
         type: Relationship
 
-                
-  required:
-    - id
-    - expedionTime
-    - belongsTo
+
+            
+required:
+- id
+- expedionTime
+- belongsTo
