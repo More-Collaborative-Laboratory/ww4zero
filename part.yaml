@@ -1,7 +1,7 @@
 part:
   title: Part
   type: object
-  description: Identifies a constituent parts of a project 111
+  description: Identifies a constituent parts of a project 555
     id:
       description: Identifies the part's name of a project
       type: string
@@ -20,21 +20,58 @@ part:
         model: https://schema.org/name
         type: Property
 
-    # belongsTo:
-    #   anyOf:
-    #     - description: 'Relationship property: Identifier the project's name that parts belong to'
-    #       maxLength: 256
-    #       minLength: 1
-    #       pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-    #       type: string
-    #     - description: 'Relationship property: associates the characteristics of a part belonging to the project name'
-    #       format: uri
-    #       type: string
-    #   description: 'Identification of the project name that parts belong to'
-    #   x-ngsi:
-    #     uri: "https://projectww4zero.pt/dataModel/belongsTo"
-    #     uri-prefix: "https://projectww4zero.pt/dataModel/"
-    #     type: Relationship
+    sort: 
+      description: Identifies the part's type that belongs to a specific project - TIPO (B)
+      type: string
+      example: Painel
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/sort"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    material: 
+      description: Identifies the part's material name
+      type: string
+      example: AG L Biscuit Nude 36W
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/material"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    amount: 
+      description: Identifies the number of pieces to be made to the same name
+      type: number
+      example: '1'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/amount"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    tag: 
+      description: Identifies the part tag number - Etiqueta
+      type: number
+      example: '18'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/tag"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+
+    belongsTo:
+      anyOf:
+        - description: 'Relationship property: Identifier the project's name that parts belong to'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: associates the characteristics of a part belonging to the project name'
+          format: uri
+          type: string
+      description: 'Identification of the project name that parts belong to'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/belongsTo"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Relationship
 
   required:
   - id
