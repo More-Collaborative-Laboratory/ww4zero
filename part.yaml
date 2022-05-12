@@ -1,24 +1,25 @@
 part:
-    title: Worker
+    title: Part
     type: object
-    description: Identifies the part-name that belongs to a specific project - REF PEÇA (A) - 
+    description: Identifies the part-name atributes that belongs to a specific project - Lista de Corte - 
     properties:
       id:
-        description: Worker Identifier
+        description: Unic Identifier of a Part of a Project
         type: string
         format: uri
-        example: urn:ngsi-ld:Worker:workerNbr #porquê Nbr?
+        example: urn:ngsi-ld:id:1223 #porquê Nbr?
         x-ngsi:
           type: Property
           
-      givenName:
-        description: Worker first name
+      partName:
+        description: REF PEÇA (A)
         type: string
-        example: Keanu
+        example: MC_MUEBLETV_A2_GAV_DIR_FUNDO
         x-ngsi:
-          uri: "https://schema.org/givenName"
-          uri-prefix: "https://schema.org/"
-          model: https://schema.org/Person
+          uri: "https://projectww4zero.pt/dataModel/partName"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
+    
+    
     required:
      - id
