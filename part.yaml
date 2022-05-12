@@ -29,6 +29,24 @@ part:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
 
+      amount:
+        description: QUANTIDADE (D)
+        type: number
+        example: "1"
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/amount"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+      material:
+        description: MATERIAL (C)
+        type: string
+        example: AG L Biscuit Nude 36W
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/material"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
       belongsTo:
         anyOf:
           - description: 'Relationship property: Identifies the project to wich the part belongs'
