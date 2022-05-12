@@ -1,14 +1,15 @@
 part:
-  title: Part
-  type: object
-  description: Identifies a constituent parts of a project sssssssss
-    id:
-      description: Identifies the part's name of a project
-      type: string
-      format: uri
-      example:  urn:ngsi-ld:id:[MC_MUEBLETV_A2_RIPA_TRAS]
-      x-ngsi:
-        type: Property
+    title: Part
+    type: object
+    description: Identifies a constituent parts of a project aaaa
+    properties:
+      id:
+        description: Identifies the part's name of a project
+        type: string
+        format: uri
+        example:  urn:ngsi-ld:id:[MC_MUEBLETV_A2_RIPA_TRAS]
+        x-ngsi:
+          type: Property
 
     name: 
       description: Identifies the part's name that belongs to a specific project - REF PEÇA (A)
