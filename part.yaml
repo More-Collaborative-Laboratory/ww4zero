@@ -14,7 +14,7 @@ part:
       name: 
         description: Part name
         type: string
-        example: MC_MUEBLETV_A2_GAV_DIR_FUNDO
+        example: MC_MUEBLETV_A2_GAV_DIR_FUNDO -REF PEÇA (A)
         x-ngsi:
           uri: "https://schema.org/name"
           uri-prefix: "https://schema.org/"
