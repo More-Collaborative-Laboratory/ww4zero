@@ -201,7 +201,7 @@ part:
           type: Property
 
       opcnc:
-        description: OPERAÇÃO_CNC (V)
+        description: OPCNC (V)
         type: string
         example: X
         x-ngsi:
