@@ -1,7 +1,7 @@
 part:
   title: Part
   type: object
-  description: Identifies a constituent parts of a project
+  description: Identifies a constituent parts of a project ssssss
   properties:
     id:
       description: Identifies the part's name of a project
