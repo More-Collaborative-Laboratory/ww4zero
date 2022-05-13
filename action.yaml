@@ -52,11 +52,19 @@ action:
         * `cnc1` - indicates cnc1 station is working
         * `nesting1` - indicates nesting1 station is working
         * `manualcut1` - indicates manualcut1 station is working
+        * `receiving material` - indicates that raw material is entering the factory
+        * `organizing the material` - indicates that raw material is being put away at the factory
+        * `assembly` - indicates that assembly station is on use
+        * `shipping` - indicates the order is shipping
       type: string  
       enum: 
         - 'cnc1'
         - 'nesting1'
         - 'manualcut1'
+        - 'receiving material'
+        - 'organizing te material'
+        - 'assembly'
+        - 'shipping'
       example: 'cnc1 station working'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/machineType"
