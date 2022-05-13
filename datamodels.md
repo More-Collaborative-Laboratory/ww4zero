@@ -72,7 +72,7 @@ Contains the information of a project
 
 # Owner
 
-Identifies a clinet (Owner of a project)
+Identifies a client (Owner of a project)
 -  `id`: Client Identifier
    -  Attribute type: **Property**. 
    -  Required
