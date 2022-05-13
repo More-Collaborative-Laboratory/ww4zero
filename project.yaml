@@ -66,7 +66,7 @@ project:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Relationship
 
-      producedAt:
+      producedBy:
         anyOf:
           - description: 'Relationship property: Identifies the operator envolved in the produced stations'
             maxLength: 256
@@ -78,7 +78,7 @@ project:
             type: string
         description: 'Identification of the operators giveName that are working in specific project Name'
         x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/producedAt"
+          uri: "https://projectww4zero.pt/dataModel/producedBy"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Relationship
 
