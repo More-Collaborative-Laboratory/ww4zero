@@ -182,6 +182,15 @@ part:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
 
+      observation:
+        description: Observation (T)
+        type: string
+        example: Uma forma de executar o trabalho sem perigos
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/observation"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
       weight:
         description: PESO (U)
         type: number
