@@ -217,4 +217,12 @@ part:
           type: Relationship    
     
     required:
-     - id
+     - id;
+     - partName;
+     - sort;
+     - material;
+     - amount;
+     - width;
+     - thickness;
+     - tag;
+     - wight;
