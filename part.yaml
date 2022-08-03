@@ -137,15 +137,6 @@ part:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
 
-      veio:
-        description: VEIO (O)
-        type: string
-        example: X
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/veio"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
-
       orla2:
         description: ORLA2 (P)
         type: string
@@ -199,16 +190,7 @@ part:
           uri: "https://projectww4zero.pt/dataModel/weigth"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
-
-      opcnc:
-        description: OPCNC (V)
-        type: string
-        example: X
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/opcnc"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
-
+          
       belongsTo:
         anyOf:
           - description: 'Relationship property: Identifies the project to wich the part belongs'

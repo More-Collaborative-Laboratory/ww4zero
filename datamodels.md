@@ -72,7 +72,7 @@ Contains the information of a project
 
 # Owner
 
-Identifies a client (Owner of a project)
+Identifies a clinet (Owner of a project)
 -  `id`: Client Identifier
    -  Attribute type: **Property**. 
    -  Required
@@ -168,28 +168,28 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
    -  Required
 -  `partName`: REF PEÇA (A)
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `sort`: TIPO (B)
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `material`: MATERIAL (C)
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `amount`: QUANTIDADE (D)
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `length`: COMPRIMENTO (E)
    -  Attribute type: **Property**. 
    -  Optional
 -  `width`: LARGURA (F)
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `thickness`: ESPESSURA (G)
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `tag`: ETIQUETA (H)
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `nestingFlag`: NESTING (I)
    -  Attribute type: **Property**. 
    -  Optional
@@ -221,6 +221,9 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
    -  Attribute type: **Property**. 
    -  Optional
 -  `orla5`: ORLA5 (S)
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `observation`: Observation (T)
    -  Attribute type: **Property**. 
    -  Optional
 -  `weight`: PESO (U)
