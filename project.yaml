@@ -114,7 +114,7 @@ project:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Relationship
 
-^
+
       acessories:
         anyOf:
           - description: 'Relationship property: Identifies list of consumables corresponding to a determinated project'
