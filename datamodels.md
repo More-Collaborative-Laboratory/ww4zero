@@ -139,7 +139,7 @@ Identifies a worker within an organization
 -  `hasOrganization`: Identification of the Organization where the Worker is currently employed.
    -  Attribute type: **Relationship**. 
    -  Optional
--  `assemblyFor`: Identification of the project what the assembly refers of
+-  `action`: Identification of the project what the action refers
    -  Attribute type: **Relationship**. 
    -  Optional
 
@@ -238,7 +238,7 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 
 
 
-# Action
+# Assignment
 
 Machine cnc1, nesting1, manual cut1
 -  `id`: Machine Type
