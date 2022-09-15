@@ -9,7 +9,7 @@ action:
       format: uri
       example: urn:ngsi-ld:Machine:[]
       x-ngsi:
-        type: Property    
+        type: Property
 
     startTime: 
       description: Saves date and time information when the start button is pressed
