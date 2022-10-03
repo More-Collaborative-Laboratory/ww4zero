@@ -164,6 +164,16 @@ project:
           type: Relationship
 
 
+      image: 
+        description: url da imagem
+        type: string
+        example: C://breifing/Mueble_tv_A/project
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/image"
+          uri-prefix: "https://projetww4zero.pt/dataModel/"
+          type: Property
+
+
       expedition:
         anyOf:
           - description: 'Relationship property: Identifies project name that is already going from the factory to the owner address'

@@ -154,6 +154,17 @@
             uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Relationship
 
+      
+        image: 
+          description: url da imagem
+          type: string
+          example: C://breifing/Mueble_tv_A/owner
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/image"
+            uri-prefix: "https://projetww4zero.pt/dataModel/"
+            type: Property
+
+
         belongsTo:
           anyOf:
             - description: 'Relationship property: Identifies the project to wich the part belongs'

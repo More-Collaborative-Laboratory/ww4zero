@@ -47,6 +47,17 @@ consumable:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
+
+    image: 
+      description: url da imagem
+      type: string
+      example: C://breifing/Mueble_tv_A/Acessories
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/image"
+        uri-prefix: "https://projetww4zero.pt/dataModel/"
+        type: Property
+
+
     belongsTo:
       anyOf:
         - description: 'Relationship property: Identifier consumables properties that belong to a project' #por este caminho consegue-se saber-se o nome do owner?
