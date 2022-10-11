@@ -33,15 +33,17 @@ assembly:
 
     status: 
       description: Indicates the status of the project's assembly
+        * `1` - em producao
         * `1` - em espera para iniciar
         * `2` - em testes
         * `3` - testado e embalado
       type: number  #/ enum?
       enum: 
+        - '0'      
         - '1'
         - '2'
         - '3'
-      example: '3'
+      example: '0'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/status"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
