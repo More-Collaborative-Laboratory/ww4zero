@@ -67,6 +67,9 @@ Contains the information of a project
 -  `assemblyBy`: Identification assembled parts belong to some project made for some worker
    -  Attribute type: **Relationship**. 
    -  Optional
+-  `image`: url da imagem
+   -  Attribute type: **Property**. 
+   -  Optional
 -  `expedition`: Identification the addres that will recieve the oreder name
    -  Attribute type: **Relationship**. 
    -  Optional
@@ -106,6 +109,9 @@ Identifies a client (Owner of a project)
 -  `buysTo`: Identification the addres that will recieve the oreder name
    -  Attribute type: **Relationship**. 
    -  Optional
+-  `image`: url da imagem
+   -  Attribute type: **Property**. 
+   -  Optional
 -  `belongsTo`: Identifies the project to wich the part belongs
    -  Attribute type: **Relationship**. 
    -  Optional
@@ -136,6 +142,9 @@ Identifies a worker within an organization
 -  `workerShif`: Defines the possibilities of working hours * `Morning` - Shift from 8am until 5pm * `Afternoon` - Shift from 5pm until 0am * `Night` - Shift from 0am until 8am. One of : `Morning`, `Afternoon`, `Night`.
    -  Attribute type: **Property**. 
    -  Optional
+-  `image`: url da imagem
+   -  Attribute type: **Property**. 
+   -  Optional
 -  `hasOrganization`: Identification of the Organization where the Worker is currently employed.
    -  Attribute type: **Relationship**. 
    -  Optional
@@ -158,6 +167,9 @@ Describes a consumable list associated with a project
    -  Attribute type: **Property**. 
    -  Optional
 -  `status`: Indicates the status of the order * '1' - waits for separation order * '2' - In separating fase * '3' - waits for someone from factory-flor to take the separeted order * '4' - Already on flor-factory. One of : `1`, `2`, `3`, `4`.
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `image`: url da imagem
    -  Attribute type: **Property**. 
    -  Optional
 -  `belongsTo`: Identification of the projet Name that this consumables will attached to
@@ -232,6 +244,9 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 -  `weight`: PESO (U)
    -  Attribute type: **Property**. 
    -  Optional
+-  `image`: url da imagem
+   -  Attribute type: **Property**. 
+   -  Optional
 -  `belongsTo`: Identifies the project to wich the part belongs
    -  Attribute type: **Relationship**. 
    -  Optional
@@ -262,6 +277,9 @@ Machine cnc1, nesting1, manual cut1
 -  `executedIn`: Identification the made part
    -  Attribute type: **Relationship**. 
    -  Optional
+-  `belongsTo`: Identification of the projet to which this assembly corresponds
+   -  Attribute type: **Relationship**. 
+   -  Optional
 
 
 
@@ -277,7 +295,7 @@ Indicates when a assembly process is completed
 -  `endTime`: Date and hour on wich the assembly ends
    -  Attribute type: **Property**. 
    -  Optional
--  `status`: Indicates the status of the project's assembly * `1` - em espera para iniciar * `2` - em testes * `3` - testado e embalado. One of : `1`, `2`, `3`.
+-  `status`: Indicates the status of the project's assembly * `1` - em producao * `1` - em espera para iniciar * `2` - em testes * `3` - testado e embalado. One of : `0`, `1`, `2`, `3`.
    -  Attribute type: **Property**. 
    -  Required
 -  `belongsTo`: Identification of the projet to which this assembly corresponds
@@ -301,9 +319,12 @@ Clients Budget
 -  `approvedDate`: Saves date and time information when the budget was approved
    -  Attribute type: **Property**. 
    -  Required
--  `madeFor`: Identification the project that this budget belongs to
+-  `image`: url da imagem
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `belongsTo`: Identification the project that this budget belongs to
    -  Attribute type: **Relationship**. 
-   -  Required
+   -  Optional
 
 
 
