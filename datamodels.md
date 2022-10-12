@@ -1,348 +1,372 @@
-# Organization
-
-Describes the organization entity
--  `id`: Organization Identifier
-   -  Attribute type: **Property**. 
-   -  Required
--  `legalName`: Organization's legal name
-   -  Attribute type: **Property**. [Organization](https://schema.org/Organization)
-   -  Required
--  `taxId`: The organization's tax number
-   -  Attribute type: **Property**. [taxID](https://schema.org/taxID)
-   -  Required
--  `ssnId`: The organization's social security number
-   -  Attribute type: **Property**. 
-   -  Required
--  `caeId`: The organization's economic activity code
-   -  Attribute type: **Property**. 
-   -  Optional
--  `address`: The company's headquarters address
-   -  Attribute type: **Property**. [address](https://schema.org/address)
-   -  Optional
--  `email`: Contact email address
-   -  Attribute type: **Property**. [email](https://schema.org/email)
-   -  Required
--  `telephone`: Mobile or telephone contact
-   -  Attribute type: **Property**. [telephone](https://schema.org/telephone)
-   -  Optional
--  `location`: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
-   -  Attribute type: **GeoProperty**. 
-   -  Optional
+# Building
 
 
-
-# Project
-
-Contains the information of a project
--  `id`: Projects id Identifier
-   -  Attribute type: **Property**. 
-   -  Required
--  `name`: Project name
-   -  Attribute type: **Property**. [name](https://schema.org/name)
-   -  Required
--  `category`: Movel type
-   -  Attribute type: **Property**. 
-   -  Optional
--  `status`: Indicates the actual workers station * `waiting` - Projects budget approved * `working` - Projects parts are already in the factorys floor * `finished` - Projects parts are all done * `assembly` - Projects parts are being assembled in the test zone * `expedition` - The request from a client is already out from the factory. One of : `Waiting`, `working`, `finished`, `assembly`, `expedition`.
-   -  Attribute type: **Property**. 
-   -  Optional
--  `nestingTag`: Identification of the final tag to past in wood part originated on nesting station
-   -  Attribute type: **Relationship**. 
-   -  Optional
--  `producedBy`: Identification of the operators giveName that are working in specific project Name
-   -  Attribute type: **Relationship**. 
-   -  Optional
--  `orderBy`: Identification of the owner name associated to the project with status in execution
-   -  Attribute type: **Relationship**. 
-   -  Optional
--  `budget`: Documentos
-   -  Attribute type: **Relationship**. 
-   -  Optional
--  `acessories`: Identification of all nedded acessories for specific project
-   -  Attribute type: **Relationship**. 
-   -  Optional
--  `part`: Identification of the parts for a specific project comming from cut list
-   -  Attribute type: **Relationship**. 
-   -  Optional
--  `assemblyBy`: Identification assembled parts belong to some project made for some worker
-   -  Attribute type: **Relationship**. 
-   -  Optional
--  `image`: url da imagem
-   -  Attribute type: **Property**. 
-   -  Optional
--  `expedition`: Identification the addres that will recieve the oreder name
-   -  Attribute type: **Relationship**. 
-   -  Optional
-
-
-
-# Owner
-
-Identifies a client (Owner of a project)
--  `id`: Client Identifier
-   -  Attribute type: **Property**. 
-   -  Required
--  `clientTypeInstitution`: Type of client -> True identifies an institutional client. False identifies a singular client
-   -  Attribute type: **Property**. 
-   -  Optional
--  `legalName`: Institution legal name
-   -  Attribute type: **Property**. [Organization](https://schema.org/Organization)
-   -  Optional
--  `givenName`: Client first name
-   -  Attribute type: **Property**. [Person](https://schema.org/Person)
-   -  Optional
--  `familyName`: Client last name
-   -  Attribute type: **Property**. [Person](https://schema.org/Person)
-   -  Optional
--  `taxId`: Client/Institution Tax ID
-   -  Attribute type: **Property**. [Person](https://schema.org/Person)
-   -  Required
--  `address`: The client's address
+-  `address`: The mailing address.
    -  Attribute type: **Property**. [address](https://schema.org/address)
    -  Required
--  `email`: Contact email address
-   -  Attribute type: **Property**. [email](https://schema.org/email)
+   -  Normative References: https://schema.org/address
+-  `category`: The categories that this building belongs to
+   -  Attribute type: **EnumProperty**. 
    -  Required
--  `telephone`: Mobile or telephone contact
-   -  Attribute type: **Property**. [telephone](https://schema.org/telephone)
+-  `containedInPlace`: The URL this building resides within
+   -  Attribute type: **Relationship**. [URL](https://schema.org/URL)
+   -  Optional
+-  `dataProvider`: Specifies the URL to information about the provider of this information
+   -  Attribute type: **Property**. [URL](https://schema.org/URL)
+   -  Optional
+-  `description`: A description of the item
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+   -  Normative References: http://purl.org/dc/elements/1.1/description
+-  `floorsAboveGround`: Number of floors above ground within the building
+   -  Attribute type: **Property**. [Integer](https://schema.org/Integer)
+   -  Optional
+-  `floorsBelowGround`: Number of floors below ground within the building
+   -  Attribute type: **Property**. [Integer](https://schema.org/Integer)
+   -  Optional
+-  `location`: The current location of the item
+   -  Attribute type: **GeoProperty**. [Point](https://purl.org/geojson/vocab#Point) or [LineString](https://purl.org/geojson/vocab#LineString) or [Polygon](https://purl.org/geojson/vocab#Polygon) or [MultiPoint](https://purl.org/geojson/vocab#MultiPoint) or [MultiLineString](https://purl.org/geojson/vocab#MultiLineString) or [MultiPolygon](https://purl.org/geojson/vocab#MultiPolygon)
+   -  Optional
+   -  Normative References: http://geojson.org/geojson-spec.html#geometry-objects
+-  `occupier`: Link to the occupiers of the building
+   -  Attribute type: **Relationship**. [URL](https://schema.org/URL)
+   -  Optional
+-  `openingHours`: 
+   -  Attribute type: **Property**. [openingHours](https://schema.org/openingHours)
+   -  Optional
+   -  Normative References: https://schema.org/openingHours
+-  `owner`: The owner of this building
+   -  Attribute type: **Relationship**. [URL](https://schema.org/URL)
+   -  Optional
+-  `refMap`: The URL holding a map of the building
+   -  Attribute type: **Property**. [URL](https://schema.org/URL)
+   -  Optional
+-  `source`: A sequence of characters giving the source of the entity data.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+   -  Optional
+-  `temperature`: Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)
+   -  Attribute type: **Property**. [Number](https://schema.org/Number)
+   -  Optional
+   -  Meta Data: 
+       -  `providedBy`: The device that sent this reading
+           -  Attribute type: **Relationship**. [URL](https://schema.org/URL)
+       -  `observedAt`: A timestamp which denotes when the reading was taken
+           -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+       -  `unitCode`: A string representing the measurement unit corresponding to the Property value. It shall be encoded using the UN/CEFACT Common Codes for Units of Measurement
+           -  Attribute type: **Property**. [Text](https://schema.org/Text)
+-  `fillingLevel`: Property related to some measurements that are characterized by a certain value that is a filling level.
+   -  Attribute type: **Property**. [Number](https://schema.org/Number)
+   -  Optional
+   -  Meta Data: 
+       -  `providedBy`: The device that sent this reading
+           -  Attribute type: **Relationship**. [URL](https://schema.org/URL)
+       -  `observedAt`: A timestamp which denotes when the reading was taken
+           -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+       -  `unitCode`: A string representing the measurement unit corresponding to the Property value. It shall be encoded using the UN/CEFACT Common Codes for Units of Measurement
+           -  Attribute type: **Property**. [Text](https://schema.org/Text)
+
+
+
+# TemperatureSensor
+
+A device that consists of a sensor, has category `saref:Sensor` and is used for the purpose of sensing temperature`.
+
+-  `batteryLevel`: Device's battery level. It must be equal to `1.0` when battery is full. `0.0` when battery ìs empty. `-1` when transiently cannot be determined.
+-  Allowed values: Interval \[0,1\] and -1
+   -  Attribute type: **Property**. [Number](https://schema.org/Number)
+   -  Optional
+-  `category`: See attribute `category` from [DeviceModel](../../DeviceModel/doc/spec.md). Optional but recommended to optimize queries.
+   -  Attribute type: **EnumProperty**. 
    -  Required
--  `buysTo`: Identification the addres that will recieve the oreder name
-   -  Attribute type: **Relationship**. 
+-  `configuration`: Device's technical configuration. This attribute is intended to be a dictionary of properties which capture parameters which have to do with the configuration of a device (timeouts, reporting periods, etc.) and which are not currently covered by the standard attributes defined by this model.
+   -  Attribute type: **Property**. [StructuredValue](https://schema.org/StructuredValue)
    -  Optional
--  `image`: url da imagem
-   -  Attribute type: **Property**. 
+   -  Meta Data: 
+       -  `dateModified`: Last update timestamp of this attribute
+           -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+-  `controlledAsset`: The asset(s) (building, object, etc.) controlled by the device.
+   -  Attribute type: **Relationship**. [URL](https://schema.org/URL)
    -  Optional
--  `belongsTo`: Identifies the project to wich the part belongs
-   -  Attribute type: **Relationship**. 
+-  `controlledProperty`: See attribute `controlledProperty` from [DeviceModel](../../DeviceModel/doc/spec.md). Optional but recommended to optimize queries.
+   -  Attribute type: **EnumProperty**. 
    -  Optional
+-  `dataProvider`: Specifies the URL to information about the provider of this information
+   -  Attribute type: **Property**. [URL](https://schema.org/URL)
+   -  Optional
+-  `dateFirstUsed`: A timestamp which denotes when the device was first used.
+   -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+   -  Optional
+-  `dateInstalled`: A timestamp which denotes when the device was installed
+   -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+   -  Optional
+-  `dateLastCalibration`: A timestamp which denotes when the last calibration of the device happened.
+   -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+   -  Optional
+-  `dateLastValueReported`: A timestamp which denotes the last time when the
+ device successfully reported data to the cloud.
+   -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+   -  Optional
+-  `dateManufactured`: A timestamp which denotes when the device was manufactured.
+   -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+   -  Optional
+-  `description`: A description of the item
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+   -  Normative References: http://purl.org/dc/elements/1.1/description
+-  `deviceState`: State of this device from an operational point of view. Its
+ value can be vendor dependent.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `firmwareVersion`: The firmware version of this device.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `hardwareVersion`: The hardware version of this device.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `ipAddress`: The IP address of the device. It can be a comma separated list of values if the device has more than one IP address.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `location`: The current location of the item
+   -  Attribute type: **GeoProperty**. [Point](https://purl.org/geojson/vocab#Point) or [LineString](https://purl.org/geojson/vocab#LineString) or [Polygon](https://purl.org/geojson/vocab#Polygon) or [MultiPoint](https://purl.org/geojson/vocab#MultiPoint) or [MultiLineString](https://purl.org/geojson/vocab#MultiLineString) or [MultiPolygon](https://purl.org/geojson/vocab#MultiPolygon)
+   -  Optional
+   -  Normative References: http://geojson.org/geojson-spec.html#geometry-objects
+-  `macAddress`: The MAC address of the device.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `mcc`: Mobile Country Code - This property identifies univoquely the country of the mobile network the device is attached to.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `mnc`: This property identifies the Mobile Network Code (MNC) of the network the device is attached to. The MNC is used in combination with a Mobile Country Code (MCC) (also known as a "MCC / MNC tuple") to uniquely identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and 3G / 4G public land mobile networks and some satellite mobile
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `name`: A mnemonic name given to the device.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `osVersion`: The version of the host operating system device.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `owner`: The owners of a Device.
+   -  Attribute type: **Relationship**. [Person](http://schema.org/Person) or [Organization](https://schema.org/Organization)
+   -  Optional
+-  `provider`: The provider of the device.
+   -  Attribute type: **Property**. [provider](https://schema.org/provider)
+   -  Optional
+-  `refDeviceModel`: The device's model.
+   -  Attribute type: **Relationship**. [DeviceModel](https://uri.fiware.org/ns/data-models#DeviceModel)
+   -  Optional
+-  `rssi`: Received signal strength indicator for a wireless enabled device. It must be equal to `1.0` when the signal strength is maximum. `0.0` when signal is missing. `-1.0` when it cannot be determined.
+-  Allowed values: Interval \[0,1\] and -1
+   -  Attribute type: **Property**. [Number](https://schema.org/Number)
+   -  Optional
+-  `serialNumber`: The serial number assigned by the manufacturer. see [https://schema.org/serialNumber](https://schema.org/serialNumber)
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `softwareVersion`: The software version of this device.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `source`: A sequence of characters giving the source of the entity data.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+   -  Optional
+-  `supportedProtocol`: See attribute `supportedProtocol` from [DeviceModel](../../DeviceModel/doc/spec.md). Needed if due to a software update new protocols are supported. Otherwise it is better to convey it at `DeviceModel` level.
+   -  Attribute type: **EnumProperty**. 
+   -  Optional
+-  `value`: A observed or reported value. For actuator devices, it is an attribute that allows a controlling application to change the actuation setting. For instance, a switch device which is currently _on_ can report a value `"on"`of type `Text`. Obviously, in order to toggle the referred switch, this attribute value will have to be changed to `"off"`.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text) or [QuantitativeValue](https://schema.org/QuantitativeValue)
+   -  Optional
+-  `temperature`: Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)
+   -  Attribute type: **Property**. [Number](https://schema.org/Number)
+   -  Required
+   -  Meta Data: 
+       -  `providedBy`: The device that sent this reading
+           -  Attribute type: **Relationship**. [URL](https://schema.org/URL)
+       -  `observedAt`: A timestamp which denotes when the reading was taken
+           -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+       -  `unitCode`: A string representing the measurement unit corresponding to the Property value. It shall be encoded using the UN/CEFACT Common Codes for Units of Measurement
+           -  Attribute type: **Property**. [Text](https://schema.org/Text)
 
 
 
-# Worker
+# FillingLevelSensor
 
-Identifies a worker within an organization
--  `id`: Worker Identifier
+A device that consists of a sensor, has category `saref:Sensor` and is used for the purpose of sensing filling Level.
+
+-  `batteryLevel`: Device's battery level. It must be equal to `1.0` when battery is full. `0.0` when battery ìs empty. `-1` when transiently cannot be determined.
+-  Allowed values: Interval \[0,1\] and -1
+   -  Attribute type: **Property**. [Number](https://schema.org/Number)
+   -  Optional
+-  `category`: See attribute `category` from [DeviceModel](../../DeviceModel/doc/spec.md). Optional but recommended to optimize queries.
+   -  Attribute type: **EnumProperty**. 
+   -  Required
+-  `configuration`: Device's technical configuration. This attribute is intended to be a dictionary of properties which capture parameters which have to do with the configuration of a device (timeouts, reporting periods, etc.) and which are not currently covered by the standard attributes defined by this model.
+   -  Attribute type: **Property**. [StructuredValue](https://schema.org/StructuredValue)
+   -  Optional
+   -  Meta Data: 
+       -  `dateModified`: Last update timestamp of this attribute
+           -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+-  `controlledAsset`: The asset(s) (building, object, etc.) controlled by the device.
+   -  Attribute type: **Relationship**. [URL](https://schema.org/URL)
+   -  Optional
+-  `controlledProperty`: See attribute `controlledProperty` from [DeviceModel](../../DeviceModel/doc/spec.md). Optional but recommended to optimize queries.
+   -  Attribute type: **EnumProperty**. 
+   -  Optional
+-  `dataProvider`: Specifies the URL to information about the provider of this information
+   -  Attribute type: **Property**. [URL](https://schema.org/URL)
+   -  Optional
+-  `dateFirstUsed`: A timestamp which denotes when the device was first used.
+   -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+   -  Optional
+-  `dateInstalled`: A timestamp which denotes when the device was installed
+   -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+   -  Optional
+-  `dateLastCalibration`: A timestamp which denotes when the last calibration of the device happened.
+   -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+   -  Optional
+-  `dateLastValueReported`: A timestamp which denotes the last time when the
+ device successfully reported data to the cloud.
+   -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+   -  Optional
+-  `dateManufactured`: A timestamp which denotes when the device was manufactured.
+   -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+   -  Optional
+-  `description`: A description of the item
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+   -  Normative References: http://purl.org/dc/elements/1.1/description
+-  `deviceState`: State of this device from an operational point of view. Its
+ value can be vendor dependent.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `firmwareVersion`: The firmware version of this device.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `hardwareVersion`: The hardware version of this device.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `ipAddress`: The IP address of the device. It can be a comma separated list of values if the device has more than one IP address.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `location`: The current location of the item
+   -  Attribute type: **GeoProperty**. [Point](https://purl.org/geojson/vocab#Point) or [LineString](https://purl.org/geojson/vocab#LineString) or [Polygon](https://purl.org/geojson/vocab#Polygon) or [MultiPoint](https://purl.org/geojson/vocab#MultiPoint) or [MultiLineString](https://purl.org/geojson/vocab#MultiLineString) or [MultiPolygon](https://purl.org/geojson/vocab#MultiPolygon)
+   -  Optional
+   -  Normative References: http://geojson.org/geojson-spec.html#geometry-objects
+-  `macAddress`: The MAC address of the device.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `mcc`: Mobile Country Code - This property identifies univoquely the country of the mobile network the device is attached to.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `mnc`: This property identifies the Mobile Network Code (MNC) of the network the device is attached to. The MNC is used in combination with a Mobile Country Code (MCC) (also known as a "MCC / MNC tuple") to uniquely identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and 3G / 4G public land mobile networks and some satellite mobile
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `name`: A mnemonic name given to the device.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `osVersion`: The version of the host operating system device.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `owner`: The owners of a Device.
+   -  Attribute type: **Relationship**. [Person](http://schema.org/Person) or [Organization](https://schema.org/Organization)
+   -  Optional
+-  `provider`: The provider of the device.
+   -  Attribute type: **Property**. [provider](https://schema.org/provider)
+   -  Optional
+-  `refDeviceModel`: The device's model.
+   -  Attribute type: **Relationship**. [DeviceModel](https://uri.fiware.org/ns/data-models#DeviceModel)
+   -  Optional
+-  `rssi`: Received signal strength indicator for a wireless enabled device. It must be equal to `1.0` when the signal strength is maximum. `0.0` when signal is missing. `-1.0` when it cannot be determined.
+-  Allowed values: Interval \[0,1\] and -1
+   -  Attribute type: **Property**. [Number](https://schema.org/Number)
+   -  Optional
+-  `serialNumber`: The serial number assigned by the manufacturer. see [https://schema.org/serialNumber](https://schema.org/serialNumber)
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `softwareVersion`: The software version of this device.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `source`: A sequence of characters giving the source of the entity data.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text) or [URL](https://schema.org/URL)
+   -  Optional
+-  `supportedProtocol`: See attribute `supportedProtocol` from [DeviceModel](../../DeviceModel/doc/spec.md). Needed if due to a software update new protocols are supported. Otherwise it is better to convey it at `DeviceModel` level.
+   -  Attribute type: **EnumProperty**. 
+   -  Optional
+-  `value`: A observed or reported value. For actuator devices, it is an attribute that allows a controlling application to change the actuation setting. For instance, a switch device which is currently _on_ can report a value `"on"`of type `Text`. Obviously, in order to toggle the referred switch, this attribute value will have to be changed to `"off"`.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text) or [QuantitativeValue](https://schema.org/QuantitativeValue)
+   -  Optional
+-  `fillingLevel`: Property related to some measurements that are characterized by a certain value that is a filling level.
+   -  Attribute type: **Property**. [Number](https://schema.org/Number)
+   -  Optional
+   -  Meta Data: 
+       -  `providedBy`: The device that sent this reading
+           -  Attribute type: **Relationship**. [URL](https://schema.org/URL)
+       -  `observedAt`: A timestamp which denotes when the reading was taken
+           -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+       -  `unitCode`: A string representing the measurement unit corresponding to the Property value. It shall be encoded using the UN/CEFACT Common Codes for Units of Measurement
+           -  Attribute type: **Property**. [Text](https://schema.org/Text)
+
+
+
+# Person
+
+
+-  `dateCreated`: Entity's creation timestamp.
+   -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+   -  Read-Only. Automatically generated.
+-  `dateModified`: Update timestamp of this entity.
+   -  Attribute type: **Property**. [DateTime](https://schema.org/DateTime)
+   -  Read-Only. Automatically generated.
+-  `id`: URN holding the id of the attribute
    -  Attribute type: **Property**. 
    -  Required
--  `givenName`: Worker first name
-   -  Attribute type: **Property**. [Person](https://schema.org/Person)
-   -  Required
--  `familyName`: Worker last name
-   -  Attribute type: **Property**. [Person](https://schema.org/Person)
-   -  Optional
--  `taxId`: Worker Tax ID
-   -  Attribute type: **Property**. [Person](https://schema.org/Person)
-   -  Optional
--  `ssnId`: Worker Social Security Number ID
-   -  Attribute type: **Property**. 
-   -  Optional
--  `functionPerformed`: Indicates the actual worker's station * `CNC` - CNC Operator * `Nesting` - Nesting Operator * `Manual-Cut` - Manual Cut Operator * `Assembly` - Assembly Operator * `Manager` - Factory manager * `Designer` - Designer Department * `Budgeting` - Badgeting Department * `Warehouse` - Warehouse Department (consumables and wood's stock) * `Other` - Other Operation, like merchandise distributor. One of : `CNC`, `Nesting`, `Manual Cut`, `Assembly`, `Manager`, `Designer`, `Budgeting`, `Warehouse`, `Other`.
-   -  Attribute type: **Property**. 
-   -  Optional
--  `workerShif`: Defines the possibilities of working hours * `Morning` - Shift from 8am until 5pm * `Afternoon` - Shift from 5pm until 0am * `Night` - Shift from 0am until 8am. One of : `Morning`, `Afternoon`, `Night`.
-   -  Attribute type: **Property**. 
-   -  Optional
--  `image`: url da imagem
-   -  Attribute type: **Property**. 
-   -  Optional
--  `hasOrganization`: Identification of the Organization where the Worker is currently employed.
-   -  Attribute type: **Relationship**. 
-   -  Optional
--  `action`: Identification of the project what the action refers
-   -  Attribute type: **Relationship**. 
-   -  Optional
-
-
-
-# Consumable
-
-Describes a consumable list associated with a project
--  `id`: Consumable Identifier
+-  `type`: The entity type
    -  Attribute type: **Property**. 
    -  Required
--  `name`: Identifie the consumable Name
+-  `additionalName`: An additional name for a Person, can be used for a middle name.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `address`: The mailing address.
+   -  Attribute type: **Property**. [address](https://schema.org/address)
+   -  Optional
+   -  Normative References: https://schema.org/address
+-  `email`: Email address.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `familyName`: Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `faxNumber`: The fax number.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `gender`: Gender of something, typically a Person, but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The gender property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender SportsTeam can be indicated with a text value of "Mixed".. One of : `female`, `male`.
+   -  Attribute type: **EnumProperty**. [GenderType](https://schema.org/GenderType)
+   -  Optional
+-  `givenName`: Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `honorificPrefix`: An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `honorificSuffix`: An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.
+interactionStatistic  InteractionCounter  The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used. Supersedes interactionCount.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `isicV4`: The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `jobTitle`: The job title of the person (for example, Financial Manager).
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
+   -  Optional
+-  `name`: The name of the item
    -  Attribute type: **Property**. 
    -  Optional
--  `amount`: Identifier the consumable amount
-   -  Attribute type: **Property**. 
+-  `taxID`: The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Optional
--  `status`: Indicates the status of the order * '1' - waits for separation order * '2' - In separating fase * '3' - waits for someone from factory-flor to take the separeted order * '4' - Already on flor-factory. One of : `1`, `2`, `3`, `4`.
-   -  Attribute type: **Property**. 
+-  `telephone`: The telephone number.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Optional
--  `image`: url da imagem
-   -  Attribute type: **Property**. 
+-  `vatID`: The Value-added Tax ID of the organization or person.
+   -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Optional
--  `belongsTo`: Identification of the projet Name that this consumables will attached to
-   -  Attribute type: **Relationship**. 
-   -  Required
-
-
-
-# Part
-
-Identifies the part-name atributes that belongs to a specific project - Lista de Corte -
--  `id`: Unic Identifier of a Part of a Project
-   -  Attribute type: **Property**. 
-   -  Required
--  `partName`: REF PEÇA (A)
-   -  Attribute type: **Property**. 
-   -  Required
--  `sort`: TIPO (B)
-   -  Attribute type: **Property**. 
-   -  Required
--  `material`: MATERIAL (C)
-   -  Attribute type: **Property**. 
-   -  Required
--  `amount`: QUANTIDADE (D)
-   -  Attribute type: **Property**. 
-   -  Required
--  `length`: COMPRIMENTO (E)
-   -  Attribute type: **Property**. 
-   -  Optional
--  `width`: LARGURA (F)
-   -  Attribute type: **Property**. 
-   -  Required
--  `thickness`: ESPESSURA (G)
-   -  Attribute type: **Property**. 
-   -  Required
--  `tag`: ETIQUETA (H)
-   -  Attribute type: **Property**. 
-   -  Required
--  `nestingFlag`: NESTING (I)
-   -  Attribute type: **Property**. 
-   -  Optional
--  `cncFlag`: CNC (J)
-   -  Attribute type: **Property**. 
-   -  Optional
--  `f2`: FURO FACE 2 (K)
-   -  Attribute type: **Property**. 
-   -  Optional
--  `f3`: FURO FACE 3 (L)
-   -  Attribute type: **Property**. 
-   -  Optional
--  `f4`: FURO FACE 4 (M)
-   -  Attribute type: **Property**. 
-   -  Optional
--  `f5`: FURO FACE 5 (N)
-   -  Attribute type: **Property**. 
-   -  Optional
--  `orla2`: ORLA2 (P)
-   -  Attribute type: **Property**. 
-   -  Optional
--  `orla3`: ORLA3 (Q)
-   -  Attribute type: **Property**. 
-   -  Optional
--  `orla4`: ORLA4 (R)
-   -  Attribute type: **Property**. 
-   -  Optional
--  `orla5`: ORLA5 (S)
-   -  Attribute type: **Property**. 
-   -  Optional
--  `observation`: Observation (T)
-   -  Attribute type: **Property**. 
-   -  Optional
--  `weight`: PESO (U)
-   -  Attribute type: **Property**. 
-   -  Optional
--  `image`: url da imagem
-   -  Attribute type: **Property**. 
-   -  Optional
--  `belongsTo`: Identifies the project to wich the part belongs
-   -  Attribute type: **Relationship**. 
-   -  Optional
-
-
-
-# Assignment
-
-Machine cnc1, nesting1, manual cut1
--  `id`: Machine Type
-   -  Attribute type: **Property**. 
-   -  Required
--  `startTime`: Saves date and time information when the start button is pressed
-   -  Attribute type: **Property**. 
-   -  Optional
--  `endTime`: Saves date and time information when the finish button is pressed
-   -  Attribute type: **Property**. 
-   -  Optional
--  `machineStatus`: Indicates in wich stage are the parts of corresponding machine type * `waiting` - indicates Information already arrived the machine but waits for start-button * `active` - The parts to be made in this station is already start * `finished` - The parts belong to the station refered to a project are completed. One of : `waiting`, `active`, `finished`.
-   -  Attribute type: **Property**. 
-   -  Optional
--  `machineType`: Indicates in wich stage are the parts of corresponding machine type * `cnc1` - indicates cnc1 station is working * `nesting1` - indicates nesting1 station is working * `manualcut1` - indicates manualcut1 station is working * `receiving material` - indicates that raw material is entering the factory * `organizing the material` - indicates that raw material is being put away at the factory * `assembly` - indicates that assembly station is on use * `shipping` - indicates the order is shipping. One of : `cnc1`, `nesting1`, `manualcut1`, `receiving material`, `organizing te material`, `assembly`, `shipping`.
-   -  Attribute type: **Property**. 
-   -  Optional
--  `executedBy`: Identification worker that made the part
-   -  Attribute type: **Relationship**. 
-   -  Optional
--  `executedIn`: Identification the made part
-   -  Attribute type: **Relationship**. 
-   -  Optional
--  `belongsTo`: Identification of the projet to which this assembly corresponds
-   -  Attribute type: **Relationship**. 
-   -  Optional
-
-
-
-# Assembly
-
-Indicates when a assembly process is completed
--  `id`: Assembly parts from a project
-   -  Attribute type: **Property**. 
-   -  Required
--  `startTime`: Date and hour on wich the assembly starts
-   -  Attribute type: **Property**. 
-   -  Optional
--  `endTime`: Date and hour on wich the assembly ends
-   -  Attribute type: **Property**. 
-   -  Optional
--  `status`: Indicates the status of the project's assembly * `1` - em producao * `1` - em espera para iniciar * `2` - em testes * `3` - testado e embalado. One of : `0`, `1`, `2`, `3`.
-   -  Attribute type: **Property**. 
-   -  Required
--  `belongsTo`: Identification of the projet to which this assembly corresponds
-   -  Attribute type: **Relationship**. 
-   -  Required
-
-
-
-# Budget
-
-Clients Budget
--  `id`: Budget Identifier
-   -  Attribute type: **Property**. 
-   -  Required
--  `name`: Budget name
-   -  Attribute type: **Property**. [name](https://schema.org/name)
-   -  Optional
--  `amount`: Value in euros
-   -  Attribute type: **Property**. 
-   -  Optional
--  `approvedDate`: Saves date and time information when the budget was approved
-   -  Attribute type: **Property**. 
-   -  Required
--  `image`: url da imagem
-   -  Attribute type: **Property**. 
-   -  Optional
--  `belongsTo`: Identification the project that this budget belongs to
-   -  Attribute type: **Relationship**. 
-   -  Optional
-
-
-
-# expedition
-
-Indicates when an order has been shiped
--  `id`: Refers to the date of dispatch of the order
-   -  Attribute type: **Property**. 
-   -  Required
--  `expeditionTime`: Date and hour when the order left the factory in direction to the Owner
-   -  Attribute type: **Property**. 
-   -  Optional
--  `deliveryFlag`: Indicates if the order arrived to the destination
-   -  Attribute type: **Property**. 
-   -  Optional
--  `belongsTo`: Identification if the order is arrived the destination
-   -  Attribute type: **Relationship**. 
-   -  Required
 
 
 
