@@ -114,23 +114,6 @@ project:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Relationship
 
-
-      acessories:
-        anyOf:
-          - description: 'Relationship property: Identifies list of consumables corresponding to a determinated project'
-            maxLength: 256
-            minLength: 1
-            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-            type: string
-          - description: 'Relationship property: acessories list from cut list'
-            format: uri
-            type: string
-        description: 'Identification of all nedded acessories for specific project'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/acessories"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Relationship
-
       part:
         anyOf:
           - description: 'Relationship property: Indicates the name of all parts corresponding to a specific project'
