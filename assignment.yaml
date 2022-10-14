@@ -62,7 +62,7 @@ assignment:
           - 'nesting1'
           - 'manualcut1'
           - 'receiving material'
-          - 'organizing te material'
+          - 'organizing the material'
           - 'assembly'
           - 'shipping'
         example: 'cnc1 station working'
