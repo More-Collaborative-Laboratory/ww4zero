@@ -7,7 +7,7 @@ part:
         description: Unic Identifier of a Part of a Project
         type: string
         format: uri
-        example: urn:ngsi-ld:id:1223 
+        example: urn:ngsi-ld:Part:1223 
         x-ngsi:
           type: Property
           
@@ -85,8 +85,8 @@ part:
 
       nestingFlag:
         description: NESTING (I)
-        type: string
-        example: X
+        type: bool
+        example: true
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/nestingFlag"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -94,8 +94,8 @@ part:
 
       cncFlag:
         description: CNC (J)
-        type: string
-        example: X
+        type: bool
+        example: true
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/cncFlag"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
