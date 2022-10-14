@@ -140,7 +140,7 @@ part:
       orla2:
         description: ORLA2 (P)
         type: string
-        example: X
+        example: true
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/orla2"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -148,8 +148,8 @@ part:
 
       orla3:
         description: ORLA3 (Q)
-        type: string
-        example: X
+        type: bool
+        example: true
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/orla3"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -157,8 +157,8 @@ part:
 
       orla4:
         description: ORLA4 (R)
-        type: string
-        example: X
+        type: bool
+        example: false
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/orla4"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -166,8 +166,8 @@ part:
 
       orla5:
         description: ORLA5 (S)
-        type: string
-        example: X
+        type: bool
+        example: true
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/orla5"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -194,7 +194,7 @@ part:
       image: 
         description: url da imagem
         type: string
-        example: C://breifing/Mueble_tv_A/partS
+        example: https://bucket.ww4zero/images/XsDQLkgnWSZvIOpJSaQRsNDAS
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/image"
           uri-prefix: "https://projetww4zero.pt/dataModel/"
