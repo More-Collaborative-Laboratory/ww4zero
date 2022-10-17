@@ -83,22 +83,6 @@ project:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Relationship
 
-      budget:
-        anyOf:
-          - description: 'Relationship property: Identifies the Budget related to the actual project'
-            maxLength: 256
-            minLength: 1
-            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-            type: string
-          - description: 'Relationship property: Identifies a project by the associated giveName from the Budget'
-            format: uri
-            type: string
-        description: 'Documentos'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/budget"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Relationship
-
       assemblyBy:
         anyOf:
           - description: 'Relationship property: Identifies wich parts were assembled by a specific worker'
