@@ -50,21 +50,6 @@ project:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
 
-      nestingTag:
-        anyOf:
-          - description: 'Relationship property: Identifies the number to put on a wood coming from cut list'
-            maxLength: 256
-            minLength: 1
-            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-            type: string
-          - description: 'Relationship property: number of tag comming from cut list'
-            format: uri
-            type: string
-        description: 'Identification of the final tag to past in wood part originated on nesting station'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/nestingTag"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Relationship
 
       producedBy:
         anyOf:
@@ -111,22 +96,6 @@ project:
         description: 'Documentos'
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/budget"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Relationship
-
-      part:
-        anyOf:
-          - description: 'Relationship property: Indicates the name of all parts corresponding to a specific project'
-            maxLength: 256
-            minLength: 1
-            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-            type: string
-          - description: 'Relationship property: number and names for the parts comming from cut list for specific project'
-            format: uri
-            type: string
-        description: 'Identification of the parts for a specific project comming from cut list'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/part"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Relationship
 
