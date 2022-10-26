@@ -7,7 +7,7 @@ worker:
         description: Worker Identifier
         type: string
         format: uri
-        example: urn:ngsi-ld:Worker:workerNbr #porquê Nbr?
+        example: urn:ngsi-ld:Worker:workerNbr 
         x-ngsi:
           type: Property
           
@@ -30,7 +30,27 @@ worker:
           uri-prefix: "https://schema.org/"
           model: https://schema.org/Person
           type: Property
-          
+
+      email:
+          description: Contact email address
+          type: string
+          format: email
+          example: worker@mofreita.gmail.com
+          x-ngsi:
+            uri: "https://schema.org/email"
+            uri-prefix: "https://schema.org/"
+            model: https://schema.org/email
+            type: Property
+
+      password: 
+        description: Password to be log in
+        type: string
+        example: paswword
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/password"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
       taxId:
         description: Worker Tax ID
         type: string
@@ -42,7 +62,7 @@ worker:
           model: https://schema.org/Person
           type: Property
       
-      ssnId:  #muito importante para cruzamento de dados com seguro de saúde
+      ssnId:  
         description: Worker Social Security Number ID
         type: string
         pattern: '^\d{11}$'
@@ -52,9 +72,16 @@ worker:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
       
-
+      Active:
+        description: Active
+        type: bool
+        example: true
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/active"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
        
-      functionPerformed:  #funções na fábrica 
+      functionPerformed: 
         description: Indicates the actual worker's station
           * `CNC` - CNC Operator
           * `Nesting` - Nesting Operator
@@ -83,7 +110,7 @@ worker:
           type: Property
 
 
-      workerShif:  #turno de trabalho 
+      workerShif: 
         description: Defines the possibilities of working hours
           * `Morning` - Shift from 8am until 5pm
           * `Afternoon` - Shift from 5pm until 0am

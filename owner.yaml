@@ -127,6 +127,26 @@
             model: https://schema.org/email
             type: Property
                         
+        password: 
+          description: Password to be loged in
+          type: string
+          example: paswword
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/password"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+
+        Active:
+          description: Active
+          type: bool
+          example: true
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/active"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+        
+
         telephone:
           description: Mobile or telephone contact
           type: string
@@ -164,6 +184,23 @@
             uri-prefix: "https://projetww4zero.pt/dataModel/"
             type: Property
 
+        tos: 
+          description: tos a pedido da NKA
+          type: string  
+          example: XXX
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/tos"
+            uri-prefix: "https://projetww4zero.pt/dataModel/"
+            type: Property
+
+        obs: 
+          description: obs a pedido da NKA
+          type: string  
+          example: observacoes
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/obs"
+            uri-prefix: "https://projetww4zero.pt/dataModel/"
+            type: Property
 
         belongsTo:
           anyOf:
