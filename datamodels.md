@@ -46,19 +46,10 @@ Contains the information of a project
 -  `status`: Indicates the actual workers station * `waiting` - Projects budget approved * `working` - Projects parts are already in the factorys floor * `finished` - Projects parts are all done * `assembly` - Projects parts are being assembled in the test zone * `expedition` - The request from a client is already out from the factory. One of : `Waiting`, `working`, `finished`, `assembly`, `expedition`.
    -  Attribute type: **Property**. 
    -  Optional
--  `nestingTag`: Identification of the final tag to past in wood part originated on nesting station
-   -  Attribute type: **Relationship**. 
-   -  Optional
 -  `producedBy`: Identification of the operators giveName that are working in specific project Name
    -  Attribute type: **Relationship**. 
    -  Optional
 -  `orderBy`: Identification of the owner name associated to the project with status in execution
-   -  Attribute type: **Relationship**. 
-   -  Optional
--  `budget`: Documentos
-   -  Attribute type: **Relationship**. 
-   -  Optional
--  `part`: Identification of the parts for a specific project comming from cut list
    -  Attribute type: **Relationship**. 
    -  Optional
 -  `assemblyBy`: Identification assembled parts belong to some project made for some worker
@@ -100,6 +91,12 @@ Identifies a client (Owner of a project)
 -  `email`: Contact email address
    -  Attribute type: **Property**. [email](https://schema.org/email)
    -  Required
+-  `password`: Password to be loged in
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `Active`: Active
+   -  Attribute type: **Property**. 
+   -  Optional
 -  `telephone`: Mobile or telephone contact
    -  Attribute type: **Property**. [telephone](https://schema.org/telephone)
    -  Required
@@ -107,6 +104,12 @@ Identifies a client (Owner of a project)
    -  Attribute type: **Relationship**. 
    -  Optional
 -  `image`: url da imagem
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `tos`: tos a pedido da NKA
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `obs`: obs a pedido da NKA
    -  Attribute type: **Property**. 
    -  Optional
 -  `belongsTo`: Identifies the project to wich the part belongs
@@ -127,10 +130,19 @@ Identifies a worker within an organization
 -  `familyName`: Worker last name
    -  Attribute type: **Property**. [Person](https://schema.org/Person)
    -  Optional
+-  `email`: Contact email address
+   -  Attribute type: **Property**. [email](https://schema.org/email)
+   -  Optional
+-  `password`: Password to be log in
+   -  Attribute type: **Property**. 
+   -  Optional
 -  `taxId`: Worker Tax ID
    -  Attribute type: **Property**. [Person](https://schema.org/Person)
    -  Optional
 -  `ssnId`: Worker Social Security Number ID
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `Active`: Active
    -  Attribute type: **Property**. 
    -  Optional
 -  `functionPerformed`: Indicates the actual worker's station * `CNC` - CNC Operator * `Nesting` - Nesting Operator * `Manual-Cut` - Manual Cut Operator * `Assembly` - Assembly Operator * `Manager` - Factory manager * `Designer` - Designer Department * `Budgeting` - Badgeting Department * `Warehouse` - Warehouse Department (consumables and wood's stock) * `Other` - Other Operation, like merchandise distributor. One of : `CNC`, `Nesting`, `Manual Cut`, `Assembly`, `Manager`, `Designer`, `Budgeting`, `Warehouse`, `Other`.
@@ -250,7 +262,7 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 
 
 
-# Assignment
+# machine
 
 Machine cnc1, nesting1, manual cut1
 -  `id`: Machine Type
@@ -265,7 +277,7 @@ Machine cnc1, nesting1, manual cut1
 -  `machineStatus`: Indicates in wich stage are the parts of corresponding machine type * `waiting` - indicates Information already arrived the machine but waits for start-button * `active` - The parts to be made in this station is already start * `finished` - The parts belong to the station refered to a project are completed. One of : `waiting`, `active`, `finished`.
    -  Attribute type: **Property**. 
    -  Optional
--  `machineType`: Indicates in wich stage are the parts of corresponding machine type * `cnc1` - indicates cnc1 station is working * `nesting1` - indicates nesting1 station is working * `manualcut1` - indicates manualcut1 station is working * `receiving material` - indicates that raw material is entering the factory * `organizing the material` - indicates that raw material is being put away at the factory * `assembly` - indicates that assembly station is on use * `shipping` - indicates the order is shipping. One of : `cnc1`, `nesting1`, `manualcut1`, `receiving material`, `organizing te material`, `assembly`, `shipping`.
+-  `machineType`: Indicates in wich stage are the parts of corresponding machine type * `cnc1` - indicates cnc1 station is working * `nesting1` - indicates nesting1 station is working * `manualcut1` - indicates manualcut1 station is working * `receiving material` - indicates that raw material is entering the factory * `organizing the material` - indicates that raw material is being put away at the factory * `assembly` - indicates that assembly station is on use * `shipping` - indicates the order is shipping. One of : `cnc1`, `nesting1`, `manualcut1`, `receiving material`, `organizing the material`, `assembly`, `shipping`.
    -  Attribute type: **Property**. 
    -  Optional
 -  `executedBy`: Identification worker that made the part
@@ -292,7 +304,7 @@ Indicates when a assembly process is completed
 -  `endTime`: Date and hour on wich the assembly ends
    -  Attribute type: **Property**. 
    -  Optional
--  `status`: Indicates the status of the project's assembly * `1` - em producao * `1` - em espera para iniciar * `2` - em testes * `3` - testado e embalado. One of : `0`, `1`, `2`, `3`.
+-  `status`: Indicates the status of the project's assembly * `0` - em producao * `1` - em espera para iniciar * `2` - em testes * `3` - testado e embalado. One of : `0`, `1`, `2`, `3`.
    -  Attribute type: **Property**. 
    -  Required
 -  `belongsTo`: Identification of the projet to which this assembly corresponds

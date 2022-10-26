@@ -26,8 +26,8 @@ components:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/consumable"
     Part:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/part"
-    Assignment:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assignment.yaml#/assignment"
+    machine:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machine.yaml#/machine"
     Assembly:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml#/assembly"
     Budget:
