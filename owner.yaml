@@ -23,7 +23,7 @@
             - CR
           example: CRUD
           x-ngsi:
-            uri: "https://projectww4zero.pt/dataModel/permissions"
+            uri: "https://projectww4zero.pt/dataModel/permission"
             uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
 
@@ -162,7 +162,7 @@
             type: Property
 
 
-        Active:
+        active:
           description: Active
           type: bool
           example: true
