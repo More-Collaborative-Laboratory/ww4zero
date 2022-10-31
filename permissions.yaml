@@ -1,5 +1,5 @@
-premissions:
-  title: Premissions
+permissions:
+  title: Permissions
   type: object
   description: Identifica quais as premissões que cada perfil pode realizar
   properties:
