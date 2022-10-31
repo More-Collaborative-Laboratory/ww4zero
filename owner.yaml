@@ -11,7 +11,7 @@
           x-ngsi:
             type: Property
 
-        permissions: 
+        permission: 
           description: Indicates the permission associated to worker's and owners
             * `CRUD` - CRUD Operations
             * `CRU` - CRU Operations
