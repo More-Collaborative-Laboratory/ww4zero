@@ -70,7 +70,7 @@ Identifies a client (Owner of a project)
 -  `id`: Client Identifier
    -  Attribute type: **Property**. 
    -  Required
--  `permissions`: Indicates the permission associated to worker's and owners * `CRUD` - CRUD Operations * `CRU` - CRU Operations * `CR` - CR Operations. One of : `CRUD`, `CRU`, `CR`.
+-  `permission`: Indicates the permission associated to worker's and owners * `CRUD` - CRUD Operations * `CRU` - CRU Operations * `CR` - CR Operations. One of : `CRUD`, `CRU`, `CR`.
    -  Attribute type: **Property**. 
    -  Optional
 -  `clientTypeInstitution`: Indicates a type of client * `Particular` - Paricular Owner * `Institucional` - Instuticional Owner * `Other` - Other type of a client. One of : `Particular`, `Institucional`, `Other`.
@@ -97,7 +97,7 @@ Identifies a client (Owner of a project)
 -  `password`: Password to be loged in
    -  Attribute type: **Property**. 
    -  Required
--  `Active`: Active
+-  `active`: Active
    -  Attribute type: **Property**. 
    -  Optional
 -  `telephone`: Mobile or telephone contact
