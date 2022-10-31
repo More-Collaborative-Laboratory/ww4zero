@@ -70,7 +70,10 @@ Identifies a client (Owner of a project)
 -  `id`: Client Identifier
    -  Attribute type: **Property**. 
    -  Required
--  `clientTypeInstitution`: Type of client -> True identifies an institutional client. False identifies a singular client
+-  `permissions`: Indicates the permission associated to worker's and owners * `CRUD` - CRUD Operations * `CRU` - CRU Operations * `CR` - CR Operations. One of : `CRUD`, `CRU`, `CR`.
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `clientTypeInstitution`: Indicates a type of client * `Particular` - Paricular Owner * `Institucional` - Instuticional Owner * `Other` - Other type of a client. One of : `Particular`, `Institucional`, `Other`.
    -  Attribute type: **Property**. 
    -  Optional
 -  `legalName`: Institution legal name
@@ -93,7 +96,7 @@ Identifies a client (Owner of a project)
    -  Required
 -  `password`: Password to be loged in
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `Active`: Active
    -  Attribute type: **Property**. 
    -  Optional
@@ -106,7 +109,7 @@ Identifies a client (Owner of a project)
 -  `image`: url da imagem
    -  Attribute type: **Property**. 
    -  Optional
--  `tos`: tos a pedido da NKA
+-  `tos`: Conhecimento dos termos de serviço do cliente ao utilizar a aplicação
    -  Attribute type: **Property**. 
    -  Optional
 -  `obs`: obs a pedido da NKA
@@ -352,6 +355,21 @@ Indicates when an order has been shiped
 -  `belongsTo`: Identification if the order is arrived the destination
    -  Attribute type: **Relationship**. 
    -  Required
+
+
+
+# Permission
+
+Identifica quais as premissões que cada perfil pode realizar
+-  `id`: Client / Worker Identifier
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `action`: Indicates the types of operations/actions that are able to do in our application * `CRUD` - Create Read Update and Delete * `CRU` - Create Read and Update * `CR` - Create and Read * `R` - Read. One of : `CRUD`, `CRU`, `CR`, `R`.
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `required`: 
+   -  Attribute type: **Property**. 
+   -  Optional
 
 
 
