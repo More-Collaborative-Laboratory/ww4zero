@@ -18,10 +18,10 @@ components:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/organization.yaml#/organization"
     Project:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/project.yaml#/project"
-    Owner:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/owner.yaml#/owner"
-    Worker:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml#/worker"
+    # Owner:
+    #   $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/owner.yaml#/owner"
+    # Worker:
+    #   $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml#/worker"
     Consumable:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/consumable"
     Part:
@@ -34,8 +34,8 @@ components:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml#/budget"
     expedition:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/expeditionDate"
-    # Permissions:
-    #   $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/permissions.yaml#/permissions"
+    Permission:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/permission.yaml#/permission"
 
 
 paths:

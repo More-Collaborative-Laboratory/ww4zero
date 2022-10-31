@@ -1,0 +1,66 @@
+permission:
+  title: Permission
+  type: object
+  description: Identifica quais as premissões que cada perfil pode realizar
+  properties:
+    id:
+      description: Client / Worker Identifier
+      type: string
+      format: uri
+      example: urn:ngsi-ld:Client:clientIdentifier / urn:ngsi-ld:Owner:ownerIdentifier
+      x-ngsi:
+        type: Property
+        
+    action: 
+      description: Indicates the types of operations/actions that are able to do in our application
+        * `CRUD` - Create Read Update and Delete
+        * `CRU` - Create Read and Update
+        * `CR` - Create and Read
+        * `R` - Read
+      type: string
+      enum: 
+        - CRUD
+        - CRU
+        - CR
+        - R
+      example: CRUD
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/action"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    required:
+      - id
+      - action
+
+    # hasOwner:
+    #   anyOf:
+    #     - description: 'Relationship property: Identifier format of any NGSI entity'
+    #       maxLength: 256
+    #       minLength: 1
+    #       pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+    #       type: string
+    #     - description: 'Relationship property: to Owner entity'
+    #       format: uri
+    #       type: string
+    #   description: 'Identification of the Owner atributes' # <- aqui entra a Function-Performed
+    #   x-ngsi:
+    #     uri: "https://projectww4zero.pt/dataModel/hasOwner"
+    #     uri-prefix: "https://projectww4zero.pt/dataModel/"
+    #     type: Relationship
+
+    # hasWorker:
+    #   anyOf:
+    #     - description: 'Relationship property: Identifier format of any NGSI entity'
+    #       maxLength: 256
+    #       minLength: 1
+    #       pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+    #       type: string
+    #     - description: 'Relationship property: to worker entity'
+    #       format: uri
+    #       type: string
+    #   description: 'Identification of the Worker atributes'
+    #   x-ngsi:
+    #     uri: "https://projectww4zero.pt/dataModel/hasWorker"
+    #     uri-prefix: "https://projectww4zero.pt/dataModel/"
+    #     type: Relationship
