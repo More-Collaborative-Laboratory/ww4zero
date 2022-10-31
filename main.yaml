@@ -34,8 +34,8 @@ components:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml#/budget"
     expedition:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/expeditionDate"
-      Permissions:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/organization.yaml#/permissions"
+    Permissions:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/permissions.yaml#/permissions"
 
 
 paths:
