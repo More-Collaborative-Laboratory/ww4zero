@@ -11,7 +11,7 @@
           x-ngsi:
             type: Property
 
-        operationsToMake: 
+        permission: 
           description: Indicates the permission associated to worker's and owners
             * `CRUD` - CRUD Operations
             * `CRU` - CRU Operations
@@ -23,7 +23,7 @@
             - CR
           example: CRUD
           x-ngsi:
-            uri: "https://projectww4zero.pt/dataModel/operationsToMake"
+            uri: "https://projectww4zero.pt/dataModel/permission"
             uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
 
