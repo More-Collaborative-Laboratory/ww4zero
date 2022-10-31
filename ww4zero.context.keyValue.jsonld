@@ -3,19 +3,31 @@
         "type": "@type",
         "id": "@id",
         "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
-        "ww4zero": "https://projectww4zero.pt/dataModel/",
+        "fiware": "https://projectww4zero.pt/dataModel/",
         "schema": "https://schema.org/",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "Action": "ww4zero:Action",
+        "Active": {
+            "@id": "ww4zero:active",
+            "@type": "xsd:bool"
+        },
         "Assembly": "ww4zero:Assembly",
         "Budget": "ww4zero:Budget",
         "Consumable": "ww4zero:Consumable",
         "Organization": "ww4zero:Organization",
         "Owner": "ww4zero:Owner",
         "Part": "ww4zero:Part",
+        "Permission": "ww4zero:Permission",
         "Project": "ww4zero:Project",
         "Worker": "ww4zero:Worker",
+        "action": {
+            "@id": "ww4zero:action",
+            "@type": "xsd:string"
+        },
+        "active": {
+            "@id": "ww4zero:active",
+            "@type": "xsd:bool"
+        },
         "address": "schema:address",
         "addressCountry": {
             "@id": "schema:addressCountry",
@@ -41,16 +53,12 @@
             "@id": "ww4zero:assemblyBy",
             "@type": "@id"
         },
-        "assemblyFor": {
-            "@id": "ww4zero:assemblyFor",
-            "@type": "@id"
-        },
         "belongsTo": {
             "@id": "ww4zero:belongsTo",
             "@type": "@id"
         },
-        "buysAt": {
-            "@id": "ww4zero:buysAt",
+        "buysTo": {
+            "@id": "ww4zero:buysTo",
             "@type": "@id"
         },
         "caeId": {
@@ -63,15 +71,11 @@
         },
         "clientTypeInstitution": {
             "@id": "ww4zero:clientTypeInstitution",
-            "@type": "xsd:boolean"
+            "@type": "xsd:string"
         },
         "cncFlag": {
             "@id": "ww4zero:cncFlag",
-            "@type": "xsd:string"
-        },
-        "consumable": {
-            "@id": "ww4zero:consumable",
-            "@type": "@id"
+            "@type": "xsd:bool"
         },
         "deliveryFlag": {
             "@id": "ww4zero:deliveryFlag",
@@ -101,6 +105,22 @@
             "@id": "ww4zero:expeditionTime",
             "@type": "xsd:string"
         },
+        "f2": {
+            "@id": "ww4zero:f2",
+            "@type": "xsd:number"
+        },
+        "f3": {
+            "@id": "ww4zero:f3",
+            "@type": "xsd:number"
+        },
+        "f4": {
+            "@id": "ww4zero:f4",
+            "@type": "xsd:number"
+        },
+        "f5": {
+            "@id": "ww4zero:f5",
+            "@type": "xsd:number"
+        },
         "familyName": {
             "@id": "schema:familyName",
             "@type": "xsd:string"
@@ -117,6 +137,10 @@
             "@id": "ww4zero:hasOrganization",
             "@type": "@id"
         },
+        "image": {
+            "@id": "ww4zero:image",
+            "@type": "xsd:string"
+        },
         "legalName": {
             "@id": "schema:legalName",
             "@type": "xsd:string"
@@ -129,6 +153,7 @@
             "@id": "ngsi-ld:location",
             "@type": "xsd:undefined"
         },
+        "machine": "ww4zero:machine",
         "machineStatus": {
             "@id": "ww4zero:machineStatus",
             "@type": "xsd:string"
@@ -137,12 +162,8 @@
             "@id": "ww4zero:machineType",
             "@type": "xsd:string"
         },
-        "madeFor": {
-            "@id": "ww4zero:madeFor",
-            "@type": "@id"
-        },
-        "manualFlag": {
-            "@id": "ww4zero:manualFlag",
+        "material": {
+            "@id": "ww4zero:material",
             "@type": "xsd:string"
         },
         "name": {
@@ -151,27 +172,63 @@
         },
         "nestingFlag": {
             "@id": "ww4zero:nestingFlag",
+            "@type": "xsd:bool"
+        },
+        "obs": {
+            "@id": "ww4zero:obs",
             "@type": "xsd:string"
         },
-        "nestingTag": {
-            "@id": "ww4zero:nestingTag",
-            "@type": "@id"
+        "observation": {
+            "@id": "ww4zero:observation",
+            "@type": "xsd:string"
         },
         "orderBy": {
             "@id": "ww4zero:orderBy",
             "@type": "@id"
         },
-        "part": {
-            "@id": "ww4zero:part",
-            "@type": "@id"
+        "orla2": {
+            "@id": "ww4zero:orla2",
+            "@type": "xsd:bool"
+        },
+        "orla3": {
+            "@id": "ww4zero:orla3",
+            "@type": "xsd:bool"
+        },
+        "orla4": {
+            "@id": "ww4zero:orla4",
+            "@type": "xsd:bool"
+        },
+        "orla5": {
+            "@id": "ww4zero:orla5",
+            "@type": "xsd:bool"
+        },
+        "partName": {
+            "@id": "ww4zero:partName",
+            "@type": "xsd:string"
+        },
+        "password": {
+            "@id": "ww4zero:password",
+            "@type": "xsd:string"
+        },
+        "permission": {
+            "@id": "ww4zero:permission",
+            "@type": "xsd:string"
         },
         "postalCode": {
             "@id": "schema:postalCode",
             "@type": "xsd:string"
         },
-        "producedAt": {
-            "@id": "ww4zero:producedAt",
+        "producedBy": {
+            "@id": "ww4zero:producedBy",
             "@type": "@id"
+        },
+        "required": {
+            "@id": "ww4zero:required",
+            "@type": "xsd:undefined"
+        },
+        "sort": {
+            "@id": "ww4zero:sort",
+            "@type": "xsd:string"
         },
         "ssnId": {
             "@id": "ww4zero:ssnId",
@@ -189,6 +246,10 @@
             "@id": "schema:streetAddress",
             "@type": "xsd:string"
         },
+        "tag": {
+            "@id": "ww4zero:tag",
+            "@type": "xsd:number"
+        },
         "taxId": {
             "@id": "schema:taxId",
             "@type": "xsd:string"
@@ -201,13 +262,17 @@
             "@id": "ww4zero:thickness",
             "@type": "xsd:number"
         },
+        "tos": {
+            "@id": "ww4zero:tos",
+            "@type": "xsd:bool"
+        },
+        "weight": {
+            "@id": "ww4zero:weigth",
+            "@type": "xsd:number"
+        },
         "width": {
             "@id": "ww4zero:width",
             "@type": "xsd:number"
-        },
-        "woodName": {
-            "@id": "ww4zero:woodName",
-            "@type": "xsd:string"
         },
         "workerShif": {
             "@id": "ww4zero:workerShift",
@@ -259,7 +324,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identifies a clinet (Owner of a project)"
+                    "@value": "Identifies a client (Owner of a project)"
                 }
             ],
             "rdfs:label": [
@@ -316,7 +381,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identifies a constituent parts of a project"
+                    "@value": "Identifies the part-name atributes that belongs to a specific project - Lista de Corte -"
                 }
             ],
             "rdfs:label": [
@@ -330,7 +395,7 @@
             }
         },
         {
-            "@id": "ww4zero:Action",
+            "@id": "ww4zero:machine",
             "@type": "rdfs:Class",
             "rdfs:comment": [
                 {
@@ -341,7 +406,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "Action"
+                    "@value": "machine"
                 }
             ],
             "rdfs:subClassOf": {
@@ -399,6 +464,25 @@
                 {
                     "@language": "en",
                     "@value": "expedition"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "ww4zero:Permission",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifica quais as premissões que cada perfil pode realizar"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Permission"
                 }
             ],
             "rdfs:subClassOf": {
@@ -598,23 +682,7 @@
             ]
         },
         {
-            "@id": "ww4zero:nestingTag",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Identification of the final tag to past in wood part originated on nesting station"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "nestingTag"
-                }
-            ]
-        },
-        {
-            "@id": "ww4zero:producedAt",
+            "@id": "ww4zero:producedBy",
             "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
@@ -625,7 +693,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "producedAt"
+                    "@value": "producedBy"
                 }
             ]
         },
@@ -646,38 +714,6 @@
             ]
         },
         {
-            "@id": "ww4zero:consumable",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Identification of all nedded consumable for specific project"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "consumable"
-                }
-            ]
-        },
-        {
-            "@id": "ww4zero:part",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Identification of the parts for a specific project comming from cut list"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "part"
-                }
-            ]
-        },
-        {
             "@id": "ww4zero:assemblyBy",
             "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
@@ -690,6 +726,22 @@
                 {
                     "@language": "en",
                     "@value": "assemblyBy"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/image",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "url da imagem"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "image"
                 }
             ]
         },
@@ -722,22 +774,6 @@
                 {
                     "@language": "en",
                     "@value": "id"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero/dataModel/clientTypeInstitution",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Type of client -> True identifies an institutional client. False identifies a singular client"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "clientTypeInstitution"
                 }
             ]
         },
@@ -838,6 +874,38 @@
             ]
         },
         {
+            "@id": "ww4zero:password",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Password to be loged in"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "password"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:active",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Active"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "active"
+                }
+            ]
+        },
+        {
             "@id": "schema:telephone",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -854,7 +922,7 @@
             ]
         },
         {
-            "@id": "ww4zero:buysAt",
+            "@id": "ww4zero:buysTo",
             "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
@@ -865,7 +933,71 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "buysAt"
+                    "@value": "buysTo"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/image",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "url da imagem"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "image"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/tos",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Conhecimento dos termos de serviço do cliente ao utilizar a aplicação"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "tos"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/obs",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "obs a pedido da NKA"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "obs"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:belongsTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the project to wich the part belongs"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsTo"
                 }
             ]
         },
@@ -918,6 +1050,38 @@
             ]
         },
         {
+            "@id": "schema:email",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Contact email address"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "email"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:password",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Password to be log in"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "password"
+                }
+            ]
+        },
+        {
             "@id": "schema:taxId",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -950,6 +1114,38 @@
             ]
         },
         {
+            "@id": "ww4zero:Active",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Active"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Active"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/image",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "url da imagem"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "image"
+                }
+            ]
+        },
+        {
             "@id": "ww4zero:hasOrganization",
             "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
@@ -966,18 +1162,18 @@
             ]
         },
         {
-            "@id": "ww4zero:assemblyFor",
+            "@id": "ww4zero:action",
             "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the project what the assembly refers of"
+                    "@value": "Identification of the project what the action refers"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "assemblyFor"
+                    "@value": "action"
                 }
             ]
         },
@@ -1030,6 +1226,22 @@
             ]
         },
         {
+            "@id": "https://projetww4zero.pt/dataModel/image",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "url da imagem"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "image"
+                }
+            ]
+        },
+        {
             "@id": "ww4zero:belongsTo",
             "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
@@ -1051,7 +1263,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identifies the part's name of a project"
+                    "@value": "Unic Identifier of a Part of a Project"
                 }
             ],
             "rdfs:label": [
@@ -1062,66 +1274,66 @@
             ]
         },
         {
-            "@id": "schema:name",
+            "@id": "ww4zero:partName",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Part name"
+                    "@value": "REF PEÇA (A)"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "name"
+                    "@value": "partName"
                 }
             ]
         },
         {
-            "@id": "ww4zero:nestingFlag",
+            "@id": "ww4zero:sort",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Name of the material coming from cut list that needs to go through this station"
+                    "@value": "TIPO (B)"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "nestingFlag"
+                    "@value": "sort"
                 }
             ]
         },
         {
-            "@id": "ww4zero:cncFlag",
+            "@id": "ww4zero:material",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Name of the material coming from cut list that needs to go through this station"
+                    "@value": "MATERIAL (C)"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "cncFlag"
+                    "@value": "material"
                 }
             ]
         },
         {
-            "@id": "ww4zero:manualFlag",
+            "@id": "ww4zero:amount",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Name of the material coming from cut list that needs to go through this station"
+                    "@value": "QUANTIDADE (D)"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "manualFlag"
+                    "@value": "amount"
                 }
             ]
         },
@@ -1131,7 +1343,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identifies the specific parts length coming from cut list in mm"
+                    "@value": "COMPRIMENTO (E)"
                 }
             ],
             "rdfs:label": [
@@ -1147,7 +1359,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identifies the specific parts width coming from cut list in mm"
+                    "@value": "LARGURA (F)"
                 }
             ],
             "rdfs:label": [
@@ -1158,12 +1370,252 @@
             ]
         },
         {
+            "@id": "ww4zero:thickness",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ESPESSURA (G)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "thickness"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:tag",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ETIQUETA (H)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "tag"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:nestingFlag",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "NESTING (I)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "nestingFlag"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:cncFlag",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CNC (J)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "cncFlag"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:f2",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "FURO FACE 2 (K)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "f2"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:f3",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "FURO FACE 3 (L)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "f3"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:f4",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "FURO FACE 4 (M)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "f4"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:f5",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "FURO FACE 5 (N)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "f5"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:orla2",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ORLA2 (P)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "orla2"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:orla3",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ORLA3 (Q)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "orla3"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:orla4",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ORLA4 (R)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "orla4"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:orla5",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ORLA5 (S)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "orla5"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:observation",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Observation (T)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "observation"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:weight",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "PESO (U)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "weight"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/image",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "url da imagem"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "image"
+                }
+            ]
+        },
+        {
             "@id": "ww4zero:belongsTo",
             "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the project name that parts belong to"
+                    "@value": "Identifies the project to wich the part belongs"
                 }
             ],
             "rdfs:label": [
@@ -1250,6 +1702,22 @@
                 {
                     "@language": "en",
                     "@value": "executedIn"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:belongsTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the projet to which this assembly corresponds"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsTo"
                 }
             ]
         },
@@ -1382,7 +1850,23 @@
             ]
         },
         {
-            "@id": "ww4zero:madeFor",
+            "@id": "https://projetww4zero.pt/dataModel/image",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "url da imagem"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "image"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:belongsTo",
             "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
@@ -1393,7 +1877,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "madeFor"
+                    "@value": "belongsTo"
                 }
             ]
         },
@@ -1458,6 +1942,38 @@
                 {
                     "@language": "en",
                     "@value": "belongsTo"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Client / Worker Identifier"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:required",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": ""
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "required"
                 }
             ]
         }
