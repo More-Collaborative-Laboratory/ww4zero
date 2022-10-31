@@ -137,6 +137,7 @@ worker:
           type: Property
 
 
+
       hasOrganization:
         anyOf:
           - description: 'Relationship property: Identifier format of any NGSI entity'
