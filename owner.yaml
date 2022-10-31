@@ -12,36 +12,22 @@
             type: Property
             
         clientTypeInstitution:
-          description: Indicates a  type of client 
+          description: Indicates a type of client
+            * `CRUD` - Create Read Update and Delete
+            * `CRU` - Create Read and Update
+            * `CR` - Create and Read <- Criar novas NOTAS, APAGAR novas NOTAS e LER documentos trocados; - além de LER estado da encomenda - 
+            * `R` - Read
           type: string
           enum:
             -Particular
             -Institucional
             -Other
-          example: Particular
+          example: CRUD
           x-ngsi:
             uri: "https://projectww4zero.pt/dataModel/clientTypeInstitution"
             uri-prefix: "https://projectww4zero/dataModel/"
             type: Property
 
- 
-        # functionPerformed: 
-        #   description: Indicates the types of operations that are able to do in our application
-        #     * `CRUD` - Create Read Update and Delete
-        #     * `CRU` - Create Read and Update
-        #     * `CR` - Create and Read <- Criar novas NOTAS, APAGAR novas NOTAS e LER documentos trocados; - além de LER estado da encomenda - 
-        #     * `R` - Read
-        #   type: string
-        #   enum: 
-        #     - CRUD
-        #     - CRU
-        #     - CR
-        #     - R
-        #   example: CRUD
-        #   x-ngsi:
-        #     uri: "https://projectww4zero.pt/dataModel/functionPerformed"
-        #     uri-prefix: "https://projectww4zero.pt/dataModel/"
-        #     type: Property
 
         legalName: 
           description: Institution legal name
