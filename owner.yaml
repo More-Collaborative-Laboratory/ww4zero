@@ -10,19 +10,34 @@
           example: urn:ngsi-ld:Client:clientIdentifier
           x-ngsi:
             type: Property
-            
+
+        permissions: 
+          description: Indicates the permission associated to worker's and owners
+            * `CRUD` - CRUD Operations
+            * `CRU` - CRU Operations
+            * `CR` - CR Operations
+          type: string
+          enum: 
+            - CRUD
+            - CRU
+            - CR
+          example: CRUD
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/permissions"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
         clientTypeInstitution:
           description: Indicates a type of client
-            * `CRUD` - Create Read Update and Delete
-            * `CRU` - Create Read and Update
-            * `CR` - Create and Read <- Criar novas NOTAS, APAGAR novas NOTAS e LER documentos trocados; - além de LER estado da encomenda - 
-            * `R` - Read
+            * `Particular` - Paricular Owner
+            * `Institucional` - Instuticional Owner
+            * `Other` - Other type of a client
           type: string
           enum:
-            -Particular
-            -Institucional
-            -Other
-          example: CRUD
+            - Particular
+            - Institucional
+            - Other
+          example: Particular
           x-ngsi:
             uri: "https://projectww4zero.pt/dataModel/clientTypeInstitution"
             uri-prefix: "https://projectww4zero/dataModel/"
