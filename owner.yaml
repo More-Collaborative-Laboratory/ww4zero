@@ -185,9 +185,9 @@
             type: Property
 
         tos: 
-          description: tos a pedido da NKA
-          type: string  
-          example: XXX
+          description: Conhecimento dos termos de serviço do cliente ao utilizar a aplicação
+          type: bool
+          example: default (false)
           x-ngsi:
             uri: "https://projectww4zero.pt/dataModel/tos"
             uri-prefix: "https://projetww4zero.pt/dataModel/"
