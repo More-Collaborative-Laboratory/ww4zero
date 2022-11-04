@@ -30,4 +30,4 @@ image:
 
   required:
       - id
-      - action
+      - belongsTo
