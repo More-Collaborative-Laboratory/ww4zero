@@ -39,7 +39,7 @@ permission:
         - description: 'Relationship property: to Owner entity'
           format: uri
           type: string
-      description: 'Identification of the Owner atributes' 
+      description: 'Identification of the Owner atributes - name' 
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/hasOwner"
         uri-prefix: "https://projectww4zero.pt/dataModel/"

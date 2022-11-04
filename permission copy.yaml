@@ -1,0 +1,33 @@
+image:
+  title: Image
+  type: object
+  description: Identifies the url of the image context
+  properties:
+    id:
+      description: "urn:ngsi-ld:project_name:image:entety_example:1"
+      type: string
+      format: uri
+      example: "urn:ngsi-ld:project_name:image:part:1 / urn:ngsi-ld:project_name:image:budget:1"
+      x-ngsi:
+        type: Property
+        
+    belongsTo:
+      anyOf:
+        - description: 'Relationship with the entity of which the image is a part'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship with the entity of which the image is a part'
+          format: uri
+          type: string
+      description: 'Identifies the project to wich the image belongs'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/belongsTo"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Relationship    
+        
+
+  required:
+      - id
+      - action

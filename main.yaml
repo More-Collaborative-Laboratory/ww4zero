@@ -36,7 +36,8 @@ components:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/expeditionDate"
     Permission:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/permission.yaml#/permission"
-
+    Image:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/image.yaml#/image"
 
 paths:
   /ngsi-ld/v1/entities:
