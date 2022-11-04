@@ -29,38 +29,38 @@ permission:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
-    required:
+    hasOwner:
+      anyOf:
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: to Owner entity'
+          format: uri
+          type: string
+      description: 'Identification of the Owner atributes' 
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/hasOwner"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Relationship
+
+    hasWorker:
+      anyOf:
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: to worker entity'
+          format: uri
+          type: string
+      description: 'Identification of the Worker atributes'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/hasWorker"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Relationship
+
+  required:
       - id
       - action
-
-    # hasOwner:
-    #   anyOf:
-    #     - description: 'Relationship property: Identifier format of any NGSI entity'
-    #       maxLength: 256
-    #       minLength: 1
-    #       pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-    #       type: string
-    #     - description: 'Relationship property: to Owner entity'
-    #       format: uri
-    #       type: string
-    #   description: 'Identification of the Owner atributes' # <- aqui entra a Function-Performed
-    #   x-ngsi:
-    #     uri: "https://projectww4zero.pt/dataModel/hasOwner"
-    #     uri-prefix: "https://projectww4zero.pt/dataModel/"
-    #     type: Relationship
-
-    # hasWorker:
-    #   anyOf:
-    #     - description: 'Relationship property: Identifier format of any NGSI entity'
-    #       maxLength: 256
-    #       minLength: 1
-    #       pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-    #       type: string
-    #     - description: 'Relationship property: to worker entity'
-    #       format: uri
-    #       type: string
-    #   description: 'Identification of the Worker atributes'
-    #   x-ngsi:
-    #     uri: "https://projectww4zero.pt/dataModel/hasWorker"
-    #     uri-prefix: "https://projectww4zero.pt/dataModel/"
-    #     type: Relationship
