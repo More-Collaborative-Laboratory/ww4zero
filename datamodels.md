@@ -363,12 +363,15 @@ Indicates when an order has been shiped
 Identifica quais as premissões que cada perfil pode realizar
 -  `id`: Client / Worker Identifier
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `action`: Indicates the types of operations/actions that are able to do in our application * `CRUD` - Create Read Update and Delete * `CRU` - Create Read and Update * `CR` - Create and Read * `R` - Read. One of : `CRUD`, `CRU`, `CR`, `R`.
    -  Attribute type: **Property**. 
+   -  Required
+-  `hasOwner`: Identification of the Owner atributes
+   -  Attribute type: **Relationship**. 
    -  Optional
--  `required`: 
-   -  Attribute type: **Property**. 
+-  `hasWorker`: Identification of the Worker atributes
+   -  Attribute type: **Relationship**. 
    -  Optional
 
 
