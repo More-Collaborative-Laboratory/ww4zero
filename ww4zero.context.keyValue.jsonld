@@ -137,6 +137,14 @@
             "@id": "ww4zero:hasOrganization",
             "@type": "@id"
         },
+        "hasOwner": {
+            "@id": "ww4zero:hasOwner",
+            "@type": "@id"
+        },
+        "hasWorker": {
+            "@id": "ww4zero:hasWorker",
+            "@type": "@id"
+        },
         "image": {
             "@id": "ww4zero:image",
             "@type": "xsd:string"
@@ -221,10 +229,6 @@
         "producedBy": {
             "@id": "ww4zero:producedBy",
             "@type": "@id"
-        },
-        "required": {
-            "@id": "ww4zero:required",
-            "@type": "xsd:undefined"
         },
         "sort": {
             "@id": "ww4zero:sort",
@@ -1962,18 +1966,34 @@
             ]
         },
         {
-            "@id": "ww4zero:required",
-            "@type": "ngsi-ld:Property",
+            "@id": "ww4zero:hasOwner",
+            "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": ""
+                    "@value": "Identification of the Owner atributes - name"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "required"
+                    "@value": "hasOwner"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:hasWorker",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the Worker atributes"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "hasWorker"
                 }
             ]
         }
