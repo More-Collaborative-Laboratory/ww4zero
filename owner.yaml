@@ -211,8 +211,8 @@
 
         tos: 
           description: Conhecimento dos termos de serviço do cliente ao utilizar a aplicação
-          type: bool
-          example: Flase (default)
+          type: DateTime
+          example: "2018-08-07T12:00:00Z"
           x-ngsi:
             uri: "https://projectww4zero.pt/dataModel/tos"
             uri-prefix: "https://projetww4zero.pt/dataModel/"
@@ -220,8 +220,8 @@
 
         obs: 
           description: obs a pedido da NKA
-          type: date-time
-          example: observacoes
+          type: string
+          example: observation_notes
           x-ngsi:
             uri: "https://projectww4zero.pt/dataModel/obs"
             uri-prefix: "https://projetww4zero.pt/dataModel/"
@@ -249,4 +249,3 @@
         - taxId
         - address
         - email
-        - telephone
