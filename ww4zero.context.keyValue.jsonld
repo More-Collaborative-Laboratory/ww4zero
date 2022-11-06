@@ -14,6 +14,9 @@
         "Assembly": "ww4zero:Assembly",
         "Budget": "ww4zero:Budget",
         "Consumable": "ww4zero:Consumable",
+        "Expedition": "ww4zero:Expedition",
+        "Image": "ww4zero:Image",
+        "Machine": "ww4zero:Machine",
         "Organization": "ww4zero:Organization",
         "Owner": "ww4zero:Owner",
         "Part": "ww4zero:Part",
@@ -161,7 +164,6 @@
             "@id": "ngsi-ld:location",
             "@type": "xsd:undefined"
         },
-        "machine": "ww4zero:machine",
         "machineStatus": {
             "@id": "ww4zero:machineStatus",
             "@type": "xsd:string"
@@ -399,7 +401,7 @@
             }
         },
         {
-            "@id": "ww4zero:machine",
+            "@id": "ww4zero:Machine",
             "@type": "rdfs:Class",
             "rdfs:comment": [
                 {
@@ -410,7 +412,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "machine"
+                    "@value": "Machine"
                 }
             ],
             "rdfs:subClassOf": {
@@ -456,7 +458,7 @@
             }
         },
         {
-            "@id": "ww4zero:expedition",
+            "@id": "ww4zero:Expedition",
             "@type": "rdfs:Class",
             "rdfs:comment": [
                 {
@@ -467,7 +469,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "expedition"
+                    "@value": "Expedition"
                 }
             ],
             "rdfs:subClassOf": {
@@ -487,6 +489,25 @@
                 {
                     "@language": "en",
                     "@value": "Permission"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "ww4zero:Image",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the url of the image context"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Image"
                 }
             ],
             "rdfs:subClassOf": {
@@ -1994,6 +2015,134 @@
                 {
                     "@language": "en",
                     "@value": "hasWorker"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "urn:ngsi-ld:project_name:image:entety_example:1"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:sort",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "TIPO (B)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "sort"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:material",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "MATERIAL (C)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "material"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:amount",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "QUANTIDADE (D)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "amount"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:length",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "COMPRIMENTO (E)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "length"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:width",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "LARGURA (F)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "width"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:thickness",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ESPESSURA (G)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "thickness"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:belongsTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the project to wich the image belongs"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsTo"
                 }
             ]
         }

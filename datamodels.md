@@ -265,7 +265,7 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 
 
 
-# machine
+# Machine
 
 Machine cnc1, nesting1, manual cut1
 -  `id`: Machine Type
@@ -340,7 +340,7 @@ Clients Budget
 
 
 
-# expedition
+# Expedition
 
 Indicates when an order has been shiped
 -  `id`: Refers to the date of dispatch of the order
@@ -367,12 +367,42 @@ Identifica quais as premissões que cada perfil pode realizar
 -  `action`: Indicates the types of operations/actions that are able to do in our application * `CRUD` - Create Read Update and Delete * `CRU` - Create Read and Update * `CR` - Create and Read * `R` - Read. One of : `CRUD`, `CRU`, `CR`, `R`.
    -  Attribute type: **Property**. 
    -  Required
--  `hasOwner`: Identification of the Owner atributes
+-  `hasOwner`: Identification of the Owner atributes - name
    -  Attribute type: **Relationship**. 
    -  Optional
 -  `hasWorker`: Identification of the Worker atributes
    -  Attribute type: **Relationship**. 
    -  Optional
+
+
+
+# Image
+
+Identifies the url of the image context
+-  `id`: urn:ngsi-ld:project_name:image:entety_example:1
+   -  Attribute type: **Property**. 
+   -  Required
+-  `sort`: TIPO (B)
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `material`: MATERIAL (C)
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `amount`: QUANTIDADE (D)
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `length`: COMPRIMENTO (E)
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `width`: LARGURA (F)
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `thickness`: ESPESSURA (G)
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `belongsTo`: Identifies the project to wich the image belongs
+   -  Attribute type: **Relationship**. 
+   -  Required
 
 
 
