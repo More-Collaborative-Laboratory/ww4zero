@@ -164,8 +164,8 @@
 
         active:
           description: Active
-          type: bool
-          example: true
+          type: boolean
+          example: TRUE
           x-ngsi:
             uri: "https://projectww4zero.pt/dataModel/active"
             uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -220,7 +220,7 @@
 
         obs: 
           description: obs a pedido da NKA
-          type: string  
+          type: date-time
           example: observacoes
           x-ngsi:
             uri: "https://projectww4zero.pt/dataModel/obs"
