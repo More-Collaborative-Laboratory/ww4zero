@@ -163,7 +163,7 @@
 
 
         active:
-          description: Active
+          description: status of an acount
           type: boolean
           example: TRUE
           x-ngsi:
@@ -211,8 +211,8 @@
 
         tos: 
           description: date of acceptance of the system operation terms
-          type: timestamp
-          example: "2016-03-15T11:00:00.000"
+          type: boolean
+          example: TRUE
           x-ngsi:
             uri: "https://projectww4zero.pt/dataModel/tos"
             uri-prefix: "https://projetww4zero.pt/dataModel/"
