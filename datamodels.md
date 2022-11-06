@@ -102,14 +102,14 @@ Identifies a client (Owner of a project)
    -  Optional
 -  `telephone`: Mobile or telephone contact
    -  Attribute type: **Property**. [telephone](https://schema.org/telephone)
-   -  Required
+   -  Optional
 -  `buysTo`: Identification the addres that will recieve the oreder name
    -  Attribute type: **Relationship**. 
    -  Optional
 -  `image`: url da imagem
    -  Attribute type: **Property**. 
    -  Optional
--  `tos`: Conhecimento dos termos de serviço do cliente ao utilizar a aplicação
+-  `tos`: date of acceptance of the system operation terms
    -  Attribute type: **Property**. 
    -  Optional
 -  `obs`: obs a pedido da NKA
@@ -145,7 +145,7 @@ Identifies a worker within an organization
 -  `ssnId`: Worker Social Security Number ID
    -  Attribute type: **Property**. 
    -  Optional
--  `Active`: Active
+-  `active`: Active
    -  Attribute type: **Property**. 
    -  Optional
 -  `functionPerformed`: Indicates the actual worker's station * `CNC` - CNC Operator * `Nesting` - Nesting Operator * `Manual-Cut` - Manual Cut Operator * `Assembly` - Assembly Operator * `Manager` - Factory manager * `Designer` - Designer Department * `Budgeting` - Badgeting Department * `Warehouse` - Warehouse Department (consumables and wood's stock) * `Other` - Other Operation, like merchandise distributor. One of : `CNC`, `Nesting`, `Manual Cut`, `Assembly`, `Manager`, `Designer`, `Budgeting`, `Warehouse`, `Other`.

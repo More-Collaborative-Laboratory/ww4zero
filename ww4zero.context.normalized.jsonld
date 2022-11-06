@@ -5,7 +5,6 @@
         "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
         "fiware": "https://projectww4zero.pt/dataModel/",
         "schema": "https://schema.org/",
-        "Active": "ww4zero:active",
         "Assembly": "ww4zero:Assembly",
         "Budget": "ww4zero:Budget",
         "Consumable": "ww4zero:Consumable",

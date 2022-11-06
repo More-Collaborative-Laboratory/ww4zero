@@ -7,10 +7,6 @@
         "schema": "https://schema.org/",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "Active": {
-            "@id": "ww4zero:active",
-            "@type": "xsd:bool"
-        },
         "Assembly": "ww4zero:Assembly",
         "Budget": "ww4zero:Budget",
         "Consumable": "ww4zero:Consumable",
@@ -29,7 +25,7 @@
         },
         "active": {
             "@id": "ww4zero:active",
-            "@type": "xsd:bool"
+            "@type": "xsd:boolean"
         },
         "address": "schema:address",
         "addressCountry": {
@@ -270,7 +266,7 @@
         },
         "tos": {
             "@id": "ww4zero:tos",
-            "@type": "xsd:bool"
+            "@type": "xsd:DateTime"
         },
         "weight": {
             "@id": "ww4zero:weigth",
@@ -984,7 +980,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Conhecimento dos termos de serviço do cliente ao utilizar a aplicação"
+                    "@value": "date of acceptance of the system operation terms"
                 }
             ],
             "rdfs:label": [
@@ -1139,7 +1135,7 @@
             ]
         },
         {
-            "@id": "ww4zero:Active",
+            "@id": "ww4zero:active",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -1150,7 +1146,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "Active"
+                    "@value": "active"
                 }
             ]
         },
