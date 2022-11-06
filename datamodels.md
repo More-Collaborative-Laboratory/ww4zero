@@ -97,7 +97,7 @@ Identifies a client (Owner of a project)
 -  `password`: Password to be loged in
    -  Attribute type: **Property**. 
    -  Required
--  `active`: Active
+-  `active`: status of an acount
    -  Attribute type: **Property**. 
    -  Optional
 -  `telephone`: Mobile or telephone contact

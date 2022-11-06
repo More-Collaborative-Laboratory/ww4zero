@@ -74,7 +74,7 @@
         },
         "cncFlag": {
             "@id": "ww4zero:cncFlag",
-            "@type": "xsd:bool"
+            "@type": "xsd:boolean"
         },
         "deliveryFlag": {
             "@id": "ww4zero:deliveryFlag",
@@ -178,7 +178,7 @@
         },
         "nestingFlag": {
             "@id": "ww4zero:nestingFlag",
-            "@type": "xsd:bool"
+            "@type": "xsd:boolean"
         },
         "obs": {
             "@id": "ww4zero:obs",
@@ -194,19 +194,19 @@
         },
         "orla2": {
             "@id": "ww4zero:orla2",
-            "@type": "xsd:bool"
+            "@type": "xsd:boolean"
         },
         "orla3": {
             "@id": "ww4zero:orla3",
-            "@type": "xsd:bool"
+            "@type": "xsd:boolean"
         },
         "orla4": {
             "@id": "ww4zero:orla4",
-            "@type": "xsd:bool"
+            "@type": "xsd:boolean"
         },
         "orla5": {
             "@id": "ww4zero:orla5",
-            "@type": "xsd:bool"
+            "@type": "xsd:boolean"
         },
         "partName": {
             "@id": "ww4zero:partName",
@@ -266,7 +266,7 @@
         },
         "tos": {
             "@id": "ww4zero:tos",
-            "@type": "xsd:DateTime"
+            "@type": "xsd:boolean"
         },
         "weight": {
             "@id": "ww4zero:weigth",
@@ -916,7 +916,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Active"
+                    "@value": "status of an acount"
                 }
             ],
             "rdfs:label": [
