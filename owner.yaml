@@ -210,7 +210,7 @@
             type: Property
 
         tos: 
-          description: Conhecimento dos termos de serviço do cliente ao utilizar a aplicação
+          description: date of acceptance of the system operation terms
           type: DateTime
           example: "2018-08-07T12:00:00Z"
           x-ngsi:

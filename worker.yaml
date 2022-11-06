@@ -72,15 +72,16 @@ worker:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
       
-      Active:
+      active:
         description: Active
-        type: bool
-        example: true
+        type: boolean
+        example: TRUE
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/active"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
-       
+      
+
       functionPerformed: 
         description: Indicates the actual worker's station
           * `CNC` - CNC Operator
