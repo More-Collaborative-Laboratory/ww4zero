@@ -85,8 +85,8 @@ part:
 
       nestingFlag:
         description: NESTING (I)
-        type: bool
-        example: true
+        type: boolean
+        example: False
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/nestingFlag"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -94,8 +94,8 @@ part:
 
       cncFlag:
         description: CNC (J)
-        type: bool
-        example: true
+        type: boolean
+        example: False
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/cncFlag"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -139,8 +139,8 @@ part:
 
       orla2:
         description: ORLA2 (P)
-        type: bool
-        example: true
+        type: boolean
+        example: False
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/orla2"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -148,8 +148,8 @@ part:
 
       orla3:
         description: ORLA3 (Q)
-        type: bool
-        example: true
+        type: boolean
+        example: False
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/orla3"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -157,8 +157,8 @@ part:
 
       orla4:
         description: ORLA4 (R)
-        type: bool
-        example: true
+        type: boolean
+        example: False
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/orla4"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -166,8 +166,8 @@ part:
 
       orla5:
         description: ORLA5 (S)
-        type: bool
-        example: false
+        type: boolean
+        example: False
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/orla5"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
