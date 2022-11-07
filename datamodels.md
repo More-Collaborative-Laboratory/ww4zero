@@ -115,6 +115,12 @@ Identifies a client (Owner of a project)
 -  `obs`: obs a pedido da NKA
    -  Attribute type: **Property**. 
    -  Optional
+-  `ownerType`: Indicates if you have already purchased from this organization * `owner` - Indicates that you have not yet passed the budget * `buyer` - Indicates that already in client in this organization. One of : `owner`, `buyer`.
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `hasPermission`: Identifies the type of access this profile has
+   -  Attribute type: **Relationship**. 
+   -  Optional
 -  `belongsTo`: Identifies the project to wich the part belongs
    -  Attribute type: **Relationship**. 
    -  Optional

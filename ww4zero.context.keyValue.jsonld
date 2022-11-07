@@ -140,6 +140,10 @@
             "@id": "ww4zero:hasOwner",
             "@type": "@id"
         },
+        "hasPermission": {
+            "@id": "ww4zero:hasProfile",
+            "@type": "@id"
+        },
         "hasWorker": {
             "@id": "ww4zero:hasWorker",
             "@type": "@id"
@@ -207,6 +211,10 @@
         "orla5": {
             "@id": "ww4zero:orla5",
             "@type": "xsd:boolean"
+        },
+        "ownerType": {
+            "@id": "ww4zero:ownerType",
+            "@type": "xsd:string"
         },
         "partName": {
             "@id": "ww4zero:partName",
@@ -1003,6 +1011,22 @@
                 {
                     "@language": "en",
                     "@value": "obs"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:hasPermission",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the type of access this profile has"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "hasPermission"
                 }
             ]
         },
