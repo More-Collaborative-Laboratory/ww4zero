@@ -160,7 +160,7 @@ Identifies a worker within an organization
 -  `workerShif`: Defines the possibilities of working hours * `Morning` - Shift from 8am until 5pm * `Afternoon` - Shift from 5pm until 0am * `Night` - Shift from 0am until 8am. One of : `Morning`, `Afternoon`, `Night`.
    -  Attribute type: **Property**. 
    -  Optional
--  `image`: url da imagem
+-  `workerImage`: url da imagem
    -  Attribute type: **Property**. 
    -  Optional
 -  `hasOrganization`: Identification of the Organization where the Worker is currently employed.
