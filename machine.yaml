@@ -52,8 +52,8 @@ machine:
           * `cnc1` - indicates cnc1 station is working
           * `nesting1` - indicates nesting1 station is working
           * `manualcut1` - indicates manualcut1 station is working
-          * `receiving material` - indicates that raw material is entering the factory
-          * `organizing the material` - indicates that raw material is being put away at the factory
+          * `receiving_material` - indicates that raw material is entering the factory
+          * `organizing_material` - indicates that raw material is being put away at the factory
           * `assembly` - indicates that assembly station is on use
           * `shipping` - indicates the order is shipping
         type: string  
@@ -61,8 +61,8 @@ machine:
           - 'cnc1'
           - 'nesting1'
           - 'manualcut1'
-          - 'receiving material'
-          - 'organizing the material'
+          - 'receiving_material'
+          - 'organizing_material'
           - 'assembly'
           - 'shipping'
         example: 'cnc1 station working'
