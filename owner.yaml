@@ -227,6 +227,36 @@
             uri-prefix: "https://projetww4zero.pt/dataModel/"
             type: Property
 
+        ownerType: 
+          description: Indicates if you have already purchased from this organization
+            * `owner` - Indicates that you have not yet passed the budget
+            * `buyer` - Indicates that already in client in this organization
+          type: string  
+          enum: 
+            - 'owner'
+            - 'buyer'
+          example: 'buyer'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/ownerType"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+        hasPermission:
+          anyOf:
+            - description: 'Relationship property: Identifies the type of access this profile has'
+              maxLength: 256
+              minLength: 1
+              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+              type: string
+            - description: 'Relationship property: Identifies the type of access this profile has'
+              format: uri
+              type: string
+          description: 'Identifies the type of access this profile has'
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/hasProfile"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Relationship  
+
         belongsTo:
           anyOf:
             - description: 'Relationship property: Identifies the project to wich the part belongs'
