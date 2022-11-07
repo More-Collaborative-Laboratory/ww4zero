@@ -284,6 +284,10 @@
             "@id": "ww4zero:width",
             "@type": "xsd:number"
         },
+        "workerImage": {
+            "@id": "ww4zero:workerImage",
+            "@type": "xsd:string"
+        },
         "workerShif": {
             "@id": "ww4zero:workerShift",
             "@type": "xsd:string"
@@ -1175,7 +1179,7 @@
             ]
         },
         {
-            "@id": "https://projetww4zero.pt/dataModel/image",
+            "@id": "https://projetww4zero.pt/dataModel/workerImage",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -1186,7 +1190,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "image"
+                    "@value": "workerImage"
                 }
             ]
         },

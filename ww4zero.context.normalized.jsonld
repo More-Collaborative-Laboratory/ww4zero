@@ -84,6 +84,7 @@
         "tos": "ww4zero:tos",
         "weight": "ww4zero:weigth",
         "width": "ww4zero:width",
+        "workerImage": "ww4zero:workerImage",
         "workerShif": "ww4zero:workerShift"
     }
 }
