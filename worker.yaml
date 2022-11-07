@@ -149,7 +149,7 @@ worker:
             type: string
         description: 'Identifies the type of access this profile has'
         x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/hasProfile"
+          uri: "https://projectww4zero.pt/dataModel/hasPermission"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Relationship  
 
