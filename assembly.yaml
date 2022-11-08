@@ -17,7 +17,7 @@ assembly:
       format: DateTime
       example: '25-03-2022 10:00'
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/startDate"
+        uri: "https://projectww4zero.pt/dataModel/startTime"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
@@ -25,9 +25,9 @@ assembly:
       description: Date and hour on wich the assembly ends
       type: string
       format: DateTime
-      example: '27-03-2022 10:00'
+      example: '27-03-2022 20:00'
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/endDate"
+        uri: "https://projectww4zero.pt/dataModel/endTime"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
