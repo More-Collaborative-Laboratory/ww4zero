@@ -17,7 +17,7 @@ machine:
         format: DateTime
         example: '25-03-2022 10:00'
         x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/startTime"
+          uri: "https://projectww4zero.pt/dataModel/startDateTime"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
   
@@ -27,7 +27,7 @@ machine:
         format: DateTime
         example: '27-03-2022 10:00'
         x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/endTime"
+          uri: "https://projectww4zero.pt/dataModel/endDateTime"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
   
