@@ -31,7 +31,7 @@ assembly:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
-    status: 
+    assemblyStatus: 
       description: Indicates the status of the project's assembly
         * `0` - em producao
         * `1` - em espera para iniciar
@@ -45,7 +45,7 @@ assembly:
         - '3'
       example: '0'
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/status"
+        uri: "https://projectww4zero.pt/dataModel/assemblyStatus"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
