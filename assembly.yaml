@@ -37,7 +37,7 @@ assembly:
         * `1` - em espera para iniciar
         * `2` - em testes
         * `3` - testado e embalado
-      type: number  #/ enum?
+      type: number 
       enum: 
         - '0'      
         - '1'
