@@ -85,7 +85,7 @@
             "@type": "xsd:string"
         },
         "endTime": {
-            "@id": "ww4zero:endDate",
+            "@id": "ww4zero:endTime",
             "@type": "xsd:string"
         },
         "executedBy": {
@@ -245,7 +245,7 @@
             "@type": "xsd:string"
         },
         "startTime": {
-            "@id": "ww4zero:startDate",
+            "@id": "ww4zero:startTime",
             "@type": "xsd:string"
         },
         "status": {
