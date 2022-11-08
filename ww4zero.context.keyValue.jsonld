@@ -1,0 +1,2190 @@
+{
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "fiware": "https://projectww4zero.pt/dataModel/",
+        "schema": "https://schema.org/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "Assembly": "ww4zero:Assembly",
+        "Budget": "ww4zero:Budget",
+        "Consumable": "ww4zero:Consumable",
+        "Expedition": "ww4zero:Expedition",
+        "Image": "ww4zero:Image",
+        "Machine": "ww4zero:Machine",
+        "Organization": "ww4zero:Organization",
+        "Owner": "ww4zero:Owner",
+        "Part": "ww4zero:Part",
+        "Permission": "ww4zero:Permission",
+        "Project": "ww4zero:Project",
+        "Worker": "ww4zero:Worker",
+        "action": {
+            "@id": "ww4zero:action",
+            "@type": "xsd:string"
+        },
+        "active": {
+            "@id": "ww4zero:active",
+            "@type": "xsd:boolean"
+        },
+        "address": "schema:address",
+        "addressCountry": {
+            "@id": "schema:addressCountry",
+            "@type": "xsd:string"
+        },
+        "addressLocality": {
+            "@id": "schema:addressLocality",
+            "@type": "xsd:string"
+        },
+        "addressRegion": {
+            "@id": "schema:addressRegion",
+            "@type": "xsd:string"
+        },
+        "amount": {
+            "@id": "ww4zero:amount",
+            "@type": "xsd:number"
+        },
+        "approvedDate": {
+            "@id": "ww4zero:approvalTime",
+            "@type": "xsd:string"
+        },
+        "assemblyBy": {
+            "@id": "ww4zero:assemblyBy",
+            "@type": "@id"
+        },
+        "belongsTo": {
+            "@id": "ww4zero:belongsTo",
+            "@type": "@id"
+        },
+        "buysTo": {
+            "@id": "ww4zero:buysTo",
+            "@type": "@id"
+        },
+        "caeId": {
+            "@id": "ww4zero:caeId",
+            "@type": "xsd:string"
+        },
+        "category": {
+            "@id": "ww4zero:category",
+            "@type": "xsd:string"
+        },
+        "clientTypeInstitution": {
+            "@id": "ww4zero:clientTypeInstitution",
+            "@type": "xsd:string"
+        },
+        "cncFlag": {
+            "@id": "ww4zero:cncFlag",
+            "@type": "xsd:boolean"
+        },
+        "deliveryFlag": {
+            "@id": "ww4zero:deliveryFlag",
+            "@type": "xsd:boolean"
+        },
+        "email": {
+            "@id": "schema:email",
+            "@type": "xsd:string"
+        },
+        "endTime": {
+            "@id": "ww4zero:endTime",
+            "@type": "xsd:string"
+        },
+        "executedBy": {
+            "@id": "ww4zero:executedBy",
+            "@type": "@id"
+        },
+        "executedIn": {
+            "@id": "ww4zero:executedIn",
+            "@type": "@id"
+        },
+        "expedition": {
+            "@id": "ww4zero:expedition",
+            "@type": "@id"
+        },
+        "expeditionTime": {
+            "@id": "ww4zero:expeditionTime",
+            "@type": "xsd:string"
+        },
+        "f2": {
+            "@id": "ww4zero:f2",
+            "@type": "xsd:number"
+        },
+        "f3": {
+            "@id": "ww4zero:f3",
+            "@type": "xsd:number"
+        },
+        "f4": {
+            "@id": "ww4zero:f4",
+            "@type": "xsd:number"
+        },
+        "f5": {
+            "@id": "ww4zero:f5",
+            "@type": "xsd:number"
+        },
+        "familyName": {
+            "@id": "schema:familyName",
+            "@type": "xsd:string"
+        },
+        "functionPerformed": {
+            "@id": "ww4zero:functionPerformed",
+            "@type": "xsd:string"
+        },
+        "givenName": {
+            "@id": "schema:givenName",
+            "@type": "xsd:string"
+        },
+        "hasOrganization": {
+            "@id": "ww4zero:hasOrganization",
+            "@type": "@id"
+        },
+        "hasOwner": {
+            "@id": "ww4zero:hasOwner",
+            "@type": "@id"
+        },
+        "hasPermission": {
+            "@id": "ww4zero:hasPermission",
+            "@type": "@id"
+        },
+        "hasWorker": {
+            "@id": "ww4zero:hasWorker",
+            "@type": "@id"
+        },
+        "image": {
+            "@id": "ww4zero:image",
+            "@type": "xsd:string"
+        },
+        "legalName": {
+            "@id": "schema:legalName",
+            "@type": "xsd:string"
+        },
+        "length": {
+            "@id": "ww4zero:length",
+            "@type": "xsd:number"
+        },
+        "location": {
+            "@id": "ngsi-ld:location",
+            "@type": "xsd:undefined"
+        },
+        "machineStatus": {
+            "@id": "ww4zero:machineStatus",
+            "@type": "xsd:string"
+        },
+        "machineType": {
+            "@id": "ww4zero:machineType",
+            "@type": "xsd:string"
+        },
+        "material": {
+            "@id": "ww4zero:material",
+            "@type": "xsd:string"
+        },
+        "name": {
+            "@id": "schema:name",
+            "@type": "xsd:string"
+        },
+        "nestingFlag": {
+            "@id": "ww4zero:nestingFlag",
+            "@type": "xsd:boolean"
+        },
+        "obs": {
+            "@id": "ww4zero:obs",
+            "@type": "xsd:string"
+        },
+        "observation": {
+            "@id": "ww4zero:observation",
+            "@type": "xsd:string"
+        },
+        "orderBy": {
+            "@id": "ww4zero:orderBy",
+            "@type": "@id"
+        },
+        "orla2": {
+            "@id": "ww4zero:orla2",
+            "@type": "xsd:boolean"
+        },
+        "orla3": {
+            "@id": "ww4zero:orla3",
+            "@type": "xsd:boolean"
+        },
+        "orla4": {
+            "@id": "ww4zero:orla4",
+            "@type": "xsd:boolean"
+        },
+        "orla5": {
+            "@id": "ww4zero:orla5",
+            "@type": "xsd:boolean"
+        },
+        "ownerType": {
+            "@id": "ww4zero:ownerType",
+            "@type": "xsd:string"
+        },
+        "partName": {
+            "@id": "ww4zero:partName",
+            "@type": "xsd:string"
+        },
+        "password": {
+            "@id": "ww4zero:password",
+            "@type": "xsd:string"
+        },
+        "permission": {
+            "@id": "ww4zero:permission",
+            "@type": "xsd:string"
+        },
+        "postalCode": {
+            "@id": "schema:postalCode",
+            "@type": "xsd:string"
+        },
+        "producedBy": {
+            "@id": "ww4zero:producedBy",
+            "@type": "@id"
+        },
+        "sort": {
+            "@id": "ww4zero:sort",
+            "@type": "xsd:string"
+        },
+        "ssnId": {
+            "@id": "ww4zero:ssnId",
+            "@type": "xsd:string"
+        },
+        "startTime": {
+            "@id": "ww4zero:startTime",
+            "@type": "xsd:string"
+        },
+        "status": {
+            "@id": "ww4zero:status",
+            "@type": "xsd:number"
+        },
+        "streetAddress": {
+            "@id": "schema:streetAddress",
+            "@type": "xsd:string"
+        },
+        "tag": {
+            "@id": "ww4zero:tag",
+            "@type": "xsd:number"
+        },
+        "taxId": {
+            "@id": "schema:taxId",
+            "@type": "xsd:string"
+        },
+        "telephone": {
+            "@id": "schema:telephone",
+            "@type": "xsd:string"
+        },
+        "thickness": {
+            "@id": "ww4zero:thickness",
+            "@type": "xsd:number"
+        },
+        "tos": {
+            "@id": "ww4zero:tos",
+            "@type": "xsd:boolean"
+        },
+        "weight": {
+            "@id": "ww4zero:weigth",
+            "@type": "xsd:number"
+        },
+        "width": {
+            "@id": "ww4zero:width",
+            "@type": "xsd:number"
+        },
+        "workerImage": {
+            "@id": "ww4zero:workerImage",
+            "@type": "xsd:string"
+        },
+        "workerShif": {
+            "@id": "ww4zero:workerShift",
+            "@type": "xsd:string"
+        }
+    },
+    "@graph": [
+        {
+            "@id": "ww4zero:Organization",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Describes the organization entity"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Organization"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "ww4zero:Project",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Contains the information of a project"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Project"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "ww4zero:Owner",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies a client (Owner of a project)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Owner"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "ww4zero:Worker",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies a worker within an organization"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Worker"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "ww4zero:Consumable",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Describes a consumable list associated with a project"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Consumable"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "ww4zero:Part",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the part-name atributes that belongs to a specific project - Lista de Corte -"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Part"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "ww4zero:Machine",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Machine cnc1, nesting1, manual cut1"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Machine"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "ww4zero:Assembly",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Indicates when a assembly process is completed"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Assembly"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "ww4zero:Budget",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Clients Budget"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Budget"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "ww4zero:Expedition",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Indicates when an order has been shiped"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Expedition"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "ww4zero:Permission",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifica quais as premissões que cada perfil pode realizar"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Permission"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "ww4zero:Image",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the url of the image context"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Image"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "ww4zero:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Organization Identifier"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "https://schema.orglegalName",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Organization's legal name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "legalName"
+                }
+            ]
+        },
+        {
+            "@id": "schema:taxId",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The organization's tax number"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "taxId"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:ssnId",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The organization's social security number"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "ssnId"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:caeId",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The organization's economic activity code"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "caeId"
+                }
+            ]
+        },
+        {
+            "@id": "schema:address",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The company's headquarters address"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "address"
+                }
+            ]
+        },
+        {
+            "@id": "schema:email",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Contact email address"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "email"
+                }
+            ]
+        },
+        {
+            "@id": "schema:telephone",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Mobile or telephone contact"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "telephone"
+                }
+            ]
+        },
+        {
+            "@id": "ngsi-ld:location",
+            "@type": "ngsi-ld:GeoProperty",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "location"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Projects id Identifier"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "schema:name",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Project name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "name"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:category",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Movel type"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "category"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:producedBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the operators giveName that are working in specific project Name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "producedBy"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:orderBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the owner name associated to the project with status in execution"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "orderBy"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:assemblyBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification assembled parts belong to some project made for some worker"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "assemblyBy"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/image",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "url da imagem"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "image"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:expedition",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification the addres that will recieve the oreder name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "expedition"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Client Identifier"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "schema:legalName",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Institution legal name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "legalName"
+                }
+            ]
+        },
+        {
+            "@id": "schema:givenName",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Client first name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "givenName"
+                }
+            ]
+        },
+        {
+            "@id": "schema:familyName",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Client last name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "familyName"
+                }
+            ]
+        },
+        {
+            "@id": "schema:taxId",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Client/Institution Tax ID"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "taxId"
+                }
+            ]
+        },
+        {
+            "@id": "schema:address",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The client's address"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "address"
+                }
+            ]
+        },
+        {
+            "@id": "schema:email",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Contact email address"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "email"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:password",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Password to be loged in"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "password"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:active",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "status of an acount"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "active"
+                }
+            ]
+        },
+        {
+            "@id": "schema:telephone",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Mobile or telephone contact"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "telephone"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:buysTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification the addres that will recieve the oreder name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "buysTo"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/image",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "url da imagem"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "image"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/tos",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "date of acceptance of the system operation terms"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "tos"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/obs",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "obs a pedido da NKA"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "obs"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:hasPermission",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the type of access this profile has"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "hasPermission"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:belongsTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the project to wich the part belongs"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsTo"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Worker Identifier"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "schema:givenName",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Worker first name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "givenName"
+                }
+            ]
+        },
+        {
+            "@id": "schema:familyName",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Worker last name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "familyName"
+                }
+            ]
+        },
+        {
+            "@id": "schema:email",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Contact email address"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "email"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:password",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Password to be log in"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "password"
+                }
+            ]
+        },
+        {
+            "@id": "schema:taxId",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Worker Tax ID"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "taxId"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:ssnId",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Worker Social Security Number ID"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "ssnId"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:active",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Active"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "active"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/workerImage",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "url da imagem"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "workerImage"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:hasPermission",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the type of access this profile has"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "hasPermission"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:hasOrganization",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the Organization where the Worker is currently employed."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "hasOrganization"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:action",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the project what the action refers"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "action"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Consumable Identifier"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/name",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifie the consumable Name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "name"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/amount",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifier the consumable amount"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "amount"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/image",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "url da imagem"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "image"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:belongsTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the projet Name that this consumables will attached to"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsTo"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Unic Identifier of a Part of a Project"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:partName",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "REF PEÇA (A)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "partName"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:sort",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "TIPO (B)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "sort"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:material",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "MATERIAL (C)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "material"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:amount",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "QUANTIDADE (D)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "amount"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:length",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "COMPRIMENTO (E)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "length"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:width",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "LARGURA (F)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "width"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:thickness",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ESPESSURA (G)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "thickness"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:tag",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ETIQUETA (H)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "tag"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:nestingFlag",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "NESTING (I)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "nestingFlag"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:cncFlag",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CNC (J)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "cncFlag"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:f2",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "FURO FACE 2 (K)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "f2"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:f3",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "FURO FACE 3 (L)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "f3"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:f4",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "FURO FACE 4 (M)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "f4"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:f5",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "FURO FACE 5 (N)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "f5"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:orla2",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ORLA2 (P)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "orla2"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:orla3",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ORLA3 (Q)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "orla3"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:orla4",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ORLA4 (R)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "orla4"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:orla5",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ORLA5 (S)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "orla5"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:observation",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Observation (T)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "observation"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:weight",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "PESO (U)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "weight"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/image",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "url da imagem"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "image"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:belongsTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the project to wich the part belongs"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsTo"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Machine Type"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:startTime",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Saves date and time information when the start button is pressed"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "startTime"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:endTime",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Saves date and time information when the finish button is pressed"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "endTime"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:executedBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification worker that made the part"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "executedBy"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:executedIn",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification the made part"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "executedIn"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:belongsTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the projet to which this assembly corresponds"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsTo"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Assembly parts from a project"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:startTime",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Date and hour on wich the assembly starts"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "startTime"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:endTime",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Date and hour on wich the assembly ends"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "endTime"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:belongsTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the projet to which this assembly corresponds"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsTo"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Budget Identifier"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "schema:name",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Budget name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "name"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/amount",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Value in euros"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "amount"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:approvedDate",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Saves date and time information when the budget was approved"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "approvedDate"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/image",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "url da imagem"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "image"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:belongsTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification the project that this budget belongs to"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsTo"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Refers to the date of dispatch of the order"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:expeditionTime",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Date and hour when the order left the factory in direction to the Owner"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "expeditionTime"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:deliveryFlag",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Indicates if the order arrived to the destination"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "deliveryFlag"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:belongsTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification if the order is arrived the destination"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsTo"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Client / Worker Identifier"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:hasOwner",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the Owner atributes - name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "hasOwner"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:hasWorker",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the Worker atributes"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "hasWorker"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "urn:ngsi-ld:project_name:image:entety_example:1"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:sort",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "TIPO (B)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "sort"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:material",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "MATERIAL (C)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "material"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:amount",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "QUANTIDADE (D)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "amount"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:length",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "COMPRIMENTO (E)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "length"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:width",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "LARGURA (F)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "width"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:thickness",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ESPESSURA (G)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "thickness"
+                }
+            ]
+        },
+        {
+            "@id": "ww4zero:belongsTo",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the project to wich the image belongs"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsTo"
+                }
+            ]
+        }
+    ]
+}
