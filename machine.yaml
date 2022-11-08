@@ -21,13 +21,13 @@ machine:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
   
-      endTime: 
+      finishTime: 
         description: Saves date and time information when the finish button is pressed
         type: string
         format: DateTime
         example: '27-03-2022 10:00'
         x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/endTime"
+          uri: "https://projectww4zero.pt/dataModel/finishTime"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
   
