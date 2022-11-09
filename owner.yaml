@@ -177,9 +177,9 @@
                 model: https://schema.org/addressCountry
                 type: Property
           x-ngsi:
-            uri: "https://schema.org/address"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/address
+            x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/addressDelivery"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
 
 
