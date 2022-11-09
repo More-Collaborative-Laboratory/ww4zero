@@ -21,7 +21,7 @@ project:
           model: https://schema.org/name
           type: Property
 
-      category: #movel wc, movel cozinha, movel 
+      category: 
         description: Movel type
         type: string
         example: Movel cozinha
@@ -30,7 +30,7 @@ project:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
 
-      status:  #list ou enum 
+      status: 
         description: Indicates the actual workers station
           * `waiting` - Projects budget approved
           * `working` - Projects parts are already in the factorys floor
