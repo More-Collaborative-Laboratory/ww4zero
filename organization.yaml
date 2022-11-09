@@ -281,6 +281,3 @@ organization:
   required:
     - id
     - legalName
-    - taxId
-    - ssnId
-    - email
