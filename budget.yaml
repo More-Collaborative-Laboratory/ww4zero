@@ -1,4 +1,4 @@
-budget:
+Budget:
   title: Budget
   type: object
   description: Clients Budget 

@@ -1,4 +1,4 @@
-machine:
+Machine:
     title: Machine
     type: object
     description: Machine cnc1, nesting1, manual cut1 #tambem assemblagem das partes e envio da encomenda?

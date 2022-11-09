@@ -1,4 +1,4 @@
-assembly:
+Assembly:
   title: Assembly
   type: object
   description: Indicates when a assembly process is completed

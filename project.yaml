@@ -1,4 +1,4 @@
-project:
+Project:
     title: Project
     type: object
     description: Contains the information of a project

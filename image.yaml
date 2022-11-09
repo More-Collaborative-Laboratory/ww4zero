@@ -1,4 +1,4 @@
-image:
+Image:
   title: Image
   type: object
   description: Identifies the url of the image context

@@ -1,4 +1,4 @@
-consumable:
+Consumable:
   title: Consumable
   type: object
   description: Describes a consumable list associated with a project

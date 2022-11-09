@@ -1,4 +1,4 @@
- owner:
+ Owner:
       title: Owner
       type: object
       description: Identifies a client (Owner of a project)
