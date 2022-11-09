@@ -1,0 +1,21 @@
+{
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "fiware": "https://projectww4zero.pt/dataModel/",
+        "schema": "https://schema.org/",
+        "Assembly": "ww4zero:Assembly",
+        "Budget": "ww4zero:Budget",
+        "Consumable": "ww4zero:Consumable",
+        "Expedition": "ww4zero:Expedition",
+        "Image": "ww4zero:Image",
+        "Machine": "ww4zero:Machine",
+        "Organization": "ww4zero:Organization",
+        "Owner": "ww4zero:Owner",
+        "Part": "ww4zero:Part",
+        "Permission": "ww4zero:Permission",
+        "Project": "ww4zero:Project",
+        "Worker": "ww4zero:Worker"
+    }
+}
