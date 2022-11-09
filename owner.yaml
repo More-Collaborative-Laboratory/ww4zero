@@ -11,39 +11,6 @@
           x-ngsi:
             type: Property
 
-        permission: 
-          description: Indicates the permission associated to worker's and owners
-            * `CRUD` - CRUD Operations
-            * `CRU` - CRU Operations
-            * `CR` - CR Operations
-          type: string
-          enum: 
-            - CRUD
-            - CRU
-            - CR
-          example: CRUD
-          x-ngsi:
-            uri: "https://projectww4zero.pt/dataModel/permission"
-            uri-prefix: "https://projectww4zero.pt/dataModel/"
-            type: Property
-
-        clientTypeInstitution:
-          description: Indicates a type of client
-            * `Particular` - Paricular Owner
-            * `Institucional` - Instuticional Owner
-            * `Other` - Other type of a client
-          type: string
-          enum:
-            - Particular
-            - Institucional
-            - Other
-          example: Particular
-          x-ngsi:
-            uri: "https://projectww4zero.pt/dataModel/clientTypeInstitution"
-            uri-prefix: "https://projectww4zero/dataModel/"
-            type: Property
-
-
         legalName: 
           description: Institution legal name
           type: string
@@ -84,7 +51,25 @@
             uri-prefix: "https://schema.org/"
             model: https://schema.org/Person
             type: Property
-                
+
+        ownerClass: 
+          description: Indicate if Owner is a Owner (without buying - 0) or Buyer (with buying - 1) 
+          type: boolean
+          example: TRUE
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/ownerClass"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
+        ownerType: 
+          description: Indicate if Owner is particular ( 0 ) or institucional  ( 1 ) 
+          type: boolean
+          example: TRUE
+          x-ngsi:
+            uri: "https://projectww4zero.pt/dataModel/ownerType"
+            uri-prefix: "https://projectww4zero.pt/dataModel/"
+            type: Property
+
         address:
           description: The client's address
           type: object
@@ -140,18 +125,75 @@
             uri-prefix: "https://schema.org/"
             model: https://schema.org/address
             type: Property
-            
+
+        adressDelivery:
+          description: The delivery address
+          type: object
+          title: Address
+          properties:
+            streetAddress:
+              description: Street name
+              type: string         
+              example: Rua de São Bento, 52, 4º Esq.
+              x-ngsi:
+                uri: "https://schema.org/streetAddress"
+                uri-prefix: "https://schema.org/"
+                model: https://schema.org/streetAddress
+                type: Property
+            postalCode:
+              description: Postal code
+              type: string
+              example: 1249-068
+              x-ngsi:
+                uri: "https://schema.org/postalCode"
+                uri-prefix: "https://schema.org/"
+                model: https://schema.org/postalCode
+                type: Property              
+            addressLocality:
+              description: Name of the city or location
+              type: string
+              example: Lisboa
+              x-ngsi:
+                uri: "https://schema.org/addressLocality"
+                uri-prefix: "https://schema.org/"
+                model: https://schema.org/addressLocality
+                type: Property             
+            addressRegion:
+              description: Region (Concelho) of the city's location
+              type: string
+              example: Bragança
+              x-ngsi:
+                uri: "https://schema.org/addressRegion"
+                uri-prefix: "https://schema.org/"
+                model: https://schema.org/addressRegion
+                type: Property             
+            addressCountry:
+              description: Country where the company has its headquarters
+              type: string
+              example: Portugal
+              x-ngsi:
+                uri: "https://schema.org/addressCountry"
+                uri-prefix: "https://schema.org/"
+                model: https://schema.org/addressCountry
+                type: Property
+          x-ngsi:
+            uri: "https://schema.org/address"
+            uri-prefix: "https://schema.org/"
+            model: https://schema.org/address
+            type: Property
+
+
         email:
           description: Contact email address
           type: string
           format: email
-          example: elisa@tudodado.com
+          example: jose_luis@hotmail.com
           x-ngsi:
             uri: "https://schema.org/email"
             uri-prefix: "https://schema.org/"
             model: https://schema.org/email
             type: Property
-                        
+
         password: 
           description: Password to be loged in
           type: string
@@ -161,9 +203,8 @@
             uri-prefix: "https://projectww4zero.pt/dataModel/"
             type: Property
 
-
         active:
-          description: status of an acount
+          description: status of an acount (0-inactive) (2-active)
           type: boolean
           example: TRUE
           x-ngsi:
@@ -183,23 +224,6 @@
             model: https://schema.org/telephone
             type: Property
 
-        buysTo:
-          anyOf:
-            - description: 'Relationship property: Identifies the organization where the owner makes the order'
-              maxLength: 256
-              minLength: 1
-              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-              type: string
-            - description: 'Relationship property: indicates the organization '
-              format: uri
-              type: string
-          description: 'Identification the addres that will recieve the oreder name'
-          x-ngsi:
-            uri: "https://projectww4zero.pt/dataModel/buysTo"
-            uri-prefix: "https://projectww4zero.pt/dataModel/"
-            type: Relationship
-
-      
         image: 
           description: url da imagem
           type: string
@@ -227,19 +251,21 @@
             uri-prefix: "https://projetww4zero.pt/dataModel/"
             type: Property
 
-        ownerType: 
-          description: Indicates if you have already purchased from this organization
-            * `owner` - Indicates that you have not yet passed the budget
-            * `buyer` - Indicates that already in client in this organization
-          type: string  
-          enum: 
-            - 'owner'
-            - 'buyer'
-          example: 'buyer'
+        buysTo:
+          anyOf:
+            - description: 'Relationship property: Identifies the organization where the owner makes the order'
+              maxLength: 256
+              minLength: 1
+              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+              type: string
+            - description: 'Relationship property: indicates the organization '
+              format: uri
+              type: string
+          description: 'Identification the addres that will recieve the oreder name'
           x-ngsi:
-            uri: "https://projectww4zero.pt/dataModel/ownerType"
+            uri: "https://projectww4zero.pt/dataModel/buysTo"
             uri-prefix: "https://projectww4zero.pt/dataModel/"
-            type: Property
+            type: Relationship
 
         hasPermission:
           anyOf:
