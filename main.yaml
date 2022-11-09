@@ -1,0 +1,64 @@
+# ww4.0, @2022
+# 
+
+openapi: 3.0.0
+
+# General Data Model Information
+info:
+  title: ww4zero Project
+  description: Data model for the MOFREITA component developped under the ww4.0 project
+  version: 0.0.1
+  contact:
+    name: Digitalization da Carpintaria Portuguesa Mofreita
+    url: https://projectww4zero.pt/
+  
+components:
+  schemas: 
+    Organization:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/organization.yaml/#organization" #organization
+
+    Project:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/project.yaml/#project"
+            #"https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/project.yaml/#project"
+
+    Owner:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/owner.yaml/#owner" #owner
+
+    Worker:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml/#worker" #worker
+
+    Consumable:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml/#consumable"  #consumable
+
+    Part:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml/#part"  #part
+
+    Machine:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machine.yaml/#machine" #machine
+
+    Assembly:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml/#assembly"  #assembly
+
+    Budget:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml/#budget"  #budget
+
+    Expedition:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml/#expedition"  #expedition
+
+    Permission:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/permission.yaml/#permission"  #permission
+
+    Image:
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/image.yaml/#image" #image
+
+
+paths:
+  /ngsi-ld/v1/entities:
+    get:
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/ld+json:
+              schema:
+                type: object
