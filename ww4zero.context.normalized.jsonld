@@ -23,7 +23,7 @@
         "addressCountry": "schema:addressCountry",
         "addressLocality": "ww4zero:addressLocality",
         "addressRegion": "ww4zero:addressRegion",
-        "adressDelivery": "ww4zero:addressDelivery",
+        "addressDelivery": "ww4zero:addressDelivery",
         "amount": "ww4zero:amount",
         "approvedDate": "ww4zero:approvedDate",
         "assemblyBy": "ww4zero:assemblyBy",

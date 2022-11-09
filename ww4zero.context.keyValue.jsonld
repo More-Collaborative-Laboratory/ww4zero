@@ -40,7 +40,7 @@
             "@id": "ww4zero:addressRegion",
             "@type": "xsd:string"
         },
-        "adressDelivery": "ww4zero:addressDelivery",
+        "addressDelivery": "ww4zero:addressDelivery",
         "amount": {
             "@id": "ww4zero:amount",
             "@type": "xsd:number"
