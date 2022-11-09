@@ -126,7 +126,7 @@
             model: https://schema.org/address
             type: Property
 
-        adressDelivery:
+        addressDelivery:
           description: The delivery address
           type: object
           title: Address
