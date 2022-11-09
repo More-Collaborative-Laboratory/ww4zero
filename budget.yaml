@@ -1,7 +1,7 @@
 budget:
   title: Budget
   type: object
-  description: Clients Budget #tambem assemblagem das partes e envio da encomenda?
+  description: Clients Budget 
   properties:
     id:
       description: Budget Identifier
@@ -10,11 +10,11 @@ budget:
       example: urn:ngsi-ld:Budget:[]
       x-ngsi:
         type: Property    
-
+        
     name: 
       description: Budget name
       type: string
-      example: sr vitor
+      example: Joao
       x-ngsi:
         uri: "https://schema.org/name"
         uri-prefix: "https://schema.org/"
@@ -36,7 +36,7 @@ budget:
       format: DateTime
       example: '25-03-2022 10:00'
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/approvalTime"
+        uri: "https://projectww4zero.pt/dataModel/approvedDate"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
