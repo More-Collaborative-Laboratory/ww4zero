@@ -15,41 +15,41 @@ info:
 components:
   schemas: 
     Organization:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/organization.yaml"
-            #"https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/organization.yaml#/organization"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/organization.yaml/#organization"
+
     Project:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/project.yaml"
-            #"https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/project.yaml#/project"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/project.yaml/#project"
+
     Owner:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/owner.yaml"
-            #"https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/owner.yaml#/owner"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/owner.yaml/#owner"
+
     Worker:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml"
-            #"https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml#/worker"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml/#worker"
+
     Consumable:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml"
-            #"https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/consumable"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml/#consumable"
+
     Part:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml"
-            #"https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/part"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml/#part"
+
     Machine:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machine.yaml"
-            #"https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machine.yaml#/machine"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machine.yaml/#machine"
+
     Assembly:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml"
-            #"https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml#/assembly"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml/#assembly"
+
     Budget:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml"
-            #"https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml#/budget"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml/#budget"
+
     Expedition:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml"
-            #"https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/expeditionDate"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml/#expedition"
+
     Permission:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/permission.yaml"
-            #"https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/permission.yaml#/permission"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/permission.yaml/#permission"
+
     Image:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/image.yaml"
-            #"https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/image.yaml#/image"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/image.yaml/#image"
+
 
 paths:
   /ngsi-ld/v1/entities:
