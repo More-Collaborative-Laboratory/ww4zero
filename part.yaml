@@ -137,6 +137,15 @@ Part:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
 
+      veio:
+        description: Veio (O)
+        type: string
+        example: "Y"
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/veio"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
       orla2:
         description: ORLA2 (P)
         type: boolean
