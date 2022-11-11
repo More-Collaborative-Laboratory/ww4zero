@@ -1,4 +1,4 @@
-Expedition:
+expedition:
   title: Expedition
   type: object
   description: Indicates when an order has been shiped

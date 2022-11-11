@@ -1,4 +1,4 @@
-Permission:
+permission:
   title: Permission
   type: object
   description: Identifica quais as premissões que cada perfil pode realizar

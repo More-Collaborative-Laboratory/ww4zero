@@ -1,238 +1,238 @@
-Part:
-    title: Part
-    type: object
-    description: Identifies the part-name atributes that belongs to a specific project - Lista de Corte - 
-    properties:
-      id:
-        description: Unic Identifier of a Part of a Project
-        type: string
-        format: uri
-        example: urn:ngsi-ld:Part:1223 
-        x-ngsi:
-          type: Property
-          
-      partName:
-        description: REF PEÇA (A)
-        type: string
-        example: MC_MUEBLETV_A2_GAV_DIR_FUNDO
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/partName"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+part:
+  title: Part
+  type: object
+  description: Identifies the part-name atributes that belongs to a specific project - Lista de Corte - 
+  properties:
+    id:
+      description: Unic Identifier of a Part of a Project
+      type: string
+      format: uri
+      example: urn:ngsi-ld:Part:1223 
+      x-ngsi:
+        type: Property
+        
+    partName:
+      description: REF PEÇA (A)
+      type: string
+      example: MC_MUEBLETV_A2_GAV_DIR_FUNDO
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/partName"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      sort:
-        description: TIPO (B)
-        type: string
-        example: Painel
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/sort"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    sort:
+      description: TIPO (B)
+      type: string
+      example: Painel
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/sort"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      material:
-        description: MATERIAL (C)
-        type: string
-        example: AG L Biscuit Nude 36W
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/material"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    material:
+      description: MATERIAL (C)
+      type: string
+      example: AG L Biscuit Nude 36W
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/material"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      amount:
-        description: QUANTIDADE (D)
-        type: number
-        example: "1"
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/amount"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    amount:
+      description: QUANTIDADE (D)
+      type: number
+      example: "1"
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/amount"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      length:
-        description: COMPRIMENTO (E) 
-        type: number
-        example: "400"
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/length"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    length:
+      description: COMPRIMENTO (E) 
+      type: number
+      example: "400"
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/length"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      width:
-        description: LARGURA (F)
-        type: number
-        example: "338.5"
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/width"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    width:
+      description: LARGURA (F)
+      type: number
+      example: "338.5"
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/width"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      thickness:
-        description: ESPESSURA (G)
-        type: number
-        example: "10"
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/thickness"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    thickness:
+      description: ESPESSURA (G)
+      type: number
+      example: "10"
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/thickness"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      tag:
-        description: ETIQUETA (H)
-        type: number
-        example: "1"
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/tag"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    tag:
+      description: ETIQUETA (H)
+      type: number
+      example: "1"
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/tag"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      nestingFlag:
-        description: NESTING (I)
-        type: boolean
-        example: False
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/nestingFlag"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    nestingFlag:
+      description: NESTING (I)
+      type: boolean
+      example: False
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/nestingFlag"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      cncFlag:
-        description: CNC (J)
-        type: boolean
-        example: False
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/cncFlag"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    cncFlag:
+      description: CNC (J)
+      type: boolean
+      example: False
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/cncFlag"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      f2:
-        description: FURO FACE 2 (K)
-        type: number
-        example: "0"
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/f2"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    f2:
+      description: FURO FACE 2 (K)
+      type: number
+      example: "0"
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/f2"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      f3:
-        description: FURO FACE 3 (L)
-        type: number
-        example: "0"
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/f3"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    f3:
+      description: FURO FACE 3 (L)
+      type: number
+      example: "0"
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/f3"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      f4:
-        description: FURO FACE 4 (M)
-        type: number
-        example: "0"
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/f4"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    f4:
+      description: FURO FACE 4 (M)
+      type: number
+      example: "0"
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/f4"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      f5:
-        description: FURO FACE 5 (N)
-        type: number
-        example: "0"
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/f5"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    f5:
+      description: FURO FACE 5 (N)
+      type: number
+      example: "0"
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/f5"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      veio:
-        description: Veio (O)
-        type: string
-        example: "Y"
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/veio"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    veio:
+      description: Veio (O)
+      type: string
+      example: "Y"
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/veio"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      orla2:
-        description: ORLA2 (P)
-        type: boolean
-        example: False
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/orla2"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    orla2:
+      description: ORLA2 (P)
+      type: boolean
+      example: False
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/orla2"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      orla3:
-        description: ORLA3 (Q)
-        type: boolean
-        example: False
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/orla3"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    orla3:
+      description: ORLA3 (Q)
+      type: boolean
+      example: False
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/orla3"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      orla4:
-        description: ORLA4 (R)
-        type: boolean
-        example: False
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/orla4"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    orla4:
+      description: ORLA4 (R)
+      type: boolean
+      example: False
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/orla4"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      orla5:
-        description: ORLA5 (S)
-        type: boolean
-        example: False
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/orla5"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    orla5:
+      description: ORLA5 (S)
+      type: boolean
+      example: False
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/orla5"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      observation:
-        description: Observation (T)
-        type: string
-        example: Uma forma de executar o trabalho sem perigos
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/observation"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
+    observation:
+      description: Observation (T)
+      type: string
+      example: Uma forma de executar o trabalho sem perigos
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/observation"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
-      weight:
-        description: PESO (U)
-        type: number
-        example: "0.8"
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/weigth"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
-          
-      image: 
-        description: url da imagem
-        type: string
-        example: htps://bucket.ww4zero/images/xAdBDGScvfeADLKJdf
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/image"
-          uri-prefix: "https://projetww4zero.pt/dataModel/"
-          type: Property
+    weight:
+      description: PESO (U)
+      type: number
+      example: "0.8"
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/weigth"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+        
+    image: 
+      description: url da imagem
+      type: string
+      example: htps://bucket.ww4zero/images/xAdBDGScvfeADLKJdf
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/image"
+        uri-prefix: "https://projetww4zero.pt/dataModel/"
+        type: Property
 
 
-      belongsTo:
-        anyOf:
-          - description: 'Relationship property: Identifies the project to wich the part belongs'
-            maxLength: 256
-            minLength: 1
-            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-            type: string
-          - description: 'Relationship property: indicates the project to wich the part belongs '
-            format: uri
-            type: string
-        description: 'Identifies the project to wich the part belongs'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/belongsTo"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Relationship    
-    
-    required:
-     - id
-     - partName
-     - sort
-     - material
-     - amount
-     - width
-     - thickness
-     - tag
-     - wight
+    belongsTo:
+      anyOf:
+        - description: 'Relationship property: Identifies the project to wich the part belongs'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: indicates the project to wich the part belongs '
+          format: uri
+          type: string
+      description: 'Identifies the project to wich the part belongs'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/belongsTo"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Relationship    
+  
+  required:
+    - id
+    - partName
+    - sort
+    - material
+    - amount
+    - width
+    - thickness
+    - tag
+    - wight

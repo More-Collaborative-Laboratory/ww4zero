@@ -1,4 +1,4 @@
-Organization:
+organization:
   title: Organization
   type: object
   description: Describes the organization entity

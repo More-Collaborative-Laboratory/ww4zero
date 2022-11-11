@@ -1,124 +1,124 @@
-Machine:
-    title: Machine
-    type: object
-    description: Machine cnc1, nesting1, manual cut1 #tambem assemblagem das partes e envio da encomenda?
-    properties:
-      id:
-        description: Machine Type
-        type: string
-        format: uri
-        example: urn:ngsi-ld:Machine:[]
-        x-ngsi:
-          type: Property
-  
-      startTime: 
-        description: Saves date and time information when the start button is pressed
-        type: string
-        format: DateTime
-        example: '25-03-2022 10:00'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/startTime"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
-  
-      finishTime: 
-        description: Saves date and time information when the finish button is pressed
-        type: string
-        format: DateTime
-        example: '27-03-2022 10:00'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/finishTime"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
-  
-      machineStatus: 
-        description: Indicates in wich stage are the parts of corresponding machine type
-          * `waiting` - indicates Information already arrived the machine but waits for start-button
-          * `active` - The parts to be made in this station is already start
-          * `finished` - The parts belong to the station refered to a project are completed
-        type: string  
-        enum: 
-          - 'waiting'
-          - 'active'
-          - 'finished'
-        example: 'CNC1 Status-ON Date- 25/03/2022 Hour-9h, CNC1 Status-OFF Date- 25/03/2022 Hour-11 Minuts-22'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/machineStatus"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
-  
-      machineType: 
-        description: Indicates in wich stage are the parts of corresponding machine type
-          * `cnc1` - indicates cnc1 station is working
-          * `nesting1` - indicates nesting1 station is working
-          * `manualcut1` - indicates manualcut1 station is working
-          * `receiving_material` - indicates that raw material is entering the factory
-          * `organizing_material` - indicates that raw material is being put away at the factory
-          * `assembly` - indicates that assembly station is on use
-          * `shipping` - indicates the order is shipping
-        type: string  
-        enum: 
-          - 'cnc1'
-          - 'nesting1'
-          - 'manualcut1'
-          - 'receiving_material'
-          - 'organizing_material'
-          - 'assembly'
-          - 'shipping'
-        example: 'cnc1 station working'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/machineType"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
-  
-      executedBy:
-        anyOf:
-          - description: 'Relationship property: Identifier the Worker that is active in this task'
-            maxLength: 256
-            minLength: 1
-            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-            type: string
-          - description: 'Relationship property: Identifier format of any worker entity'
-            format: uri
-            type: string
-        description: 'Identification worker that made the part'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/executedBy" 
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Relationship
-  
-      executedIn:
-        anyOf:
-          - description: 'Relationship property: Identifier the made part'
-            maxLength: 256
-            minLength: 1
-            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-            type: string
-          - description: 'Relationship property: Identifier format of any part entity'
-            format: uri
-            type: string
-        description: 'Identification the made part'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/executedIn"  
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Relationship
+machine:
+  title: Machine
+  type: object
+  description: Machine cnc1, nesting1, manual cut1 #tambem assemblagem das partes e envio da encomenda?
+  properties:
+    id:
+      description: Machine Type
+      type: string
+      format: uri
+      example: urn:ngsi-ld:Machine:[]
+      x-ngsi:
+        type: Property
 
-      belongsTo:
-        anyOf:
-          - description: 'Relationship property: Identifier the urn of project name'
-            maxLength: 256
-            minLength: 1
-            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-            type: string
-          - description: 'Relationship property: Identifier project Name'
-            format: uri
-            type: string
-        description: 'Identification of the projet to which this assembly corresponds'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/belongsTo"  #pode ser assim igual ao budget?
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Relationship
-    
+    startTime: 
+      description: Saves date and time information when the start button is pressed
+      type: string
+      format: DateTime
+      example: '25-03-2022 10:00'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/startTime"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    finishTime: 
+      description: Saves date and time information when the finish button is pressed
+      type: string
+      format: DateTime
+      example: '27-03-2022 10:00'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/finishTime"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    machineStatus: 
+      description: Indicates in wich stage are the parts of corresponding machine type
+        * `waiting` - indicates Information already arrived the machine but waits for start-button
+        * `active` - The parts to be made in this station is already start
+        * `finished` - The parts belong to the station refered to a project are completed
+      type: string  
+      enum: 
+        - 'waiting'
+        - 'active'
+        - 'finished'
+      example: 'CNC1 Status-ON Date- 25/03/2022 Hour-9h, CNC1 Status-OFF Date- 25/03/2022 Hour-11 Minuts-22'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/machineStatus"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    machineType: 
+      description: Indicates in wich stage are the parts of corresponding machine type
+        * `cnc1` - indicates cnc1 station is working
+        * `nesting1` - indicates nesting1 station is working
+        * `manualcut1` - indicates manualcut1 station is working
+        * `receiving_material` - indicates that raw material is entering the factory
+        * `organizing_material` - indicates that raw material is being put away at the factory
+        * `assembly` - indicates that assembly station is on use
+        * `shipping` - indicates the order is shipping
+      type: string  
+      enum: 
+        - 'cnc1'
+        - 'nesting1'
+        - 'manualcut1'
+        - 'receiving_material'
+        - 'organizing_material'
+        - 'assembly'
+        - 'shipping'
+      example: 'cnc1 station working'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/machineType"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    executedBy:
+      anyOf:
+        - description: 'Relationship property: Identifier the Worker that is active in this task'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier format of any worker entity'
+          format: uri
+          type: string
+      description: 'Identification worker that made the part'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/executedBy" 
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Relationship
+
+    executedIn:
+      anyOf:
+        - description: 'Relationship property: Identifier the made part'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier format of any part entity'
+          format: uri
+          type: string
+      description: 'Identification the made part'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/executedIn"  
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Relationship
+
+    belongsTo:
+      anyOf:
+        - description: 'Relationship property: Identifier the urn of project name'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier project Name'
+          format: uri
+          type: string
+      description: 'Identification of the projet to which this assembly corresponds'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/belongsTo"  #pode ser assim igual ao budget?
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Relationship
   
-    required:
-      - id
+
+  required:
+    - id
