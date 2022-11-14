@@ -34,17 +34,15 @@ assembly:
     statusAssembly: 
       description: Indicates the actual workers station
         * 0 - Waiting
-        * 1 - Macking
-        * 2 - Assembling
-        * 3 - Testing
-        * 4 - Packed        
+        * 1 - Assembling
+        * 2 - Testing
+        * 3 - Packed        
       type: number
       enum: 
         - 0
         - 1
         - 2
-        - 3
-        - 4        
+        - 3       
       example: 0
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/statusAssembly"
