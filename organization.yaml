@@ -18,7 +18,7 @@ organization:
       x-ngsi:
         uri: "https://schema.org/legalName"
         uri-prefix: "https://schema.org"
-        model: https://schema.org/Organization
+        model: "https://schema.org/legalName"
         type: Property
         
     taxId:
