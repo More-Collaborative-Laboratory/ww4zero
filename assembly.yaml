@@ -13,8 +13,8 @@ assembly:
 
     startTime: 
       description: Date and hour on wich the assembly starts
-      type: string
-      format: DateTime
+      type: DateTime
+      format: uri
       example: '25-03-2022 10:00'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/startTime"
@@ -23,8 +23,8 @@ assembly:
 
     endTime: 
       description: Date and hour on wich the assembly ends
-      type: string
-      format: DateTime
+      type: DateTime
+      format: uri
       example: '27-03-2022 20:00'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/endTime"
@@ -62,7 +62,7 @@ assembly:
           type: string
       description: 'Identification of the projet to which this assembly corresponds'
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/belongsTo"  #pode ser assim igual ao budget?
+        uri: "https://projectww4zero.pt/dataModel/belongsTo" 
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
 
