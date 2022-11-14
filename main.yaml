@@ -40,6 +40,7 @@ components:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/image.yaml#/image"
 
 
+
 paths:
   /ngsi-ld/v1/entities:
     get:
