@@ -12,43 +12,42 @@ assembly:
         type: Property
 
     startTime: 
-      description: Date and hour on wich the assembly starts
+      description: Saves date and time information when the start button is pressed
       type: string
-      format: uri
+      format: DateTime
       example: '25-03-2022 10:00'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/startTime"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
-    endTime: 
-      description: Date and hour on wich the assembly ends
+    finishTime: 
+      description: Saves date and time information when the finish button is pressed
       type: string
-      format: uri
-      example: '27-03-2022 20:00'
+      format: DateTime
+      example: '27-03-2022 10:00'
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/endTime"
+        uri: "https://projectww4zero.pt/dataModel/finishTime"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
-    assemblyStatus: 
-      description: Indicates the status of the project's assembly
-        * `0` - em producao
-        * `1` - em espera para iniciar
-        * `2` - em testes
-        * `3` - testado e embalado
-      type: number 
+    statusAssembly: 
+      description: Indicates the actual workers station
+        * 0 - In production
+        * 1 - Waiting to start
+        * 2 - Testing
+        * 3 - Tested and packed
+      type: number
       enum: 
-        - '0'      
-        - '1'
-        - '2'
-        - '3'
-      example: '0'
+        - 0
+        - 1
+        - 2
+        - 3
+      example: 0
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/assemblyStatus"
+        uri: "https://projectww4zero.pt/dataModel/statusAssembly"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
-
 
     belongsTo:
       anyOf:
