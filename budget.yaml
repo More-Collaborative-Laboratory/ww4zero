@@ -31,9 +31,9 @@ budget:
         type: Property
 
     approvedDate: 
-      description: Saves date and time information when the budget was approved
-      type: DateTime
-      format: uri
+      description: Saves date and time information when the start button is pressed
+      type: string
+      format: DateTime
       example: '25-03-2022 10:00'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/approvedDate"
