@@ -13,7 +13,7 @@ assembly:
 
     startTime: 
       description: Date and hour on wich the assembly starts
-      type: DateTime
+      type: string
       format: uri
       example: '25-03-2022 10:00'
       x-ngsi:
@@ -23,7 +23,7 @@ assembly:
 
     endTime: 
       description: Date and hour on wich the assembly ends
-      type: DateTime
+      type: string
       format: uri
       example: '27-03-2022 20:00'
       x-ngsi:
