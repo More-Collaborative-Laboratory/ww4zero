@@ -111,7 +111,7 @@ worker:
         type: Property
 
 
-    workerShif: 
+    workerShift: 
       description: Defines the possibilities of working hours
         * `Morning` - Shift from 8am until 5pm
         * `Afternoon` - Shift from 5pm until 0am
