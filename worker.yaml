@@ -50,28 +50,7 @@ worker:
         uri: "https://projectww4zero.pt/dataModel/password"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
-
-    taxId:
-      description: Worker Tax ID
-      type: string
-      pattern: '^\d{9}$'
-      example: 254545879
-      x-ngsi:
-        uri: "https://schema.org/taxId"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/Person
-        type: Property
-    
-    ssnId:  
-      description: Worker Social Security Number ID
-      type: string
-      pattern: '^\d{11}$'
-      example: 254545879
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/ssnId"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-    
+   
     active:
       description: Active
       type: boolean
@@ -110,24 +89,6 @@ worker:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
-
-    workerShift: 
-      description: Defines the possibilities of working hours
-        * `Morning` - Shift from 8am until 5pm
-        * `Afternoon` - Shift from 5pm until 0am
-        * `Night` - Shift from 0am until 8am
-      type: string
-      enum: 
-        - Morning
-        - Afternoon
-        - Night
-      example: Morning
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/workerShift"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-
     workerImage: 
       description: url da imagem
       type: string
@@ -136,22 +97,6 @@ worker:
         uri: "https://projectww4zero.pt/dataModel/workerImage"
         uri-prefix: "https://projetww4zero.pt/dataModel/"
         type: Property
-
-    hasPermission:
-      anyOf:
-        - description: 'Relationship property: Identifies the type of access this profile has'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifies the type of access this profile has'
-          format: uri
-          type: string
-      description: 'Identifies the type of access this profile has'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/hasPermission"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship  
 
     hasOrganization:
       anyOf:

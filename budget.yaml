@@ -21,6 +21,15 @@ budget:
         model: https://schema.org/name
         type: Property
 
+    category: 
+      description: Movel type
+      type: string
+      example: Movel cozinha
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/category"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
     amount: 
       description: Value in euros
       type: number

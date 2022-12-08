@@ -178,7 +178,6 @@ owner:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
 
-
       email:
         description: Contact email address
         type: string
@@ -208,7 +207,6 @@ owner:
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
       
-
       telephone:
         description: Mobile or telephone contact
         type: string
@@ -246,22 +244,6 @@ owner:
           uri: "https://projectww4zero.pt/dataModel/obs"
           uri-prefix: "https://projetww4zero.pt/dataModel/"
           type: Property
-
-      hasPermission:
-        anyOf:
-          - description: 'Relationship property: Identifies the type of access this profile has'
-            maxLength: 256
-            minLength: 1
-            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-            type: string
-          - description: 'Relationship property: Identifies the type of access this profile has'
-            format: uri
-            type: string
-        description: 'Identifies the type of access this profile has'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/hasPermission"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Relationship  
 
       belongsTo:
         anyOf:
