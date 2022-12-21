@@ -52,13 +52,15 @@ owner:
           model: https://schema.org/Person
           type: Property
 
-      ownerClass: 
-        description: Indicate if Owner is a Owner (without buying - 0) or Buyer (with buying - 1) 
-        type: boolean
-        example: TRUE
+      role:
+        description: Client/role
+        type: string
+        pattern: '/xxx[\x00-\x7F]+xxx/;'
+        example: customer
         x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/ownerClass"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          uri: "https://schema.org/Role"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/Role
           type: Property
 
       ownerType: 
@@ -189,14 +191,6 @@ owner:
           model: https://schema.org/email
           type: Property
 
-      password: 
-        description: Password to be loged in
-        type: string
-        example: paswword
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/password"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Property
 
       active:
         description: status of an acount (0-inactive) (2-active)
@@ -236,30 +230,7 @@ owner:
           uri-prefix: "https://projetww4zero.pt/dataModel/"
           type: Property
 
-      obs: 
-        description: obs a pedido da NKA
-        type: string
-        example: observation_notes
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/obs"
-          uri-prefix: "https://projetww4zero.pt/dataModel/"
-          type: Property
 
-      belongsTo:
-        anyOf:
-          - description: 'Relationship property: Identifies the project to wich the part belongs'
-            maxLength: 256
-            minLength: 1
-            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-            type: string
-          - description: 'Relationship property: indicates the project to wich the part belongs '
-            format: uri
-            type: string
-        description: 'Identifies the project to wich the part belongs'
-        x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/belongsTo"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          type: Relationship  
 
     required:
       - id
