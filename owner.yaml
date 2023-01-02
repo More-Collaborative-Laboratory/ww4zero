@@ -63,10 +63,10 @@ owner:
           model: https://schema.org/Role
           type: Property
 
-      ownerType: 
+      isCompany: 
         description: Indicate if Owner is particular ( 0 ) or institucional  ( 1 ) 
         type: boolean
-        example: TRUE
+        example: true
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/ownerType"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -234,7 +234,6 @@ owner:
 
     required:
       - id
-      - password
       - taxId
       - address
       - email
