@@ -2,7 +2,7 @@ worker:
   title: Worker
   type: object
   description: Identifies a worker within an organization
-  
+
   properties:
     id:
       description: Worker Identifier
@@ -44,9 +44,9 @@ worker:
           type: Property
    
     active:
-      description: Active
+      description: if the work is an active user or not 
       type: boolean
-      example: TRUE
+      example: true 
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/active"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -130,6 +130,7 @@ worker:
     - id
     - givenName
     - active
+    - email
 
 
       #example: urn:ngsi-ld:FactoryManager:workerNbr
