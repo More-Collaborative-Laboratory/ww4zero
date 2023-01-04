@@ -70,6 +70,7 @@ owner:
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/ownerType"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
+          model: "https://schema.org/Boolean"
           type: Property
 
       address:
@@ -199,6 +200,7 @@ owner:
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/active"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
+          model: "https://schema.org/Boolean"
           type: Property
       
       telephone:
@@ -215,19 +217,22 @@ owner:
       image: 
         description: url da imagem
         type: string
-        example: C://breifing/Mueble_tv_A/owner
+        example: https://schema.org/image
         x-ngsi:
+          model: "https://schema.org/URL"
           uri: "https://projectww4zero.pt/dataModel/image"
           uri-prefix: "https://projetww4zero.pt/dataModel/"
           type: Property
 
+
       tos: 
         description: date of acceptance of the system operation terms
         type: boolean
-        example: TRUE
+        example: true
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/tos"
           uri-prefix: "https://projetww4zero.pt/dataModel/"
+          model: "https://schema.org/Boolean"
           type: Property
 
 

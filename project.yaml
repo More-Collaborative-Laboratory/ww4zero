@@ -103,8 +103,9 @@ project:
     image: 
       description: url da imagem
       type: string
-      example: C://breifing/Mueble_tv_A/project
+      example: https://schema.org/image
       x-ngsi:
+        model: "https://schema.org/URL"
         uri: "https://projectww4zero.pt/dataModel/image"
         uri-prefix: "https://projetww4zero.pt/dataModel/"
         type: Property
