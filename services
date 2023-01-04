@@ -36,17 +36,17 @@ case "${command}" in
 		;;
 	"markdown")
 		echo "Creating Documentation for the Data Models"
-		docker run --rm -v $(pwd)/:/files contextgen markdown -i "/files/${file}" > ./context/datamodels.md
+		docker run --rm -v $(pwd)/:/files contextgen markdown -i "/files/${file}" > ./context/ww4zero.md
 		echo "datamodels.md created"
 		;;
 	"ngsi")
 		echo "Creating a NGSI-LD @context file for normalized interactions"
-		docker run --rm -v $(pwd)/:/files contextgen ngsi -i "/files/${file}" > ./context/datamodels.context-ngsi.jsonld
+		docker run --rm -v $(pwd)/:/files contextgen ngsi -i "/files/${file}" > ./context/ww4zero.context-ngsi.jsonld
 		echo "datamodels.context-ngsi.jsonld created"
 		;;
 	"jsonld")
 		echo "Creating a JSON-LD @context file for key-values interactions"
-		docker run --rm -v $(pwd)/:/files contextgen jsonld -i "/files/${file}" > ./context/datamodels.context.jsonld
+		docker run --rm -v $(pwd)/:/files contextgen jsonld -i "/files/${file}" > ./context/ww4zero.context.jsonld
 		echo "datamodels.context.jsonld created"
 		;;
 	"validate")
