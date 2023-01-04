@@ -41,15 +41,6 @@ worker:
           uri-prefix: "https://schema.org/"
           model: https://schema.org/email
           type: Property
-
-    password: 
-      description: Password to be log in
-      type: string
-      example: paswword
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/password"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
    
     active:
       description: Active
@@ -90,14 +81,15 @@ worker:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
-    workerImage: 
-      description: url da imagem
-      type: string
-      example: C://breifing/Mueble_tv_A/worker
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/workerImage"
-        uri-prefix: "https://projetww4zero.pt/dataModel/"
-        type: Property
+    image: 
+        description: url da imagem
+        type: string
+        example: https://schema.org/image
+        x-ngsi:
+          model: "https://schema.org/URL"
+          uri: "https://projectww4zero.pt/dataModel/image"
+          uri-prefix: "https://projetww4zero.pt/dataModel/"
+          type: Property
 
     hasOrganization:
       anyOf:

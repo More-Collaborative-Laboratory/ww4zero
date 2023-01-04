@@ -131,8 +131,8 @@ Identifies a worker within an organization
    -  Attribute type: **Property**. 
    -  Optional
 -  `active`: Active
-   -  Attribute type: **Property**. 
-   -  Optional
+   -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
+   -  Required
 -  `functionPerformed`: Indicates the actual worker's station * `CNC` - CNC Operator * `Nesting` - Nesting Operator * `Manual-Cut` - Manual Cut Operator * `Assembly` - Assembly Operator * `Manager` - Factory manager * `Designer` - Designer Department * `Budgeting` - Badgeting Department * `Warehouse` - Warehouse Department (consumables and wood's stock) * `Other` - Other Operation, like merchandise distributor. One of : `CNC`, `Nesting`, `Manual Cut`, `Assembly`, `Manager`, `Designer`, `Budgeting`, `Warehouse`, `Other`.
    -  Attribute type: **Property**. 
    -  Optional

@@ -141,6 +141,7 @@ owner:
             x-ngsi:
               uri: "https://projectww4zero.pt/dataModel/streetAddress"
               uri-prefix: "https://projectww4zero.pt/dataModel/"
+              model: https://schema.org/streetAddress
               type: Property
           postalCode:
             description: Postal code
@@ -149,6 +150,7 @@ owner:
             x-ngsi:
               uri: "https://projectww4zero.pt/dataModel/addresspostalCode"
               uri-prefix: "https://projectww4zero.pt/dataModel/"
+              model: https://schema.org/postalCode
               type: Property              
           addressLocality:
             description: Name of the city or location
@@ -157,6 +159,7 @@ owner:
             x-ngsi:
               uri: "https://projectww4zero.pt/dataModel/addressLocality"
               uri-prefix: "https://projectww4zero.pt/dataModel/"
+              model: https://schema.org/addressLocality
               type: Property             
           addressRegion:
             description: Region (Concelho) of the city's location
@@ -165,6 +168,7 @@ owner:
             x-ngsi:
               uri: "https://projectww4zero.pt/dataModel/addressRegion"
               uri-prefix: "https://projectww4zero.pt/dataModel/"
+              model: https://schema.org/addressRegion
               type: Property             
           addressCountry:
             description: Country where the company has its headquarters
@@ -179,6 +183,7 @@ owner:
           x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/addressDelivery"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
+          model: https://schema.org/address
           type: Property
 
       email:
@@ -243,3 +248,5 @@ owner:
       - address
       - email
       - active
+      - tos 
+      - isCompany
