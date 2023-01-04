@@ -137,7 +137,7 @@ part:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
-    veio:
+    groove:
       description: Veio (O)
       type: string
       example: "Y"
