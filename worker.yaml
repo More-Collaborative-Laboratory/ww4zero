@@ -58,6 +58,7 @@ worker:
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/active"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
+        model: "https://schema.org/Boolean"
         type: Property
     
 
@@ -135,6 +136,7 @@ worker:
   required:
     - id
     - givenName
+    - active
 
 
       #example: urn:ngsi-ld:FactoryManager:workerNbr
