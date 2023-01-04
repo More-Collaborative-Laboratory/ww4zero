@@ -202,6 +202,7 @@ part:
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/weigth"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
+        model: https://schema.org/weight
         type: Property
         
     image: 

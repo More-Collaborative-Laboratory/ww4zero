@@ -195,13 +195,13 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
    -  Optional
 -  `width`: LARGURA (F)
    -  Attribute type: **Property**. 
-   -  Required
+   -  Optional
 -  `thickness`: ESPESSURA (G)
    -  Attribute type: **Property**. 
-   -  Required
+   -  Optional
 -  `tag`: ETIQUETA (H)
    -  Attribute type: **Property**. 
-   -  Required
+   -  Optional
 -  `nestingFlag`: NESTING (I)
    -  Attribute type: **Property**. 
    -  Optional
@@ -246,10 +246,10 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
    -  Optional
 -  `orderBy`: Identification of the owner name associated to the project with status in execution
    -  Attribute type: **Relationship**. 
-   -  Optional
+   -  Required
 -  `belongsTo`: Identifies the project to wich the part belongs
    -  Attribute type: **Relationship**. 
-   -  Optional
+   -  Required
 
 
 
