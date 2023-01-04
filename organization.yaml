@@ -2,6 +2,7 @@ organization:
   title: Organization
   type: object
   description: Describes the organization entity
+  model: https://schema.org/Organization
   properties:
     id:
       description: Organization Identifier

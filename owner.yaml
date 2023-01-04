@@ -18,7 +18,7 @@ owner:
         x-ngsi:
           uri: "https://schema.org/legalName"
           uri-prefix: "https://schema.org/"
-          model: https://schema.org/Organization
+          model: https://schema.org/legalName
           type: Property
 
       givenName: 
@@ -28,7 +28,7 @@ owner:
         x-ngsi:
           uri: "https://schema.org/givenName"
           uri-prefix: "https://schema.org/"
-          model: https://schema.org/Person
+          model: https://schema.org/givenName
           type: Property
           
       familyName: 
@@ -38,7 +38,7 @@ owner:
         x-ngsi:
           uri: "https://schema.org/familyName"
           uri-prefix: "https://schema.org/"
-          model: https://schema.org/Person
+          model: https://schema.org/familyName
           type: Property
           
       taxId:
@@ -49,7 +49,7 @@ owner:
         x-ngsi:
           uri: "https://schema.org/taxID"
           uri-prefix: "https://schema.org/"
-          model: https://schema.org/Person
+          model: "https://schema.org/taxID"
           type: Property
 
       role:
