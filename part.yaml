@@ -254,7 +254,5 @@ part:
     - sort
     - material
     - amount
-    - width
-    - thickness
-    - tag
-    - wight
+    - belongsTo
+    - orderBy
