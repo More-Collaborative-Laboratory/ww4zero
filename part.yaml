@@ -43,8 +43,9 @@ part:
       type: number
       example: "1"
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/amount"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        uri: https://schema.org/amount
+        uri-prefix: https://schema.org/
+        model: https://schema.org/amount
         type: Property
 
     length:
@@ -62,8 +63,8 @@ part:
       type: number
       example: "338.5"
       x-ngsi:
-        uri: https://projectww4zero.pt/dataModel/width
-        uri-prefix: https://projectww4zero.pt/dataModel
+        uri: https://schema.org/width
+        uri-prefix: https://schema.org/
         model: https://schema.org/width
         type: Property
 
@@ -194,8 +195,9 @@ part:
       type: string
       example: Uma forma de executar o trabalho sem perigos
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/observation"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        uri: https://schema.org/Observation
+        uri-prefix: https://schema.org/
+        model: https://schema.org/Observation
         type: Property
 
     weight:
