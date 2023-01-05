@@ -54,6 +54,7 @@ part:
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/length"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
+        model: https://schema.org/size
         type: Property
 
     width:
@@ -61,8 +62,9 @@ part:
       type: number
       example: "338.5"
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/width"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        uri: https://projectww4zero.pt/dataModel/width
+        uri-prefix: https://projectww4zero.pt/dataModel
+        model: https://schema.org/width
         type: Property
 
     thickness:
@@ -72,6 +74,7 @@ part:
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/thickness"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
+        model: https://schema.org/size
         type: Property
 
     tag:
@@ -200,8 +203,8 @@ part:
       type: number
       example: "0.8"
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/weigth"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        uri: https://schema.org/weight
+        uri-prefix: https://schema.org/
         model: https://schema.org/weight
         type: Property
         

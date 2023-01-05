@@ -30,13 +30,13 @@
             "@id": "schema:addressCountry",
             "@type": "xsd:string"
         },
-        "addressDelivery": "https://projectww4zero.pt/dataModel/addressDelivery",
+        "addressDelivery": "schema:address",
         "addressLocality": {
-            "@id": "https://projectww4zero.pt/dataModel/addressLocality",
+            "@id": "schema:addressLocality",
             "@type": "xsd:string"
         },
         "addressRegion": {
-            "@id": "https://projectww4zero.pt/dataModel/addressRegion",
+            "@id": "schema:addressRegion",
             "@type": "xsd:string"
         },
         "amount": {
@@ -136,7 +136,7 @@
             "@type": "xsd:string"
         },
         "isCompany": {
-            "@id": "https://projectww4zero.pt/dataModel/isCompany",
+            "@id": "schema:Boolean",
             "@type": "xsd:boolean"
         },
         "legalName": {
@@ -200,7 +200,7 @@
             "@type": "xsd:string"
         },
         "postalCode": {
-            "@id": "https://projectww4zero.pt/dataModel/postalCode",
+            "@id": "schema:postalCode",
             "@type": "xsd:string"
         },
         "producedBy": {
@@ -232,7 +232,7 @@
             "@type": "xsd:number"
         },
         "streetAddress": {
-            "@id": "https://projectww4zero.pt/dataModel/streetAddress",
+            "@id": "schema:streetAddress",
             "@type": "xsd:string"
         },
         "tag": {
@@ -824,7 +824,7 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/isCompany",
+            "@id": "https://schema.orgisCompany",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -856,7 +856,7 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/addressDelivery",
+            "@id": "schema:addressDelivery",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
