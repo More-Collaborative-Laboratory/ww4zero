@@ -71,28 +71,28 @@ Identifies a client (Owner of a project)
    -  Attribute type: **Property**. 
    -  Required
 -  `legalName`: Institution legal name
-   -  Attribute type: **Property**. [Organization](https://schema.org/Organization)
+   -  Attribute type: **Property**. [legalName](https://schema.org/legalName)
    -  Optional
 -  `givenName`: Client first name
-   -  Attribute type: **Property**. [Person](https://schema.org/Person)
+   -  Attribute type: **Property**. [givenName](https://schema.org/givenName)
    -  Optional
 -  `familyName`: Client last name
-   -  Attribute type: **Property**. [Person](https://schema.org/Person)
+   -  Attribute type: **Property**. [familyName](https://schema.org/familyName)
    -  Optional
 -  `taxId`: Client/Institution Tax ID
-   -  Attribute type: **Property**. [Person](https://schema.org/Person)
+   -  Attribute type: **Property**. [taxID](https://schema.org/taxID)
    -  Required
 -  `role`: Client/role
    -  Attribute type: **Property**. [Role](https://schema.org/Role)
    -  Optional
 -  `isCompany`: Indicate if Owner is particular ( 0 ) or institucional  ( 1 )
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
-   -  Optional
+   -  Required
 -  `address`: The client's address
    -  Attribute type: **Property**. [address](https://schema.org/address)
    -  Required
 -  `addressDelivery`: The delivery address
-   -  Attribute type: **Property**. 
+   -  Attribute type: **Property**. [address](https://schema.org/address)
    -  Optional
 -  `email`: Contact email address
    -  Attribute type: **Property**. [email](https://schema.org/email)
@@ -108,7 +108,7 @@ Identifies a client (Owner of a project)
    -  Optional
 -  `tos`: date of acceptance of the system operation terms
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
-   -  Optional
+   -  Required
 
 
 
@@ -126,18 +126,15 @@ Identifies a worker within an organization
    -  Optional
 -  `email`: Contact email address
    -  Attribute type: **Property**. [email](https://schema.org/email)
-   -  Optional
--  `password`: Password to be log in
-   -  Attribute type: **Property**. 
-   -  Optional
--  `active`: Active
+   -  Required
+-  `active`: if the work is an active user or not
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
    -  Required
 -  `functionPerformed`: Indicates the actual worker's station * `CNC` - CNC Operator * `Nesting` - Nesting Operator * `Manual-Cut` - Manual Cut Operator * `Assembly` - Assembly Operator * `Manager` - Factory manager * `Designer` - Designer Department * `Budgeting` - Badgeting Department * `Warehouse` - Warehouse Department (consumables and wood's stock) * `Other` - Other Operation, like merchandise distributor. One of : `CNC`, `Nesting`, `Manual Cut`, `Assembly`, `Manager`, `Designer`, `Budgeting`, `Warehouse`, `Other`.
    -  Attribute type: **Property**. 
    -  Optional
--  `workerImage`: url da imagem
-   -  Attribute type: **Property**. 
+-  `image`: url da imagem
+   -  Attribute type: **Property**. [URL](https://schema.org/URL)
    -  Optional
 -  `hasOrganization`: Identification of the Organization where the Worker is currently employed.
    -  Attribute type: **Relationship**. 
@@ -220,7 +217,7 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 -  `f5`: FURO FACE 5 (N)
    -  Attribute type: **Property**. 
    -  Optional
--  `veio`: Veio (O)
+-  `groove`: Veio (O)
    -  Attribute type: **Property**. 
    -  Optional
 -  `orla2`: ORLA2 (P)

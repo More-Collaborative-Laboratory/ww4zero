@@ -43,6 +43,7 @@
         "finishTime": "https://projectww4zero.pt/dataModel/finishTime",
         "functionPerformed": "https://projectww4zero.pt/dataModel/functionPerformed",
         "givenName": "schema:givenName",
+        "groove": "https://projectww4zero.pt/dataModel/veio",
         "hasOrganization": "https://projectww4zero.pt/dataModel/hasOrganization",
         "image": "https://projectww4zero.pt/dataModel/image",
         "isCompany": "https://projectww4zero.pt/dataModel/ownerType",
@@ -61,7 +62,6 @@
         "orla4": "https://projectww4zero.pt/dataModel/orla4",
         "orla5": "https://projectww4zero.pt/dataModel/orla5",
         "partName": "https://projectww4zero.pt/dataModel/partName",
-        "password": "https://projectww4zero.pt/dataModel/password",
         "postalCode": "https://projectww4zero.pt/dataModel/postalCode",
         "producedBy": "https://projectww4zero.pt/dataModel/producedBy",
         "role": "schema:Role",
@@ -76,9 +76,7 @@
         "telephone": "schema:telephone",
         "thickness": "https://projectww4zero.pt/dataModel/thickness",
         "tos": "https://projectww4zero.pt/dataModel/tos",
-        "veio": "https://projectww4zero.pt/dataModel/veio",
         "weight": "https://projectww4zero.pt/dataModel/weigth",
-        "width": "https://projectww4zero.pt/dataModel/width",
-        "workerImage": "https://projectww4zero.pt/dataModel/workerImage"
+        "width": "https://projectww4zero.pt/dataModel/width"
     }
 }

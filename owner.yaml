@@ -64,11 +64,11 @@ owner:
           type: Property
 
       isCompany: 
-        description: Indicate if Owner is particular ( 0 ) or institucional  ( 1 ) 
+        description: This property aims to indicate if the owner is a Instituition or not
         type: boolean
         example: true
         x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/ownerType"
+          uri: "https://projectww4zero.pt/dataModel/isCompany"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           model: "https://schema.org/Boolean"
           type: Property

@@ -123,6 +123,10 @@
             "@id": "schema:givenName",
             "@type": "xsd:string"
         },
+        "groove": {
+            "@id": "https://projectww4zero.pt/dataModel/veio",
+            "@type": "xsd:string"
+        },
         "hasOrganization": {
             "@id": "https://projectww4zero.pt/dataModel/hasOrganization",
             "@type": "@id"
@@ -195,10 +199,6 @@
             "@id": "https://projectww4zero.pt/dataModel/partName",
             "@type": "xsd:string"
         },
-        "password": {
-            "@id": "https://projectww4zero.pt/dataModel/password",
-            "@type": "xsd:string"
-        },
         "postalCode": {
             "@id": "https://projectww4zero.pt/dataModel/postalCode",
             "@type": "xsd:string"
@@ -255,10 +255,6 @@
             "@id": "https://projectww4zero.pt/dataModel/tos",
             "@type": "xsd:boolean"
         },
-        "veio": {
-            "@id": "https://projectww4zero.pt/dataModel/veio",
-            "@type": "xsd:string"
-        },
         "weight": {
             "@id": "https://projectww4zero.pt/dataModel/weigth",
             "@type": "xsd:number"
@@ -266,10 +262,6 @@
         "width": {
             "@id": "https://projectww4zero.pt/dataModel/width",
             "@type": "xsd:number"
-        },
-        "workerImage": {
-            "@id": "https://projectww4zero.pt/dataModel/workerImage",
-            "@type": "xsd:string"
         }
     },
     "@graph": [
@@ -1024,28 +1016,12 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/password",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Password to be log in"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "password"
-                }
-            ]
-        },
-        {
             "@id": "https://projectww4zero.pt/dataModel/active",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Active"
+                    "@value": "if the work is an active user or not"
                 }
             ],
             "rdfs:label": [
@@ -1056,7 +1032,7 @@
             ]
         },
         {
-            "@id": "https://projetww4zero.pt/dataModel/workerImage",
+            "@id": "https://projetww4zero.pt/dataModel/image",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -1067,7 +1043,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "workerImage"
+                    "@value": "image"
                 }
             ]
         },
@@ -1424,7 +1400,7 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/veio",
+            "@id": "https://projectww4zero.pt/dataModel/groove",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -1435,7 +1411,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "veio"
+                    "@value": "groove"
                 }
             ]
         },
