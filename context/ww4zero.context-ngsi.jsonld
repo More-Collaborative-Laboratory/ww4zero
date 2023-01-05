@@ -55,7 +55,7 @@
         "material": "https://projectww4zero.pt/dataModel/material",
         "name": "schema:name",
         "nestingFlag": "https://projectww4zero.pt/dataModel/nestingFlag",
-        "observation": "https://projectww4zero.pt/dataModel/observation",
+        "observation": "schema:Observation",
         "orderBy": "https://projectww4zero.pt/dataModel/orderBy",
         "orla2": "https://projectww4zero.pt/dataModel/orla2",
         "orla3": "https://projectww4zero.pt/dataModel/orla3",
@@ -76,7 +76,7 @@
         "telephone": "schema:telephone",
         "thickness": "https://projectww4zero.pt/dataModel/thickness",
         "tos": "https://projectww4zero.pt/dataModel/tos",
-        "weight": "https://projectww4zero.pt/dataModel/weigth",
-        "width": "https://projectww4zero.pt/dataModel/width"
+        "weight": "schema:weight",
+        "width": "schema:width"
     }
 }

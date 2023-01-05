@@ -16,8 +16,9 @@ part:
       type: string
       example: MC_MUEBLETV_A2_GAV_DIR_FUNDO
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/partName"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        uri: https://schema.org/name
+        uri-prefix: https://schema.org/
+        model: https://schema.org/name
         type: Property
 
     sort:
@@ -34,8 +35,9 @@ part:
       type: string
       example: AG L Biscuit Nude 36W
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/material"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        uri: https://schema.org/material
+        uri-prefix: https://schema.org/
+        model: https://schema.org/material
         type: Property
 
     amount:
