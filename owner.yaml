@@ -68,8 +68,8 @@ owner:
         type: boolean
         example: true
         x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/isCompany"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          uri: "https://schema.org/Boolean"
+          uri-prefix: "https://schema.org"
           model: "https://schema.org/Boolean"
           type: Property
 
