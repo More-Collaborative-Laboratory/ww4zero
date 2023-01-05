@@ -137,10 +137,10 @@ owner:
           streetAddress:
             description: Street name
             type: string         
-            example: Rua de São Bento, 52, 4º Esq.
+            example: Rua de São Bento, 55, 4º Esq.
             x-ngsi:
-              uri: "https://projectww4zero.pt/dataModel/streetAddress"
-              uri-prefix: "https://projectww4zero.pt/dataModel/"
+              uri: "https://schema.org/streetAddress"
+              uri-prefix: "https://schema.org/"
               model: https://schema.org/streetAddress
               type: Property
           postalCode:
@@ -148,8 +148,8 @@ owner:
             type: string
             example: 1249-068
             x-ngsi:
-              uri: "https://projectww4zero.pt/dataModel/addresspostalCode"
-              uri-prefix: "https://projectww4zero.pt/dataModel/"
+              uri: "https://schema.org/postalCode"
+              uri-prefix: "https://schema.org/"
               model: https://schema.org/postalCode
               type: Property              
           addressLocality:
@@ -157,8 +157,8 @@ owner:
             type: string
             example: Lisboa
             x-ngsi:
-              uri: "https://projectww4zero.pt/dataModel/addressLocality"
-              uri-prefix: "https://projectww4zero.pt/dataModel/"
+              uri: "https://schema.org/addressLocality"
+              uri-prefix: "https://schema.org/"
               model: https://schema.org/addressLocality
               type: Property             
           addressRegion:
@@ -166,8 +166,8 @@ owner:
             type: string
             example: Bragança
             x-ngsi:
-              uri: "https://projectww4zero.pt/dataModel/addressRegion"
-              uri-prefix: "https://projectww4zero.pt/dataModel/"
+              uri: "https://schema.org/addressRegion"
+              uri-prefix: "https://schema.org/"
               model: https://schema.org/addressRegion
               type: Property             
           addressCountry:
@@ -180,9 +180,8 @@ owner:
               model: https://schema.org/addressCountry
               type: Property
         x-ngsi:
-          x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/addressDelivery"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          uri: "https://schema.org/address"
+          uri-prefix: "https://schema.org/"
           model: https://schema.org/address
           type: Property
 
