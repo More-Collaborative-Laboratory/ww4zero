@@ -46,7 +46,7 @@
         "groove": "https://projectww4zero.pt/dataModel/veio",
         "hasOrganization": "https://projectww4zero.pt/dataModel/hasOrganization",
         "image": "https://projectww4zero.pt/dataModel/image",
-        "isCompany": "https://projectww4zero.pt/dataModel/ownerType",
+        "isCompany": "https://projectww4zero.pt/dataModel/isCompany",
         "legalName": "schema:legalName",
         "length": "https://projectww4zero.pt/dataModel/length",
         "location": "ngsi-ld:location",

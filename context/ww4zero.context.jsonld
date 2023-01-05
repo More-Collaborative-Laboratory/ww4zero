@@ -136,7 +136,7 @@
             "@type": "xsd:string"
         },
         "isCompany": {
-            "@id": "https://projectww4zero.pt/dataModel/ownerType",
+            "@id": "https://projectww4zero.pt/dataModel/isCompany",
             "@type": "xsd:boolean"
         },
         "legalName": {
@@ -829,7 +829,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Indicate if Owner is particular ( 0 ) or institucional  ( 1 )"
+                    "@value": "This property aims to indicate if the owner is a Instituition or not"
                 }
             ],
             "rdfs:label": [

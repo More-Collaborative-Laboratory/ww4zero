@@ -85,7 +85,7 @@ Identifies a client (Owner of a project)
 -  `role`: Client/role
    -  Attribute type: **Property**. [Role](https://schema.org/Role)
    -  Optional
--  `isCompany`: Indicate if Owner is particular ( 0 ) or institucional  ( 1 )
+-  `isCompany`: This property aims to indicate if the owner is a Instituition or not
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
    -  Required
 -  `address`: The client's address
