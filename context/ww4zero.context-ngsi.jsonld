@@ -52,7 +52,7 @@
         "location": "ngsi-ld:location",
         "machineStatus": "https://projectww4zero.pt/dataModel/machineStatus",
         "machineType": "https://projectww4zero.pt/dataModel/machineType",
-        "material": "https://projectww4zero.pt/dataModel/material",
+        "material": "schema:material",
         "name": "schema:name",
         "nestingFlag": "https://projectww4zero.pt/dataModel/nestingFlag",
         "observation": "schema:Observation",
@@ -61,7 +61,7 @@
         "orla3": "https://projectww4zero.pt/dataModel/orla3",
         "orla4": "https://projectww4zero.pt/dataModel/orla4",
         "orla5": "https://projectww4zero.pt/dataModel/orla5",
-        "partName": "https://projectww4zero.pt/dataModel/partName",
+        "partName": "schema:name",
         "postalCode": "schema:postalCode",
         "producedBy": "https://projectww4zero.pt/dataModel/producedBy",
         "role": "schema:Role",
@@ -76,6 +76,7 @@
         "telephone": "schema:telephone",
         "thickness": "https://projectww4zero.pt/dataModel/thickness",
         "tos": "https://projectww4zero.pt/dataModel/tos",
+        "vat": "schema:vatID",
         "weight": "schema:weight",
         "width": "schema:width"
     }

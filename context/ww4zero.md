@@ -79,9 +79,9 @@ Identifies a client (Owner of a project)
 -  `familyName`: Client last name
    -  Attribute type: **Property**. [familyName](https://schema.org/familyName)
    -  Optional
--  `taxId`: Client/Institution Tax ID
-   -  Attribute type: **Property**. [taxID](https://schema.org/taxID)
-   -  Required
+-  `vat`: Client/Institution Tax ID
+   -  Attribute type: **Property**. [vatID](https://schema.org/vatID)
+   -  Optional
 -  `role`: Client/role
    -  Attribute type: **Property**. [Role](https://schema.org/Role)
    -  Optional
@@ -176,13 +176,13 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
    -  Attribute type: **Property**. 
    -  Required
 -  `partName`: REF PEÇA (A)
-   -  Attribute type: **Property**. 
+   -  Attribute type: **Property**. [name](https://schema.org/name)
    -  Required
 -  `sort`: TIPO (B)
    -  Attribute type: **Property**. 
    -  Required
 -  `material`: MATERIAL (C)
-   -  Attribute type: **Property**. 
+   -  Attribute type: **Property**. [material](https://schema.org/material)
    -  Required
 -  `amount`: QUANTIDADE (D)
    -  Attribute type: **Property**. [amount](https://schema.org/amount)

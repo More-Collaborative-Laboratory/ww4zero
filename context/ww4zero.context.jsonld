@@ -160,7 +160,7 @@
             "@type": "xsd:string"
         },
         "material": {
-            "@id": "https://projectww4zero.pt/dataModel/material",
+            "@id": "schema:material",
             "@type": "xsd:string"
         },
         "name": {
@@ -196,7 +196,7 @@
             "@type": "xsd:boolean"
         },
         "partName": {
-            "@id": "https://projectww4zero.pt/dataModel/partName",
+            "@id": "schema:name",
             "@type": "xsd:string"
         },
         "postalCode": {
@@ -254,6 +254,10 @@
         "tos": {
             "@id": "https://projectww4zero.pt/dataModel/tos",
             "@type": "xsd:boolean"
+        },
+        "vat": {
+            "@id": "schema:vatID",
+            "@type": "xsd:string"
         },
         "weight": {
             "@id": "schema:weight",
@@ -792,7 +796,7 @@
             ]
         },
         {
-            "@id": "schema:taxId",
+            "@id": "schema:vat",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -803,7 +807,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "taxId"
+                    "@value": "vat"
                 }
             ]
         },
@@ -1176,7 +1180,7 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/partName",
+            "@id": "schema:partName",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -1208,7 +1212,7 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/material",
+            "@id": "schema:material",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
