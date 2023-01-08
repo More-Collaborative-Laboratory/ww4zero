@@ -41,15 +41,15 @@ owner:
           model: https://schema.org/familyName
           type: Property
           
-      taxId:
+      vat:
         description: Client/Institution Tax ID
         type: string
         pattern: '^\d{9}$'
         example: 254545879
         x-ngsi:
-          uri: "https://schema.org/taxID"
+          uri: "https://schema.org/vatID"
           uri-prefix: "https://schema.org/"
-          model: "https://schema.org/taxID"
+          model: "https://schema.org/vatID"
           type: Property
 
       role:
