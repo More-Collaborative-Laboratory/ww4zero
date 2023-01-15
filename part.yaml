@@ -242,15 +242,15 @@ part:
 
     belongsTo:
       anyOf:
-        - description: 'Relationship property: Identifies the project to wich the part belongs'
+        - description: 'Relationship property: Identifies the project to which the part belongs'
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: indicates the project to wich the part belongs '
+        - description: 'Relationship property: indicates the project to which the part belongs '
           format: uri
           type: string
-      description: 'Identifies the project to wich the part belongs'
+      description: 'Identifies the project to which the part belongs'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/belongsTo"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
