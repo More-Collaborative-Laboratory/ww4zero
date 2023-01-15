@@ -1,24 +1,3 @@
-# Organization
-
-Describes the organization entity
--  `id`: Organization Identifier
-   -  Attribute type: **Property**. 
-   -  Required
--  `legalName`: Organization's legal name
-   -  Attribute type: **Property**. [legalName](https://schema.org/legalName)
-   -  Required
--  `vat`: Client/Institution Tax ID
-   -  Attribute type: **Property**. [vatID](https://schema.org/vatID)
-   -  Required
--  `email`: Contact email address
-   -  Attribute type: **Property**. [email](https://schema.org/email)
-   -  Required
--  `active`: if the work is an active user or not
-   -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
-   -  Required
-
-
-
 # Project
 
 Contains the information of a project
@@ -123,9 +102,6 @@ Identifies a worker within an organization
    -  Optional
 -  `image`: url da imagem
    -  Attribute type: **Property**. [URL](https://schema.org/URL)
-   -  Optional
--  `hasOrganization`: Identification of the Organization where the Worker is currently employed.
-   -  Attribute type: **Relationship**. 
    -  Optional
 -  `action`: Identification of the project what the action refers
    -  Attribute type: **Relationship**. 
