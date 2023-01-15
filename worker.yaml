@@ -92,22 +92,6 @@ worker:
           uri-prefix: "https://projetww4zero.pt/dataModel/"
           type: Property
 
-    hasOrganization:
-      anyOf:
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          format: uri
-          type: string
-      description: 'Identification of the Organization where the Worker is currently employed.'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/hasOrganization"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
-
     action:
       anyOf:
         - description: 'Relationship property: Identifies the action and the project each is related'
