@@ -12,6 +12,7 @@
         "Consumable": "fiware:Consumable",
         "Expedition": "fiware:Expedition",
         "Machine": "fiware:Machine",
+        "Organization": "fiware:Organization",
         "Owner": "fiware:Owner",
         "Part": "fiware:Part",
         "Project": "fiware:Project",
@@ -121,6 +122,10 @@
         "groove": {
             "@id": "https://projectww4zero.pt/dataModel/veio",
             "@type": "xsd:string"
+        },
+        "hasOrganization": {
+            "@id": "https://projectww4zero.pt/dataModel/hasOrganization",
+            "@type": "@id"
         },
         "image": {
             "@id": "https://projectww4zero.pt/dataModel/image",
@@ -248,6 +253,25 @@
         }
     },
     "@graph": [
+        {
+            "@id": "fiware:Organization",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Describes the organization entity"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Organization"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
         {
             "@id": "fiware:Project",
             "@type": "rdfs:Class",
@@ -418,6 +442,86 @@
             "rdfs:subClassOf": {
                 "@id": "schema:Thing"
             }
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Organization Identifier"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "https://schema.orglegalName",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Organization's legal name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "legalName"
+                }
+            ]
+        },
+        {
+            "@id": "schema:vat",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Client/Institution Tax ID"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "vat"
+                }
+            ]
+        },
+        {
+            "@id": "schema:email",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Contact email address"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "email"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/active",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "if the work is an active user or not"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "active"
+                }
+            ]
         },
         {
             "@id": "fiware:id",
@@ -864,6 +968,22 @@
                 {
                     "@language": "en",
                     "@value": "image"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/hasOrganization",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the Organization where the Worker is currently employed."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "hasOrganization"
                 }
             ]
         },
