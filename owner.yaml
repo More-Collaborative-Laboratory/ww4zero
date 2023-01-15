@@ -52,17 +52,6 @@ owner:
           model: "https://schema.org/vatID"
           type: Property
 
-      role:
-        description: Client/role
-        type: string
-        pattern: '/xxx[\x00-\x7F]+xxx/;'
-        example: customer
-        x-ngsi:
-          uri: "https://schema.org/Role"
-          uri-prefix: "https://schema.org/"
-          model: https://schema.org/Role
-          type: Property
-
       isCompany: 
         description: This property aims to indicate if the owner is a Institution or not
         type: boolean
