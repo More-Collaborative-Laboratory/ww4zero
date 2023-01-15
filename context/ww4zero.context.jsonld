@@ -1164,6 +1164,22 @@
             ]
         },
         {
+            "@id": "https://projectww4zero.pt/dataModel/orderBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the owner name associated to the project with status in execution"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "orderBy"
+                }
+            ]
+        },
+        {
             "@id": "fiware:id",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -1720,6 +1736,22 @@
                 {
                     "@language": "en",
                     "@value": "belongsTo"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/orderBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the owner name associated to the project with status in execution"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "orderBy"
                 }
             ]
         },

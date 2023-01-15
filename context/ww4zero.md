@@ -166,6 +166,9 @@ Describes a consumable list associated with a project
 -  `belongsTo`: Identification of the projet Name that this consumables will attached to
    -  Attribute type: **Relationship**. 
    -  Required
+-  `orderBy`: Identification of the owner name associated to the project with status in execution
+   -  Attribute type: **Relationship**. 
+   -  Optional
 
 
 
@@ -298,6 +301,9 @@ Indicates when a assembly process is completed
 -  `belongsTo`: Identification of the projet to which this assembly corresponds
    -  Attribute type: **Relationship**. 
    -  Required
+-  `orderBy`: Identification of the owner name associated to the project with status in execution
+   -  Attribute type: **Relationship**. 
+   -  Optional
 
 
 
