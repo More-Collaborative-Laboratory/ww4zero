@@ -55,10 +55,6 @@
             "@id": "https://projectww4zero.pt/dataModel/belongsTo",
             "@type": "@id"
         },
-        "caeId": {
-            "@id": "https://projectww4zero.pt/dataModel/caeId",
-            "@type": "xsd:string"
-        },
         "category": {
             "@id": "https://projectww4zero.pt/dataModel/category",
             "@type": "xsd:string"
@@ -147,10 +143,6 @@
             "@id": "https://projectww4zero.pt/dataModel/length",
             "@type": "xsd:number"
         },
-        "location": {
-            "@id": "ngsi-ld:location",
-            "@type": "xsd:undefined"
-        },
         "machineStatus": {
             "@id": "https://projectww4zero.pt/dataModel/machineStatus",
             "@type": "xsd:string"
@@ -215,10 +207,6 @@
             "@id": "https://projectww4zero.pt/dataModel/sort",
             "@type": "xsd:string"
         },
-        "ssnId": {
-            "@id": "https://projectww4zero.pt/dataModel/ssnId",
-            "@type": "xsd:string"
-        },
         "startTime": {
             "@id": "https://projectww4zero.pt/dataModel/startTime",
             "@type": "xsd:string"
@@ -238,10 +226,6 @@
         "tag": {
             "@id": "https://projectww4zero.pt/dataModel/tag",
             "@type": "xsd:number"
-        },
-        "taxId": {
-            "@id": "schema:taxID",
-            "@type": "xsd:string"
         },
         "telephone": {
             "@id": "schema:telephone",
@@ -492,66 +476,18 @@
             ]
         },
         {
-            "@id": "schema:taxId",
+            "@id": "schema:vat",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "The organization's tax number"
+                    "@value": "Client/Institution Tax ID"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "taxId"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/ssnId",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "The organization's social security number"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "ssnId"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/caeId",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "The organization's economic activity code"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "caeId"
-                }
-            ]
-        },
-        {
-            "@id": "schema:address",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "The company's headquarters address"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "address"
+                    "@value": "vat"
                 }
             ]
         },
@@ -572,34 +508,18 @@
             ]
         },
         {
-            "@id": "schema:telephone",
+            "@id": "https://projectww4zero.pt/dataModel/active",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Mobile or telephone contact"
+                    "@value": "if the work is an active user or not"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "telephone"
-                }
-            ]
-        },
-        {
-            "@id": "ngsi-ld:location",
-            "@type": "ngsi-ld:GeoProperty",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "location"
+                    "@value": "active"
                 }
             ]
         },
@@ -1729,7 +1649,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the projet to which this assembly corresponds"
+                    "@value": "Identification of the project to which this assembly corresponds"
                 }
             ],
             "rdfs:label": [

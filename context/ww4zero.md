@@ -7,27 +7,15 @@ Describes the organization entity
 -  `legalName`: Organization's legal name
    -  Attribute type: **Property**. [legalName](https://schema.org/legalName)
    -  Required
--  `taxId`: The organization's tax number
-   -  Attribute type: **Property**. [taxID](https://schema.org/taxID)
-   -  Optional
--  `ssnId`: The organization's social security number
-   -  Attribute type: **Property**. 
-   -  Optional
--  `caeId`: The organization's economic activity code
-   -  Attribute type: **Property**. 
-   -  Optional
--  `address`: The company's headquarters address
-   -  Attribute type: **Property**. [address](https://schema.org/address)
-   -  Optional
+-  `vat`: Client/Institution Tax ID
+   -  Attribute type: **Property**. [vatID](https://schema.org/vatID)
+   -  Required
 -  `email`: Contact email address
    -  Attribute type: **Property**. [email](https://schema.org/email)
-   -  Optional
--  `telephone`: Mobile or telephone contact
-   -  Attribute type: **Property**. [telephone](https://schema.org/telephone)
-   -  Optional
--  `location`: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
-   -  Attribute type: **GeoProperty**. 
-   -  Optional
+   -  Required
+-  `active`: if the work is an active user or not
+   -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
+   -  Required
 
 
 
@@ -298,7 +286,7 @@ Indicates when a assembly process is completed
 -  `statusAssembly`: Indicates the actual workers station * 0 - Waiting * 1 - Assembling * 2 - Testing * 3 - Packed. One of : ``, ``, ``, ``.
    -  Attribute type: **Property**. 
    -  Optional
--  `belongsTo`: Identification of the projet to which this assembly corresponds
+-  `belongsTo`: Identification of the project to which this assembly corresponds
    -  Attribute type: **Relationship**. 
    -  Required
 -  `orderBy`: Identification of the owner name associated to the project with status in execution
