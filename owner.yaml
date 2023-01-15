@@ -64,7 +64,7 @@ owner:
           type: Property
 
       isCompany: 
-        description: This property aims to indicate if the owner is a Instituition or not
+        description: This property aims to indicate if the owner is a Institution or not
         type: boolean
         example: true
         x-ngsi:
@@ -243,7 +243,7 @@ owner:
 
     required:
       - id
-      - taxId
+      - vat
       - address
       - email
       - active

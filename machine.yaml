@@ -32,10 +32,10 @@ machine:
         type: Property
 
     machineStatus: 
-      description: Indicates in wich stage are the parts of corresponding machine type
+      description: Indicates in which stage are the parts of corresponding machine type
         * `waiting` - indicates Information already arrived the machine but waits for start-button
         * `active` - The parts to be made in this station is already start
-        * `finished` - The parts belong to the station refered to a project are completed
+        * `finished` - The parts belong to the station referred to a project are completed
       type: string  
       enum: 
         - 'waiting'
@@ -113,7 +113,7 @@ machine:
         - description: 'Relationship property: Identifier project Name'
           format: uri
           type: string
-      description: 'Identification of the projet to which this assembly corresponds'
+      description: 'Identification of the project to which this assembly corresponds'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/belongsTo"  #pode ser assim igual ao budget?
         uri-prefix: "https://projectww4zero.pt/dataModel/"
