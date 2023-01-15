@@ -753,7 +753,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "This property aims to indicate if the owner is a Instituition or not"
+                    "@value": "This property aims to indicate if the owner is a Institution or not"
                 }
             ],
             "rdfs:label": [
@@ -1585,7 +1585,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the projet to which this assembly corresponds"
+                    "@value": "Identification of the project to which this assembly corresponds"
                 }
             ],
             "rdfs:label": [

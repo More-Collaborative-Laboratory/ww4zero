@@ -69,11 +69,11 @@ Identifies a client (Owner of a project)
    -  Optional
 -  `vat`: Client/Institution Tax ID
    -  Attribute type: **Property**. [vatID](https://schema.org/vatID)
-   -  Optional
+   -  Required
 -  `role`: Client/role
    -  Attribute type: **Property**. [Role](https://schema.org/Role)
    -  Optional
--  `isCompany`: This property aims to indicate if the owner is a Instituition or not
+-  `isCompany`: This property aims to indicate if the owner is a Institution or not
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
    -  Required
 -  `address`: The client's address
@@ -253,7 +253,7 @@ Machine cnc1, nesting1, manual cut1
 -  `finishTime`: Saves date and time information when the finish button is pressed
    -  Attribute type: **Property**. 
    -  Optional
--  `machineStatus`: Indicates in wich stage are the parts of corresponding machine type * `waiting` - indicates Information already arrived the machine but waits for start-button * `active` - The parts to be made in this station is already start * `finished` - The parts belong to the station refered to a project are completed. One of : `waiting`, `active`, `finished`.
+-  `machineStatus`: Indicates in which stage are the parts of corresponding machine type * `waiting` - indicates Information already arrived the machine but waits for start-button * `active` - The parts to be made in this station is already start * `finished` - The parts belong to the station referred to a project are completed. One of : `waiting`, `active`, `finished`.
    -  Attribute type: **Property**. 
    -  Optional
 -  `machineType`: Indicates in wich stage are the parts of corresponding machine type * `cnc1` - indicates cnc1 station is working * `nesting1` - indicates nesting1 station is working * `manualcut1` - indicates manualcut1 station is working * `receiving_material` - indicates that raw material is entering the factory * `organizing_material` - indicates that raw material is being put away at the factory * `assembly` - indicates that assembly station is on use * `shipping` - indicates the order is shipping. One of : `cnc1`, `nesting1`, `manualcut1`, `receiving_material`, `organizing_material`, `assembly`, `shipping`.
@@ -265,7 +265,7 @@ Machine cnc1, nesting1, manual cut1
 -  `executedIn`: Identification the made part
    -  Attribute type: **Relationship**. 
    -  Optional
--  `belongsTo`: Identification of the projet to which this assembly corresponds
+-  `belongsTo`: Identification of the project to which this assembly corresponds
    -  Attribute type: **Relationship**. 
    -  Optional
 
