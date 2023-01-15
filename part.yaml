@@ -255,7 +255,7 @@ part:
         uri: "https://projectww4zero.pt/dataModel/belongsTo"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
-   action:
+    action:
       anyOf:
         - description: 'Relationship property: Identifies the action and the project each is related'
           maxLength: 256
