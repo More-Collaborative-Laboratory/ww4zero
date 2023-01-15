@@ -59,7 +59,7 @@ assembly:
         - description: 'Relationship property: Identifier project Name'
           format: uri
           type: string
-      description: 'Identification of the projet to which this assembly corresponds'
+      description: 'Identification of the project to which this assembly corresponds'
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/belongsTo" 
         uri-prefix: "https://projectww4zero.pt/dataModel/"
