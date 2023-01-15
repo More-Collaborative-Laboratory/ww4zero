@@ -54,15 +54,14 @@ worker:
         type: Property
     
 
-    functionPerformed: 
+    performanceRole: 
       description: Indicates the actual worker's station
         * `CNC` - CNC Operator
         * `Nesting` - Nesting Operator
         * `Manual-Cut` - Manual Cut Operator
         * `Assembly` - Assembly Operator
         * `Manager` - Factory manager
-        * `Designer` - Designer Department
-        * `Budgeting` - Badgeting Department
+        * `Office` - Office Department
         * `Warehouse` - Warehouse Department (consumables and wood's stock)
         * `Other` - Other Operation, like merchandise distributor
       type: string
@@ -72,18 +71,18 @@ worker:
         - Manual Cut
         - Assembly
         - Manager
-        - Designer
-        - Budgeting
+        - Office
         - Warehouse
         - Other
       example: Designer
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/functionPerformed"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        uri: "https://schema.org/PerformanceRole"
+        uri-prefix: "https://schema.org/"
         type: Property
+        model: https://schema.org/PerformanceRole
 
     image: 
-        description: url da imagem
+        description: url da image
         type: string
         example: https://schema.org/image
         x-ngsi:
