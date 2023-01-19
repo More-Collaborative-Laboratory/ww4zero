@@ -122,7 +122,7 @@ Identifies a worker within an organization
    -  Attribute type: **Property**. [URL](https://schema.org/URL)
    -  Optional
 -  `hasOrganization`: Identification of the Organization where the Worker is currently employed.
-   -  Attribute type: **Relationship**. 
+   -  Attribute type: **Property**. 
    -  Optional
 
 

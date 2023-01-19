@@ -116,8 +116,8 @@
             "@type": "xsd:string"
         },
         "hasOrganization": {
-            "@id": "https://projectww4zero.pt/dataModel/hasOrganization",
-            "@type": "@id"
+            "@id": "fiware:hasOrganization",
+            "@type": "xsd:undefined"
         },
         "image": {
             "@id": "https://projectww4zero.pt/dataModel/image",
@@ -948,8 +948,8 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/hasOrganization",
-            "@type": "ngsi-ld:Relationship",
+            "@id": "fiware:hasOrganization",
+            "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",

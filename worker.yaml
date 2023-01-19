@@ -94,9 +94,3 @@ worker:
       description: 'Identification of the Organization where the Worker is currently employed.'
       x-ngsi:
          attr-type: Relationship
-required:
-  - id
-  - givenName
-  - active
-  - email
-  - hasOrganization
