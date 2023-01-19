@@ -102,19 +102,19 @@ Identifies a client (Owner of a project)
 Identifies a worker within an organization
 -  `id`: Worker Identifier
    -  Attribute type: **Property**. 
-   -  Required
+   -  Optional
 -  `givenName`: Worker first name
    -  Attribute type: **Property**. [Person](https://schema.org/Person)
-   -  Required
+   -  Optional
 -  `familyName`: Worker last name
    -  Attribute type: **Property**. [Person](https://schema.org/Person)
    -  Optional
 -  `email`: Contact email address
    -  Attribute type: **Property**. [email](https://schema.org/email)
-   -  Required
+   -  Optional
 -  `active`: if the work is an active user or not
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
-   -  Required
+   -  Optional
 -  `performanceRole`: Indicates the actual worker's station * `CNC` - CNC Operator * `Nesting` - Nesting Operator * `Manual-Cut` - Manual Cut Operator * `Assembly` - Assembly Operator * `Manager` - Factory manager * `Office` - Office Department * `Warehouse` - Warehouse Department (consumables and wood's stock) * `Other` - Other Operation, like merchandise distributor. One of : `CNC`, `Nesting`, `Manual Cut`, `Assembly`, `Manager`, `Office`, `Warehouse`, `Other`.
    -  Attribute type: **Property**. [PerformanceRole](https://schema.org/PerformanceRole)
    -  Optional
@@ -123,7 +123,7 @@ Identifies a worker within an organization
    -  Optional
 -  `hasOrganization`: Identification of the Organization where the Worker is currently employed.
    -  Attribute type: **Relationship**. 
-   -  Required
+   -  Optional
 
 
 

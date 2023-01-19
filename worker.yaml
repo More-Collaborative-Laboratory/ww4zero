@@ -91,26 +91,12 @@ worker:
           type: Property
 
     hasOrganization:
-      anyOf:
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          format: uri
-          type: string
       description: 'Identification of the Organization where the Worker is currently employed.'
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/hasOrganization"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
+         attr-type: Relationship
 required:
   - id
   - givenName
   - active
   - email
   - hasOrganization
-
-
-    #example: urn:ngsi-ld:FactoryManager:workerNbr
