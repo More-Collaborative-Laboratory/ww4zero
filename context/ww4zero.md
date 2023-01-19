@@ -70,9 +70,6 @@ Identifies a client (Owner of a project)
 -  `vat`: Client/Institution Tax ID
    -  Attribute type: **Property**. [vatID](https://schema.org/vatID)
    -  Required
--  `role`: Client/role
-   -  Attribute type: **Property**. [Role](https://schema.org/Role)
-   -  Optional
 -  `isCompany`: This property aims to indicate if the owner is a Institution or not
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
    -  Required
@@ -232,10 +229,7 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 -  `orderBy`: Identification of the owner name associated to the project with status in execution
    -  Attribute type: **Relationship**. 
    -  Required
--  `belongsTo`: Identifies the project to wich the part belongs
-   -  Attribute type: **Relationship**. 
-   -  Required
--  `action`: Identification of the project what the action refers
+-  `belongsTo`: Identifies the project to which the part belongs
    -  Attribute type: **Relationship**. 
    -  Required
 

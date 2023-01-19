@@ -1,122 +1,117 @@
 worker:
-  title: Worker
-  type: object
-  description: Identifies a worker within an organization
-
-  properties:
-    id:
-      description: Worker Identifier
-      type: string
-      format: uri
-      example: urn:ngsi-ld:Worker:workerNbr 
-      x-ngsi:
-        type: Property
-        
-    givenName:
-      description: Worker first name
-      type: string
-      example: Keanu
-      x-ngsi:
-        uri: "https://schema.org/givenName"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/Person
-        type: Property
-        
-    familyName: 
-      description: Worker last name
-      type: string
-      example: Reeves
-      x-ngsi:
-        uri: "https://schema.org/familyName"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/Person
-        type: Property
-
-    email:
-        description: Contact email address
+    title: Worker
+    type: object
+    description: Identifies a worker within an organization
+    properties:
+      id:
+        description: Worker Identifier
         type: string
-        format: email
-        example: worker@mofreita.gmail.com
+        format: uri
+        example: urn:ngsi-ld:Worker:workerNbr 
         x-ngsi:
-          uri: "https://schema.org/email"
+          type: Property
+          
+      givenName:
+        description: Worker first name
+        type: string
+        example: Keanu
+        x-ngsi:
+          uri: "https://schema.org/givenName"
           uri-prefix: "https://schema.org/"
-          model: https://schema.org/email
+          model: https://schema.org/Person
           type: Property
-   
-    active:
-      description: if the work is an active user or not 
-      type: boolean
-      example: true 
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/active"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        model: "https://schema.org/Boolean"
-        type: Property
-    
-
-    performanceRole: 
-      description: Indicates the actual worker's station
-        * `CNC` - CNC Operator
-        * `Nesting` - Nesting Operator
-        * `Manual-Cut` - Manual Cut Operator
-        * `Assembly` - Assembly Operator
-        * `Manager` - Factory manager
-        * `Office` - Office Department
-        * `Warehouse` - Warehouse Department (consumables and wood's stock)
-        * `Other` - Other Operation, like merchandise distributor
-      type: string
-      enum: 
-        - CNC
-        - Nesting
-        - Manual Cut
-        - Assembly
-        - Manager
-        - Office
-        - Warehouse
-        - Other
-      example: Designer
-      x-ngsi:
-        uri: "https://schema.org/PerformanceRole"
-        uri-prefix: "https://schema.org/"
-        type: Property
-        model: https://schema.org/PerformanceRole
-
-    image: 
-        description: url da image
+          
+      familyName: 
+        description: Worker last name
         type: string
-        example: https://schema.org/image
+        example: Reeves
         x-ngsi:
-          model: "https://schema.org/URL"
-          uri: "https://projectww4zero.pt/dataModel/image"
-          uri-prefix: "https://projetww4zero.pt/dataModel/"
+          uri: "https://schema.org/familyName"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/Person
           type: Property
 
-    hasOrganization:
-      anyOf:
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+      email:
+          description: Contact email address
           type: string
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          format: uri
+          format: email
+          example: worker@mofreita.gmail.com
+          x-ngsi:
+            uri: "https://schema.org/email"
+            uri-prefix: "https://schema.org/"
+            model: https://schema.org/email
+            type: Property
+    
+      active:
+        description: if the work is an active user or not 
+        type: boolean
+        example: true 
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/active"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          model: "https://schema.org/Boolean"
+          type: Property
+      
+
+      performanceRole: 
+        description: Indicates the actual worker's station
+          * `CNC` - CNC Operator
+          * `Nesting` - Nesting Operator
+          * `Manual-Cut` - Manual Cut Operator
+          * `Assembly` - Assembly Operator
+          * `Manager` - Factory manager
+          * `Office` - Office Department
+          * `Warehouse` - Warehouse Department (consumables and wood's stock)
+          * `Other` - Other Operation, like merchandise distributor
+        type: string
+        enum: 
+          - CNC
+          - Nesting
+          - Manual Cut
+          - Assembly
+          - Manager
+          - Office
+          - Warehouse
+          - Other
+        example: Designer
+        x-ngsi:
+          uri: "https://schema.org/PerformanceRole"
+          uri-prefix: "https://schema.org/"
+          type: Property
+          model: https://schema.org/PerformanceRole
+
+      image: 
+          description: url da image
           type: string
-      description: 'Identification of the Organization where the Worker is currently employed.'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/hasOrganization"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
+          example: https://schema.org/image
+          x-ngsi:
+            model: "https://schema.org/URL"
+            uri: "https://projectww4zero.pt/dataModel/image"
+            uri-prefix: "https://projetww4zero.pt/dataModel/"
+            type: Property
 
-   
+      hasOrganization:
+        anyOf:
+          - description: 'Relationship property: Identifier format of any NGSI entity'
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: 'Relationship property: Identifier format of any NGSI entity'
+            format: uri
+            type: string
+        description: 'Identification of the Organization where the Worker is currently employed.'
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/hasOrganization"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship
+
+    required:
+      - id
+      - givenName
+      - active
+      - email
+      - hasOrganization
 
 
-
-  required:
-    - id
-    - givenName
-    - active
-    - email
-    - hasOrganization
-
-
-      #example: urn:ngsi-ld:FactoryManager:workerNbr
+        #example: urn:ngsi-ld:FactoryManager:workerNbr

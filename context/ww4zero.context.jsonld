@@ -17,10 +17,6 @@
         "Part": "fiware:Part",
         "Project": "fiware:Project",
         "Worker": "fiware:Worker",
-        "action": {
-            "@id": "https://projectww4zero.pt/dataModel/action",
-            "@type": "@id"
-        },
         "active": {
             "@id": "https://projectww4zero.pt/dataModel/active",
             "@type": "xsd:boolean"
@@ -198,10 +194,6 @@
         "producedBy": {
             "@id": "https://projectww4zero.pt/dataModel/producedBy",
             "@type": "@id"
-        },
-        "role": {
-            "@id": "schema:Role",
-            "@type": "xsd:string"
         },
         "sort": {
             "@id": "https://projectww4zero.pt/dataModel/sort",
@@ -728,22 +720,6 @@
                 {
                     "@language": "en",
                     "@value": "vat"
-                }
-            ]
-        },
-        {
-            "@id": "schema:role",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Client/role"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "role"
                 }
             ]
         },
@@ -1473,29 +1449,13 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identifies the project to wich the part belongs"
+                    "@value": "Identifies the project to which the part belongs"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
                     "@value": "belongsTo"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/action",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Identification of the project what the action refers"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "action"
                 }
             ]
         },
