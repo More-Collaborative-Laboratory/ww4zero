@@ -131,3 +131,4 @@ project:
   required:
   - id
   - name
+  - orderBy
