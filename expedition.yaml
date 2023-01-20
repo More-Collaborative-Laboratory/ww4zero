@@ -54,5 +54,5 @@ expedition:
                 
   required:
     - id
-    - expedionTime
-    - belongsTo
+    - expeditionTime
+    - orderBy
