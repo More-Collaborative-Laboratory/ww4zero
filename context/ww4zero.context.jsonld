@@ -48,7 +48,7 @@
             "@type": "@id"
         },
         "belongsTo": {
-            "@id": "https://projectww4zero.pt/dataModel/belongsTo",
+            "@id": "https://projectww4zero.pt/dataModel/madeFor",
             "@type": "@id"
         },
         "category": {
@@ -116,8 +116,8 @@
             "@type": "xsd:string"
         },
         "hasOrganization": {
-            "@id": "fiware:hasOrganization",
-            "@type": "xsd:undefined"
+            "@id": "https://projectww4zero.pt/dataModel/hasOrganization",
+            "@type": "@id"
         },
         "image": {
             "@id": "https://projectww4zero.pt/dataModel/image",
@@ -948,8 +948,8 @@
             ]
         },
         {
-            "@id": "fiware:hasOrganization",
-            "@type": "ngsi-ld:Property",
+            "@id": "https://projectww4zero.pt/dataModel/hasOrganization",
+            "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
@@ -1808,22 +1808,6 @@
                 {
                     "@language": "en",
                     "@value": "deliveryFlag"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/belongsTo",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Identification if the order is arrived the destination"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "belongsTo"
                 }
             ]
         },

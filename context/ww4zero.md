@@ -39,7 +39,7 @@ Contains the information of a project
    -  Optional
 -  `orderBy`: Identification of the owner name associated to the project with status in execution
    -  Attribute type: **Relationship**. 
-   -  Optional
+   -  Required
 -  `assemblyBy`: Identification assembled parts belong to some project made for some worker
    -  Attribute type: **Relationship**. 
    -  Optional
@@ -122,7 +122,7 @@ Identifies a worker within an organization
    -  Attribute type: **Property**. [URL](https://schema.org/URL)
    -  Optional
 -  `hasOrganization`: Identification of the Organization where the Worker is currently employed.
-   -  Attribute type: **Property**. 
+   -  Attribute type: **Relationship**. [Organization](https://schema.org/Organization)
    -  Optional
 
 
@@ -326,14 +326,11 @@ Indicates when an order has been shiped
    -  Attribute type: **Property**. 
    -  Required
 -  `expeditionTime`: Date and hour when the order left the factory in direction to the Owner
-   -  Attribute type: **Property**. 
+   -  Attribute type: **Property**. [Time](https://schema.org/Time)
    -  Optional
 -  `deliveryFlag`: Indicates if the order arrived to the destination
    -  Attribute type: **Property**. 
    -  Optional
--  `belongsTo`: Identification if the order is arrived the destination
-   -  Attribute type: **Relationship**. 
-   -  Required
 -  `orderBy`: Identification of the owner name associated to the project with status in execution
    -  Attribute type: **Relationship**. 
    -  Optional
