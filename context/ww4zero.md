@@ -327,13 +327,13 @@ Indicates when an order has been shiped
    -  Required
 -  `expeditionTime`: Date and hour when the order left the factory in direction to the Owner
    -  Attribute type: **Property**. [Time](https://schema.org/Time)
-   -  Optional
+   -  Required
 -  `deliveryFlag`: Indicates if the order arrived to the destination
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
    -  Optional
 -  `orderBy`: Identification of the owner name associated to the project with status in execution
    -  Attribute type: **Relationship**. 
-   -  Optional
+   -  Required
 
 
 
