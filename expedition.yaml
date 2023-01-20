@@ -31,6 +31,7 @@ expedition:
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/deliveryFlag"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
+        model: https://schema.org/Boolean
         type: Property
 
 
