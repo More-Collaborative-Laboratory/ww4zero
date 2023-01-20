@@ -11,7 +11,6 @@ expedition:
       x-ngsi:
         type: Property
 
-
     expeditionTime: 
       description: Date and hour when the order left the factory in direction to the Owner
       type: string
@@ -23,7 +22,6 @@ expedition:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
-
     deliveryFlag: 
       description: Indicates if the order arrived to the destination
       type: boolean
@@ -33,7 +31,6 @@ expedition:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         model: https://schema.org/Boolean
         type: Property
-
 
     orderBy:
       anyOf:
@@ -51,7 +48,6 @@ expedition:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
 
-                
   required:
     - id
     - expeditionTime
