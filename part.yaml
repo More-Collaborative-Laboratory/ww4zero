@@ -182,6 +182,16 @@ part:
         model: "https://schema.org/Boolean"
         type: Property
 
+    tupia:
+      description: TUPIA
+      type: boolean
+      example: false
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/tupia"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        model: "https://schema.org/Boolean"
+        type: Property
+
     orla5:
       description: ORLA5 (S)
       type: boolean
