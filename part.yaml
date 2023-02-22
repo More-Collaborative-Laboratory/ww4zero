@@ -203,16 +203,6 @@ part:
         model: https://schema.org/Observation
         type: Property
 
-    weight:
-      description: PESO (U)
-      type: number
-      example: "0.8"
-      x-ngsi:
-        uri: https://schema.org/weight
-        uri-prefix: https://schema.org/
-        model: https://schema.org/weight
-        type: Property
-
     location:
       description: PART LOCATION IN STOCK
       type: string
@@ -221,6 +211,16 @@ part:
         uri: https://schema.org/location
         uri-prefix: https://schema.org/
         model: https://schema.org/location
+        type: Property
+
+    weight:
+      description: PESO (U)
+      type: number
+      example: "0.8"
+      x-ngsi:
+        uri: https://schema.org/weight
+        uri-prefix: https://schema.org/
+        model: https://schema.org/weight
         type: Property
 
     image: 
