@@ -50,15 +50,15 @@ part:
         model: https://schema.org/amount
         type: Property
 
-  dimensions:
-      description: CARTESIAN COORDINATES OF THE CORNERS
-      type: Polygon
-      example: [(12, 23), (35, 25), (33, 55), (12, 23)]
-      x-ngsi:
-        uri: "https://schema.org/GeospatialGeometry"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/GeospatialGeometry
-        type: GeoProperty
+    dimensions:
+        description: CARTESIAN COORDINATES OF THE CORNERS
+        type: Polygon
+        example: [(12, 23), (35, 25), (33, 55), (12, 23)]
+        x-ngsi:
+          uri: "https://schema.org/GeospatialGeometry"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/GeospatialGeometry
+          type: Property
 
     thickness:
       description: ESPESSURA (G)
