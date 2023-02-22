@@ -93,6 +93,7 @@ consumable:
         uri: "https://projectww4zero.pt/dataModel/belongsTo"  
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
+        
     orderBy:
       anyOf:
         - description: 'Relationship property: Identifies the Owner giveName or familyName or taxID that the project belongs to'
