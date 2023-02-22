@@ -58,7 +58,7 @@ part:
         uri: "https://schema.org/GeospatialGeometry"
         uri-prefix: "https://schema.org/"
         model: https://schema.org/GeospatialGeometry
-        type: GeoProperty
+        type: Property
 
     thickness:
       description: ESPESSURA (G)
