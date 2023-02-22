@@ -12,13 +12,33 @@ consumable:
         type: Property
         
     name: 
-      description: Identifie the consumable Name 
+      description: Identify the consumable Name 
       type: string
       example: corrediça
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/name"
         uri-prefix: "https://projetww4zero.pt/dataModel/"
         type: Property
+
+    tag:
+      description: ETIQUETA (H)
+      type: number
+      example: "1"
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/tag"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
+    material: 
+      description: MATERIAL (C)
+      type: string
+      example: AG L Biscuit Nude 36W
+      x-ngsi:
+        uri: https://schema.org/material
+        uri-prefix: https://schema.org/
+        model: https://schema.org/material
+        type: Property
+
 
     amount: 
       description: Identifier the consumable amount

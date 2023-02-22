@@ -50,25 +50,16 @@ part:
         model: https://schema.org/amount
         type: Property
 
-    length:
-      description: COMPRIMENTO (E) 
-      type: number
-      example: "400"
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/length"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        model: https://schema.org/size
-        type: Property
 
-    width:
-      description: LARGURA (F)
-      type: number
-      example: "338.5"
+    dimensions:
+      description: CARTESIAN COORDINATES OF THE CORNERS
+      type: list 
+      example: [(12, 23), (35, 25), (33, 55), (12, 23)]
       x-ngsi:
-        uri: https://schema.org/width
-        uri-prefix: https://schema.org/
-        model: https://schema.org/width
-        type: Property
+        uri: "https://schema.org/GeospatialGeometry"
+        uri-prefix: "https://schema.org/"
+        model: https://schema.org/GeospatialGeometry
+        type: GeoProperty
 
     thickness:
       description: ESPESSURA (G)
@@ -221,7 +212,17 @@ part:
         uri-prefix: https://schema.org/
         model: https://schema.org/weight
         type: Property
-        
+
+    weight:
+      description: PART LOCATION IN STOCK
+      type: string
+      example: AWZ
+      x-ngsi:
+        uri: https://schema.org/location
+        uri-prefix: https://schema.org/
+        model: https://schema.org/location
+        type: Property
+
     image: 
       description: url da imagem
       type: string
