@@ -51,8 +51,6 @@ part:
         type: Property
 
 
-    
-
     thickness:
       description: ESPESSURA (G)
       type: number
