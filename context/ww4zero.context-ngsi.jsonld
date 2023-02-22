@@ -28,7 +28,6 @@
         "category": "https://projectww4zero.pt/dataModel/category",
         "cncFlag": "https://projectww4zero.pt/dataModel/cncFlag",
         "deliveryFlag": "https://projectww4zero.pt/dataModel/deliveryFlag",
-        "dimensions": "schema:GeospatialGeometry",
         "email": "schema:email",
         "executedBy": "https://projectww4zero.pt/dataModel/executedBy",
         "executedIn": "https://projectww4zero.pt/dataModel/executedIn",

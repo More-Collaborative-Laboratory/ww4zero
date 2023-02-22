@@ -178,9 +178,6 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 -  `amount`: QUANTIDADE (D)
    -  Attribute type: **Property**. [amount](https://schema.org/amount)
    -  Required
--  `dimensions`: CARTESIAN COORDINATES OF THE CORNERS
-   -  Attribute type: **Property**. [GeospatialGeometry](https://schema.org/GeospatialGeometry)
-   -  Optional
 -  `thickness`: ESPESSURA (G)
    -  Attribute type: **Property**. [size](https://schema.org/size)
    -  Optional

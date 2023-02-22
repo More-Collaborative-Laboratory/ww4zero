@@ -63,10 +63,6 @@
             "@id": "https://projectww4zero.pt/dataModel/deliveryFlag",
             "@type": "xsd:boolean"
         },
-        "dimensions": {
-            "@id": "schema:GeospatialGeometry",
-            "@type": "xsd:list"
-        },
         "email": {
             "@id": "schema:email",
             "@type": "xsd:string"
@@ -1172,22 +1168,6 @@
                 {
                     "@language": "en",
                     "@value": "amount"
-                }
-            ]
-        },
-        {
-            "@id": "schema:dimensions",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "CARTESIAN COORDINATES OF THE CORNERS"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "dimensions"
                 }
             ]
         },
