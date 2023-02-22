@@ -213,7 +213,7 @@ part:
         model: https://schema.org/weight
         type: Property
 
-    weight:
+    location:
       description: PART LOCATION IN STOCK
       type: string
       example: AWZ
