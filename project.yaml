@@ -99,7 +99,6 @@ project:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
 
-
     assemblyBy:
       anyOf:
         - description: 'Relationship property: Identifies wich parts were assembled by a specific worker'
@@ -115,7 +114,6 @@ project:
         uri: "https://projectww4zero.pt/dataModel/assemblyBy"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
-
 
     image: 
       description: url da imagem
