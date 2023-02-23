@@ -378,7 +378,6 @@ part:
         uri-prefix: "https://projetww4zero.pt/dataModel/"
         type: Property
 
-
     orderBy:
       anyOf:
         - description: 'Relationship property: Identifies the Owner giveName or familyName or taxID that the project belongs to'
