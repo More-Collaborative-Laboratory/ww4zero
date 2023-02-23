@@ -1,244 +1,15 @@
 part:
-  title: Part
-  type: object
-  description: Identifies the part-name atributes that belongs to a specific project - Lista de Corte - 
+  description: Identifies the part-name atributes that belongs to a specific project - Lista de Corte -
   properties:
-    id:
-      description: Unic Identifier of a Part of a Project
-      type: string
-      format: uri
-      example: urn:ngsi-ld:Part:1223 
-      x-ngsi:
-        type: Property
-        
-    partName:
-      description: REF PEÇA (A)
-      type: string
-      example: MC_MUEBLETV_A2_GAV_DIR_FUNDO
-      x-ngsi:
-        uri: https://schema.org/name
-        uri-prefix: https://schema.org/
-        model: https://schema.org/name
-        type: Property
-
-    sort:
-      description: TIPO (B)
-      type: string
-      example: Painel
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/sort"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    material:
-      description: MATERIAL (C)
-      type: string
-      example: AG L Biscuit Nude 36W
-      x-ngsi:
-        uri: https://schema.org/material
-        uri-prefix: https://schema.org/
-        model: https://schema.org/material
-        type: Property
-
     amount:
       description: QUANTIDADE (D)
+      example: '1'
       type: number
-      example: "1"
       x-ngsi:
-        uri: https://schema.org/amount
-        uri-prefix: https://schema.org/
         model: https://schema.org/amount
         type: Property
-      
-    thickness:
-      description: ESPESSURA (G)
-      type: number
-      example: "10"
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/thickness"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        model: https://schema.org/size
-        type: Property
-
-    tag:
-      description: ETIQUETA (H)
-      type: number
-      example: "1"
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/tag"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    nestingFlag:
-      description: NESTING (I)
-      type: boolean
-      example: False
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/nestingFlag"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    cncFlag:
-      description: CNC (J)
-      type: boolean
-      example: False
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/cncFlag"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    f2:
-      description: FURO FACE 2 (K)
-      type: number
-      example: "0"
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/f2"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    f3:
-      description: FURO FACE 3 (L)
-      type: number
-      example: "0"
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/f3"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    f4:
-      description: FURO FACE 4 (M)
-      type: number
-      example: "0"
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/f4"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    f5:
-      description: FURO FACE 5 (N)
-      type: number
-      example: "0"
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/f5"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    groove:
-      description: Veio (O)
-      type: string
-      example: "Y"
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/veio"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    orla2:
-      description: ORLA2 (P)
-      type: boolean
-      example: false
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/orla2"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        model: "https://schema.org/Boolean"
-        type: Property
-
-    orla3:
-      description: ORLA3 (Q)
-      type: boolean
-      example: false
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/orla3"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        model: "https://schema.org/Boolean"
-        type: Property
-
-    orla4:
-      description: ORLA4 (R)
-      type: boolean
-      example: false
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/orla4"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        model: "https://schema.org/Boolean"
-        type: Property
-
-    tupia:
-      description: TUPIA
-      type: boolean
-      example: false
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/tupia"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        model: "https://schema.org/Boolean"
-        type: Property
-
-    orla5:
-      description: ORLA5 (S)
-      type: boolean
-      example: false
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/orla5"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        model: "https://schema.org/Boolean"
-        type: Property
-
-    observation:
-      description: Observation (T)
-      type: string
-      example: Uma forma de executar o trabalho sem perigos
-      x-ngsi:
-        uri: https://schema.org/Observation
+        uri: https://schema.org/amount
         uri-prefix: https://schema.org/
-        model: https://schema.org/Observation
-        type: Property
-
-    location:
-      description: PART LOCATION IN STOCK
-      type: string
-      example: AWZ
-      x-ngsi:
-        uri: https://schema.org/location
-        uri-prefix: https://schema.org/
-        model: https://schema.org/location
-        type: Property
-
-    weight:
-      description: PESO (U)
-      type: number
-      example: "0.8"
-      x-ngsi:
-        uri: https://schema.org/weight
-        uri-prefix: https://schema.org/
-        model: https://schema.org/weight
-        type: Property
-
-    image: 
-      description: url da imagem
-      type: string
-      example: https://schema.org/image
-      x-ngsi:
-        model: "https://schema.org/URL"
-        uri: "https://projectww4zero.pt/dataModel/image"
-        uri-prefix: "https://projetww4zero.pt/dataModel/"
-        type: Property
-
-    orderBy:
-      anyOf:
-        - description: 'Relationship property: Identifies the Owner giveName or familyName or taxID that the project belongs to'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifies a project by the associated giveName from the owner'
-          format: uri
-          type: string
-      description: 'Identification of the owner name associated to the project with status in execution'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/orderBy"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
-
-
     belongsTo:
       anyOf:
         - description: 'Relationship property: Identifies the project to which the part belongs'
@@ -249,14 +20,213 @@ part:
         - description: 'Relationship property: indicates the project to which the part belongs '
           format: uri
           type: string
-      description: 'Identifies the project to which the part belongs'
+      description: Identifies the project to which the part belongs
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/belongsTo"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
-
-   
-  
+        uri: https://projectww4zero.pt/dataModel/belongsTo
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    cncFlag:
+      description: CNC (J)
+      example: false
+      type: boolean
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/cncFlag
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    f2:
+      description: FURO FACE 2 (K)
+      example: '0'
+      type: number
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/f2
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    f3:
+      description: FURO FACE 3 (L)
+      example: '0'
+      type: number
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/f3
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    f4:
+      description: FURO FACE 4 (M)
+      example: '0'
+      type: number
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/f4
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    f5:
+      description: FURO FACE 5 (N)
+      example: '0'
+      type: number
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/f5
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    groove:
+      description: Veio (O)
+      example: 'Y'
+      type: string
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/veio
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    id:
+      description: Unic Identifier of a Part of a Project
+      example: urn:ngsi-ld:Part:1223
+      format: uri
+      type: string
+      x-ngsi:
+        type: Property
+    image:
+      description: url da imagem
+      example: https://schema.org/image
+      type: string
+      x-ngsi:
+        model: https://schema.org/URL
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/image
+        uri-prefix: https://projetww4zero.pt/dataModel/
+    location:
+      description: PART LOCATION IN STOCK
+      example: AWZ
+      type: string
+      x-ngsi:
+        model: https://schema.org/location
+        type: Property
+        uri: https://schema.org/location
+        uri-prefix: https://schema.org/
+    material:
+      description: MATERIAL (C)
+      example: AG L Biscuit Nude 36W
+      type: string
+      x-ngsi:
+        model: https://schema.org/material
+        type: Property
+        uri: https://schema.org/material
+        uri-prefix: https://schema.org/
+    nestingFlag:
+      description: NESTING (I)
+      example: false
+      type: boolean
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/nestingFlag
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    observation:
+      description: Observation (T)
+      example: Uma forma de executar o trabalho sem perigos
+      type: string
+      x-ngsi:
+        model: https://schema.org/Observation
+        type: Property
+        uri: https://schema.org/Observation
+        uri-prefix: https://schema.org/
+    orderBy:
+      anyOf:
+        - description: 'Relationship property: Identifies the Owner giveName or familyName or taxID that the project belongs to'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifies a project by the associated giveName from the owner'
+          format: uri
+          type: string
+      description: Identification of the owner name associated to the project with status in execution
+      x-ngsi:
+        type: Relationship
+        uri: https://projectww4zero.pt/dataModel/orderBy
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    orla2:
+      description: ORLA2 (P)
+      example: false
+      type: boolean
+      x-ngsi:
+        model: https://schema.org/Boolean
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/orla2
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    orla3:
+      description: ORLA3 (Q)
+      example: false
+      type: boolean
+      x-ngsi:
+        model: https://schema.org/Boolean
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/orla3
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    orla4:
+      description: ORLA4 (R)
+      example: false
+      type: boolean
+      x-ngsi:
+        model: https://schema.org/Boolean
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/orla4
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    orla5:
+      description: ORLA5 (S)
+      example: false
+      type: boolean
+      x-ngsi:
+        model: https://schema.org/Boolean
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/orla5
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    partName:
+      description: REF PEÇA (A)
+      example: MC_MUEBLETV_A2_GAV_DIR_FUNDO
+      type: string
+      x-ngsi:
+        model: https://schema.org/name
+        type: Property
+        uri: https://schema.org/name
+        uri-prefix: https://schema.org/
+    sort:
+      description: TIPO (B)
+      example: Painel
+      type: string
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/sort
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    tag:
+      description: ETIQUETA (H)
+      example: '1'
+      type: number
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/tag
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    thickness:
+      description: ESPESSURA (G)
+      example: '10'
+      type: number
+      x-ngsi:
+        model: https://schema.org/size
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/thickness
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    tupia:
+      description: TUPIA
+      example: false
+      type: boolean
+      x-ngsi:
+        model: https://schema.org/Boolean
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/tupia
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    weight:
+      description: PESO (U)
+      example: '0.8'
+      type: number
+      x-ngsi:
+        model: https://schema.org/weight
+        type: Property
+        uri: https://schema.org/weight
+        uri-prefix: https://schema.org/
   required:
     - id
     - partName
@@ -265,3 +235,5 @@ part:
     - amount
     - belongsTo
     - orderBy
+  title: Part
+  type: object
