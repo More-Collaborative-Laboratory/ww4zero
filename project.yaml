@@ -83,7 +83,7 @@ project:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
 
-  belongsTo:
+    belongsTo:
       anyOf:
         - description: 'Relationship property: Identifier the name of the budget that the project owns'
           maxLength: 256
