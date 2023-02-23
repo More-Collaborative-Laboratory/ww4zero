@@ -51,7 +51,7 @@ part:
         type: Property
 
     dimensions:
-    description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'
+      description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'
       oneOf:
         - description: 'Geoproperty. Geojson reference to the item. Point'
           properties:
