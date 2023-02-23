@@ -123,10 +123,9 @@ project:
         type: Property
         uri: https://projectww4zero.pt/dataModel/status
         uri-prefix: https://projectww4zero.pt/dataModel/
+        
   required:
     - id
     - name
     - orderBy
     - belongsTo
-  title: Project
-  type: object
