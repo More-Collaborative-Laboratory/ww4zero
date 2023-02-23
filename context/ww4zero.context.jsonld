@@ -1156,6 +1156,22 @@
             ]
         },
         {
+            "@id": "schema:dimensions",
+            "@type": "ngsi-ld:Geoproperty",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dimensions"
+                }
+            ]
+        },
+        {
             "@id": "https://projectww4zero.pt/dataModel/f2",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [

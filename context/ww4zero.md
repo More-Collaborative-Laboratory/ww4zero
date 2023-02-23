@@ -175,6 +175,9 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 -  `cncFlag`: CNC (J)
    -  Attribute type: **Property**. 
    -  Optional
+-  `dimensions`: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
+   -  Attribute type: **Geoproperty**. 
+   -  Optional
 -  `f2`: FURO FACE 2 (K)
    -  Attribute type: **Property**. 
    -  Optional
