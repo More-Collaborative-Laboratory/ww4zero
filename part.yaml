@@ -52,7 +52,7 @@ part:
 
     dimensions:
     description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'
-      oneOf: &dimensions_properties
+      oneOf:
         - description: 'Geoproperty. Geojson reference to the item. Point'
           properties:
             bbox:
