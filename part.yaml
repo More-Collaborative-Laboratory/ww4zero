@@ -51,14 +51,7 @@ part:
         type: Property
 
     dimensions:
-      description: CARTESIAN COORDINATES OF THE CORNERS
-      type: geojson
-      example: [(12, 23), (35, 25), (33, 55), (12, 23)]
-      x-ngsi:
-        uri: "https://schema.org/Place"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/Place
-        type: GeoProperty
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons/properties/location"
 
     thickness:
       description: ESPESSURA (G)

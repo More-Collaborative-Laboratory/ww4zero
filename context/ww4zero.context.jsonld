@@ -65,7 +65,7 @@
         },
         "dimensions": {
             "@id": "schema:Place",
-            "@type": "xsd:string"
+            "@type": "xsd:geojson"
         },
         "email": {
             "@id": "schema:email",
@@ -1193,7 +1193,7 @@
         },
         {
             "@id": "schema:dimensions",
-            "@type": "ngsi-ld:Property",
+            "@type": "ngsi-ld:GeoProperty",
             "rdfs:comment": [
                 {
                     "@language": "en",
