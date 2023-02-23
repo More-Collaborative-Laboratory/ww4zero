@@ -1,88 +1,21 @@
 project:
-  title: Project
-  type: object
   description: Contains the information of a project
   properties:
-    id:
-      description: Projects id Identifier
-      type: string
-      format: uri
-      example: urn:ngsi-ld:Project:[uuid]
-      x-ngsi:
-        type: Property
-        
-    name: 
-      description: Project name
-      type: string
-      example: MUEBLE-WC
-      x-ngsi:
-        uri: "https://schema.org/name"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/name
-        type: Property
-
-    category: 
-      description: Movel type
-      type: string
-      example: Movel cozinha
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/category"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-    status: 
-      description: Indicates the actual workers station
-        * `waiting` - Projects budget approved
-        * `working` - Projects parts are already in the factorys floor
-        * `finished` - Projects parts are all done
-        * `assembly` - Projects parts are being assembled in the test zone 
-        * `expedition` - The request from a client is already out from the factory
-      type: string
-      enum: 
-        - Waiting
-        - working
-        - finished
-        - assembly
-        - expedition
-      example: expedition
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/status"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
-
-
-    producedBy:
+    assemblyBy:
       anyOf:
-        - description: 'Relationship property: Identifies the operator envolved in the produced stations'
+        - description: 'Relationship property: Identifies which parts were assembled by a specific worker'
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: linking the workers and the project giveName'
+        - description: 'Relationship property: parts of a project assembled by work giveName or familyName'
           format: uri
           type: string
-      description: 'Identification of the operators giveName that are working in specific project Name'
+      description: Identification assembled parts belong to some project made for some worker
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/producedBy"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
-
-    orderBy:
-      anyOf:
-        - description: 'Relationship property: Identifies the Owner giveName or familyName or taxID that the project belongs to'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifies a project by the associated giveName from the owner'
-          format: uri
-          type: string
-      description: 'Identification of the owner name associated to the project with status in execution'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/orderBy"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
-
+        uri: https://projectww4zero.pt/dataModel/assemblyBy
+        uri-prefix: https://projectww4zero.pt/dataModel/
     belongsTo:
       anyOf:
         - description: 'Relationship property: Identifier the name of the budget that the project owns'
@@ -93,39 +26,19 @@ project:
         - description: 'Relationship property: Identifier the name  of the budge'
           format: uri
           type: string
-      description: 'Identification the budget that this project belongs to'
+      description: Identification the budget that this project belongs to
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/madeFor"  
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
-
-    assemblyBy:
-      anyOf:
-        - description: 'Relationship property: Identifies wich parts were assembled by a specific worker'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: parts of a project assembled by work giveName or familyName'
-          format: uri
-          type: string
-      description: 'Identification assembled parts belong to some project made for some worker'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/assemblyBy"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
-
-    image: 
-      description: url da imagem
+        uri: https://projectww4zero.pt/dataModel/madeFor
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    category:
+      description: Movel type
+      example: Movel cozinha
       type: string
-      example: https://schema.org/image
       x-ngsi:
-        model: "https://schema.org/URL"
-        uri: "https://projectww4zero.pt/dataModel/image"
-        uri-prefix: "https://projetww4zero.pt/dataModel/"
         type: Property
-
-
+        uri: https://projectww4zero.pt/dataModel/category
+        uri-prefix: https://projectww4zero.pt/dataModel/
     expedition:
       anyOf:
         - description: 'Relationship property: Identifies project name that is already going from the factory to the owner address'
@@ -136,15 +49,84 @@ project:
         - description: 'Relationship property: indicates that all the process of some order is going for some address'
           format: uri
           type: string
-      description: 'Identification the addres that will recieve the oreder name'
+      description: Identification the addres that will recieve the oreder name
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/expedition"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
-
-
+        uri: https://projectww4zero.pt/dataModel/expedition
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    id:
+      description: Projects id Identifier
+      example: urn:ngsi-ld:Project:[uuid]
+      format: uri
+      type: string
+      x-ngsi:
+        type: Property
+    image:
+      description: url da imagem
+      example: https://schema.org/image
+      type: string
+      x-ngsi:
+        model: https://schema.org/URL
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/image
+        uri-prefix: https://projetww4zero.pt/dataModel/
+    name:
+      description: Project name
+      example: MUEBLE-WC
+      type: string
+      x-ngsi:
+        model: https://schema.org/name
+        type: Property
+        uri: https://schema.org/name
+        uri-prefix: https://schema.org/
+    orderBy:
+      anyOf:
+        - description: 'Relationship property: Identifies the Owner giveName or familyName or taxID that the project belongs to'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifies a project by the associated giveName from the owner'
+          format: uri
+          type: string
+      description: Identification of the owner name associated to the project with status in execution
+      x-ngsi:
+        type: Relationship
+        uri: https://projectww4zero.pt/dataModel/orderBy
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    producedBy:
+      anyOf:
+        - description: 'Relationship property: Identifies the operator evolved in the produced stations'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: linking the workers and the project giveName'
+          format: uri
+          type: string
+      description: Identification of the operators giveName that are working in specific project Name
+      x-ngsi:
+        type: Relationship
+        uri: https://projectww4zero.pt/dataModel/producedBy
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    status:
+      description: Indicates the actual workers station * `waiting` - Projects budget approved * `working` - Projects parts are already in the factorys floor * `finished` - Projects parts are all done * `assembly` - Projects parts are being assembled in the test zone * `expedition` - The request from a client is already out from the factory
+      enum:
+        - Waiting
+        - working
+        - finished
+        - assembly
+        - expedition
+      example: expedition
+      type: string
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/status
+        uri-prefix: https://projectww4zero.pt/dataModel/
   required:
-  - id
-  - name
-  - orderBy
-  - belongsTo
+    - id
+    - name
+    - orderBy
+    - belongsTo
+  title: Project
+  type: object
