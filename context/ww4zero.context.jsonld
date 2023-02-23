@@ -64,8 +64,8 @@
             "@type": "xsd:boolean"
         },
         "dimensions": {
-            "@id": "schema:GeospatialGeometry",
-            "@type": "xsd:Polygon"
+            "@id": "schema:Place",
+            "@type": "xsd:string"
         },
         "email": {
             "@id": "schema:email",
@@ -1177,7 +1177,7 @@
         },
         {
             "@id": "schema:dimensions",
-            "@type": "ngsi-ld:GeoProperty",
+            "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",

@@ -179,7 +179,7 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
    -  Attribute type: **Property**. [amount](https://schema.org/amount)
    -  Required
 -  `dimensions`: CARTESIAN COORDINATES OF THE CORNERS
-   -  Attribute type: **GeoProperty**. [GeospatialGeometry](https://schema.org/GeospatialGeometry)
+   -  Attribute type: **Property**. [Place](https://schema.org/Place)
    -  Optional
 -  `thickness`: ESPESSURA (G)
    -  Attribute type: **Property**. [size](https://schema.org/size)
