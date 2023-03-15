@@ -24,7 +24,7 @@
         "amount": "https://projectww4zero.pt/dataModel/amount",
         "approvedDate": "https://projectww4zero.pt/dataModel/approvedDate",
         "assemblyBy": "https://projectww4zero.pt/dataModel/assemblyBy",
-        "belongsTo": "https://projectww4zero.pt/dataModel/madeFor",
+        "belongsTo": "https://projectww4zero.pt/dataModel/belongsTo",
         "category": "https://projectww4zero.pt/dataModel/category",
         "cncFlag": "https://projectww4zero.pt/dataModel/cncFlag",
         "deliveryFlag": "https://projectww4zero.pt/dataModel/deliveryFlag",
@@ -45,7 +45,7 @@
         "image": "https://projectww4zero.pt/dataModel/image",
         "isCompany": "schema:Boolean",
         "legalName": "schema:legalName",
-        "length": "https://projectww4zero.pt/dataModel/length",
+        "location": "schema:location",
         "machineStatus": "https://projectww4zero.pt/dataModel/machineStatus",
         "machineType": "https://projectww4zero.pt/dataModel/machineType",
         "material": "schema:material",
@@ -70,8 +70,8 @@
         "telephone": "schema:telephone",
         "thickness": "https://projectww4zero.pt/dataModel/thickness",
         "tos": "https://projectww4zero.pt/dataModel/tos",
+        "tupia": "https://projectww4zero.pt/dataModel/tupia",
         "vat": "schema:vatID",
-        "weight": "schema:weight",
-        "width": "schema:width"
+        "weight": "schema:weight"
     }
 }

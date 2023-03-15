@@ -48,7 +48,7 @@
             "@type": "@id"
         },
         "belongsTo": {
-            "@id": "https://projectww4zero.pt/dataModel/madeFor",
+            "@id": "https://projectww4zero.pt/dataModel/belongsTo",
             "@type": "@id"
         },
         "category": {
@@ -131,9 +131,9 @@
             "@id": "schema:legalName",
             "@type": "xsd:string"
         },
-        "length": {
-            "@id": "https://projectww4zero.pt/dataModel/length",
-            "@type": "xsd:number"
+        "location": {
+            "@id": "schema:location",
+            "@type": "xsd:string"
         },
         "machineStatus": {
             "@id": "https://projectww4zero.pt/dataModel/machineStatus",
@@ -231,16 +231,16 @@
             "@id": "https://projectww4zero.pt/dataModel/tos",
             "@type": "xsd:boolean"
         },
+        "tupia": {
+            "@id": "https://projectww4zero.pt/dataModel/tupia",
+            "@type": "xsd:boolean"
+        },
         "vat": {
             "@id": "schema:vatID",
             "@type": "xsd:string"
         },
         "weight": {
             "@id": "schema:weight",
-            "@type": "xsd:number"
-        },
-        "width": {
-            "@id": "schema:width",
             "@type": "xsd:number"
         }
     },
@@ -516,34 +516,34 @@
             ]
         },
         {
-            "@id": "fiware:id",
-            "@type": "ngsi-ld:Property",
+            "@id": "https://projectww4zero.pt/dataModel/assemblyBy",
+            "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Projects id Identifier"
+                    "@value": "Identification assembled parts belong to some project made for some worker"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "id"
+                    "@value": "assemblyBy"
                 }
             ]
         },
         {
-            "@id": "schema:name",
-            "@type": "ngsi-ld:Property",
+            "@id": "https://projectww4zero.pt/dataModel/belongsTo",
+            "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Project name"
+                    "@value": "Identification the budget that this project belongs to"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "name"
+                    "@value": "belongsTo"
                 }
             ]
         },
@@ -564,50 +564,34 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/producedBy",
+            "@id": "https://projectww4zero.pt/dataModel/expedition",
             "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the operators giveName that are working in specific project Name"
+                    "@value": "Identification the addres that will recieve the oreder name"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "producedBy"
+                    "@value": "expedition"
                 }
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/orderBy",
-            "@type": "ngsi-ld:Relationship",
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the owner name associated to the project with status in execution"
+                    "@value": "Projects id Identifier"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "orderBy"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/assemblyBy",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Identification assembled parts belong to some project made for some worker"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "assemblyBy"
+                    "@value": "id"
                 }
             ]
         },
@@ -628,18 +612,50 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/expedition",
-            "@type": "ngsi-ld:Relationship",
+            "@id": "schema:name",
+            "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification the addres that will recieve the oreder name"
+                    "@value": "Project name"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "expedition"
+                    "@value": "name"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/orderBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the owner name associated to the project with status in execution"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "orderBy"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/producedBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the operators giveName that are working in specific project Name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "producedBy"
                 }
             ]
         },
@@ -985,13 +1001,45 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identifie the consumable Name"
+                    "@value": "Identify the consumable Name"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
                     "@value": "name"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/tag",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ETIQUETA (H)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "tag"
+                }
+            ]
+        },
+        {
+            "@id": "schema:material",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "MATERIAL (C)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "material"
                 }
             ]
         },
@@ -1060,70 +1108,6 @@
             ]
         },
         {
-            "@id": "fiware:id",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Unic Identifier of a Part of a Project"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "id"
-                }
-            ]
-        },
-        {
-            "@id": "schema:partName",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "REF PEÇA (A)"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "partName"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/sort",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "TIPO (B)"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "sort"
-                }
-            ]
-        },
-        {
-            "@id": "schema:material",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "MATERIAL (C)"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "material"
-                }
-            ]
-        },
-        {
             "@id": "schema:amount",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -1140,82 +1124,18 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/length",
-            "@type": "ngsi-ld:Property",
+            "@id": "https://projectww4zero.pt/dataModel/belongsTo",
+            "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "COMPRIMENTO (E)"
+                    "@value": "Identifies the project to which the part belongs"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "length"
-                }
-            ]
-        },
-        {
-            "@id": "schema:width",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "LARGURA (F)"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "width"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/thickness",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "ESPESSURA (G)"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "thickness"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/tag",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "ETIQUETA (H)"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "tag"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/nestingFlag",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "NESTING (I)"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "nestingFlag"
+                    "@value": "belongsTo"
                 }
             ]
         },
@@ -1232,6 +1152,22 @@
                 {
                     "@language": "en",
                     "@value": "cncFlag"
+                }
+            ]
+        },
+        {
+            "@id": "schema:dimensions",
+            "@type": "ngsi-ld:Geoproperty",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dimensions"
                 }
             ]
         },
@@ -1316,6 +1252,118 @@
             ]
         },
         {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Unic Identifier of a Part of a Project"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/image",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "url da imagem"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "image"
+                }
+            ]
+        },
+        {
+            "@id": "schema:location",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "PART LOCATION IN STOCK"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "location"
+                }
+            ]
+        },
+        {
+            "@id": "schema:material",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "MATERIAL (C)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "material"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/nestingFlag",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "NESTING (I)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "nestingFlag"
+                }
+            ]
+        },
+        {
+            "@id": "schema:observation",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Observation (T)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "observation"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/orderBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the owner name associated to the project with status in execution"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "orderBy"
+                }
+            ]
+        },
+        {
             "@id": "https://projectww4zero.pt/dataModel/orla2",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -1380,18 +1428,82 @@
             ]
         },
         {
-            "@id": "schema:observation",
+            "@id": "schema:partName",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Observation (T)"
+                    "@value": "REF PEÇA (A)"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "observation"
+                    "@value": "partName"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/sort",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "TIPO (B)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "sort"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/tag",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ETIQUETA (H)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "tag"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/thickness",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "ESPESSURA (G)"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "thickness"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/tupia",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "TUPIA"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "tupia"
                 }
             ]
         },
@@ -1408,54 +1520,6 @@
                 {
                     "@language": "en",
                     "@value": "weight"
-                }
-            ]
-        },
-        {
-            "@id": "https://projetww4zero.pt/dataModel/image",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "url da imagem"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "image"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/orderBy",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Identification of the owner name associated to the project with status in execution"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "orderBy"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/belongsTo",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Identifies the project to which the part belongs"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "belongsTo"
                 }
             ]
         },
@@ -1728,22 +1792,6 @@
                 {
                     "@language": "en",
                     "@value": "image"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/belongsTo",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Identification the project that this budget belongs to"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "belongsTo"
                 }
             ]
         },

@@ -22,32 +22,35 @@ Describes the organization entity
 # Project
 
 Contains the information of a project
--  `id`: Projects id Identifier
-   -  Attribute type: **Property**. 
-   -  Required
--  `name`: Project name
-   -  Attribute type: **Property**. [name](https://schema.org/name)
+-  `assemblyBy`: Identification assembled parts belong to some project made for some worker
+   -  Attribute type: **Relationship**. 
+   -  Optional
+-  `belongsTo`: Identification the budget that this project belongs to
+   -  Attribute type: **Relationship**. 
    -  Required
 -  `category`: Movel type
    -  Attribute type: **Property**. 
    -  Optional
--  `status`: Indicates the actual workers station * `waiting` - Projects budget approved * `working` - Projects parts are already in the factorys floor * `finished` - Projects parts are all done * `assembly` - Projects parts are being assembled in the test zone * `expedition` - The request from a client is already out from the factory. One of : `Waiting`, `working`, `finished`, `assembly`, `expedition`.
+-  `expedition`: Identification the addres that will recieve the oreder name
+   -  Attribute type: **Relationship**. 
+   -  Optional
+-  `id`: Projects id Identifier
    -  Attribute type: **Property**. 
-   -  Optional
--  `producedBy`: Identification of the operators giveName that are working in specific project Name
-   -  Attribute type: **Relationship**. 
-   -  Optional
--  `orderBy`: Identification of the owner name associated to the project with status in execution
-   -  Attribute type: **Relationship**. 
    -  Required
--  `assemblyBy`: Identification assembled parts belong to some project made for some worker
-   -  Attribute type: **Relationship**. 
-   -  Optional
 -  `image`: url da imagem
    -  Attribute type: **Property**. [URL](https://schema.org/URL)
    -  Optional
--  `expedition`: Identification the addres that will recieve the oreder name
+-  `name`: Project name
+   -  Attribute type: **Property**. [name](https://schema.org/name)
+   -  Required
+-  `orderBy`: Identification of the owner name associated to the project with status in execution
    -  Attribute type: **Relationship**. 
+   -  Required
+-  `producedBy`: Identification of the operators giveName that are working in specific project Name
+   -  Attribute type: **Relationship**. 
+   -  Optional
+-  `status`: Indicates the actual workers station * `waiting` - Projects budget approved * `working` - Projects parts are already in the factorys floor * `finished` - Projects parts are all done * `assembly` - Projects parts are being assembled in the test zone * `expedition` - The request from a client is already out from the factory. One of : `Waiting`, `working`, `finished`, `assembly`, `expedition`.
+   -  Attribute type: **Property**. 
    -  Optional
 
 
@@ -133,8 +136,14 @@ Describes a consumable list associated with a project
 -  `id`: Consumable Identifier
    -  Attribute type: **Property**. 
    -  Required
--  `name`: Identifie the consumable Name
+-  `name`: Identify the consumable Name
    -  Attribute type: **Property**. 
+   -  Optional
+-  `tag`: ETIQUETA (H)
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `material`: MATERIAL (C)
+   -  Attribute type: **Property**. [material](https://schema.org/material)
    -  Optional
 -  `amount`: Identifier the consumable amount
    -  Attribute type: **Property**. 
@@ -157,38 +166,17 @@ Describes a consumable list associated with a project
 # Part
 
 Identifies the part-name atributes that belongs to a specific project - Lista de Corte -
--  `id`: Unic Identifier of a Part of a Project
-   -  Attribute type: **Property**. 
-   -  Required
--  `partName`: REF PEÇA (A)
-   -  Attribute type: **Property**. [name](https://schema.org/name)
-   -  Required
--  `sort`: TIPO (B)
-   -  Attribute type: **Property**. 
-   -  Required
--  `material`: MATERIAL (C)
-   -  Attribute type: **Property**. [material](https://schema.org/material)
-   -  Required
 -  `amount`: QUANTIDADE (D)
    -  Attribute type: **Property**. [amount](https://schema.org/amount)
    -  Required
--  `length`: COMPRIMENTO (E)
-   -  Attribute type: **Property**. [size](https://schema.org/size)
-   -  Optional
--  `width`: LARGURA (F)
-   -  Attribute type: **Property**. [width](https://schema.org/width)
-   -  Optional
--  `thickness`: ESPESSURA (G)
-   -  Attribute type: **Property**. [size](https://schema.org/size)
-   -  Optional
--  `tag`: ETIQUETA (H)
-   -  Attribute type: **Property**. 
-   -  Optional
--  `nestingFlag`: NESTING (I)
-   -  Attribute type: **Property**. 
-   -  Optional
+-  `belongsTo`: Identifies the project to which the part belongs
+   -  Attribute type: **Relationship**. 
+   -  Required
 -  `cncFlag`: CNC (J)
    -  Attribute type: **Property**. 
+   -  Optional
+-  `dimensions`: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
+   -  Attribute type: **Geoproperty**. 
    -  Optional
 -  `f2`: FURO FACE 2 (K)
    -  Attribute type: **Property**. 
@@ -205,6 +193,27 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 -  `groove`: Veio (O)
    -  Attribute type: **Property**. 
    -  Optional
+-  `id`: Unic Identifier of a Part of a Project
+   -  Attribute type: **Property**. 
+   -  Required
+-  `image`: url da imagem
+   -  Attribute type: **Property**. [URL](https://schema.org/URL)
+   -  Optional
+-  `location`: PART LOCATION IN STOCK
+   -  Attribute type: **Property**. [location](https://schema.org/location)
+   -  Optional
+-  `material`: MATERIAL (C)
+   -  Attribute type: **Property**. [material](https://schema.org/material)
+   -  Required
+-  `nestingFlag`: NESTING (I)
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `observation`: Observation (T)
+   -  Attribute type: **Property**. [Observation](https://schema.org/Observation)
+   -  Optional
+-  `orderBy`: Identification of the owner name associated to the project with status in execution
+   -  Attribute type: **Relationship**. 
+   -  Required
 -  `orla2`: ORLA2 (P)
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
    -  Optional
@@ -217,21 +226,24 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 -  `orla5`: ORLA5 (S)
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
    -  Optional
--  `observation`: Observation (T)
-   -  Attribute type: **Property**. [Observation](https://schema.org/Observation)
+-  `partName`: REF PEÇA (A)
+   -  Attribute type: **Property**. [name](https://schema.org/name)
+   -  Required
+-  `sort`: TIPO (B)
+   -  Attribute type: **Property**. 
+   -  Required
+-  `tag`: ETIQUETA (H)
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `thickness`: ESPESSURA (G)
+   -  Attribute type: **Property**. [size](https://schema.org/size)
+   -  Optional
+-  `tupia`: TUPIA
+   -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
    -  Optional
 -  `weight`: PESO (U)
    -  Attribute type: **Property**. [weight](https://schema.org/weight)
    -  Optional
--  `image`: url da imagem
-   -  Attribute type: **Property**. [URL](https://schema.org/URL)
-   -  Optional
--  `orderBy`: Identification of the owner name associated to the project with status in execution
-   -  Attribute type: **Relationship**. 
-   -  Required
--  `belongsTo`: Identifies the project to which the part belongs
-   -  Attribute type: **Relationship**. 
-   -  Required
 
 
 
@@ -309,9 +321,6 @@ Clients Budget
    -  Required
 -  `image`: url da imagem
    -  Attribute type: **Property**. [URL](https://schema.org/URL)
-   -  Optional
--  `belongsTo`: Identification the project that this budget belongs to
-   -  Attribute type: **Relationship**. 
    -  Optional
 -  `orderBy`: Identification of the owner name associated to the project with status in execution
    -  Attribute type: **Relationship**. 
