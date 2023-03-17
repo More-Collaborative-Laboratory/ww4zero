@@ -172,6 +172,9 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 -  `belongsTo`: Identifies the project to which the part belongs
    -  Attribute type: **Relationship**. 
    -  Required
+-  `belongsToModule`: Identifies the project to which the part belongs
+   -  Attribute type: **Relationship**. 
+   -  Optional
 -  `cncFlag`: CNC (J)
    -  Attribute type: **Property**. 
    -  Optional
@@ -343,6 +346,30 @@ Indicates when an order has been shiped
 -  `orderBy`: Identification of the owner name associated to the project with status in execution
    -  Attribute type: **Relationship**. 
    -  Required
+
+
+
+# Module
+
+Indicates a corresponding module of a project under assembly
+-  `belongsToAssembly`: Identification of the assembly to which this module belongs
+   -  Attribute type: **Property**. 
+   -  Required
+-  `finishTime`: Saves date and time information when the finish button is pressed
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `id`: Module of a project under assembly
+   -  Attribute type: **Property**. 
+   -  Required
+-  `name`: name-project_module-name
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `parts`: parts that make up the module
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `startTime`: Saves date and time information when the start button is pressed
+   -  Attribute type: **Property**. 
+   -  Optional
 
 
 

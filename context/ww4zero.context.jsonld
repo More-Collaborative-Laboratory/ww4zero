@@ -12,6 +12,7 @@
         "Consumable": "fiware:Consumable",
         "Expedition": "fiware:Expedition",
         "Machine": "fiware:Machine",
+        "Module": "fiware:Module",
         "Organization": "fiware:Organization",
         "Owner": "fiware:Owner",
         "Part": "fiware:Part",
@@ -49,6 +50,14 @@
         },
         "belongsTo": {
             "@id": "https://projectww4zero.pt/dataModel/belongsTo",
+            "@type": "@id"
+        },
+        "belongsToAssembly": {
+            "@id": "https://projectww4zero.pt/dataModel/asAssembly",
+            "@type": "xsd:undefined"
+        },
+        "belongsToModule": {
+            "@id": "https://projectww4zero.pt/dataModel/belongsToModule",
             "@type": "@id"
         },
         "category": {
@@ -148,7 +157,7 @@
             "@type": "xsd:string"
         },
         "name": {
-            "@id": "schema:name",
+            "@id": "https://projectww4zero.pt/dataModel/name",
             "@type": "xsd:string"
         },
         "nestingFlag": {
@@ -181,6 +190,10 @@
         },
         "partName": {
             "@id": "schema:name",
+            "@type": "xsd:string"
+        },
+        "parts": {
+            "@id": "https://projectww4zero.pt/dataModel/parts",
             "@type": "xsd:string"
         },
         "performanceRole": {
@@ -429,6 +442,25 @@
                 {
                     "@language": "en",
                     "@value": "Expedition"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "fiware:Module",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Indicates a corresponding module of a project under assembly"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Module"
                 }
             ],
             "rdfs:subClassOf": {
@@ -1136,6 +1168,22 @@
                 {
                     "@language": "en",
                     "@value": "belongsTo"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/belongsToModule",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the project to which the part belongs"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsToModule"
                 }
             ]
         },
@@ -1872,6 +1920,102 @@
                 {
                     "@language": "en",
                     "@value": "orderBy"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/belongsToAssembly",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the assembly to which this module belongs"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsToAssembly"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/finishTime",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Saves date and time information when the finish button is pressed"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "finishTime"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Module of a project under assembly"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/name",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "name-project_module-name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "name"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/parts",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "parts that make up the module"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "parts"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/startTime",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Saves date and time information when the start button is pressed"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "startTime"
                 }
             ]
         }
