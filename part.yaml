@@ -25,6 +25,21 @@ part:
         type: Relationship
         uri: https://projectww4zero.pt/dataModel/belongsTo
         uri-prefix: https://projectww4zero.pt/dataModel/
+    belongsToModule:
+      anyOf:
+        - description: 'Relationship property: Identifies which assembler module the part belongs to (optional)'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifies which assembler module the part belongs to (optional)'
+          format: uri
+          type: string
+      description: Identifies the project to which the part belongs
+      x-ngsi:
+        type: Relationship
+        uri: https://projectww4zero.pt/dataModel/belongsToModule
+        uri-prefix: https://projectww4zero.pt/dataModel/
     cncFlag:
       description: CNC (J)
       example: false
@@ -33,7 +48,6 @@ part:
         type: Property
         uri: https://projectww4zero.pt/dataModel/cncFlag
         uri-prefix: https://projectww4zero.pt/dataModel/
-        
     dimensions:
       description: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
       oneOf:

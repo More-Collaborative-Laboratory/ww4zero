@@ -1,0 +1,64 @@
+module:
+  description: Indicates a corresponding module of a project under assembly
+  properties:
+    belongsToAssembly:
+      anyOf:
+        - description: 'Relationship property: Identifier the urn of assembly of the project name'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier project Name'
+          format: uri
+          type: string
+      description: Identification of the assembly to which this module belongs
+      x-ngsi:
+        uri: https://projectww4zero.pt/dataModel/asAssembly
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    finishTime:
+      description: Saves date and time information when the finish button is pressed
+      example: 27-03-2022 10:00
+      format: DateTime
+      type: string
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/finishTime
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    id:
+      description: Module of a project under assembly
+      example: urn:ngsi-ld:module:[]
+      format: uri
+      type: string
+      x-ngsi:
+        type: Property
+    name:
+      description: name-project_module-name
+      example: MC_MUEBLETV_A
+      type: string
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/name
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    parts:
+      description: parts that make up the module
+      example: MC_MUEBLETV_A_gaveta
+      type: string
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/parts
+        uri-prefix: https://projectww4zero.pt/dataModel/
+    startTime:
+      description: Saves date and time information when the start button is pressed
+      example: 25-03-2022 10:00
+      format: DateTime
+      type: string
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/startTime
+        uri-prefix: https://projectww4zero.pt/dataModel/
+  required:
+    - id
+    - status
+    - belongsToAssembly
+  title: Module
+  type: object
