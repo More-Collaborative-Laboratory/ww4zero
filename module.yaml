@@ -39,14 +39,6 @@ module:
         type: Property
         uri: https://projectww4zero.pt/dataModel/name
         uri-prefix: https://projectww4zero.pt/dataModel/
-    parts:
-      description: parts that make up the module
-      example: MC_MUEBLETV_A_gaveta
-      type: string
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/parts
-        uri-prefix: https://projectww4zero.pt/dataModel/
     startTime:
       description: Saves date and time information when the start button is pressed
       example: 25-03-2022 10:00
