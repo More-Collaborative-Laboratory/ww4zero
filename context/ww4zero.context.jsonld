@@ -192,10 +192,6 @@
             "@id": "schema:name",
             "@type": "xsd:string"
         },
-        "parts": {
-            "@id": "https://projectww4zero.pt/dataModel/parts",
-            "@type": "xsd:string"
-        },
         "performanceRole": {
             "@id": "schema:PerformanceRole",
             "@type": "xsd:string"
@@ -1984,22 +1980,6 @@
                 {
                     "@language": "en",
                     "@value": "name"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/parts",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "parts that make up the module"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "parts"
                 }
             ]
         },

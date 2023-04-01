@@ -61,7 +61,6 @@
         "orla4": "https://projectww4zero.pt/dataModel/orla4",
         "orla5": "https://projectww4zero.pt/dataModel/orla5",
         "partName": "schema:name",
-        "parts": "https://projectww4zero.pt/dataModel/parts",
         "performanceRole": "schema:PerformanceRole",
         "postalCode": "schema:postalCode",
         "producedBy": "https://projectww4zero.pt/dataModel/producedBy",

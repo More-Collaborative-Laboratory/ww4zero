@@ -364,9 +364,6 @@ Indicates a corresponding module of a project under assembly
 -  `name`: name-project_module-name
    -  Attribute type: **Property**. 
    -  Optional
--  `parts`: parts that make up the module
-   -  Attribute type: **Property**. 
-   -  Optional
 -  `startTime`: Saves date and time information when the start button is pressed
    -  Attribute type: **Property**. 
    -  Optional
