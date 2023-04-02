@@ -11,7 +11,7 @@ machineTask:
       x-ngsi:
         type: Property
 
-performedOn:
+    performedOn:
       anyOf:
         - description: 'Relationship property: Identifier what part is executed by the machine.'
           maxLength: 256
@@ -26,7 +26,7 @@ performedOn:
         uri: "https://projectww4zero.pt/dataModel/performedOn" 
         uri-prefix: "https://projectww4zero.pt/dataModel/"
 
-byMachine:
+    byMachine:
       anyOf:
         - description: 'Relationship property: Identifier what machine the task is executed.''
           maxLength: 256
