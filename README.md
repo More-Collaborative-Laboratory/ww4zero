@@ -10,7 +10,7 @@ The `info` section of the OpenAPI specification provides the following informati
 
 - `title`: ww4zero Project
 - `description`: Data model for the MOFREITA component developed under the ww4.0 project
-- `version`: 0.0.1
+- `version`: 2.0.0
 - `contact`: information about the Digitalization of Mofreita, including the name and a URL to the project's GitHub repository.
  ---
 
