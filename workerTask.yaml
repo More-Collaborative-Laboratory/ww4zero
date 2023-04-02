@@ -1,5 +1,5 @@
-modulo:
-  title: Modulo
+workerTask:
+  title: WorkerTask
   type: object
   description: Indicates a corresponding module of a project under assembly
   properties:
