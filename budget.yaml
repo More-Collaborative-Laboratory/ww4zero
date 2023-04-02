@@ -49,18 +49,6 @@ budget:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         model: https://schema.org/Date
         type: Property
-
-    image: 
-      description: url da imagem
-      type: string
-      example: https://schema.org/image
-      x-ngsi:
-        model: "https://schema.org/URL"
-        uri: "https://projectww4zero.pt/dataModel/image"
-        uri-prefix: "https://projetww4zero.pt/dataModel/"
-        type: Property
-
-
     
     orderBy:
       anyOf:
@@ -81,4 +69,5 @@ budget:
   required:
     - id
     - approvedDate
-    - madeFor
+    - orderBy
+    - belongsTo

@@ -19,7 +19,6 @@ consumable:
         uri: "https://projectww4zero.pt/dataModel/name"
         uri-prefix: "https://projetww4zero.pt/dataModel/"
         type: Property
-
     tag:
       description: ETIQUETA (H)
       type: number
@@ -66,7 +65,6 @@ consumable:
         uri: "https://projectww4zero.pt/dataModel/status"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
-
 
     image: 
       description: url da imagem

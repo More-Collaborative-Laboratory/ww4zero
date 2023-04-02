@@ -1,9 +1,16 @@
 project:
   description: Contains the information of a project
   properties:
-    assemblyBy:
+    id:
+      description: Projects id Identifier
+      example: urn:ngsi-ld:Project:[name]
+      format: uri
+      type: string
+      x-ngsi:
+        type: Property
+    hasBudget:
       anyOf:
-        - description: 'Relationship property: Identifies which parts were assembled by a specific worker'
+        - description: 'Relationship property: Identifies the budget related'
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
@@ -14,22 +21,7 @@ project:
       description: Identification assembled parts belong to some project made for some worker
       x-ngsi:
         type: Relationship
-        uri: https://projectww4zero.pt/dataModel/assemblyBy
-        uri-prefix: https://projectww4zero.pt/dataModel/
-    belongsTo:
-      anyOf:
-        - description: 'Relationship property: Identifier the name of the budget that the project owns'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifier the name  of the budge'
-          format: uri
-          type: string
-      description: Identification the budget that this project belongs to
-      x-ngsi:
-        type: Relationship
-        uri: https://projectww4zero.pt/dataModel/madeFor
+        uri: https://projectww4zero.pt/dataModel/hasBudget
         uri-prefix: https://projectww4zero.pt/dataModel/
     category:
       description: Movel type
@@ -39,37 +31,6 @@ project:
         type: Property
         uri: https://projectww4zero.pt/dataModel/category
         uri-prefix: https://projectww4zero.pt/dataModel/
-    expedition:
-      anyOf:
-        - description: 'Relationship property: Identifies project name that is already going from the factory to the owner address'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: indicates that all the process of some order is going for some address'
-          format: uri
-          type: string
-      description: Identification the addres that will recieve the oreder name
-      x-ngsi:
-        type: Relationship
-        uri: https://projectww4zero.pt/dataModel/expedition
-        uri-prefix: https://projectww4zero.pt/dataModel/
-    id:
-      description: Projects id Identifier
-      example: urn:ngsi-ld:Project:[uuid]
-      format: uri
-      type: string
-      x-ngsi:
-        type: Property
-    image:
-      description: url da imagem
-      example: https://schema.org/image
-      type: string
-      x-ngsi:
-        model: https://schema.org/URL
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/image
-        uri-prefix: https://projetww4zero.pt/dataModel/
     name:
       description: Project name
       example: MUEBLE-WC
@@ -94,21 +55,6 @@ project:
         type: Relationship
         uri: https://projectww4zero.pt/dataModel/orderBy
         uri-prefix: https://projectww4zero.pt/dataModel/
-    producedBy:
-      anyOf:
-        - description: 'Relationship property: Identifies the operator evolved in the produced stations'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: linking the workers and the project giveName'
-          format: uri
-          type: string
-      description: Identification of the operators giveName that are working in specific project Name
-      x-ngsi:
-        type: Relationship
-        uri: https://projectww4zero.pt/dataModel/producedBy
-        uri-prefix: https://projectww4zero.pt/dataModel/
     status:
       description: Indicates the actual workers station * `waiting` - Projects budget approved * `working` - Projects parts are already in the factorys floor * `finished` - Projects parts are all done * `assembly` - Projects parts are being assembled in the test zone * `expedition` - The request from a client is already out from the factory
       enum:
@@ -128,4 +74,4 @@ project:
     - id
     - name
     - orderBy
-    - belongsTo
+    - hasBudget

@@ -1,7 +1,16 @@
 module:
+  title: Module
+  type: object
   description: Indicates a corresponding module of a project under assembly
   properties:
-    belongsToAssembly:
+    id:
+      description: Module of a project under assembly
+      example: urn:ngsi-ld:Module:[]
+      format: uri
+      type: string
+      x-ngsi:
+        type: Property
+    belongsToMobile:
       anyOf:
         - description: 'Relationship property: Identifier the urn of assembly of the project name'
           maxLength: 256
@@ -13,7 +22,7 @@ module:
           type: string
       description: Identification of the assembly to which this module belongs
       x-ngsi:
-        uri: https://projectww4zero.pt/dataModel/asAssembly
+        uri: https://projectww4zero.pt/dataModel/belongsToMobile
         uri-prefix: https://projectww4zero.pt/dataModel/
     finishTime:
       description: Saves date and time information when the finish button is pressed
@@ -24,13 +33,6 @@ module:
         type: Property
         uri: https://projectww4zero.pt/dataModel/finishTime
         uri-prefix: https://projectww4zero.pt/dataModel/
-    id:
-      description: Module of a project under assembly
-      example: urn:ngsi-ld:module:[]
-      format: uri
-      type: string
-      x-ngsi:
-        type: Property
     name:
       description: name-project_module-name
       example: MC_MUEBLETV_A
@@ -51,6 +53,5 @@ module:
   required:
     - id
     - status
-    - belongsToAssembly
-  title: Module
-  type: object
+    - belongsToMobile
+  

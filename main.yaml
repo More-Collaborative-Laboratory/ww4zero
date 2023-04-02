@@ -36,6 +36,18 @@ components:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/expedition" 
     Module:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/module
+    Mobile:
+      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/mobile.yaml#/mobile
+    Group:
+      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/group.yaml#/group
+    MachineTask:
+      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machineTask.yaml#/machineTask
+    WorkerTask:
+      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/workerTask
+
+    
+
+    
 
 
 

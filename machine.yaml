@@ -4,12 +4,22 @@ machine:
   description: Machine cnc1, nesting1, manual cut1 #tambem assemblagem das partes e envio da encomenda?
   properties:
     id:
-      description: Machine Type
+      description: Machine From the organization
       type: string
       format: uri
-      example: urn:ngsi-ld:Machine:[]
+      example: urn:ngsi-ld:Machine:<machine_name>
       x-ngsi:
         type: Property
+
+    name:
+      description: Project name
+      example: MUEBLE-WC
+      type: string
+      x-ngsi:
+        model: https://schema.org/name
+        type: Property
+        uri: https://schema.org/name
+        uri-prefix: https://schema.org/
 
     startTime: 
       description: Saves date and time information when the start button is pressed
@@ -70,26 +80,9 @@ machine:
         uri: "https://projectww4zero.pt/dataModel/machineType"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
-
-    executedBy:
+    allocatedIn:
       anyOf:
-        - description: 'Relationship property: Identifier the Worker that is active in this task'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifier format of any worker entity'
-          format: uri
-          type: string
-      description: 'Identification worker that made the part'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/executedBy" 
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
-
-    executedIn:
-      anyOf:
-        - description: 'Relationship property: Identifier the made part'
+        - description: 'Relationship property: Identifier the organization the machine is allocated'
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
@@ -103,22 +96,6 @@ machine:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
 
-    belongsTo:
-      anyOf:
-        - description: 'Relationship property: Identifier the urn of project name'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifier project Name'
-          format: uri
-          type: string
-      description: 'Identification of the project to which this assembly corresponds'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/belongsTo"  #pode ser assim igual ao budget?
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
-  
-
   required:
     - id
+    - belongsTo 

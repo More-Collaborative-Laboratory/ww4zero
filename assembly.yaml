@@ -7,7 +7,7 @@ assembly:
       description: Assembly parts from a project
       type: string
       format: uri
-      example: urn:ngsi-ld:assembly:[]
+      example: urn:ngsi-ld:assembly:<project_name>
       x-ngsi:
         type: Property
 
@@ -86,3 +86,4 @@ assembly:
     - id
     - status
     - belongsTo
+    - orderBy

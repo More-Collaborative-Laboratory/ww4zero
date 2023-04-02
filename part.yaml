@@ -25,7 +25,8 @@ part:
         type: Relationship
         uri: https://projectww4zero.pt/dataModel/belongsTo
         uri-prefix: https://projectww4zero.pt/dataModel/
-    belongsToModule:
+
+    belongsToGroup:
       anyOf:
         - description: 'Relationship property: Identifies which assembler module the part belongs to (optional)'
           maxLength: 256
@@ -38,7 +39,7 @@ part:
       description: Identifies the project to which the part belongs
       x-ngsi:
         type: Relationship
-        uri: https://projectww4zero.pt/dataModel/belongsToModule
+        uri: https://projectww4zero.pt/dataModel/belongsToGroup
         uri-prefix: https://projectww4zero.pt/dataModel/
     cncFlag:
       description: CNC (J)
