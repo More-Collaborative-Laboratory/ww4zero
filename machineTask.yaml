@@ -1,5 +1,5 @@
 machineTask:
-  title: machineTask
+  title: MachineTask
   type: object
   description: This entity creates a bridge table between the Machine and Part entities. 
   properties:

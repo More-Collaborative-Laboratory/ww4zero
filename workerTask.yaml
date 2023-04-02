@@ -14,7 +14,7 @@ workerTask:
     executedBy:
       anyOf:
         - description: 'Relationship property: Identifier the worker operating a machine'
-          maxLength: 256
+          maxLength: 255
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
