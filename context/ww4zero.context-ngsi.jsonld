@@ -56,7 +56,6 @@
         "isCompany": "schema:Boolean",
         "legalName": "schema:legalName",
         "location": "schema:location",
-        "machineStatus": "https://projectww4zero.pt/dataModel/machineStatus",
         "machineType": "https://projectww4zero.pt/dataModel/machineType",
         "material": "schema:material",
         "name": "https://projectww4zero.pt/dataModel/name",

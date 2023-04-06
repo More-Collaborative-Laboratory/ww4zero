@@ -32,22 +32,6 @@ expedition:
         model: https://schema.org/Boolean
         type: Property
 
-    orderBy:
-      anyOf:
-        - description: 'Relationship property: Identifies the Owner giveName or familyName or taxID that the project belongs to'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifies a project by the associated giveName from the owner'
-          format: uri
-          type: string
-      description: 'Identification of the owner name associated to the project with status in execution'
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/orderBy"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
-
     belongsTo:
       anyOf:
         - description: 'Relationship property: Identifier consumables properties that belong to a project'
@@ -67,4 +51,4 @@ expedition:
   required:
     - id
     - expeditionTime
-    - orderBy
+    - belongsTo

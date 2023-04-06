@@ -163,6 +163,12 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 -  `belongsToGroup`: Identifies the project to which the part belongs
    -  Attribute type: **Relationship**. 
    -  Optional
+-  `belongsToMobile`: Identifies the project to which the part belongs
+   -  Attribute type: **Relationship**. 
+   -  Optional
+-  `belongsToModule`: Identifies the project to which the part belongs
+   -  Attribute type: **Relationship**. 
+   -  Optional
 -  `cncFlag`: CNC (J)
    -  Attribute type: **Property**. 
    -  Optional
@@ -246,15 +252,6 @@ Machine cnc1, nesting1, manual cut1
    -  Required
 -  `name`: Project name
    -  Attribute type: **Property**. [name](https://schema.org/name)
-   -  Optional
--  `startTime`: Saves date and time information when the start button is pressed
-   -  Attribute type: **Property**. 
-   -  Optional
--  `finishTime`: Saves date and time information when the finish button is pressed
-   -  Attribute type: **Property**. 
-   -  Optional
--  `machineStatus`: Indicates in which stage are the parts of corresponding machine type * `waiting` - indicates Information already arrived the machine but waits for start-button * `active` - The parts to be made in this station is already start * `finished` - The parts belong to the station referred to a project are completed. One of : `waiting`, `active`, `finished`.
-   -  Attribute type: **Property**. 
    -  Optional
 -  `machineType`: Indicates in wich stage are the parts of corresponding machine type * `cnc1` - indicates cnc1 station is working * `nesting1` - indicates nesting1 station is working * `manualcut1` - indicates manualcut1 station is working * `receiving_material` - indicates that raw material is entering the factory * `organizing_material` - indicates that raw material is being put away at the factory * `assembly` - indicates that assembly station is on use * `shipping` - indicates the order is shipping. One of : `cnc1`, `nesting1`, `manualcut1`, `receiving_material`, `organizing_material`, `assembly`, `shipping`.
    -  Attribute type: **Property**. 
@@ -409,6 +406,12 @@ This entity creates a bridge table between the Machine and Part entities.
 -  `byMachine`: Identification of the workers  to which worked  on project
    -  Attribute type: **Property**. 
    -  Optional
+-  `startTime`: Saves date and time information when the start button is pressed
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `finishTime`: Saves date and time information when the finish button is pressed
+   -  Attribute type: **Property**. 
+   -  Optional
 
 
 
@@ -422,6 +425,12 @@ Indicates a corresponding module of a project under assembly
    -  Attribute type: **Property**. 
    -  Optional
 -  `executedIn`: Identification of the project  to which this machine is working on
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `startTime`: Saves date and time information when the start button is pressed
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `finishTime`: Saves date and time information when the finish button is pressed
    -  Attribute type: **Property**. 
    -  Optional
 

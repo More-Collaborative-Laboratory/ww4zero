@@ -160,10 +160,6 @@
             "@id": "schema:location",
             "@type": "xsd:string"
         },
-        "machineStatus": {
-            "@id": "https://projectww4zero.pt/dataModel/machineStatus",
-            "@type": "xsd:string"
-        },
         "machineType": {
             "@id": "https://projectww4zero.pt/dataModel/machineType",
             "@type": "xsd:string"
@@ -1212,6 +1208,38 @@
             ]
         },
         {
+            "@id": "https://projectww4zero.pt/dataModel/belongsToMobile",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the project to which the part belongs"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsToMobile"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/belongsToModule",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the project to which the part belongs"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsToModule"
+                }
+            ]
+        },
+        {
             "@id": "https://projectww4zero.pt/dataModel/cncFlag",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -1624,38 +1652,6 @@
                 {
                     "@language": "en",
                     "@value": "name"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/startTime",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Saves date and time information when the start button is pressed"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "startTime"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/finishTime",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Saves date and time information when the finish button is pressed"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "finishTime"
                 }
             ]
         },
@@ -2220,6 +2216,38 @@
             ]
         },
         {
+            "@id": "https://projectww4zero.pt/dataModel/startTime",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Saves date and time information when the start button is pressed"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "startTime"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/finishTime",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Saves date and time information when the finish button is pressed"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "finishTime"
+                }
+            ]
+        },
+        {
             "@id": "fiware:id",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -2264,6 +2292,38 @@
                 {
                     "@language": "en",
                     "@value": "executedIn"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/startTime",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Saves date and time information when the start button is pressed"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "startTime"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/finishTime",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Saves date and time information when the finish button is pressed"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "finishTime"
                 }
             ]
         }
