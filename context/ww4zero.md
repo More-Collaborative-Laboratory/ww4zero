@@ -208,9 +208,6 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 -  `observation`: Observation (T)
    -  Attribute type: **Property**. [Observation](https://schema.org/Observation)
    -  Optional
--  `orderBy`: Identification of the owner name associated to the project with status in execution
-   -  Attribute type: **Relationship**. 
-   -  Required
 -  `orla2`: ORLA2 (P)
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
    -  Optional
@@ -295,9 +292,6 @@ Clients Budget
 -  `name`: Budget name
    -  Attribute type: **Property**. [name](https://schema.org/name)
    -  Optional
--  `category`: Movel type
-   -  Attribute type: **Property**. 
-   -  Optional
 -  `amount`: Value in euros
    -  Attribute type: **Property**. 
    -  Optional
@@ -307,6 +301,9 @@ Clients Budget
 -  `orderBy`: Identification of the owner name associated to the project with status in execution
    -  Attribute type: **Relationship**. 
    -  Required
+-  `approvedBy`: Identification of the owner name associated to the project with status in execution
+   -  Attribute type: **Relationship**. 
+   -  Optional
 
 
 
@@ -322,12 +319,9 @@ Indicates when an order has been shiped
 -  `deliveryFlag`: Indicates if the order arrived to the destination
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
    -  Optional
--  `orderBy`: Identification of the owner name associated to the project with status in execution
-   -  Attribute type: **Relationship**. 
-   -  Required
 -  `belongsTo`: Identification of the projet Name that this consumables will attached to
    -  Attribute type: **Relationship**. 
-   -  Optional
+   -  Required
 
 
 
@@ -358,6 +352,12 @@ Indicates a corresponding mobile of a project under assembly
 -  `id`: movel of a project under assembly
    -  Attribute type: **Property**. 
    -  Required
+-  `category`: Movel type
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `amount`: Value in euros
+   -  Attribute type: **Property**. 
+   -  Optional
 -  `startTime`: Saves date and time information when the start button is pressed
    -  Attribute type: **Property**. 
    -  Optional
@@ -369,6 +369,9 @@ Indicates a corresponding mobile of a project under assembly
    -  Optional
 -  `belongsToAssembly`: Identification of the movel to which this module belongs
    -  Attribute type: **Property**. 
+   -  Required
+-  `hasBudget`: Identification assembled parts belong to some project made for some worker
+   -  Attribute type: **Relationship**. 
    -  Required
 
 

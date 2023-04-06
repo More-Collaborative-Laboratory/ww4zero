@@ -48,6 +48,10 @@
             "@id": "https://projectww4zero.pt/dataModel/amount",
             "@type": "xsd:number"
         },
+        "approvedBy": {
+            "@id": "https://projectww4zero.pt/dataModel/approvedBy",
+            "@type": "@id"
+        },
         "approvedDate": {
             "@id": "https://projectww4zero.pt/dataModel/approvedDate",
             "@type": "xsd:string"
@@ -1448,22 +1452,6 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/orderBy",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Identification of the owner name associated to the project with status in execution"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "orderBy"
-                }
-            ]
-        },
-        {
             "@id": "https://projectww4zero.pt/dataModel/orla2",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -1784,22 +1772,6 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/category",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Movel type"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "category"
-                }
-            ]
-        },
-        {
             "@id": "https://projetww4zero.pt/dataModel/amount",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -1848,6 +1820,22 @@
             ]
         },
         {
+            "@id": "https://projectww4zero.pt/dataModel/approvedBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the owner name associated to the project with status in execution"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "approvedBy"
+                }
+            ]
+        },
+        {
             "@id": "fiware:id",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -1892,22 +1880,6 @@
                 {
                     "@language": "en",
                     "@value": "deliveryFlag"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/orderBy",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Identification of the owner name associated to the project with status in execution"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "orderBy"
                 }
             ]
         },
@@ -2024,6 +1996,38 @@
             ]
         },
         {
+            "@id": "https://projectww4zero.pt/dataModel/category",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Movel type"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "category"
+                }
+            ]
+        },
+        {
+            "@id": "https://projetww4zero.pt/dataModel/amount",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Value in euros"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "amount"
+                }
+            ]
+        },
+        {
             "@id": "https://projectww4zero.pt/dataModel/startTime",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -2084,6 +2088,22 @@
                 {
                     "@language": "en",
                     "@value": "belongsToAssembly"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/hasBudget",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification assembled parts belong to some project made for some worker"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "hasBudget"
                 }
             ]
         },

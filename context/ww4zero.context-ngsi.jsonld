@@ -28,6 +28,7 @@
         "addressRegion": "schema:addressRegion",
         "allocatedIn": "https://projectww4zero.pt/dataModel/executedIn",
         "amount": "https://projectww4zero.pt/dataModel/amount",
+        "approvedBy": "https://projectww4zero.pt/dataModel/approvedBy",
         "approvedDate": "https://projectww4zero.pt/dataModel/approvedDate",
         "belongsTo": "https://projectww4zero.pt/dataModel/belongsTo",
         "belongsToAssembly": "https://projectww4zero.pt/dataModel/belongsToAssembly",
