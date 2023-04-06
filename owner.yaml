@@ -219,13 +219,13 @@ owner:
 
 
       tos: 
-        description: date of acceptance of the system operation terms
-        type: boolean
-        example: true
+        description: Saves date and time information when the start button is pressed
+        type: string
+        format: DateTime
+        example: '25-03-2022 10:00'
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/tos"
-          uri-prefix: "https://projetww4zero.pt/dataModel/"
-          model: "https://schema.org/Boolean"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Property
 
 
@@ -236,5 +236,4 @@ owner:
       - address
       - email
       - active
-      - tos 
       - isCompany
