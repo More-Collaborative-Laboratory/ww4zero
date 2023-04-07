@@ -95,5 +95,4 @@ furniture:
   required:
     - id
     - status
-    - belongsToAssembly
     - hasBudget
