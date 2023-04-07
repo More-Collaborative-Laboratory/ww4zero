@@ -44,7 +44,7 @@ part:
         uri: https://projectww4zero.pt/dataModel/belongsToGroup
         uri-prefix: https://projectww4zero.pt/dataModel/
 
-    belongsToMobile:
+    belongsToFurniture:
       anyOf:
         - description: 'Relationship property: Identifies which assembler module the part belongs to (optional)'
           maxLength: 256
@@ -57,7 +57,7 @@ part:
       description: Identifies the project to which the part belongs
       x-ngsi:
         type: Relationship
-        uri: https://projectww4zero.pt/dataModel/belongsToMobile
+        uri: https://projectww4zero.pt/dataModel/belongsToFurniture
         uri-prefix: https://projectww4zero.pt/dataModel/
 
     belongsToModule:
