@@ -52,6 +52,7 @@ group:
           type: string
       description: 'Identification of the movel to which this module belongs'
       x-ngsi:
+        type: Relationship
         uri: "https://projectww4zero.pt/dataModel/belongsToModule" 
         uri-prefix: "https://projectww4zero.pt/dataModel/"
 
