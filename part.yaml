@@ -1,5 +1,5 @@
-part:
-  title: Part
+leftOver:
+  title: LeftOver
   type: object
   description: Identifies the part-name atributes that belongs to a specific project - Lista de Corte -
   properties:
@@ -295,15 +295,6 @@ part:
         type: Property
         uri: https://projectww4zero.pt/dataModel/image
         uri-prefix: https://projetww4zero.pt/dataModel/
-    location:
-      description: PART LOCATION IN STOCK
-      example: AWZ
-      type: string
-      x-ngsi:
-        model: https://schema.org/location
-        type: Property
-        uri: https://schema.org/location
-        uri-prefix: https://schema.org/
     material:
       description: MATERIAL (C)
       example: AG L Biscuit Nude 36W

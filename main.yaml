@@ -44,7 +44,8 @@ components:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machineTask.yaml#/machineTask
     WorkerTask:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/workerTask
-
+    LeftOver:
+      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/leftOver
     
 
     
