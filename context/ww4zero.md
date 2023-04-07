@@ -329,7 +329,7 @@ Indicates a corresponding module of a project under assembly
    -  Attribute type: **Property**. 
    -  Required
 -  `belongsToFurniture`: Identification of the assembly to which this module belongs
-   -  Attribute type: **Property**. 
+   -  Attribute type: **Relationship**. 
    -  Required
 -  `finishTime`: Saves date and time information when the finish button is pressed
    -  Attribute type: **Property**. 
@@ -365,7 +365,7 @@ Indicates a corresponding furniture of a project under assembly
    -  Attribute type: **Property**. 
    -  Optional
 -  `belongsToAssembly`: Identification of the movel to which this module belongs
-   -  Attribute type: **Property**. 
+   -  Attribute type: **Relationship**. 
    -  Required
 -  `hasBudget`: Identification assembled parts belong to some project made for some worker
    -  Attribute type: **Relationship**. 
@@ -389,7 +389,7 @@ Indicates a corresponding module of a project under assembly
    -  Attribute type: **Property**. 
    -  Required
 -  `belongsToModule`: Identification of the movel to which this module belongs
-   -  Attribute type: **Property**. 
+   -  Attribute type: **Relationship**. 
    -  Required
 
 

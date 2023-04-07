@@ -63,11 +63,11 @@
         },
         "belongsToAssembly": {
             "@id": "https://projectww4zero.pt/dataModel/belongsToAssembly",
-            "@type": "xsd:undefined"
+            "@type": "@id"
         },
         "belongsToFurniture": {
             "@id": "https://projectww4zero.pt/dataModel/belongsToFurniture",
-            "@type": "xsd:undefined"
+            "@type": "@id"
         },
         "belongsToGroup": {
             "@id": "https://projectww4zero.pt/dataModel/belongsToGroup",
@@ -75,7 +75,7 @@
         },
         "belongsToModule": {
             "@id": "https://projectww4zero.pt/dataModel/belongsToModule",
-            "@type": "xsd:undefined"
+            "@type": "@id"
         },
         "byMachine": {
             "@id": "https://projectww4zero.pt/dataModel/producedBy",
@@ -1925,7 +1925,7 @@
         },
         {
             "@id": "https://projectww4zero.pt/dataModel/belongsToFurniture",
-            "@type": "ngsi-ld:Property",
+            "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
@@ -2085,7 +2085,7 @@
         },
         {
             "@id": "https://projectww4zero.pt/dataModel/belongsToAssembly",
-            "@type": "ngsi-ld:Property",
+            "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
@@ -2181,7 +2181,7 @@
         },
         {
             "@id": "https://projectww4zero.pt/dataModel/belongsToModule",
-            "@type": "ngsi-ld:Property",
+            "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
