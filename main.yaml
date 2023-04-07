@@ -36,8 +36,8 @@ components:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/expedition" 
     Module:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/module
-    Mobile:
-      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/mobile.yaml#/mobile
+    Furniture:
+      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/furniture.yaml#/furniture
     Group:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/group.yaml#/group
     MachineTask:
