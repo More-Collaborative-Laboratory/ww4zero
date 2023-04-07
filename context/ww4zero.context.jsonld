@@ -64,13 +64,13 @@
             "@id": "https://projectww4zero.pt/dataModel/belongsToAssembly",
             "@type": "xsd:undefined"
         },
+        "belongsToFurniture": {
+            "@id": "https://projectww4zero.pt/dataModel/belongsToFurniture",
+            "@type": "xsd:undefined"
+        },
         "belongsToGroup": {
             "@id": "https://projectww4zero.pt/dataModel/belongsToGroup",
             "@type": "@id"
-        },
-        "belongsToMobile": {
-            "@id": "https://projectww4zero.pt/dataModel/belongsToMobile",
-            "@type": "xsd:undefined"
         },
         "belongsToModule": {
             "@id": "https://projectww4zero.pt/dataModel/belongsToModule",
@@ -219,6 +219,10 @@
         "postalCode": {
             "@id": "schema:postalCode",
             "@type": "xsd:string"
+        },
+        "price": {
+            "@id": "schema:price",
+            "@type": "xsd:number"
         },
         "sort": {
             "@id": "https://projectww4zero.pt/dataModel/sort",
@@ -1212,7 +1216,7 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/belongsToMobile",
+            "@id": "https://projectww4zero.pt/dataModel/belongsToFurniture",
             "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
@@ -1223,7 +1227,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "belongsToMobile"
+                    "@value": "belongsToFurniture"
                 }
             ]
         },
@@ -1772,18 +1776,18 @@
             ]
         },
         {
-            "@id": "https://projetww4zero.pt/dataModel/amount",
+            "@id": "schema:price",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Value in euros"
+                    "@value": "Price in euros"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "amount"
+                    "@value": "price"
                 }
             ]
         },
@@ -1916,7 +1920,7 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/belongsToMobile",
+            "@id": "https://projectww4zero.pt/dataModel/belongsToFurniture",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -1927,7 +1931,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "belongsToMobile"
+                    "@value": "belongsToFurniture"
                 }
             ]
         },

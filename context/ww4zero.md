@@ -163,7 +163,7 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 -  `belongsToGroup`: Identifies the project to which the part belongs
    -  Attribute type: **Relationship**. 
    -  Optional
--  `belongsToMobile`: Identifies the project to which the part belongs
+-  `belongsToFurniture`: Identifies the project to which the part belongs
    -  Attribute type: **Relationship**. 
    -  Optional
 -  `belongsToModule`: Identifies the project to which the part belongs
@@ -292,7 +292,7 @@ Clients Budget
 -  `name`: Budget name
    -  Attribute type: **Property**. [name](https://schema.org/name)
    -  Optional
--  `amount`: Value in euros
+-  `price`: Price in euros
    -  Attribute type: **Property**. 
    -  Optional
 -  `approvedDate`: Saves date and time information when the start button is pressed
@@ -331,7 +331,7 @@ Indicates a corresponding module of a project under assembly
 -  `id`: Module of a project under assembly
    -  Attribute type: **Property**. 
    -  Required
--  `belongsToMobile`: Identification of the assembly to which this module belongs
+-  `belongsToFurniture`: Identification of the assembly to which this module belongs
    -  Attribute type: **Property**. 
    -  Required
 -  `finishTime`: Saves date and time information when the finish button is pressed

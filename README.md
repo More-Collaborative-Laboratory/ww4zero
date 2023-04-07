@@ -37,4 +37,4 @@ components:
 
 ## Representation
 
-![alt text](./Documents/WoodWork4.0_v2.drawio.svg)
+![alt text](./Documents/WoodWork.svg)
