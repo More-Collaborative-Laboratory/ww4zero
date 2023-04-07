@@ -10,7 +10,7 @@ module:
       type: string
       x-ngsi:
         type: Property
-    belongsToMobile:
+    belongsToFurniture:
       anyOf:
         - description: 'Relationship property: Identifier the urn of assembly of the project name'
           maxLength: 256
@@ -22,7 +22,7 @@ module:
           type: string
       description: Identification of the assembly to which this module belongs
       x-ngsi:
-        uri: https://projectww4zero.pt/dataModel/belongsToMobile
+        uri: https://projectww4zero.pt/dataModel/belongsToFurniture
         uri-prefix: https://projectww4zero.pt/dataModel/
     finishTime:
       description: Saves date and time information when the finish button is pressed
@@ -53,5 +53,5 @@ module:
   required:
     - id
     - status
-    - belongsToMobile
+    - belongsToFurniture
   

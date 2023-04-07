@@ -21,13 +21,15 @@ budget:
         model: https://schema.org/name
         type: Property
 
-    amount: 
-      description: Value in euros
+    price: 
+      description: Price in euros
       type: number
-      example: '15 000'
+      example: '15000'
+      maxLength: 255
+      minLength: 1
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/amount"
-        uri-prefix: "https://projetww4zero.pt/dataModel/"
+        uri: "https://schema.org/price"
+        uri-prefix: "https://schema.org/"
         type: Property
 
     
@@ -45,7 +47,7 @@ budget:
     orderBy:
       anyOf:
         - description: 'Relationship property: Identifies the Owner giveName or familyName or taxID that the project belongs to'
-          maxLength: 256
+          maxLength: 255
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string

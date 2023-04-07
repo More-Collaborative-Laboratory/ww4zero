@@ -1,13 +1,13 @@
-mobile:
-  title: Mobile
+furniture:
+  title: Furniture
   type: object
-  description: Indicates a corresponding mobile of a project under assembly
+  description: Indicates a corresponding furniture of a project under assembly
   properties:
     id:
       description: movel of a project under assembly
       type: string
       format: uri
-      example: urn:ngsi-ld:Mobile:[]
+      example: urn:ngsi-ld:Furniture:[]
       x-ngsi:
         type: Property
 
