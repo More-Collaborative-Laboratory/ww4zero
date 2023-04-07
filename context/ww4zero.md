@@ -366,7 +366,7 @@ Indicates a corresponding furniture of a project under assembly
    -  Optional
 -  `belongsToAssembly`: Identification of the movel to which this module belongs
    -  Attribute type: **Relationship**. 
-   -  Required
+   -  Optional
 -  `hasBudget`: Identification assembled parts belong to some project made for some worker
    -  Attribute type: **Relationship**. 
    -  Required
