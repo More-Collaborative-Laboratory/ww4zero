@@ -1,5 +1,5 @@
-part:
-  title: leftOver
+leftOver:
+  title: LeftOver
   type: object
   description: Identifies the part-name atributes that belongs to a specific project - Lista de Corte -
   properties:
