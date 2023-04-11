@@ -10,21 +10,6 @@ leftOver:
       type: string
       x-ngsi:
         type: Property
-    belongsTo:
-      anyOf:
-        - description: 'Relationship property: Identifies the project to which the part belongs'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: indicates the project to which the part belongs '
-          format: uri
-          type: string
-      description: Identifies the project to which the part belongs
-      x-ngsi:
-        type: Relationship
-        uri: https://projectww4zero.pt/dataModel/belongsTo
-        uri-prefix: https://projectww4zero.pt/dataModel/
     dimensions:
       description: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
       oneOf:
@@ -229,5 +214,4 @@ leftOver:
   required:
     - id
     - material
-    - belongsTo
   
