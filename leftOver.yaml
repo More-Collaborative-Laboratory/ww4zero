@@ -1,11 +1,11 @@
-leftOver:
-  title: Leftover
+leftover:
   type: object
+  title: Leftover
   description: Identifies the attributes of a leftover that belongs to an organization
   properties:
     id:
       description: Unique identifier of the leftover
-      example: urn:ngsi-ld:leftOver:1223
+      example: urn:ngsi-ld:Leftover:1223
       format: uri
       type: string
       maxLength: 256

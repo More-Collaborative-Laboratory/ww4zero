@@ -1,60 +1,72 @@
 project:
+  type: object
+  title: Project
   description: Contains the information of a project
   properties:
     id:
-      description: Projects id Identifier
+      description: Unique identifier of the project
       example: urn:ngsi-ld:Project:[name]
       format: uri
       type: string
+      maxLength: 256
       x-ngsi:
         type: Property
+
     hasBudget:
+      description: "Relationship property: Identifies the budget related"
       anyOf:
-        - description: 'Relationship property: Identifies the budget related'
+        - description: Property. Identifier format of any NGSI entity
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: parts of a project assembled by work giveName or familyName'
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: Identification assembled parts belong to some project made for some worker
+          maxLength: 256
       x-ngsi:
         type: Relationship
         uri: https://projectww4zero.pt/dataModel/hasBudget
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     category:
-      description: Movel type
+      description: Type of furniture
       example: Movel cozinha
       type: string
+      maxLength: 256
       x-ngsi:
         type: Property
         uri: https://projectww4zero.pt/dataModel/category
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     name:
       description: Project name
       example: MUEBLE-WC
       type: string
+      maxLength: 256
       x-ngsi:
         model: https://schema.org/name
         type: Property
         uri: https://schema.org/name
         uri-prefix: https://schema.org/
+
     orderBy:
+      description: Identification of the owner name associated to the project with status in execution
       anyOf:
-        - description: 'Relationship property: Identifies the Owner giveName or familyName or taxID that the project belongs to'
+        - description: Property. Identifier format of any NGSI entity
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: Identifies a project by the associated giveName from the owner'
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: Identification of the owner name associated to the project with status in execution
+          maxLength: 256
       x-ngsi:
         type: Relationship
         uri: https://projectww4zero.pt/dataModel/orderBy
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     status:
       description: Indicates the actual workers station * `waiting` - Projects budget approved * `working` - Projects parts are already in the factorys floor * `finished` - Projects parts are all done * `assembly` - Projects parts are being assembled in the test zone * `expedition` - The request from a client is already out from the factory
       enum:
@@ -69,7 +81,7 @@ project:
         type: Property
         uri: https://projectww4zero.pt/dataModel/status
         uri-prefix: https://projectww4zero.pt/dataModel/
-        
+
   required:
     - id
     - name
