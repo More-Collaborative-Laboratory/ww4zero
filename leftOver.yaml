@@ -1,32 +1,34 @@
 leftOver:
   title: LeftOver
   type: object
-  description: Identifies the part-name atributes that belongs to a specific project - Lista de Corte -
+  description: Identifies the attributes of a leftover that belongs to an organization
   properties:
     id:
-      description: Unic Identifier of a Part of a Project
-      example: urn:ngsi-ld:Part:1223
+      description: Unique identifier of the leftover
+      example: urn:ngsi-ld:LeftOver:1223
       format: uri
       type: string
       x-ngsi:
         type: Property
+
     hasOrganization:
+      description: "Relationship property: identifies the organization to which the leftover belongs"
       anyOf:
-        - description: 'Relationship property: Identifies the project to which the part belongs'
+        - description: Property. Identifier format of any NGSI entity
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: indicates the project to which the part belongs '
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: Identifies the project to which the part belongs
       x-ngsi:
         type: Relationship
-        uri: https://projectww4zero.pt/dataModel/hasOrganization
+        uri: https://projectww4zero.pt/dataModel/belongsTo
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     dimensions:
-      description: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
+      description: Dimensions of the leftover
       oneOf:
         - description: Geoproperty. Geojson reference to the item. Point
           properties:
@@ -182,7 +184,7 @@ leftOver:
         uri-prefix: https://schema.org/
 
     image:
-      description: url da imagem
+      description: URL of the leftover image
       example: https://schema.org/image
       type: string
       x-ngsi:
@@ -190,8 +192,9 @@ leftOver:
         type: Property
         uri: https://projectww4zero.pt/dataModel/image
         uri-prefix: https://projetww4zero.pt/dataModel/
+
     location:
-      description: PART LOCATION IN STOCK
+      description: Location of the leftover
       example: AWZ
       type: string
       x-ngsi:
@@ -199,8 +202,9 @@ leftOver:
         type: Property
         uri: https://schema.org/location
         uri-prefix: https://schema.org/
+
     material:
-      description: MATERIAL (C)
+      description: Material (C)
       example: AG L Biscuit Nude 36W
       type: string
       x-ngsi:
@@ -208,27 +212,27 @@ leftOver:
         type: Property
         uri: https://schema.org/material
         uri-prefix: https://schema.org/
+
     thickness:
-      description: ESPESSURA (G)
-      example: '10'
+      description: Thickness (G)
+      example: "10"
       type: number
       x-ngsi:
         model: https://schema.org/size
         type: Property
         uri: https://projectww4zero.pt/dataModel/thickness
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     weight:
-      description: PESO (U)
-      example: '0.8'
+      description: Weight (U)
+      example: "0.8"
       type: number
       x-ngsi:
         model: https://schema.org/weight
         type: Property
         uri: https://schema.org/weight
         uri-prefix: https://schema.org/
-        
+
   required:
     - id
     - material
-
-  
