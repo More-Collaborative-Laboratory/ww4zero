@@ -197,6 +197,7 @@ leftOver:
       description: Location of the leftover
       example: AWZ
       type: string
+      maxLength: 256
       x-ngsi:
         model: https://schema.org/location
         type: Property
@@ -207,6 +208,7 @@ leftOver:
       description: Material (C)
       example: AG L Biscuit Nude 36W
       type: string
+      maxLength: 256
       x-ngsi:
         model: https://schema.org/material
         type: Property
@@ -232,27 +234,26 @@ leftOver:
         type: Property
         uri: https://schema.org/weight
         uri-prefix: https://schema.org/
-    
+
     width:
-      description: Width in mm 
-      example: '0.8'
+      description: Width in mm
+      example: "0.8"
       type: number
       x-ngsi:
         model: https://schema.org/weight
         type: Property
-        uri:https://schema.org/width
+        uri: https://schema.org/width
         uri-prefix: https://schema.org/
 
     length:
-      description: Length in mm 
-      example: '0.8'
+      description: Length in mm
+      example: "0.8"
       type: number
       x-ngsi:
         model: https://schema.org/size
         type: Property
         uri: https://schema.org/size
         uri-prefix: https://schema.org/
-
 
   required:
     - id
