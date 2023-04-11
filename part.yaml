@@ -417,7 +417,7 @@ part:
       x-ngsi:
         model: https://schema.org/weight
         type: Property
-        uri:https://schema.org/width
+        uri: https://schema.org/width
         uri-prefix: https://schema.org/
 
     length:
