@@ -49,7 +49,6 @@ furniture:
         uri: "https://projectww4zero.pt/dataModel/finishTime"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
-
     name:
       description: name module
       type: string

@@ -232,6 +232,27 @@ leftOver:
         type: Property
         uri: https://schema.org/weight
         uri-prefix: https://schema.org/
+    
+    width:
+      description: Width in mm 
+      example: '0.8'
+      type: number
+      x-ngsi:
+        model: https://schema.org/weight
+        type: Property
+        uri:https://schema.org/width
+        uri-prefix: https://schema.org/
+
+    length:
+      description: Length in mm 
+      example: '0.8'
+      type: number
+      x-ngsi:
+        model: https://schema.org/size
+        type: Property
+        uri: https://schema.org/size
+        uri-prefix: https://schema.org/
+
 
   required:
     - id
