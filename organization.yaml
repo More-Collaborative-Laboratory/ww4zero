@@ -6,35 +6,39 @@ organization:
     id:
       description: Organization Identifier
       type: string
+      maxLength: 256
       format: uri
       example: urn:ngsi-ld:Organization:[taxId]
       x-ngsi:
         type: Property
-        
-    legalName: 
+
+    legalName:
       description: Organization's legal name
       type: string
+      maxLength: 256
       example: MOFREITA
       x-ngsi:
         uri: "https://schema.org/legalName"
         uri-prefix: "https://schema.org"
         model: "https://schema.org/legalName"
         type: Property
-        
+
     vat:
       description: Client/Institution Tax ID
       type: string
-      pattern: '^\d{9}$'
+      maxLength: 9
+      pattern: ^\d{9}$
       example: 254545879
       x-ngsi:
         uri: "https://schema.org/vatID"
         uri-prefix: "https://schema.org/"
         model: "https://schema.org/vatID"
         type: Property
-        
+
     email:
       description: Contact email address
       type: string
+      maxLength: 256
       format: email
       example: 11CAEOT@ar.parlamento.pt
       x-ngsi:
@@ -42,19 +46,17 @@ organization:
         uri-prefix: "https://schema.org/"
         model: https://schema.org/email
         type: Property
+
     active:
-      description: if the work is an active user or not 
+      description: if the work is an active user or not
       type: boolean
-      example: true 
+      example: true
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/active"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         model: "https://schema.org/Boolean"
         type: Property
 
-    
-
-                
   required:
     - id
     - legalName

@@ -1,13 +1,14 @@
 leftOver:
-  title: LeftOver
+  title: Leftover
   type: object
   description: Identifies the attributes of a leftover that belongs to an organization
   properties:
     id:
       description: Unique identifier of the leftover
-      example: urn:ngsi-ld:LeftOver:1223
+      example: urn:ngsi-ld:leftOver:1223
       format: uri
       type: string
+      maxLength: 256
       x-ngsi:
         type: Property
 
@@ -22,6 +23,7 @@ leftOver:
         - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
+          maxLength: 256
       x-ngsi:
         type: Relationship
         uri: https://projectww4zero.pt/dataModel/belongsTo
