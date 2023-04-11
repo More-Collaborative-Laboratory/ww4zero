@@ -442,6 +442,9 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 -  `id`: Unic Identifier of a Part of a Project
    -  Attribute type: **Property**. 
    -  Required
+-  `hasOrganization`: Identifies the project to which the part belongs
+   -  Attribute type: **Relationship**. 
+   -  Optional
 -  `dimensions`: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
    -  Attribute type: **Geoproperty**. 
    -  Optional
