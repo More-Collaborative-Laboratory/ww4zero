@@ -2372,22 +2372,6 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/belongsTo",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Identifies the project to which the part belongs"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "belongsTo"
-                }
-            ]
-        },
-        {
             "@id": "schema:dimensions",
             "@type": "ngsi-ld:Geoproperty",
             "rdfs:comment": [
