@@ -21,7 +21,7 @@ furniture:
         type: Property
     
     amount: 
-      description: Value in euros
+      description: QUantity of elements
       type: number
       example: '15 000'
       x-ngsi:
