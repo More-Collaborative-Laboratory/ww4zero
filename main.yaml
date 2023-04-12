@@ -49,4 +49,4 @@ components:
 
 paths:
   /ngsi-ld/v1/entities:
-    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/paths/~1ngsi-ld~1v1~1entities"
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/paths/~1ngsi-ld~1v1~1entities
