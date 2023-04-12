@@ -48,7 +48,7 @@ owner:
     vat:
       description: Client/Institution Tax ID
       type: string
-      maxLength: 9
+      maxLength: 256
       pattern: ^\d+$
       example: 254545879
       x-ngsi:
@@ -237,9 +237,9 @@ owner:
     tos:
       description: Saves date and time information when the start button is pressed
       type: string
-      maxLength: 16
+      maxLength: 256
       format: DateTime
-      example: "25-03-2022 10:00"
+      example: 25-03-2022 10:00
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/tos"
         uri-prefix: "https://projectww4zero.pt/dataModel/"

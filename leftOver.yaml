@@ -230,7 +230,7 @@ leftover:
 
     thickness:
       description: ESPESSURA (G)
-      example: "10"
+      example: 10
       type: number
       x-ngsi:
         model: https://schema.org/size
@@ -240,7 +240,7 @@ leftover:
 
     weight:
       description: PESO (U)
-      example: "0.8"
+      example: 0.8
       type: number
       x-ngsi:
         model: https://schema.org/weight
@@ -250,7 +250,7 @@ leftover:
 
     width:
       description: Width in mm
-      example: "0.8"
+      example: 0.8
       type: number
       x-ngsi:
         model: https://schema.org/weight
@@ -260,7 +260,7 @@ leftover:
 
     length:
       description: Length in mm
-      example: "0.8"
+      example: 0.8
       type: number
       x-ngsi:
         model: https://schema.org/size

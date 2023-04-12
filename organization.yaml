@@ -26,7 +26,7 @@ organization:
     vat:
       description: Client/Institution Tax ID
       type: string
-      maxLength: 9
+      maxLength: 256
       pattern: ^\d+$
       example: 254545879
       x-ngsi:

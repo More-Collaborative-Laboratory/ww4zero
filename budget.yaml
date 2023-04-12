@@ -1,66 +1,63 @@
 budget:
   title: Budget
   type: object
-  description: Clients Budget 
+  description: Clients Budget
+
   properties:
     id:
-      description: Budget Identifier
+      description: Unique identifier of a budget
       type: string
+      maxLength: 256
       format: uri
       example: urn:ngsi-ld:Budget:[]
       x-ngsi:
-        type: Property    
+        type: Property
 
-    number: 
-      description: Budget name
+    number:
+      description: Budget number
       type: number
-      maxLength: 255
-      minLength: 1
-      example: '12345'
+      example: 12345
       x-ngsi:
         uri: "https://schema.org/Number"
         uri-prefix: "https://schema.org/"
         model: https://schema.org/Number
         type: Property
-        
-    name: 
+
+    name:
       description: Budget name
       type: string
+      maxLength: 256
       example: Joao
-      maxLength: 255
-      minLength: 1
       x-ngsi:
         uri: "https://schema.org/name"
         uri-prefix: "https://schema.org/"
         model: https://schema.org/name
         type: Property
 
-    price: 
+    price:
       description: Price in euros
       type: number
-      example: '15000'
-      maxLength: 255
-      minLength: 1
+      example: 15000
       x-ngsi:
         uri: "https://schema.org/price"
         uri-prefix: "https://schema.org/"
         type: Property
-        
-    budgetStatus: 
+
+    budgetStatus:
       description: Budget possible states
         * must_be_analyzed -> initial budget value, which is pre-budget, where the necessary data for budget development is collected
         * waiting_budget - value before update
         * waiting_adjudication - value after budget was delivered to the customer for approval
         * adjudicated - value after budget adjudication
         * canceled - value after budget canceled
-      type: string  
-      enum: 
-        - 'must_be_analyzed '
-        - 'waiting_budget'
-        - 'waiting_adjudication'
-        - 'adjudicated'
-        - 'canceled'
-      example: 'adjudicated'
+      type: string
+      enum:
+        - must_be_analyzed
+        - waiting_budget
+        - waiting_adjudication
+        - adjudicated
+        - canceled
+      example: adjudicated
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/budgetStatus"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -69,156 +66,167 @@ budget:
     observation:
       description: Observation (T)
       example: Uma forma de executar o trabalho sem perigos
-      maxLength: 255
-      minLength: 1
       type: string
+      maxLength: 256
       x-ngsi:
         model: https://schema.org/Observation
         type: Property
         uri: https://schema.org/Observation
         uri-prefix: https://schema.org/
 
-    approvedDate: 
+    approvedDate:
       description: Saves date and time information when the start button is pressed
       type: string
+      maxLength: 256
       format: DateTime
-      example: '25-03-2022 10:00:59'
+      example: 25-03-2022 10:00:59
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/approvedDate"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         model: https://schema.org/Date
         type: Property
-    
-    requestDate: 
+
+    requestDate:
       description: Customer quote request date (1st contact) (DD/MM/YYYY hh:mm:ss )
       type: string
+      maxLength: 256
       format: DateTime
-      example: '25-03-2022 10:00:59'
+      example: 25-03-2022 10:00:59
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/requestDate"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         model: https://schema.org/Date
         type: Property
 
-    deliveryAgreementDate: 
+    deliveryAgreementDate:
       description: Agreed budget delivery date (DD/MM/YYYY hh:mm:ss )
       type: string
+      maxLength: 256
       format: DateTime
-      example: '25-03-2022 10:00:59'
+      example: 25-03-2022 10:00:59
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/deliveryAgreementDate"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         model: https://schema.org/Date
         type: Property
 
-    deliveryDate: 
+    deliveryDate:
       description: Actual quote delivery date (DD/MM/YYYY hh:mm:ss )
       type: string
+      maxLength: 256
       format: DateTime
-      example: '25-03-2022 10:00:59'
+      example: 25-03-2022 10:00:59
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/deliveryDate"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         model: https://schema.org/Date
         type: Property
 
-    lastUpdate: 
+    lastUpdate:
       description: Date of last amendment to the budget, until the budget is awarded (DD/MM/YYYY hh:mm:ss )
       type: string
+      maxLength: 256
       format: DateTime
-      example: '25-03-2022 10:00:59'
+      example: 25-03-2022 10:00:59
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/lastUpdate"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         model: https://schema.org/Date
         type: Property
-    
-    
+
     orderBy:
+      description: Identification of the client for whom the budget was prepared
       anyOf:
-        - description: 'Relationship property: Identifies the Owner giveName or familyName or taxID that the project belongs to'
-          maxLength: 255
+        - description: Property. Identifier format of any NGSI entity
+          maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: Identifies a project by the associated giveName from the owner'
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: 'Identification of the owner name associated to the project with status in execution'
+          maxLength: 256
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/orderBy"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
 
     approvedBy:
+      description: Identification of the worker who approved the budget
       anyOf:
-        - description: 'Relationship property: Identifies the Owner giveName or familyName or taxID that the project belongs to'
+        - description: Property. Identifier format of any NGSI entity
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: Identifies a project by the associated giveName from the owner'
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: 'Identification of the owner name associated to the project with status in execution'
+          maxLength: 256
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/approvedBy"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
+
     deliveryAddress:
-        description: The delivery address
-        type: object
-        title: Address
-        properties:
-          streetAddress:
-            description: Street name
-            type: string         
-            example: Rua de São Bento, 55, 4º Esq.
-            x-ngsi:
-              uri: "https://schema.org/streetAddress"
-              uri-prefix: "https://schema.org/"
-              model: https://schema.org/streetAddress
-              type: Property
-          postalCode:
-            description: Postal code
-            type: string
-            example: 1249-068
-            x-ngsi:
-              uri: "https://schema.org/postalCode"
-              uri-prefix: "https://schema.org/"
-              model: https://schema.org/postalCode
-              type: Property              
-          addressLocality:
-            description: Name of the city or location
-            type: string
-            example: Lisboa
-            x-ngsi:
-              uri: "https://schema.org/addressLocality"
-              uri-prefix: "https://schema.org/"
-              model: https://schema.org/addressLocality
-              type: Property             
-          addressRegion:
-            description: Region (Concelho) of the city's location
-            type: string
-            example: Bragança
-            x-ngsi:
-              uri: "https://schema.org/addressRegion"
-              uri-prefix: "https://schema.org/"
-              model: https://schema.org/addressRegion
-              type: Property             
-          addressCountry:
-            description: Country where the company has its headquarters
-            type: string
-            example: Portugal
-            x-ngsi:
-              uri: "https://schema.org/addressCountry"
-              uri-prefix: "https://schema.org/"
-              model: https://schema.org/addressCountry
-              type: Property
-        x-ngsi:
-          uri: "https://schema.org/address"
-          uri-prefix: "https://schema.org/"
-          model: https://schema.org/address
+      description: The delivery address
+      type: object
+      title: Address
+      properties:
+        streetAddress:
+          description: Street name
+          type: string
+          maxLength: 256
+          example: Rua de São Bento, 55, 4º Esq.
+          x-ngsi:
+            uri: "https://schema.org/streetAddress"
+            uri-prefix: "https://schema.org/"
+            model: https://schema.org/streetAddress
+            type: Property
+        postalCode:
+          description: Postal code
+          type: string
+          maxLength: 256
+          example: 1249-068
+          x-ngsi:
+            uri: "https://schema.org/postalCode"
+            uri-prefix: "https://schema.org/"
+            model: https://schema.org/postalCode
+            type: Property
+        addressLocality:
+          description: Name of the city or location
+          type: string
+          maxLength: 256
+          example: Lisboa
+          x-ngsi:
+            uri: "https://schema.org/addressLocality"
+            uri-prefix: "https://schema.org/"
+            model: https://schema.org/addressLocality
+            type: Property
+        addressRegion:
+          description: Region (Concelho) of the city's location
+          type: string
+          maxLength: 256
+          example: Bragança
+          x-ngsi:
+            uri: "https://schema.org/addressRegion"
+            uri-prefix: "https://schema.org/"
+            model: https://schema.org/addressRegion
+            type: Property
+        addressCountry:
+          description: Country where the company has its headquarters
+          type: string
+          maxLength: 256
+          example: Portugal
+          x-ngsi:
+            uri: "https://schema.org/addressCountry"
+            uri-prefix: "https://schema.org/"
+            model: https://schema.org/addressCountry
+            type: Property
+      x-ngsi:
+        uri: "https://schema.org/address"
+        uri-prefix: "https://schema.org/"
+        model: https://schema.org/address
 
   required:
     - id
