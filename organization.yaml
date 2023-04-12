@@ -4,7 +4,7 @@ organization:
   description: Describes the organization entity
   properties:
     id:
-      description: Organization Identifier
+      description: Unique identifier of the organization
       type: string
       maxLength: 256
       format: uri
