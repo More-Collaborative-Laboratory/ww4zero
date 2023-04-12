@@ -14,7 +14,7 @@ machineTask:
         type: Property
 
     performedOn:
-      description: Identifies the part being processed by the machine
+      description: Identifies the part processed by the machine
       anyOf:
         - description: Property. Identifier format of any NGSI entity
           maxLength: 256
@@ -30,7 +30,7 @@ machineTask:
         uri-prefix: "https://projectww4zero.pt/dataModel/"
 
     byMachine:
-      description: Identifies the machine that is processing the part
+      description: Identifies the machine that processed the part
       anyOf:
         - description: Property. Identifier format of any NGSI entity
           maxLength: 256
