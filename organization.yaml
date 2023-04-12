@@ -27,7 +27,7 @@ organization:
       description: Client/Institution Tax ID
       type: string
       maxLength: 9
-      pattern: ^\d{9}$
+      pattern: ^\d+$
       example: 254545879
       x-ngsi:
         uri: "https://schema.org/vatID"

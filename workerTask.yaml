@@ -7,7 +7,7 @@ workerTask:
       description: Module of a project under assembly
       type: string
       format: uri
-      example: urn:ngsi-ld:module:[]
+      example: urn:ngsi-ld:Module:[]
       x-ngsi:
         type: Property
 

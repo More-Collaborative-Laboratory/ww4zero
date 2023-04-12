@@ -7,7 +7,7 @@ expedition:
       description: Refers to the date of dispatch of the order
       type: string
       format: uri
-      example: urn:ngsi-ld:expedition:[]
+      example: urn:ngsi-ld:Expedition:[]
       x-ngsi:
         type: Property
 
