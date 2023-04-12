@@ -48,10 +48,10 @@ budget:
     
     budgetStatus: 
       description: Budget possible states
-        * ´waiting_budget´ - initial budget value
-        * ´waiting_adjudication´ - value after budget was delivered to the customer for approval
-        * ´adjudicated´ - value after budget adjudication
-        * ´canceled´ - value after budget canceled
+        * waiting_budget - initial budget value
+        * waiting_adjudication - value after budget was delivered to the customer for approval
+        * adjudicated - value after budget adjudication
+        * canceled - value after budget canceled
       type: string  
       enum: 
         - 'waiting_budget'
