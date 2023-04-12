@@ -1,12 +1,13 @@
-/ngsi-ld/v1/entities:
-  get:
-    responses:
-      "200":
-        description: "OK"
-        content:
-          application/ld+json:
-            schema:
-              type: object
+paths:
+  /ngsi-ld/v1/entities:
+    get:
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/ld+json:
+              schema:
+                type: object
 
 leftover:
   type: object
