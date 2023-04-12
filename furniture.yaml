@@ -10,6 +10,18 @@ furniture:
       example: urn:ngsi-ld:Furniture:[]
       x-ngsi:
         type: Property
+    
+    lineNumber: 
+      description: Budget name
+      type: number
+      maxLength: 255
+      minLength: 1
+      example: '12345'
+      x-ngsi:
+        uri: "https://schema.org/Number"
+        uri-prefix: "https://schema.org/"
+        model: https://schema.org/Number
+        type: Property
 
     category: 
       description: Movel type
@@ -101,6 +113,25 @@ furniture:
         uri-prefix: "https://schema.org/"
         type: Property
     
+    furnitureType: 
+      description: Type of line
+        * furniture -> initial budget value, which is pre-budget, where the necessary data for budget development is collected
+        * group 
+        * accessory - (Ex robinet, ...)
+
+
+      type: string  
+      enum:
+        - 'furniture' 
+        - 'group'
+        - 'accessory'
+
+      example: 'adjudicated'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/furnitureType"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
+
     width:
       description: Width in mm 
       example: '0.8'

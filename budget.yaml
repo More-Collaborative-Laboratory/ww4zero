@@ -48,12 +48,14 @@ budget:
         
     budgetStatus: 
       description: Budget possible states
-        * waiting_budget - initial budget value
+        * must_be_analyzed -> initial budget value, which is pre-budget, where the necessary data for budget development is collected
+        * waiting_budget - value before update
         * waiting_adjudication - value after budget was delivered to the customer for approval
         * adjudicated - value after budget adjudication
         * canceled - value after budget canceled
       type: string  
       enum: 
+        - 'must_be_analyzed '
         - 'waiting_budget'
         - 'waiting_adjudication'
         - 'adjudicated'

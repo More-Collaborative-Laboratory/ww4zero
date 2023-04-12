@@ -68,13 +68,18 @@ project:
         uri-prefix: https://projectww4zero.pt/dataModel/
 
     status:
-      description: Indicates the actual workers station * `waiting` - Projects budget approved * `working` - Projects parts are already in the factorys floor * `finished` - Projects parts are all done * `assembly` - Projects parts are being assembled in the test zone * `expedition` - The request from a client is already out from the factory
+      description: Indicates the actual workers station 
+        * drawing - Initial state of a project, in which CAD drawings are being developed...
+        * production - While in the production phase on the factory floor...
+        * testing - While in the assembly and testing phase...
+        * transport - While in the transportation phase, which begins after the completion of assembly...
+        * finished - When installed at the site.
       enum:
-        - Waiting
-        - working
+        - drawing
+        - production
+        - testing
+        - transport
         - finished
-        - assembly
-        - expedition
       example: expedition
       type: string
       x-ngsi:
