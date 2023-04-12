@@ -49,11 +49,4 @@ components:
 
 paths:
   /ngsi-ld/v1/entities:
-    get:
-      responses:
-        "200":
-          description: "OK"
-          content:
-            application/ld+json:
-              schema:
-                type: object
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/~1ngsi-ld~1v1~1entities"
