@@ -45,8 +45,24 @@ budget:
         uri: "https://schema.org/price"
         uri-prefix: "https://schema.org/"
         type: Property
-    
-    
+        
+    budgetStatus: 
+      description: Budget possible states
+        * waiting_budget - initial budget value
+        * waiting_adjudication - value after budget was delivered to the customer for approval
+        * adjudicated - value after budget adjudication
+        * canceled - value after budget canceled
+      type: string  
+      enum: 
+        - 'waiting_budget'
+        - 'waiting_adjudication'
+        - 'adjudicated'
+        - 'canceled'
+      example: 'adjudicated'
+      x-ngsi:
+        uri: "https://projectww4zero.pt/dataModel/budgetStatus"
+        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        type: Property
 
     observation:
       description: Observation (T)
