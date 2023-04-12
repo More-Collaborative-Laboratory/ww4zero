@@ -1,62 +1,66 @@
 group:
   title: Group
   type: object
-  description: Indicates a corresponding module of a project under assembly
+  description: Identifies a group associated with a module
   properties:
     id:
-      description: movel of a project under assembly
+      description: Unique identifier of the group
       type: string
+      maxLength: 256
       format: uri
       example: urn:ngsi-ld:Group:[]
       x-ngsi:
         type: Property
 
-    startTime: 
+    startTime:
       description: Saves date and time information when the start button is pressed
       type: string
+      maxLength: 256
       format: DateTime
-      example: '25-03-2022 10:00'
+      example: 25-03-2022 10:00
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/startTime"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
-    finishTime: 
+    finishTime:
       description: Saves date and time information when the finish button is pressed
       type: string
+      maxLength: 256
       format: DateTime
-      example: '27-03-2022 10:00'
+      example: "27-03-2022 10:00"
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/finishTime"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
     name:
-      description: name group
+      description: Group name
       type: string
       example: _A
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/name"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+        model: https://schema.org/name
         type: Property
+        uri: https://schema.org/name
+        uri-prefix: https://schema.org/
 
     belongsToModule:
+      description: Identifies the module that is associated with this group
       anyOf:
-        - description: 'Relationship property: Identifier the urn of assembly of the project name'
+        - description: Property. Identifier format of any NGSI entity
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: Identifier project Name'
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: 'Identification of the movel to which this module belongs'
+          maxLength: 256
       x-ngsi:
         type: Relationship
-        uri: "https://projectww4zero.pt/dataModel/belongsToModule" 
+        uri: "https://projectww4zero.pt/dataModel/belongsToModule"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
 
-                
   required:
     - id
     - name

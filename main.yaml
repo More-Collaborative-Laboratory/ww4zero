@@ -62,6 +62,7 @@ components:
     Furniture:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/furniture.yaml#/furniture
 
+    #verified
     Group:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/group.yaml#/group
 
