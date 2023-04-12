@@ -47,9 +47,10 @@ module:
       type: string
       maxLength: 256
       x-ngsi:
+        model: https://schema.org/name
         type: Property
-        uri: https://projectww4zero.pt/dataModel/name
-        uri-prefix: https://projectww4zero.pt/dataModel/
+        uri: https://schema.org/name
+        uri-prefix: https://schema.org/
 
     startTime:
       description: Saves date and time information when the start button is pressed

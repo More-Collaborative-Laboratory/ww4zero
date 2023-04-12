@@ -253,7 +253,7 @@ leftover:
       example: 0.8
       type: number
       x-ngsi:
-        model: https://schema.org/weight
+        model: https://schema.org/width
         type: Property
         uri: https://schema.org/width
         uri-prefix: https://schema.org/
