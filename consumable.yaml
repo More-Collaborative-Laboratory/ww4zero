@@ -73,7 +73,7 @@ consumable:
       description: Image URL
       type: string
       maxLength: 256
-      example: C://breifing/Mueble_tv_A/Acessories
+      example: https://schema.org/image
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/image"
         uri-prefix: "https://projetww4zero.pt/dataModel/"

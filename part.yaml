@@ -1,76 +1,81 @@
 part:
-  title: Part
   type: object
-  description: Identifies the part-name atributes that belongs to a specific project - Lista de Corte -
+  title: Part
+  description: Identifies the part-name atributes that belongs to a specific project - Lista de Corte
   properties:
     amount:
       description: QUANTIDADE (D)
-      example: '1'
+      example: 1
       type: number
       x-ngsi:
         model: https://schema.org/amount
         type: Property
         uri: https://schema.org/amount
         uri-prefix: https://schema.org/
+
     belongsTo:
+      description: Identifies the project to which the part belongs
       anyOf:
-        - description: 'Relationship property: Identifies the project to which the part belongs'
+        - description: Property. Identifier format of any NGSI entity
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: indicates the project to which the part belongs '
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: Identifies the project to which the part belongs
+          maxLength: 256
       x-ngsi:
         type: Relationship
         uri: https://projectww4zero.pt/dataModel/belongsTo
         uri-prefix: https://projectww4zero.pt/dataModel/
 
     belongsToGroup:
+      description: Identifies the group to which the part belongs
       anyOf:
-        - description: 'Relationship property: Identifies which assembler module the part belongs to (optional)'
+        - description: Property. Identifier format of any NGSI entity
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: Identifies which assembler module the part belongs to (optional)'
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: Identifies the project to which the part belongs
+          maxLength: 256
       x-ngsi:
         type: Relationship
         uri: https://projectww4zero.pt/dataModel/belongsToGroup
         uri-prefix: https://projectww4zero.pt/dataModel/
 
     belongsToFurniture:
+      description: Identifies the piece of furniture to which the part belongs.
       anyOf:
-        - description: 'Relationship property: Identifies which assembler module the part belongs to (optional)'
+        - description: Property. Identifier format of any NGSI entity
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: Identifies which assembler module the part belongs to (optional)'
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: Identifies the project to which the part belongs
+          maxLength: 256
       x-ngsi:
         type: Relationship
         uri: https://projectww4zero.pt/dataModel/belongsToFurniture
         uri-prefix: https://projectww4zero.pt/dataModel/
 
     belongsToModule:
+      description: Identifies which assembler module the part belongs to (optional)
       anyOf:
-        - description: 'Relationship property: Identifies which assembler module the part belongs to (optional)'
-          maxLength: 255
+        - description: Property. Identifier format of any NGSI entity
+          maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: Identifies which assembler module the part belongs to (optional)'
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: Identifies the project to which the part belongs
+          maxLength: 256
       x-ngsi:
         type: Relationship
         uri: https://projectww4zero.pt/dataModel/belongsToModule
@@ -84,6 +89,7 @@ part:
         type: Property
         uri: https://projectww4zero.pt/dataModel/cncFlag
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     dimensions:
       description: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
       oneOf:
@@ -239,46 +245,53 @@ part:
         type: Geoproperty
         uri: https://schema.org/GeospatialGeometry
         uri-prefix: https://schema.org/
+
     f2:
       description: FURO FACE 2 (K)
-      example: '0'
+      example: 0
       type: number
       x-ngsi:
         type: Property
         uri: https://projectww4zero.pt/dataModel/f2
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     f3:
       description: FURO FACE 3 (L)
-      example: '0'
+      example: 0
       type: number
       x-ngsi:
         type: Property
         uri: https://projectww4zero.pt/dataModel/f3
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     f4:
       description: FURO FACE 4 (M)
-      example: '0'
+      example: 0
       type: number
       x-ngsi:
         type: Property
         uri: https://projectww4zero.pt/dataModel/f4
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     f5:
       description: FURO FACE 5 (N)
-      example: '0'
+      example: 0
       type: number
       x-ngsi:
         type: Property
         uri: https://projectww4zero.pt/dataModel/f5
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     groove:
       description: Veio (O)
-      example: 'Y'
+      example: "Y"
       type: string
+      maxLength: 256
       x-ngsi:
         type: Property
         uri: https://projectww4zero.pt/dataModel/veio
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     id:
       description: Unic Identifier of a Part of a Project
       example: urn:ngsi-ld:Part:1223
@@ -376,7 +389,7 @@ part:
         uri-prefix: https://projectww4zero.pt/dataModel/
     tag:
       description: ETIQUETA (H)
-      example: '1'
+      example: "1"
       type: number
       x-ngsi:
         type: Property
@@ -384,7 +397,7 @@ part:
         uri-prefix: https://projectww4zero.pt/dataModel/
     thickness:
       description: ESPESSURA (G)
-      example: '10'
+      example: "10"
       type: number
       x-ngsi:
         model: https://schema.org/size
@@ -402,7 +415,7 @@ part:
         uri-prefix: https://projectww4zero.pt/dataModel/
     weight:
       description: PESO (U)
-      example: '0.8'
+      example: "0.8"
       type: number
       x-ngsi:
         model: https://schema.org/weight
@@ -411,8 +424,8 @@ part:
         uri-prefix: https://schema.org/
 
     width:
-      description: Width in mm 
-      example: '0.8'
+      description: Width in mm
+      example: "0.8"
       type: number
       x-ngsi:
         model: https://schema.org/width
@@ -421,8 +434,8 @@ part:
         uri-prefix: https://schema.org/
 
     length:
-      description: Length in mm 
-      example: '0.8'
+      description: Length in mm
+      example: "0.8"
       type: number
       x-ngsi:
         model: https://schema.org/size
@@ -437,4 +450,3 @@ part:
     - material
     - amount
     - belongsTo
-  
