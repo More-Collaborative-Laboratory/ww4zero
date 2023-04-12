@@ -1,5 +1,5 @@
 # ww4.0, @2022
-#
+# 
 
 openapi: 3.0.0
 
@@ -11,44 +11,29 @@ info:
   contact:
     name: Digitalization da Carpintaria Portuguesa Mofreita
     url: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/
-
-paths:
-  /ngsi-ld/v1/entities:
-    get:
-      responses:
-        "200":
-          description: "OK"
-          content:
-            application/ld+json:
-              schema:
-                type: object
-
+  
 components:
-  schemas:
-    # verified
+  schemas: 
     Organization:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/organization.yaml#/organization"
-    
-    # verified
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/organization.yaml#/organization" 
     Project:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/project.yaml#/project"
-    
     Owner:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/owner.yaml#/owner"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/owner.yaml#/owner" 
     Worker:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml#/worker"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml#/worker" 
     Consumable:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/consumable"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/consumable"  
     Part:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/part"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/part" 
     Machine:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machine.yaml#/machine"
     Assembly:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml#/assembly"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml#/assembly"  
     Budget:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml#/budget"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml#/budget" 
     Expedition:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/expedition"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/expedition" 
     Module:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/module
     Furniture:
@@ -59,7 +44,18 @@ components:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machineTask.yaml#/machineTask
     WorkerTask:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/workerTask
-
-    # verified
     LeftOver:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/leftOver
+    
+
+
+paths:
+  /ngsi-ld/v1/entities:
+    get:
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/ld+json:
+              schema:
+                type: object

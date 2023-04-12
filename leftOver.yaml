@@ -11,6 +11,15 @@ leftover:
       maxLength: 256
       x-ngsi:
         type: Property
+    
+    sort:
+      description: TIPO (B)
+      example: Painel
+      type: string
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/sort
+        uri-prefix: https://projectww4zero.pt/dataModel/
 
     hasOrganization:
       description: "Relationship property: identifies the organization to which the leftover belongs"
