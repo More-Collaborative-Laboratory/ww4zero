@@ -66,6 +66,7 @@ components:
     Group:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/group.yaml#/group
 
+    #verified
     MachineTask:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machineTask.yaml#/machineTask
 

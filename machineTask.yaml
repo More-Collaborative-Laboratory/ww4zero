@@ -1,61 +1,67 @@
 machineTask:
   title: MachineTask
   type: object
-  description: This entity creates a bridge table between the Machine and Part entities. 
+  description: This entity creates a bridge table between the Machine and Part entities.
+
   properties:
     id:
-      description: Module of a project under assembly
+      description: Unique identifier
       type: string
+      maxLength: 256
       format: uri
       example: urn:ngsi-ld:MachineTask:[]
       x-ngsi:
         type: Property
 
     performedOn:
+      description: Identifies the part being processed by the machine
       anyOf:
-        - description: 'Relationship property: Identifier what part is executed by the machine.'
+        - description: Property. Identifier format of any NGSI entity
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: Identifier project Name'
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: 'Identification of the project  to which this machine is working on'
+          maxLength: 256
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/performedOn" 
+        uri: "https://projectww4zero.pt/dataModel/performedOn"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
 
     byMachine:
+      description: Identifies the machine that is processing the part
       anyOf:
-        - description: 'Relationship property: Identifier what machine the task is executed.'
+        - description: Property. Identifier format of any NGSI entity
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: "Relationship property: Identifier project Name"
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: 'Identification of the workers  to which worked  on project'
+          maxLength: 256
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/producedBy" 
+        uri: "https://projectww4zero.pt/dataModel/producedBy"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
-        
-    startTime: 
+
+    startTime:
       description: Saves date and time information when the start button is pressed
       type: string
+      maxLength: 256
       format: DateTime
-      example: '25-03-2022 10:00'
+      example: 25-03-2022 10:00
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/startTime"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
-    finishTime: 
+    finishTime:
       description: Saves date and time information when the finish button is pressed
       type: string
+      maxLength: 256
       format: DateTime
-      example: '27-03-2022 10:00'
+      example: 27-03-2022 10:00
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/finishTime"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
