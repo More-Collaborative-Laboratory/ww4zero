@@ -3,6 +3,15 @@ part:
   title: Part
   description: Identifies the part-name atributes that belongs to a specific project - Lista de Corte
   properties:
+    id:
+      description: Unique identifier of the part of a project.
+      example: urn:ngsi-ld:Part:1223
+      format: uri
+      type: string
+      maxLength: 256
+      x-ngsi:
+        type: Property
+
     amount:
       description: QUANTIDADE (D)
       example: 1
@@ -284,7 +293,7 @@ part:
 
     groove:
       description: Veio (O)
-      example: "Y"
+      example: Y
       type: string
       maxLength: 256
       x-ngsi:
@@ -292,31 +301,28 @@ part:
         uri: https://projectww4zero.pt/dataModel/veio
         uri-prefix: https://projectww4zero.pt/dataModel/
 
-    id:
-      description: Unic Identifier of a Part of a Project
-      example: urn:ngsi-ld:Part:1223
-      format: uri
-      type: string
-      x-ngsi:
-        type: Property
     image:
-      description: url da imagem
+      description: URL of the part image
       example: https://schema.org/image
       type: string
+      maxLength: 256
       x-ngsi:
         model: https://schema.org/URL
         type: Property
         uri: https://projectww4zero.pt/dataModel/image
         uri-prefix: https://projetww4zero.pt/dataModel/
+
     material:
       description: MATERIAL (C)
       example: AG L Biscuit Nude 36W
       type: string
+      maxLength: 256
       x-ngsi:
         model: https://schema.org/material
         type: Property
         uri: https://schema.org/material
         uri-prefix: https://schema.org/
+
     nestingFlag:
       description: NESTING (I)
       example: false
@@ -325,15 +331,18 @@ part:
         type: Property
         uri: https://projectww4zero.pt/dataModel/nestingFlag
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     observation:
       description: Observation (T)
       example: Uma forma de executar o trabalho sem perigos
       type: string
+      maxLength: 256
       x-ngsi:
         model: https://schema.org/Observation
         type: Property
         uri: https://schema.org/Observation
         uri-prefix: https://schema.org/
+
     orla2:
       description: ORLA2 (P)
       example: false
@@ -343,6 +352,7 @@ part:
         type: Property
         uri: https://projectww4zero.pt/dataModel/orla2
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     orla3:
       description: ORLA3 (Q)
       example: false
@@ -352,6 +362,7 @@ part:
         type: Property
         uri: https://projectww4zero.pt/dataModel/orla3
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     orla4:
       description: ORLA4 (R)
       example: false
@@ -361,6 +372,7 @@ part:
         type: Property
         uri: https://projectww4zero.pt/dataModel/orla4
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     orla5:
       description: ORLA5 (S)
       example: false
@@ -370,40 +382,47 @@ part:
         type: Property
         uri: https://projectww4zero.pt/dataModel/orla5
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     partName:
       description: REF PEÇA (A)
       example: MC_MUEBLETV_A2_GAV_DIR_FUNDO
       type: string
+      maxLength: 256
       x-ngsi:
         model: https://schema.org/name
         type: Property
         uri: https://schema.org/name
         uri-prefix: https://schema.org/
+
     sort:
       description: TIPO (B)
       example: Painel
       type: string
+      maxLength: 256
       x-ngsi:
         type: Property
         uri: https://projectww4zero.pt/dataModel/sort
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     tag:
       description: ETIQUETA (H)
-      example: "1"
+      example: 1
       type: number
       x-ngsi:
         type: Property
         uri: https://projectww4zero.pt/dataModel/tag
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     thickness:
       description: ESPESSURA (G)
-      example: "10"
+      example: 10
       type: number
       x-ngsi:
         model: https://schema.org/size
         type: Property
         uri: https://projectww4zero.pt/dataModel/thickness
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     tupia:
       description: TUPIA
       example: false
@@ -413,9 +432,10 @@ part:
         type: Property
         uri: https://projectww4zero.pt/dataModel/tupia
         uri-prefix: https://projectww4zero.pt/dataModel/
+
     weight:
       description: PESO (U)
-      example: "0.8"
+      example: 0.8
       type: number
       x-ngsi:
         model: https://schema.org/weight
@@ -425,7 +445,7 @@ part:
 
     width:
       description: Width in mm
-      example: "0.8"
+      example: 0.8
       type: number
       x-ngsi:
         model: https://schema.org/width
@@ -435,7 +455,7 @@ part:
 
     length:
       description: Length in mm
-      example: "0.8"
+      example: 0.8
       type: number
       x-ngsi:
         model: https://schema.org/size
