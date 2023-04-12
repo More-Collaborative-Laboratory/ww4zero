@@ -89,7 +89,57 @@ furniture:
         type: Relationship
         uri: https://projectww4zero.pt/dataModel/hasBudget
         uri-prefix: https://projectww4zero.pt/dataModel/
+    
+    price: 
+      description: Price in euros
+      type: number
+      example: '15000'
+      maxLength: 255
+      minLength: 1
+      x-ngsi:
+        uri: "https://schema.org/price"
+        uri-prefix: "https://schema.org/"
+        type: Property
+    
+    width:
+      description: Width in mm 
+      example: '0.8'
+      type: number
+      x-ngsi:
+        model: https://schema.org/width
+        type: Property
+        uri: https://schema.org/width
+        uri-prefix: https://schema.org/
 
+    length:
+      description: Length in mm 
+      example: '0.8'
+      type: number
+      x-ngsi:
+        model: https://schema.org/size
+        type: Property
+        uri: https://schema.org/size
+        uri-prefix: https://schema.org/
+
+    depth:
+      description: Depth in mm 
+      example: '0.8'
+      type: number
+      x-ngsi:
+        model: https://schema.org/depth
+        type: Property
+        uri: https://schema.org/depth
+        uri-prefix: https://schema.org/
+    
+    observation:
+      description: Observation (T)
+      example: Uma forma de executar o trabalho sem perigos
+      type: string
+      x-ngsi:
+        model: https://schema.org/Observation
+        type: Property
+        uri: https://schema.org/Observation
+        uri-prefix: https://schema.org/
                 
   required:
     - id
