@@ -1,29 +1,32 @@
 worker:
-  title: Worker
   type: object
+  title: Worker
   description: Identifies a worker within an organization
   properties:
     id:
-      description: Worker Identifier
+      description: Unique identifier of the worker
       type: string
+      maxLength: 256
       format: uri
-      example: urn:ngsi-ld:Worker:workerNbr 
+      example: urn:ngsi-ld:Worker:workerNbr
       x-ngsi:
         type: Property
-        
+
     givenName:
       description: Worker first name
       type: string
+      maxLength: 256
       example: Keanu
       x-ngsi:
         uri: "https://schema.org/givenName"
         uri-prefix: "https://schema.org/"
         model: https://schema.org/Person
         type: Property
-        
-    familyName: 
+
+    familyName:
       description: Worker last name
       type: string
+      maxLength: 256
       example: Reeves
       x-ngsi:
         uri: "https://schema.org/familyName"
@@ -32,28 +35,28 @@ worker:
         type: Property
 
     email:
-        description: Contact email address
-        type: string
-        format: email
-        example: worker@mofreita.gmail.com
-        x-ngsi:
-          uri: "https://schema.org/email"
-          uri-prefix: "https://schema.org/"
-          model: https://schema.org/email
-          type: Property
-  
+      description: Contact email address
+      type: string
+      maxLength: 256
+      format: email
+      example: worker@mofreita.gmail.com
+      x-ngsi:
+        uri: "https://schema.org/email"
+        uri-prefix: "https://schema.org/"
+        model: https://schema.org/email
+        type: Property
+
     active:
-      description: if the work is an active user or not 
+      description: If the work is an active user or not
       type: boolean
-      example: true 
+      example: true
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/active"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         model: "https://schema.org/Boolean"
         type: Property
-    
 
-    performanceRole: 
+    performanceRole:
       description: Indicates the actual worker's station
         * `CNC` - CNC Operator
         * `Nesting` - Nesting Operator
@@ -64,7 +67,7 @@ worker:
         * `Warehouse` - Warehouse Department (consumables and wood's stock)
         * `Other` - Other Operation, like merchandise distributor
       type: string
-      enum: 
+      enum:
         - CNC
         - Nesting
         - Manual Cut
@@ -80,32 +83,35 @@ worker:
         type: Property
         model: https://schema.org/PerformanceRole
 
-    image: 
-        description: url da image
-        type: string
-        example: https://schema.org/image
-        x-ngsi:
-          model: "https://schema.org/URL"
-          uri: "https://projectww4zero.pt/dataModel/image"
-          uri-prefix: "https://projetww4zero.pt/dataModel/"
-          type: Property
+    image:
+      description: Image URL
+      type: string
+      maxLength: 256
+      example: https://schema.org/image
+      x-ngsi:
+        model: "https://schema.org/URL"
+        uri: "https://projectww4zero.pt/dataModel/image"
+        uri-prefix: "https://projetww4zero.pt/dataModel/"
+        type: Property
 
     hasOrganization:
+      description: Identification of the Organization where the Worker is currently employed.
       anyOf:
-        - description: 'Relationship property: Identifier format of any NGSI entity'
+        - description: Property. Identifier format of any NGSI entity
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property: Identifier format of any NGSI entity'
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: 'Identification of the Organization where the Worker is currently employed.'
+          maxLength: 256
       x-ngsi:
         model: https://schema.org/Organization
         uri: "https://projectww4zero.pt/dataModel/hasOrganization"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
+
 required:
   - id
   - givenName
