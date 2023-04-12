@@ -1,160 +1,88 @@
-/ngsi-ld/v1/entities:
-  get:
-    responses:
-      "200":
-        description: "OK"
-        content:
-          application/ld+json:
-            schema:
-              type: object
+paths:
+  /ngsi-ld/v1/entities:
+    get:
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/ld+json:
+              schema:
+                type: object
 
-leftover:
-  type: object
-  title: Leftover
-  description: Identifies the attributes of a leftover that belongs to an organization
-  properties:
-    id:
-      description: Unique identifier of the leftover
-      example: urn:ngsi-ld:Leftover:1223
-      format: uri
-      type: string
-      maxLength: 256
-      x-ngsi:
-        type: Property
+schemas:
+  leftover:
+    type: object
+    title: Leftover
+    description: Identifies the attributes of a leftover that belongs to an organization
+    properties:
+      id:
+        description: Unique identifier of the leftover
+        example: urn:ngsi-ld:Leftover:1223
+        format: uri
+        type: string
+        maxLength: 256
+        x-ngsi:
+          type: Property
 
-    sort:
-      description: Type (B)
-      example: Painel
-      type: string
-      maxLength: 256
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/sort
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      sort:
+        description: Type (B)
+        example: Painel
+        type: string
+        maxLength: 256
+        x-ngsi:
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/sort
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    hasOrganization:
-      description: "Relationship property: identifies the organization to which the leftover belongs"
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        type: Relationship
-        uri: https://projectww4zero.pt/dataModel/belongsTo
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      hasOrganization:
+        description: "Relationship property: identifies the organization to which the leftover belongs"
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          type: Relationship
+          uri: https://projectww4zero.pt/dataModel/belongsTo
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    dimensions:
-      description: Dimensions of the leftover
-      oneOf:
-        - description: Geoproperty. Geojson reference to the item. Point
-          properties:
-            bbox:
-              items:
-                type: number
-              minItems: 4
-              type: array
-            coordinates:
-              items:
-                type: number
-              minItems: 2
-              type: array
-            type:
-              enum:
-                - Point
-              type: string
-          required:
-            - type
-            - coordinates
-          title: GeoJSON Point
-          type: object
-        - description: Geoproperty. Geojson reference to the item. LineString
-          properties:
-            bbox:
-              items:
-                type: number
-              minItems: 4
-              type: array
-            coordinates:
-              items:
+      dimensions:
+        description: Dimensions of the leftover
+        oneOf:
+          - description: Geoproperty. Geojson reference to the item. Point
+            properties:
+              bbox:
                 items:
                   type: number
-                minItems: 2
-                type: array
-              minItems: 2
-              type: array
-            type:
-              enum:
-                - LineString
-              type: string
-          required:
-            - type
-            - coordinates
-          title: GeoJSON LineString
-          type: object
-        - description: Geoproperty. Geojson reference to the item. Polygon
-          properties:
-            bbox:
-              items:
-                type: number
-              minItems: 4
-              type: array
-            coordinates:
-              items:
-                items:
-                  items:
-                    type: number
-                  minItems: 2
-                  type: array
                 minItems: 4
                 type: array
-              type: array
-            type:
-              enum:
-                - Polygon
-              type: string
-          required:
-            - type
-            - coordinates
-          title: GeoJSON Polygon
-          type: object
-        - description: Geoproperty. Geojson reference to the item. MultiPoint
-          properties:
-            bbox:
-              items:
-                type: number
-              minItems: 4
-              type: array
-            coordinates:
-              items:
+              coordinates:
                 items:
                   type: number
                 minItems: 2
                 type: array
-              type: array
-            type:
-              enum:
-                - MultiPoint
-              type: string
-          required:
-            - type
-            - coordinates
-          title: GeoJSON MultiPoint
-          type: object
-        - description: Geoproperty. Geojson reference to the item. MultiLineString
-          properties:
-            bbox:
-              items:
-                type: number
-              minItems: 4
-              type: array
-            coordinates:
-              items:
+              type:
+                enum:
+                  - Point
+                type: string
+            required:
+              - type
+              - coordinates
+            title: GeoJSON Point
+            type: object
+          - description: Geoproperty. Geojson reference to the item. LineString
+            properties:
+              bbox:
+                items:
+                  type: number
+                minItems: 4
+                type: array
+              coordinates:
                 items:
                   items:
                     type: number
@@ -162,25 +90,23 @@ leftover:
                   type: array
                 minItems: 2
                 type: array
-              type: array
-            type:
-              enum:
-                - MultiLineString
-              type: string
-          required:
-            - type
-            - coordinates
-          title: GeoJSON MultiLineString
-          type: object
-        - description: Geoproperty. Geojson reference to the item. MultiLineString
-          properties:
-            bbox:
-              items:
-                type: number
-              minItems: 4
-              type: array
-            coordinates:
-              items:
+              type:
+                enum:
+                  - LineString
+                type: string
+            required:
+              - type
+              - coordinates
+            title: GeoJSON LineString
+            type: object
+          - description: Geoproperty. Geojson reference to the item. Polygon
+            properties:
+              bbox:
+                items:
+                  type: number
+                minItems: 4
+                type: array
+              coordinates:
                 items:
                   items:
                     items:
@@ -190,94 +116,170 @@ leftover:
                   minItems: 4
                   type: array
                 type: array
-              type: array
-            type:
-              enum:
-                - MultiPolygon
-              type: string
-          required:
-            - type
-            - coordinates
-          title: GeoJSON MultiPolygon
-          type: object
-      x-ngsi:
-        type: Geoproperty
-        uri: https://schema.org/GeospatialGeometry
-        uri-prefix: https://schema.org/
+              type:
+                enum:
+                  - Polygon
+                type: string
+            required:
+              - type
+              - coordinates
+            title: GeoJSON Polygon
+            type: object
+          - description: Geoproperty. Geojson reference to the item. MultiPoint
+            properties:
+              bbox:
+                items:
+                  type: number
+                minItems: 4
+                type: array
+              coordinates:
+                items:
+                  items:
+                    type: number
+                  minItems: 2
+                  type: array
+                type: array
+              type:
+                enum:
+                  - MultiPoint
+                type: string
+            required:
+              - type
+              - coordinates
+            title: GeoJSON MultiPoint
+            type: object
+          - description: Geoproperty. Geojson reference to the item. MultiLineString
+            properties:
+              bbox:
+                items:
+                  type: number
+                minItems: 4
+                type: array
+              coordinates:
+                items:
+                  items:
+                    items:
+                      type: number
+                    minItems: 2
+                    type: array
+                  minItems: 2
+                  type: array
+                type: array
+              type:
+                enum:
+                  - MultiLineString
+                type: string
+            required:
+              - type
+              - coordinates
+            title: GeoJSON MultiLineString
+            type: object
+          - description: Geoproperty. Geojson reference to the item. MultiLineString
+            properties:
+              bbox:
+                items:
+                  type: number
+                minItems: 4
+                type: array
+              coordinates:
+                items:
+                  items:
+                    items:
+                      items:
+                        type: number
+                      minItems: 2
+                      type: array
+                    minItems: 4
+                    type: array
+                  type: array
+                type: array
+              type:
+                enum:
+                  - MultiPolygon
+                type: string
+            required:
+              - type
+              - coordinates
+            title: GeoJSON MultiPolygon
+            type: object
+        x-ngsi:
+          type: Geoproperty
+          uri: https://schema.org/GeospatialGeometry
+          uri-prefix: https://schema.org/
 
-    image:
-      description: URL of the leftover image
-      example: https://schema.org/image
-      type: string
-      maxLength: 256
-      x-ngsi:
-        model: https://schema.org/URL
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/image
-        uri-prefix: https://projetww4zero.pt/dataModel/
+      image:
+        description: URL of the leftover image
+        example: https://schema.org/image
+        type: string
+        maxLength: 256
+        x-ngsi:
+          model: https://schema.org/URL
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/image
+          uri-prefix: https://projetww4zero.pt/dataModel/
 
-    location:
-      description: Location of the leftover
-      example: AWZ
-      type: string
-      maxLength: 256
-      x-ngsi:
-        model: https://schema.org/location
-        type: Property
-        uri: https://schema.org/location
-        uri-prefix: https://schema.org/
+      location:
+        description: Location of the leftover
+        example: AWZ
+        type: string
+        maxLength: 256
+        x-ngsi:
+          model: https://schema.org/location
+          type: Property
+          uri: https://schema.org/location
+          uri-prefix: https://schema.org/
 
-    material:
-      description: MATERIAL (C)
-      example: AG L Biscuit Nude 36W
-      type: string
-      maxLength: 256
-      x-ngsi:
-        model: https://schema.org/material
-        type: Property
-        uri: https://schema.org/material
-        uri-prefix: https://schema.org/
+      material:
+        description: MATERIAL (C)
+        example: AG L Biscuit Nude 36W
+        type: string
+        maxLength: 256
+        x-ngsi:
+          model: https://schema.org/material
+          type: Property
+          uri: https://schema.org/material
+          uri-prefix: https://schema.org/
 
-    thickness:
-      description: ESPESSURA (G)
-      example: 10
-      type: number
-      x-ngsi:
-        model: https://schema.org/size
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/thickness
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      thickness:
+        description: ESPESSURA (G)
+        example: 10
+        type: number
+        x-ngsi:
+          model: https://schema.org/size
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/thickness
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    weight:
-      description: PESO (U)
-      example: 0.8
-      type: number
-      x-ngsi:
-        model: https://schema.org/weight
-        type: Property
-        uri: https://schema.org/weight
-        uri-prefix: https://schema.org/
+      weight:
+        description: PESO (U)
+        example: 0.8
+        type: number
+        x-ngsi:
+          model: https://schema.org/weight
+          type: Property
+          uri: https://schema.org/weight
+          uri-prefix: https://schema.org/
 
-    width:
-      description: Width in mm
-      example: 0.8
-      type: number
-      x-ngsi:
-        model: https://schema.org/width
-        type: Property
-        uri: https://schema.org/width
-        uri-prefix: https://schema.org/
+      width:
+        description: Width in mm
+        example: 0.8
+        type: number
+        x-ngsi:
+          model: https://schema.org/width
+          type: Property
+          uri: https://schema.org/width
+          uri-prefix: https://schema.org/
 
-    length:
-      description: Length in mm
-      example: 0.8
-      type: number
-      x-ngsi:
-        model: https://schema.org/size
-        type: Property
-        uri: https://schema.org/size
-        uri-prefix: https://schema.org/
+      length:
+        description: Length in mm
+        example: 0.8
+        type: number
+        x-ngsi:
+          model: https://schema.org/size
+          type: Property
+          uri: https://schema.org/size
+          uri-prefix: https://schema.org/
 
-  required:
-    - id
-    - material
+    required:
+      - id
+      - material
