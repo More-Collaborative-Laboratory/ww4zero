@@ -2,30 +2,33 @@ expedition:
   title: Expedition
   type: object
   description: Indicates when an order has been shiped
+
   properties:
     id:
-      description: Refers to the date of dispatch of the order
+      description: Unique identifier of the shipping order
       type: string
+      maxLength: 256
       format: uri
       example: urn:ngsi-ld:Expedition:[]
       x-ngsi:
         type: Property
 
-    expeditionTime: 
+    expeditionTime:
       description: Date and hour when the order left the factory in direction to the Owner
       type: string
+      maxLength: 256
       format: DateTime
-      example: '2022-04-06T00:00:00.000Z'
+      example: "2022-04-06T00:00:00.000Z"
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/expeditionTime"
         model: https://schema.org/Time
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Property
 
-    deliveryFlag: 
+    deliveryFlag:
       description: Indicates if the order arrived to the destination
       type: boolean
-      example: '0' #0- on going, 1- arrived to destination
+      example: false #0- on going, 1- arrived to destination
       x-ngsi:
         uri: "https://projectww4zero.pt/dataModel/deliveryFlag"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
@@ -33,18 +36,19 @@ expedition:
         type: Property
 
     belongsTo:
+      description: Identification of the project to which this expedition relates
       anyOf:
-        - description: 'Relationship property: Identifier consumables properties that belong to a project'
+        - description: Property. Identifier format of any NGSI entity
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Relationship property:  Identifier consumables name and amount for a determined project'
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: 'Identification of the projet Name that this consumables will attached to'
+          maxLength: 256
       x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/belongsTo"  
+        uri: "https://projectww4zero.pt/dataModel/belongsTo"
         uri-prefix: "https://projectww4zero.pt/dataModel/"
         type: Relationship
 
