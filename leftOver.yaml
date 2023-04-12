@@ -218,7 +218,7 @@ leftover:
         uri-prefix: https://schema.org/
 
     material:
-      description: Material (C)
+      description: MATERIAL (C)
       example: AG L Biscuit Nude 36W
       type: string
       maxLength: 256
@@ -229,7 +229,7 @@ leftover:
         uri-prefix: https://schema.org/
 
     thickness:
-      description: Thickness (G)
+      description: ESPESSURA (G)
       example: "10"
       type: number
       x-ngsi:
@@ -239,7 +239,7 @@ leftover:
         uri-prefix: https://projectww4zero.pt/dataModel/
 
     weight:
-      description: Weight (U)
+      description: PESO (U)
       example: "0.8"
       type: number
       x-ngsi:

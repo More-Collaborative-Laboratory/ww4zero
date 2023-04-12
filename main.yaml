@@ -30,8 +30,10 @@ components:
     Worker:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml#/worker"
 
+    # verified
     Consumable:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/consumable"
+    
     Part:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/part"
     Machine:
