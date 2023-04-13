@@ -1,7 +1,7 @@
 # Organization
 
 Describes the organization entity
--  `id`: Organization Identifier
+-  `id`: Unique identifier of the organization
    -  Attribute type: **Property**. 
    -  Required
 -  `legalName`: Organization's legal name
@@ -37,7 +37,7 @@ Contains the information of a project
 -  `orderBy`: Identification of the owner name associated to the project with status in execution
    -  Attribute type: **Relationship**. 
    -  Required
--  `status`: Indicates the actual workers station * `waiting` - Projects budget approved * `working` - Projects parts are already in the factorys floor * `finished` - Projects parts are all done * `assembly` - Projects parts are being assembled in the test zone * `expedition` - The request from a client is already out from the factory. One of : `Waiting`, `working`, `finished`, `assembly`, `expedition`.
+-  `status`: Indicates the actual workers station * drawing - Initial state of a project, in which CAD drawings are being developed... * production - While in the production phase on the factory floor... * testing - While in the assembly and testing phase... * transport - While in the transportation phase, which begins after the completion of assembly... * finished - When installed at the site.. One of : `drawing`, `production`, `testing`, `transport`, `finished`.
    -  Attribute type: **Property**. 
    -  Optional
 
@@ -45,8 +45,8 @@ Contains the information of a project
 
 # Owner
 
-Identifies a client (Owner of a project)
--  `id`: Client Identifier
+Identifies a client (owner of a project)
+-  `id`: Unique identifier of the client
    -  Attribute type: **Property**. 
    -  Required
 -  `legalName`: Institution legal name
@@ -73,13 +73,13 @@ Identifies a client (Owner of a project)
 -  `email`: Contact email address
    -  Attribute type: **Property**. [email](https://schema.org/email)
    -  Required
--  `active`: status of an acount (0-inactive) (2-active)
+-  `active`: Status of an acount
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
    -  Required
 -  `telephone`: Mobile or telephone contact
    -  Attribute type: **Property**. [telephone](https://schema.org/telephone)
    -  Optional
--  `image`: url da imagem
+-  `image`: Image URL
    -  Attribute type: **Property**. [URL](https://schema.org/URL)
    -  Optional
 -  `tos`: Saves date and time information when the start button is pressed
@@ -91,7 +91,7 @@ Identifies a client (Owner of a project)
 # Worker
 
 Identifies a worker within an organization
--  `id`: Worker Identifier
+-  `id`: Unique identifier of the worker
    -  Attribute type: **Property**. 
    -  Optional
 -  `givenName`: Worker first name
@@ -103,13 +103,13 @@ Identifies a worker within an organization
 -  `email`: Contact email address
    -  Attribute type: **Property**. [email](https://schema.org/email)
    -  Optional
--  `active`: if the work is an active user or not
+-  `active`: If the work is an active user or not
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
    -  Optional
 -  `performanceRole`: Indicates the actual worker's station * `CNC` - CNC Operator * `Nesting` - Nesting Operator * `Manual-Cut` - Manual Cut Operator * `Assembly` - Assembly Operator * `Manager` - Factory manager * `Office` - Office Department * `Warehouse` - Warehouse Department (consumables and wood's stock) * `Other` - Other Operation, like merchandise distributor. One of : `CNC`, `Nesting`, `Manual Cut`, `Assembly`, `Manager`, `Office`, `Warehouse`, `Other`.
    -  Attribute type: **Property**. [PerformanceRole](https://schema.org/PerformanceRole)
    -  Optional
--  `image`: url da image
+-  `image`: Image URL
    -  Attribute type: **Property**. [URL](https://schema.org/URL)
    -  Optional
 -  `hasOrganization`: Identification of the Organization where the Worker is currently employed.
@@ -121,10 +121,10 @@ Identifies a worker within an organization
 # Consumable
 
 Describes a consumable list associated with a project
--  `id`: Consumable Identifier
+-  `id`: Unique identifier of the consumable
    -  Attribute type: **Property**. 
    -  Required
--  `name`: Identify the consumable Name
+-  `name`: Identify the consumable name
    -  Attribute type: **Property**. 
    -  Optional
 -  `tag`: ETIQUETA (H)
@@ -136,13 +136,13 @@ Describes a consumable list associated with a project
 -  `amount`: Identifier the consumable amount
    -  Attribute type: **Property**. 
    -  Optional
--  `status`: Indicates the status of the order * '1' - waits for separation order * '2' - In separating fase * '3' - waits for someone from factory-flor to take the separeted order * '4' - Already on flor-factory. One of : `1`, `2`, `3`, `4`.
+-  `status`: Indicates the status of the order * '1' - waits for separation order * '2' - In separating fase * '3' - waits for someone from factory-flor to take the separeted order * '4' - Already on flor-factory. One of : ``, ``, ``, ``.
    -  Attribute type: **Property**. 
    -  Optional
--  `image`: url da imagem
+-  `image`: Image URL
    -  Attribute type: **Property**. 
    -  Optional
--  `belongsTo`: Identification of the projet Name that this consumables will attached to
+-  `belongsTo`: Identification of the projet name that this consumables will attached to
    -  Attribute type: **Relationship**. 
    -  Required
 -  `orderBy`: Identification of the owner name associated to the project with status in execution
@@ -153,20 +153,23 @@ Describes a consumable list associated with a project
 
 # Part
 
-Identifies the part-name atributes that belongs to a specific project - Lista de Corte -
+Identifies the part-name atributes that belongs to a specific project - Lista de Corte
+-  `id`: Unique identifier of the part of a project.
+   -  Attribute type: **Property**. 
+   -  Required
 -  `amount`: QUANTIDADE (D)
    -  Attribute type: **Property**. [amount](https://schema.org/amount)
    -  Required
 -  `belongsTo`: Identifies the project to which the part belongs
    -  Attribute type: **Relationship**. 
    -  Required
--  `belongsToGroup`: Identifies the project to which the part belongs
+-  `belongsToGroup`: Identifies the group to which the part belongs
    -  Attribute type: **Relationship**. 
    -  Optional
--  `belongsToFurniture`: Identifies the project to which the part belongs
+-  `belongsToFurniture`: Identifies the piece of furniture to which the part belongs.
    -  Attribute type: **Relationship**. 
    -  Optional
--  `belongsToModule`: Identifies the project to which the part belongs
+-  `belongsToModule`: Identifies which assembler module the part belongs to (optional)
    -  Attribute type: **Relationship**. 
    -  Optional
 -  `cncFlag`: CNC (J)
@@ -190,10 +193,7 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 -  `groove`: Veio (O)
    -  Attribute type: **Property**. 
    -  Optional
--  `id`: Unic Identifier of a Part of a Project
-   -  Attribute type: **Property**. 
-   -  Required
--  `image`: url da imagem
+-  `image`: URL of the part image
    -  Attribute type: **Property**. [URL](https://schema.org/URL)
    -  Optional
 -  `material`: MATERIAL (C)
@@ -246,17 +246,17 @@ Identifies the part-name atributes that belongs to a specific project - Lista de
 
 # Machine
 
-Machine cnc1, nesting1, manual cut1
--  `id`: Machine From the organization
+Identifies the attributes of a machine in the organization
+-  `id`: Unique identifier of the machine
    -  Attribute type: **Property**. 
    -  Required
--  `name`: Project name
+-  `name`: Machine name
    -  Attribute type: **Property**. [name](https://schema.org/name)
    -  Optional
 -  `machineType`: Indicates in wich stage are the parts of corresponding machine type * `cnc1` - indicates cnc1 station is working * `nesting1` - indicates nesting1 station is working * `manualcut1` - indicates manualcut1 station is working * `receiving_material` - indicates that raw material is entering the factory * `organizing_material` - indicates that raw material is being put away at the factory * `assembly` - indicates that assembly station is on use * `shipping` - indicates the order is shipping. One of : `cnc1`, `nesting1`, `manualcut1`, `receiving_material`, `organizing_material`, `assembly`, `shipping`.
    -  Attribute type: **Property**. 
    -  Optional
--  `allocatedIn`: Identification the made part
+-  `allocatedIn`: Identifier the organization the machine is allocated
    -  Attribute type: **Relationship**. 
    -  Optional
 
@@ -265,7 +265,7 @@ Machine cnc1, nesting1, manual cut1
 # Assembly
 
 Indicates when a assembly process is completed
--  `id`: Assembly parts from a project
+-  `id`: Unique identifier for the assembly process of a project
    -  Attribute type: **Property**. 
    -  Required
 -  `startTime`: Saves date and time information when the start button is pressed
@@ -280,19 +280,16 @@ Indicates when a assembly process is completed
 -  `belongsTo`: Identification of the project to which this assembly corresponds
    -  Attribute type: **Relationship**. 
    -  Required
--  `orderBy`: Identification of the owner name associated to the project with status in execution
-   -  Attribute type: **Relationship**. 
-   -  Required
 
 
 
 # Budget
 
 Clients Budget
--  `id`: Budget Identifier
+-  `id`: Unique identifier of a budget
    -  Attribute type: **Property**. 
    -  Required
--  `number`: Budget name
+-  `number`: Budget number
    -  Attribute type: **Property**. [Number](https://schema.org/Number)
    -  Optional
 -  `name`: Budget name
@@ -301,7 +298,7 @@ Clients Budget
 -  `price`: Price in euros
    -  Attribute type: **Property**. 
    -  Optional
--  `budgetStatus`: Budget possible states * waiting_budget - initial budget value * waiting_adjudication - value after budget was delivered to the customer for approval * adjudicated - value after budget adjudication * canceled - value after budget canceled. One of : `waiting_budget`, `waiting_adjudication`, `adjudicated`, `canceled`.
+-  `budgetStatus`: Budget possible states * must_be_analyzed -> initial budget value, which is pre-budget, where the necessary data for budget development is collected * waiting_budget - value before update * waiting_adjudication - value after budget was delivered to the customer for approval * adjudicated - value after budget adjudication * canceled - value after budget canceled. One of : `must_be_analyzed`, `waiting_budget`, `waiting_adjudication`, `adjudicated`, `canceled`.
    -  Attribute type: **Property**. 
    -  Optional
 -  `observation`: Observation (T)
@@ -322,10 +319,10 @@ Clients Budget
 -  `lastUpdate`: Date of last amendment to the budget, until the budget is awarded (DD/MM/YYYY hh:mm:ss )
    -  Attribute type: **Property**. [Date](https://schema.org/Date)
    -  Optional
--  `orderBy`: Identification of the owner name associated to the project with status in execution
+-  `orderBy`: Identification of the client for whom the budget was prepared
    -  Attribute type: **Relationship**. 
    -  Required
--  `approvedBy`: Identification of the owner name associated to the project with status in execution
+-  `approvedBy`: Identification of the worker who approved the budget
    -  Attribute type: **Relationship**. 
    -  Optional
 -  `deliveryAddress`: The delivery address
@@ -337,7 +334,7 @@ Clients Budget
 # Expedition
 
 Indicates when an order has been shiped
--  `id`: Refers to the date of dispatch of the order
+-  `id`: Unique identifier of the shipping order
    -  Attribute type: **Property**. 
    -  Required
 -  `expeditionTime`: Date and hour when the order left the factory in direction to the Owner
@@ -346,7 +343,7 @@ Indicates when an order has been shiped
 -  `deliveryFlag`: Indicates if the order arrived to the destination
    -  Attribute type: **Property**. [Boolean](https://schema.org/Boolean)
    -  Optional
--  `belongsTo`: Identification of the projet Name that this consumables will attached to
+-  `belongsTo`: Identification of the project to which this expedition relates
    -  Attribute type: **Relationship**. 
    -  Required
 
@@ -355,7 +352,7 @@ Indicates when an order has been shiped
 # Module
 
 Indicates a corresponding module of a project under assembly
--  `id`: Module of a project under assembly
+-  `id`: Unique identifier of a module of a project under assembly.
    -  Attribute type: **Property**. 
    -  Required
 -  `belongsToFurniture`: Identification of the assembly to which this module belongs
@@ -364,8 +361,8 @@ Indicates a corresponding module of a project under assembly
 -  `finishTime`: Saves date and time information when the finish button is pressed
    -  Attribute type: **Property**. 
    -  Optional
--  `name`: name-project_module-name
-   -  Attribute type: **Property**. 
+-  `name`: Module name (name-project_module-name)
+   -  Attribute type: **Property**. [name](https://schema.org/name)
    -  Optional
 -  `startTime`: Saves date and time information when the start button is pressed
    -  Attribute type: **Property**. 
@@ -375,14 +372,17 @@ Indicates a corresponding module of a project under assembly
 
 # Furniture
 
-Indicates a corresponding furniture of a project under assembly
--  `id`: movel of a project under assembly
+Describes a piece of furniture from a project under assembly
+-  `id`: Unique identifier of the piece of furniture
    -  Attribute type: **Property**. 
    -  Required
--  `category`: Movel type
+-  `lineNumber`: Line number
+   -  Attribute type: **Property**. [Number](https://schema.org/Number)
+   -  Optional
+-  `category`: Type of the piece of furniture
    -  Attribute type: **Property**. 
    -  Optional
--  `amount`: Value in euros
+-  `amount`: Quantity of elements
    -  Attribute type: **Property**. 
    -  Optional
 -  `startTime`: Saves date and time information when the start button is pressed
@@ -391,16 +391,19 @@ Indicates a corresponding furniture of a project under assembly
 -  `finishTime`: Saves date and time information when the finish button is pressed
    -  Attribute type: **Property**. 
    -  Optional
--  `name`: name module
-   -  Attribute type: **Property**. 
+-  `name`: Name of the piece of furniture
+   -  Attribute type: **Property**. [name](https://schema.org/name)
    -  Optional
--  `belongsToAssembly`: Identification of the movel to which this module belongs
+-  `belongsToAssembly`: Identification of the assembly affected to the furniture.
    -  Attribute type: **Relationship**. 
    -  Optional
--  `hasBudget`: Identification assembled parts belong to some project made for some worker
+-  `hasBudget`: Identifies the budget related
    -  Attribute type: **Relationship**. 
    -  Required
 -  `price`: Price in euros
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `furnitureType`: Type of line * furniture -> initial budget value, which is pre-budget, where the necessary data for budget development is collected * group * accessory - (Ex robinet, ...). One of : `furniture`, `group`, `accessory`.
    -  Attribute type: **Property**. 
    -  Optional
 -  `width`: Width in mm
@@ -420,8 +423,8 @@ Indicates a corresponding furniture of a project under assembly
 
 # Group
 
-Indicates a corresponding module of a project under assembly
--  `id`: movel of a project under assembly
+Identifies a group associated with a module
+-  `id`: Unique identifier of the group
    -  Attribute type: **Property**. 
    -  Required
 -  `startTime`: Saves date and time information when the start button is pressed
@@ -430,10 +433,10 @@ Indicates a corresponding module of a project under assembly
 -  `finishTime`: Saves date and time information when the finish button is pressed
    -  Attribute type: **Property**. 
    -  Optional
--  `name`: name group
-   -  Attribute type: **Property**. 
+-  `name`: Group name
+   -  Attribute type: **Property**. [name](https://schema.org/name)
    -  Required
--  `belongsToModule`: Identification of the movel to which this module belongs
+-  `belongsToModule`: Identifies the module that is associated with this group
    -  Attribute type: **Relationship**. 
    -  Required
 
@@ -442,13 +445,13 @@ Indicates a corresponding module of a project under assembly
 # MachineTask
 
 This entity creates a bridge table between the Machine and Part entities.
--  `id`: Module of a project under assembly
+-  `id`: Unique identifier
    -  Attribute type: **Property**. 
    -  Optional
--  `performedOn`: Identification of the project  to which this machine is working on
+-  `performedOn`: Identifies the part processed by the machine
    -  Attribute type: **Property**. 
    -  Optional
--  `byMachine`: Identification of the workers  to which worked  on project
+-  `byMachine`: Identifies the machine that processed the part
    -  Attribute type: **Property**. 
    -  Optional
 -  `startTime`: Saves date and time information when the start button is pressed
@@ -462,14 +465,14 @@ This entity creates a bridge table between the Machine and Part entities.
 
 # WorkerTask
 
-Indicates a corresponding module of a project under assembly
--  `id`: Module of a project under assembly
+This entity creates a bridge table between the Worker and Part entities.
+-  `id`: Unique identifier
    -  Attribute type: **Property**. 
    -  Optional
--  `executedBy`: Identification of the project  to which this machine is working on
+-  `executedBy`: Identifies the worker who processed the part
    -  Attribute type: **Property**. 
    -  Optional
--  `executedIn`: Identification of the project  to which this machine is working on
+-  `executedIn`: Identifies the part processed by the worker
    -  Attribute type: **Property**. 
    -  Optional
 -  `startTime`: Saves date and time information when the start button is pressed
@@ -487,7 +490,7 @@ Identifies the attributes of a leftover that belongs to an organization
 -  `id`: Unique identifier of the leftover
    -  Attribute type: **Property**. 
    -  Required
--  `sort`: TIPO (B)
+-  `sort`: Type (B)
    -  Attribute type: **Property**. 
    -  Optional
 -  `hasOrganization`: Relationship property: identifies the organization to which the leftover belongs
@@ -502,17 +505,17 @@ Identifies the attributes of a leftover that belongs to an organization
 -  `location`: Location of the leftover
    -  Attribute type: **Property**. [location](https://schema.org/location)
    -  Optional
--  `material`: Material (C)
+-  `material`: MATERIAL (C)
    -  Attribute type: **Property**. [material](https://schema.org/material)
    -  Required
--  `thickness`: Thickness (G)
+-  `thickness`: ESPESSURA (G)
    -  Attribute type: **Property**. [size](https://schema.org/size)
    -  Optional
--  `weight`: Weight (U)
+-  `weight`: PESO (U)
    -  Attribute type: **Property**. [weight](https://schema.org/weight)
    -  Optional
 -  `width`: Width in mm
-   -  Attribute type: **Property**. [weight](https://schema.org/weight)
+   -  Attribute type: **Property**. [width](https://schema.org/width)
    -  Optional
 -  `length`: Length in mm
    -  Attribute type: **Property**. [size](https://schema.org/size)

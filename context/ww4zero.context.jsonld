@@ -150,6 +150,10 @@
             "@id": "https://projectww4zero.pt/dataModel/finishTime",
             "@type": "xsd:string"
         },
+        "furnitureType": {
+            "@id": "https://projectww4zero.pt/dataModel/furnitureType",
+            "@type": "xsd:string"
+        },
         "givenName": {
             "@id": "schema:givenName",
             "@type": "xsd:string"
@@ -186,6 +190,10 @@
             "@id": "schema:size",
             "@type": "xsd:number"
         },
+        "lineNumber": {
+            "@id": "schema:Number",
+            "@type": "xsd:number"
+        },
         "location": {
             "@id": "schema:location",
             "@type": "xsd:string"
@@ -199,7 +207,7 @@
             "@type": "xsd:string"
         },
         "name": {
-            "@id": "https://projectww4zero.pt/dataModel/name",
+            "@id": "schema:name",
             "@type": "xsd:string"
         },
         "nestingFlag": {
@@ -356,7 +364,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identifies a client (Owner of a project)"
+                    "@value": "Identifies a client (owner of a project)"
                 }
             ],
             "rdfs:label": [
@@ -413,7 +421,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identifies the part-name atributes that belongs to a specific project - Lista de Corte -"
+                    "@value": "Identifies the part-name atributes that belongs to a specific project - Lista de Corte"
                 }
             ],
             "rdfs:label": [
@@ -432,7 +440,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Machine cnc1, nesting1, manual cut1"
+                    "@value": "Identifies the attributes of a machine in the organization"
                 }
             ],
             "rdfs:label": [
@@ -527,7 +535,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Indicates a corresponding furniture of a project under assembly"
+                    "@value": "Describes a piece of furniture from a project under assembly"
                 }
             ],
             "rdfs:label": [
@@ -546,7 +554,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Indicates a corresponding module of a project under assembly"
+                    "@value": "Identifies a group associated with a module"
                 }
             ],
             "rdfs:label": [
@@ -584,7 +592,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Indicates a corresponding module of a project under assembly"
+                    "@value": "This entity creates a bridge table between the Worker and Part entities."
                 }
             ],
             "rdfs:label": [
@@ -622,7 +630,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Organization Identifier"
+                    "@value": "Unique identifier of the organization"
                 }
             ],
             "rdfs:label": [
@@ -782,7 +790,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Client Identifier"
+                    "@value": "Unique identifier of the client"
                 }
             ],
             "rdfs:label": [
@@ -926,7 +934,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "status of an acount (0-inactive) (2-active)"
+                    "@value": "Status of an acount"
                 }
             ],
             "rdfs:label": [
@@ -958,7 +966,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "url da imagem"
+                    "@value": "Image URL"
                 }
             ],
             "rdfs:label": [
@@ -990,7 +998,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Worker Identifier"
+                    "@value": "Unique identifier of the worker"
                 }
             ],
             "rdfs:label": [
@@ -1054,7 +1062,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "if the work is an active user or not"
+                    "@value": "If the work is an active user or not"
                 }
             ],
             "rdfs:label": [
@@ -1070,7 +1078,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "url da image"
+                    "@value": "Image URL"
                 }
             ],
             "rdfs:label": [
@@ -1102,7 +1110,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Consumable Identifier"
+                    "@value": "Unique identifier of the consumable"
                 }
             ],
             "rdfs:label": [
@@ -1118,7 +1126,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identify the consumable Name"
+                    "@value": "Identify the consumable name"
                 }
             ],
             "rdfs:label": [
@@ -1182,7 +1190,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "url da imagem"
+                    "@value": "Image URL"
                 }
             ],
             "rdfs:label": [
@@ -1198,7 +1206,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the projet Name that this consumables will attached to"
+                    "@value": "Identification of the projet name that this consumables will attached to"
                 }
             ],
             "rdfs:label": [
@@ -1221,6 +1229,22 @@
                 {
                     "@language": "en",
                     "@value": "orderBy"
+                }
+            ]
+        },
+        {
+            "@id": "fiware:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Unique identifier of the part of a project."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
                 }
             ]
         },
@@ -1262,7 +1286,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identifies the project to which the part belongs"
+                    "@value": "Identifies the group to which the part belongs"
                 }
             ],
             "rdfs:label": [
@@ -1278,7 +1302,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identifies the project to which the part belongs"
+                    "@value": "Identifies the piece of furniture to which the part belongs."
                 }
             ],
             "rdfs:label": [
@@ -1294,7 +1318,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identifies the project to which the part belongs"
+                    "@value": "Identifies which assembler module the part belongs to (optional)"
                 }
             ],
             "rdfs:label": [
@@ -1417,28 +1441,12 @@
             ]
         },
         {
-            "@id": "fiware:id",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Unic Identifier of a Part of a Project"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "id"
-                }
-            ]
-        },
-        {
             "@id": "https://projetww4zero.pt/dataModel/image",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "url da imagem"
+                    "@value": "URL of the part image"
                 }
             ],
             "rdfs:label": [
@@ -1694,7 +1702,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Machine From the organization"
+                    "@value": "Unique identifier of the machine"
                 }
             ],
             "rdfs:label": [
@@ -1710,7 +1718,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Project name"
+                    "@value": "Machine name"
                 }
             ],
             "rdfs:label": [
@@ -1726,7 +1734,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification the made part"
+                    "@value": "Identifier the organization the machine is allocated"
                 }
             ],
             "rdfs:label": [
@@ -1742,7 +1750,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Assembly parts from a project"
+                    "@value": "Unique identifier for the assembly process of a project"
                 }
             ],
             "rdfs:label": [
@@ -1801,28 +1809,12 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/orderBy",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Identification of the owner name associated to the project with status in execution"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "orderBy"
-                }
-            ]
-        },
-        {
             "@id": "fiware:id",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Budget Identifier"
+                    "@value": "Unique identifier of a budget"
                 }
             ],
             "rdfs:label": [
@@ -1838,7 +1830,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Budget name"
+                    "@value": "Budget number"
                 }
             ],
             "rdfs:label": [
@@ -1982,7 +1974,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the owner name associated to the project with status in execution"
+                    "@value": "Identification of the client for whom the budget was prepared"
                 }
             ],
             "rdfs:label": [
@@ -1998,7 +1990,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the owner name associated to the project with status in execution"
+                    "@value": "Identification of the worker who approved the budget"
                 }
             ],
             "rdfs:label": [
@@ -2030,7 +2022,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Refers to the date of dispatch of the order"
+                    "@value": "Unique identifier of the shipping order"
                 }
             ],
             "rdfs:label": [
@@ -2078,7 +2070,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the projet Name that this consumables will attached to"
+                    "@value": "Identification of the project to which this expedition relates"
                 }
             ],
             "rdfs:label": [
@@ -2094,7 +2086,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Module of a project under assembly"
+                    "@value": "Unique identifier of a module of a project under assembly."
                 }
             ],
             "rdfs:label": [
@@ -2137,12 +2129,12 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/name",
+            "@id": "schema:name",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "name-project_module-name"
+                    "@value": "Module name (name-project_module-name)"
                 }
             ],
             "rdfs:label": [
@@ -2174,7 +2166,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "movel of a project under assembly"
+                    "@value": "Unique identifier of the piece of furniture"
                 }
             ],
             "rdfs:label": [
@@ -2185,12 +2177,28 @@
             ]
         },
         {
+            "@id": "schema:lineNumber",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Line number"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "lineNumber"
+                }
+            ]
+        },
+        {
             "@id": "https://projectww4zero.pt/dataModel/category",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Movel type"
+                    "@value": "Type of the piece of furniture"
                 }
             ],
             "rdfs:label": [
@@ -2206,7 +2214,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Value in euros"
+                    "@value": "Quantity of elements"
                 }
             ],
             "rdfs:label": [
@@ -2249,12 +2257,12 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/name",
+            "@id": "schema:name",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "name module"
+                    "@value": "Name of the piece of furniture"
                 }
             ],
             "rdfs:label": [
@@ -2270,7 +2278,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the movel to which this module belongs"
+                    "@value": "Identification of the assembly affected to the furniture."
                 }
             ],
             "rdfs:label": [
@@ -2286,7 +2294,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification assembled parts belong to some project made for some worker"
+                    "@value": "Identifies the budget related"
                 }
             ],
             "rdfs:label": [
@@ -2382,7 +2390,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "movel of a project under assembly"
+                    "@value": "Unique identifier of the group"
                 }
             ],
             "rdfs:label": [
@@ -2425,12 +2433,12 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/name",
+            "@id": "schema:name",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "name group"
+                    "@value": "Group name"
                 }
             ],
             "rdfs:label": [
@@ -2446,7 +2454,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the movel to which this module belongs"
+                    "@value": "Identifies the module that is associated with this group"
                 }
             ],
             "rdfs:label": [
@@ -2462,7 +2470,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Module of a project under assembly"
+                    "@value": "Unique identifier"
                 }
             ],
             "rdfs:label": [
@@ -2478,7 +2486,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the project  to which this machine is working on"
+                    "@value": "Identifies the part processed by the machine"
                 }
             ],
             "rdfs:label": [
@@ -2494,7 +2502,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the workers  to which worked  on project"
+                    "@value": "Identifies the machine that processed the part"
                 }
             ],
             "rdfs:label": [
@@ -2542,7 +2550,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Module of a project under assembly"
+                    "@value": "Unique identifier"
                 }
             ],
             "rdfs:label": [
@@ -2558,7 +2566,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the project  to which this machine is working on"
+                    "@value": "Identifies the worker who processed the part"
                 }
             ],
             "rdfs:label": [
@@ -2574,7 +2582,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Identification of the project  to which this machine is working on"
+                    "@value": "Identifies the part processed by the worker"
                 }
             ],
             "rdfs:label": [
@@ -2638,7 +2646,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "TIPO (B)"
+                    "@value": "Type (B)"
                 }
             ],
             "rdfs:label": [
@@ -2718,7 +2726,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Material (C)"
+                    "@value": "MATERIAL (C)"
                 }
             ],
             "rdfs:label": [
@@ -2734,7 +2742,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Thickness (G)"
+                    "@value": "ESPESSURA (G)"
                 }
             ],
             "rdfs:label": [
@@ -2750,7 +2758,7 @@
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Weight (U)"
+                    "@value": "PESO (U)"
                 }
             ],
             "rdfs:label": [
