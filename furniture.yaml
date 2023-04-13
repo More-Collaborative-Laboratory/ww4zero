@@ -176,5 +176,5 @@ furniture:
 
   required:
     - id
-    - status
+    - furnitureType
     - hasBudget
