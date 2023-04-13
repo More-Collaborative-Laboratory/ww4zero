@@ -1,13 +1,124 @@
 paths:
-  /ngsi-ld/v1/entities:
+  /leftover:
     get:
+      tags:
+        - Leftover
+      summary: Get all the leftovers
       responses:
         "200":
-          description: "OK"
+          description: Success
           content:
-            application/ld+json:
+            application/json:
               schema:
-                type: object
+                type: array
+                items:
+                  $ref: "#/schemas/leftover"
+    post:
+      tags:
+        - Leftover
+      summary: Register a leftover
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/schemas/leftover"
+        required: true
+      responses:
+        "201":
+          description: Success
+          content:
+            application/json: {}
+
+  /leftover/{id}:
+    get:
+      tags:
+        - Leftover
+      summary: Get the details of a specific leftover
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the leftover to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/leftover/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/leftover"
+    delete:
+      tags:
+        - Leftover
+      summary: Delete a leftover
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the leftover to delete
+          required: true
+          schema:
+            $ref: "#/schemas/leftover/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
+
+  /leftover/{id}/attrs:
+    patch:
+      tags:
+        - Leftover
+      summary: Update multiple attributes of a leftover
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the leftover to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/leftover/properties/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                width:
+                  type: number
+                  value: 0.9
+                length:
+                  type: number
+                  value: 0.5
+
+  /leftover/{id}/attrs/{attr}:
+    patch:
+      tags:
+        - Leftover
+      summary: Update a single attribute of the leftover
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the leftover to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/leftover/properties/id"
+        - name: attr
+          in: path
+          description: Attribute to be changed.
+          required: true
+          schema:
+            type: string
+            enum:
+              - dimensions
+              - material
+              - thickness
+              - width
+              - length
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
 schemas:
   leftover:
@@ -21,6 +132,14 @@ schemas:
         format: uri
         type: string
         maxLength: 256
+        x-ngsi:
+          type: Property
+
+      type:
+        description: NGSI Entity type
+        enum:
+          - Leftover
+        type: string
         x-ngsi:
           type: Property
 
@@ -54,6 +173,51 @@ schemas:
       dimensions:
         description: Dimensions of the leftover
         oneOf:
+          - description: Geoproperty. Geojson reference to the item. Polygon
+            properties:
+              bbox:
+                items:
+                  type: number
+                minItems: 4
+                type: array
+                example: [175, 13, 747, 516]
+              coordinates:
+                items:
+                  items:
+                    items:
+                      type: number
+                    minItems: 2
+                    type: array
+                  minItems: 4
+                  type: array
+                type: array
+                example:
+                  [
+                    [
+                      [0.0, 0.01],
+                      [0.01, 1.0],
+                      [0.24, 1.0],
+                      [0.24, 0.76],
+                      [0.39, 0.76],
+                      [0.39, 0.92],
+                      [0.71, 0.92],
+                      [0.71, 0.76],
+                      [1.0, 0.75],
+                      [1.0, 0.17],
+                      [0.24, 0.18],
+                      [0.23, 0.0],
+                      [0.0, 0.01],
+                    ],
+                  ]
+              type:
+                enum:
+                  - Polygon
+                type: string
+            required:
+              - type
+              - coordinates
+            title: GeoJSON Polygon
+            type: object
           - description: Geoproperty. Geojson reference to the item. Point
             properties:
               bbox:
@@ -98,32 +262,6 @@ schemas:
               - type
               - coordinates
             title: GeoJSON LineString
-            type: object
-          - description: Geoproperty. Geojson reference to the item. Polygon
-            properties:
-              bbox:
-                items:
-                  type: number
-                minItems: 4
-                type: array
-              coordinates:
-                items:
-                  items:
-                    items:
-                      type: number
-                    minItems: 2
-                    type: array
-                  minItems: 4
-                  type: array
-                type: array
-              type:
-                enum:
-                  - Polygon
-                type: string
-            required:
-              - type
-              - coordinates
-            title: GeoJSON Polygon
             type: object
           - description: Geoproperty. Geojson reference to the item. MultiPoint
             properties:
@@ -174,7 +312,7 @@ schemas:
               - coordinates
             title: GeoJSON MultiLineString
             type: object
-          - description: Geoproperty. Geojson reference to the item. MultiLineString
+          - description: Geoproperty. Geojson reference to the item. MultiPolygon
             properties:
               bbox:
                 items:
@@ -209,7 +347,7 @@ schemas:
 
       image:
         description: URL of the leftover image
-        example: https://schema.org/image
+        example: http://woodwork4.ddns.net/ww4/api/v1/storages/leftover/leftover_Xw9Jz3BbzBO4GlZ2/
         type: string
         maxLength: 256
         x-ngsi:

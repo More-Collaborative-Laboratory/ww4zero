@@ -17,8 +17,14 @@ servers:
     description: Production environment
 
 paths:
-  /ngsi-ld/v1/entities:
-    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/paths/~1ngsi-ld~1v1~1entities
+  /leftover:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/paths/~1leftover
+  /leftover/{id}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/paths/~1leftover~1{id}
+  /leftover/{id}/attrs:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/paths/~1leftover~1{id}~1attrs
+  /leftover/{id}/attrs/{attr}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/paths/~1leftover~1{id}~1attrs~1{attr}
 
 components:
   schemas:
