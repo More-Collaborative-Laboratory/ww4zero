@@ -67,8 +67,8 @@ project:
         uri: https://projectww4zero.pt/dataModel/orderBy
         uri-prefix: https://projectww4zero.pt/dataModel/
 
-    status:
-      description: Indicates the actual workers station 
+    projectStatus:
+      description: Indicates the actual project status
         * drawing - Initial state of a project, in which CAD drawings are being developed...
         * production - While in the production phase on the factory floor...
         * testing - While in the assembly and testing phase...
@@ -84,7 +84,7 @@ project:
       type: string
       x-ngsi:
         type: Property
-        uri: https://projectww4zero.pt/dataModel/status
+        uri: https://projectww4zero.pt/dataModel/projectStatus
         uri-prefix: https://projectww4zero.pt/dataModel/
 
   required:
