@@ -12,6 +12,14 @@ info:
     name: Digitalization da Carpintaria Portuguesa Mofreita
     url: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/
 
+servers:
+  - url: http://woodwork4.ddns.net/ww4/api/v1
+    description: Production environment
+
+paths:
+  /ngsi-ld/v1/entities:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/paths/~1ngsi-ld~1v1~1entities
+
 components:
   schemas:
     Organization:
@@ -46,7 +54,3 @@ components:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/workerTask
     LeftOver:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/schemas/leftover
-
-paths:
-  /ngsi-ld/v1/entities:
-    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/paths/~1ngsi-ld~1v1~1entities
