@@ -1,94 +1,226 @@
-project:
-  type: object
-  title: Project
-  description: Contains the information of a project
-  properties:
-    id:
-      description: Unique identifier of the project
-      example: urn:ngsi-ld:Project:[name]
-      format: uri
-      type: string
-      maxLength: 256
-      x-ngsi:
-        type: Property
+paths:
+  /project:
+    get:
+      tags:
+        - Project
+      summary: Get all the projects
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schemas/project"
+    post:
+      tags:
+        - Project
+      summary: Register a project
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/schemas/project"
+        required: true
+      responses:
+        "201":
+          description: Success
+          content:
+            application/json: {}
 
-    hasBudget:
-      description: "Relationship property: Identifies the budget related"
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        type: Relationship
-        uri: https://projectww4zero.pt/dataModel/hasBudget
-        uri-prefix: https://projectww4zero.pt/dataModel/
+  /project/{id}:
+    get:
+      tags:
+        - Project
+      summary: Get the details of a specific project
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the project to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/project/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/project"
+    delete:
+      tags:
+        - Project
+      summary: Delete a project
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the project to delete
+          required: true
+          schema:
+            $ref: "#/schemas/project/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    category:
-      description: Type of furniture
-      example: Movel cozinha
-      type: string
-      maxLength: 256
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/category
-        uri-prefix: https://projectww4zero.pt/dataModel/
+  /project/{id}/attrs:
+    patch:
+      tags:
+        - Project
+      summary: Update multiple attributes of a project
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the project to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/project/properties/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                category:
+                  type: string
+                  value: Aparador
+                projectStatus:
+                  type: string
+                  value: drawing
 
-    name:
-      description: Project name
-      example: MUEBLE-WC
-      type: string
-      maxLength: 256
-      x-ngsi:
-        model: https://schema.org/name
-        type: Property
-        uri: https://schema.org/name
-        uri-prefix: https://schema.org/
+  /project/{id}/attrs/{attr}:
+    patch:
+      tags:
+        - Project
+      summary: Update a single attribute of the project
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the project to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/project/properties/id"
+        - name: attr
+          in: path
+          description: Attribute to be changed.
+          required: true
+          schema:
+            type: string
+            enum:
+              - hasBudget
+              - category
+              - name
+              - orderBy
+              - projectStatus
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    orderBy:
-      description: Identification of the owner name associated to the project with status in execution
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        type: Relationship
-        uri: https://projectww4zero.pt/dataModel/orderBy
-        uri-prefix: https://projectww4zero.pt/dataModel/
+schemas:
+  project:
+    type: object
+    title: Project
+    description: Contains the information of a project
+    properties:
+      id:
+        description: Unique identifier of the project
+        example: urn:ngsi-ld:Project:[name]
+        format: uri
+        type: string
+        maxLength: 256
+        x-ngsi:
+          type: Property
 
-    projectStatus:
-      description: Indicates the actual project status
-        * drawing - Initial state of a project, in which CAD drawings are being developed...
-        * production - While in the production phase on the factory floor...
-        * testing - While in the assembly and testing phase...
-        * transport - While in the transportation phase, which begins after the completion of assembly...
-        * finished - When installed at the site.
-      enum:
-        - drawing
-        - production
-        - testing
-        - transport
-        - finished
-      example: expedition
-      type: string
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/projectStatus
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      type:
+        description: NGSI Entity type
+        enum:
+          - Project
+        type: string
+        x-ngsi:
+          type: Property
 
-  required:
-    - id
-    - name
-    - orderBy
-    - hasBudget
+      hasBudget:
+        description: "Relationship property: Identifies the budget related"
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          type: Relationship
+          uri: https://projectww4zero.pt/dataModel/hasBudget
+          uri-prefix: https://projectww4zero.pt/dataModel/
+
+      category:
+        description: Type of furniture
+        example: Movel cozinha
+        type: string
+        maxLength: 256
+        x-ngsi:
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/category
+          uri-prefix: https://projectww4zero.pt/dataModel/
+
+      name:
+        description: Project name
+        example: MUEBLE-WC
+        type: string
+        maxLength: 256
+        x-ngsi:
+          model: https://schema.org/name
+          type: Property
+          uri: https://schema.org/name
+          uri-prefix: https://schema.org/
+
+      orderBy:
+        description: Identification of the owner name associated to the project with status in execution
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          type: Relationship
+          uri: https://projectww4zero.pt/dataModel/orderBy
+          uri-prefix: https://projectww4zero.pt/dataModel/
+
+      projectStatus:
+        description: Indicates the actual project status
+          * drawing - Initial state of a project, in which CAD drawings are being developed...
+          * production - While in the production phase on the factory floor...
+          * testing - While in the assembly and testing phase...
+          * transport - While in the transportation phase, which begins after the completion of assembly...
+          * finished - When installed at the site.
+        enum:
+          - drawing
+          - production
+          - testing
+          - transport
+          - finished
+        example: expedition
+        type: string
+        x-ngsi:
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/projectStatus
+          uri-prefix: https://projectww4zero.pt/dataModel/
+
+    required:
+      - id
+      - type
+      - name
+      - orderBy
+      - hasBudget

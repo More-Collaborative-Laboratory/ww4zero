@@ -34,77 +34,78 @@ paths:
               schema:
                 $ref: "#/schemas/organization"
 
-organization:
-  title: Organization
-  type: object
-  description: Describes the organization entity
-  properties:
-    id:
-      description: Unique identifier of the organization
-      type: string
-      maxLength: 256
-      format: uri
-      example: urn:ngsi-ld:Organization:[taxId]
-      x-ngsi:
-        type: Property
+schemas:
+  organization:
+    title: Organization
+    type: object
+    description: Describes the organization entity
+    properties:
+      id:
+        description: Unique identifier of the organization
+        type: string
+        maxLength: 256
+        format: uri
+        example: urn:ngsi-ld:Organization:[taxId]
+        x-ngsi:
+          type: Property
 
-    type:
-      description: NGSI Entity type
-      enum:
-        - Organization
-      type: string
-      x-ngsi:
-        type: Property
+      type:
+        description: NGSI Entity type
+        enum:
+          - Organization
+        type: string
+        x-ngsi:
+          type: Property
 
-    legalName:
-      description: Organization's legal name
-      type: string
-      maxLength: 256
-      example: MOFREITA
-      x-ngsi:
-        uri: "https://schema.org/legalName"
-        uri-prefix: "https://schema.org"
-        model: "https://schema.org/legalName"
-        type: Property
+      legalName:
+        description: Organization's legal name
+        type: string
+        maxLength: 256
+        example: MOFREITA
+        x-ngsi:
+          uri: "https://schema.org/legalName"
+          uri-prefix: "https://schema.org"
+          model: "https://schema.org/legalName"
+          type: Property
 
-    vat:
-      description: Client/Institution Tax ID
-      type: string
-      maxLength: 256
-      pattern: ^\d+$
-      example: 254545879
-      x-ngsi:
-        uri: "https://schema.org/vatID"
-        uri-prefix: "https://schema.org/"
-        model: "https://schema.org/vatID"
-        type: Property
+      vat:
+        description: Client/Institution Tax ID
+        type: string
+        maxLength: 256
+        pattern: ^\d+$
+        example: 254545879
+        x-ngsi:
+          uri: "https://schema.org/vatID"
+          uri-prefix: "https://schema.org/"
+          model: "https://schema.org/vatID"
+          type: Property
 
-    email:
-      description: Contact email address
-      type: string
-      maxLength: 256
-      format: email
-      example: 11CAEOT@ar.parlamento.pt
-      x-ngsi:
-        uri: "https://schema.org/email"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/email
-        type: Property
+      email:
+        description: Contact email address
+        type: string
+        maxLength: 256
+        format: email
+        example: 11CAEOT@ar.parlamento.pt
+        x-ngsi:
+          uri: "https://schema.org/email"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/email
+          type: Property
 
-    active:
-      description: if the work is an active user or not
-      type: boolean
-      example: true
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/active"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        model: "https://schema.org/Boolean"
-        type: Property
+      active:
+        description: if the work is an active user or not
+        type: boolean
+        example: true
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/active"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          model: "https://schema.org/Boolean"
+          type: Property
 
-  required:
-    - id
-    - type
-    - legalName
-    - vat
-    - email
-    - active
+    required:
+      - id
+      - type
+      - legalName
+      - vat
+      - email
+      - active

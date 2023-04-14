@@ -119,80 +119,81 @@ paths:
           content:
             application/json: {}
 
-module:
-  title: Module
-  type: object
-  description: Indicates a corresponding module of a project under assembly
+schemas:
+  module:
+    title: Module
+    type: object
+    description: Indicates a corresponding module of a project under assembly
 
-  properties:
-    id:
-      description: Unique identifier of a module of a project under assembly.
-      example: urn:ngsi-ld:Module:[]
-      format: uri
-      type: string
-      maxLength: 256
-      x-ngsi:
-        type: Property
+    properties:
+      id:
+        description: Unique identifier of a module of a project under assembly.
+        example: urn:ngsi-ld:Module:[]
+        format: uri
+        type: string
+        maxLength: 256
+        x-ngsi:
+          type: Property
 
-    type:
-      description: NGSI Entity type
-      enum:
-        - Module
-      type: string
-      x-ngsi:
-        type: Property
+      type:
+        description: NGSI Entity type
+        enum:
+          - Module
+        type: string
+        x-ngsi:
+          type: Property
 
-    name:
-      description: Module name (name-project_module-name)
-      example: MC_MUEBLETV_A
-      type: string
-      maxLength: 256
-      x-ngsi:
-        model: https://schema.org/name
-        type: Property
-        uri: https://schema.org/name
-        uri-prefix: https://schema.org/
+      name:
+        description: Module name (name-project_module-name)
+        example: MC_MUEBLETV_A
+        type: string
+        maxLength: 256
+        x-ngsi:
+          model: https://schema.org/name
+          type: Property
+          uri: https://schema.org/name
+          uri-prefix: https://schema.org/
 
-    belongsToFurniture:
-      description: Identification of the assembly to which this module belongs
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        type: Relationship
-        uri: https://projectww4zero.pt/dataModel/belongsToFurniture
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      belongsToFurniture:
+        description: Identification of the assembly to which this module belongs
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          type: Relationship
+          uri: https://projectww4zero.pt/dataModel/belongsToFurniture
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    startTime:
-      description: Saves date and time information when the start button is pressed
-      example: 25-03-2022 10:00
-      format: DateTime
-      type: string
-      maxLength: 256
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/startTime
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      startTime:
+        description: Saves date and time information when the start button is pressed
+        example: 25-03-2022 10:00
+        format: DateTime
+        type: string
+        maxLength: 256
+        x-ngsi:
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/startTime
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    finishTime:
-      description: Saves date and time information when the finish button is pressed
-      example: 27-03-2022 10:00
-      format: DateTime
-      type: string
-      maxLength: 256
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/finishTime
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      finishTime:
+        description: Saves date and time information when the finish button is pressed
+        example: 27-03-2022 10:00
+        format: DateTime
+        type: string
+        maxLength: 256
+        x-ngsi:
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/finishTime
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-  required:
-    - id
-    - type
-    - belongsToFurniture
+    required:
+      - id
+      - type
+      - belongsToFurniture

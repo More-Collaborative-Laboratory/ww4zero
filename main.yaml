@@ -37,6 +37,14 @@ paths:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/paths/~1module~1{id}~1attrs
   /module/{id}/attrs/{attr}:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/paths/~1module~1{id}~1attrs~1{attr}
+  /project:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/project.yaml#/paths/~1project
+  /project/{id}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/project.yaml#/paths/~1project~1{id}
+  /project/{id}/attrs:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/project.yaml#/paths/~1project~1{id}~1attrs
+  /project/{id}/attrs/{attr}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/project.yaml#/paths/~1project~1{id}~1attrs~1{attr}
 
 components:
   schemas:
