@@ -1,210 +1,290 @@
-part:
-  type: object
-  title: Part
-  description: Identifies the part-name atributes that belongs to a specific project - Lista de Corte
-  properties:
-    id:
-      description: Unique identifier of the part of a project.
-      example: urn:ngsi-ld:Part:1223
-      format: uri
-      type: string
-      maxLength: 256
-      x-ngsi:
-        type: Property
+paths:
+  /part:
+    get:
+      tags:
+        - Part
+      summary: Get all the parts
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schemas/part"
+    post:
+      tags:
+        - Part
+      summary: Register a part
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/schemas/part"
+        required: true
+      responses:
+        "201":
+          description: Success
+          content:
+            application/json: {}
 
-    amount:
-      description: QUANTIDADE (D)
-      example: 1
-      type: number
-      x-ngsi:
-        model: https://schema.org/amount
-        type: Property
-        uri: https://schema.org/amount
-        uri-prefix: https://schema.org/
+  /part/{id}:
+    get:
+      tags:
+        - Part
+      summary: Get the details of a specific part
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the part to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/part/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/part"
+    delete:
+      tags:
+        - Part
+      summary: Delete a part
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the part to delete
+          required: true
+          schema:
+            $ref: "#/schemas/part/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    belongsTo:
-      description: Identifies the project to which the part belongs
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        type: Relationship
-        uri: https://projectww4zero.pt/dataModel/belongsTo
-        uri-prefix: https://projectww4zero.pt/dataModel/
+  /part/{id}/attrs:
+    patch:
+      tags:
+        - Part
+      summary: Update multiple attributes of a part
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the part to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/part/properties/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                length:
+                  type: number
+                  value: 0.9
+                amount:
+                  type: number
+                  value: 2
 
-    belongsToGroup:
-      description: Identifies the group to which the part belongs
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        type: Relationship
-        uri: https://projectww4zero.pt/dataModel/belongsToGroup
-        uri-prefix: https://projectww4zero.pt/dataModel/
+  /part/{id}/attrs/{attr}:
+    patch:
+      tags:
+        - Part
+      summary: Update a single attribute of the part
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the part to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/part/properties/id"
+        - name: attr
+          in: path
+          description: Attribute to be changed.
+          required: true
+          schema:
+            type: string
+            enum:
+              - amount
+              - belongsTo
+              - belongsToGroup
+              - belongsToFurniture
+              - belongsToModule
+              - cncFlag
+              - dimensions
+              - f2
+              - f3
+              - f4
+              - f5
+              - groove
+              - image
+              - material
+              - nestingFlag
+              - observation
+              - orla2
+              - orla3
+              - orla4
+              - orla5
+              - partName
+              - sort
+              - tag
+              - thickness
+              - tupia
+              - weight
+              - width
+              - length
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    belongsToFurniture:
-      description: Identifies the piece of furniture to which the part belongs.
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        type: Relationship
-        uri: https://projectww4zero.pt/dataModel/belongsToFurniture
-        uri-prefix: https://projectww4zero.pt/dataModel/
+schemas:
+  part:
+    type: object
+    title: Part
+    description: Identifies the part-name atributes that belongs to a specific project - Lista de Corte
+    properties:
+      id:
+        description: Unique identifier of the part of a project.
+        example: urn:ngsi-ld:Part:1223
+        format: uri
+        type: string
+        maxLength: 256
+        x-ngsi:
+          type: Property
 
-    belongsToModule:
-      description: Identifies which assembler module the part belongs to (optional)
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        type: Relationship
-        uri: https://projectww4zero.pt/dataModel/belongsToModule
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      type:
+        description: NGSI Entity type
+        enum:
+          - Part
+        type: string
+        x-ngsi:
+          type: Property
 
-    cncFlag:
-      description: CNC (J)
-      example: false
-      type: boolean
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/cncFlag
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      amount:
+        description: QUANTIDADE (D)
+        example: 1
+        type: number
+        x-ngsi:
+          model: https://schema.org/amount
+          type: Property
+          uri: https://schema.org/amount
+          uri-prefix: https://schema.org/
 
-    dimensions:
-      description: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
-      oneOf:
-        - description: Geoproperty. Geojson reference to the item. Point
-          properties:
-            bbox:
-              items:
-                type: number
-              minItems: 4
-              type: array
-            coordinates:
-              items:
-                type: number
-              minItems: 2
-              type: array
-            type:
-              enum:
-                - Point
-              type: string
-          required:
-            - type
-            - coordinates
-          title: GeoJSON Point
-          type: object
-        - description: Geoproperty. Geojson reference to the item. LineString
-          properties:
-            bbox:
-              items:
-                type: number
-              minItems: 4
-              type: array
-            coordinates:
-              items:
+      belongsTo:
+        description: Identifies the project to which the part belongs
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          type: Relationship
+          uri: https://projectww4zero.pt/dataModel/belongsTo
+          uri-prefix: https://projectww4zero.pt/dataModel/
+
+      belongsToGroup:
+        description: Identifies the group to which the part belongs
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          type: Relationship
+          uri: https://projectww4zero.pt/dataModel/belongsToGroup
+          uri-prefix: https://projectww4zero.pt/dataModel/
+
+      belongsToFurniture:
+        description: Identifies the piece of furniture to which the part belongs.
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          type: Relationship
+          uri: https://projectww4zero.pt/dataModel/belongsToFurniture
+          uri-prefix: https://projectww4zero.pt/dataModel/
+
+      belongsToModule:
+        description: Identifies which assembler module the part belongs to (optional)
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          type: Relationship
+          uri: https://projectww4zero.pt/dataModel/belongsToModule
+          uri-prefix: https://projectww4zero.pt/dataModel/
+
+      cncFlag:
+        description: CNC (J)
+        example: false
+        type: boolean
+        x-ngsi:
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/cncFlag
+          uri-prefix: https://projectww4zero.pt/dataModel/
+
+      dimensions:
+        description: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
+        oneOf:
+          - description: Geoproperty. Geojson reference to the item. Point
+            properties:
+              bbox:
                 items:
                   type: number
-                minItems: 2
-                type: array
-              minItems: 2
-              type: array
-            type:
-              enum:
-                - LineString
-              type: string
-          required:
-            - type
-            - coordinates
-          title: GeoJSON LineString
-          type: object
-        - description: Geoproperty. Geojson reference to the item. Polygon
-          properties:
-            bbox:
-              items:
-                type: number
-              minItems: 4
-              type: array
-            coordinates:
-              items:
-                items:
-                  items:
-                    type: number
-                  minItems: 2
-                  type: array
                 minItems: 4
                 type: array
-              type: array
-            type:
-              enum:
-                - Polygon
-              type: string
-          required:
-            - type
-            - coordinates
-          title: GeoJSON Polygon
-          type: object
-        - description: Geoproperty. Geojson reference to the item. MultiPoint
-          properties:
-            bbox:
-              items:
-                type: number
-              minItems: 4
-              type: array
-            coordinates:
-              items:
+              coordinates:
                 items:
                   type: number
                 minItems: 2
                 type: array
-              type: array
-            type:
-              enum:
-                - MultiPoint
-              type: string
-          required:
-            - type
-            - coordinates
-          title: GeoJSON MultiPoint
-          type: object
-        - description: Geoproperty. Geojson reference to the item. MultiLineString
-          properties:
-            bbox:
-              items:
-                type: number
-              minItems: 4
-              type: array
-            coordinates:
-              items:
+              type:
+                enum:
+                  - Point
+                type: string
+            required:
+              - type
+              - coordinates
+            title: GeoJSON Point
+            type: object
+          - description: Geoproperty. Geojson reference to the item. LineString
+            properties:
+              bbox:
+                items:
+                  type: number
+                minItems: 4
+                type: array
+              coordinates:
                 items:
                   items:
                     type: number
@@ -212,25 +292,23 @@ part:
                   type: array
                 minItems: 2
                 type: array
-              type: array
-            type:
-              enum:
-                - MultiLineString
-              type: string
-          required:
-            - type
-            - coordinates
-          title: GeoJSON MultiLineString
-          type: object
-        - description: Geoproperty. Geojson reference to the item. MultiLineString
-          properties:
-            bbox:
-              items:
-                type: number
-              minItems: 4
-              type: array
-            coordinates:
-              items:
+              type:
+                enum:
+                  - LineString
+                type: string
+            required:
+              - type
+              - coordinates
+            title: GeoJSON LineString
+            type: object
+          - description: Geoproperty. Geojson reference to the item. Polygon
+            properties:
+              bbox:
+                items:
+                  type: number
+                minItems: 4
+                type: array
+              coordinates:
                 items:
                   items:
                     items:
@@ -240,233 +318,310 @@ part:
                   minItems: 4
                   type: array
                 type: array
-              type: array
-            type:
-              enum:
-                - MultiPolygon
-              type: string
-          required:
-            - type
-            - coordinates
-          title: GeoJSON MultiPolygon
-          type: object
-      x-ngsi:
-        type: Geoproperty
-        uri: https://schema.org/GeospatialGeometry
-        uri-prefix: https://schema.org/
+              type:
+                enum:
+                  - Polygon
+                type: string
+            required:
+              - type
+              - coordinates
+            title: GeoJSON Polygon
+            type: object
+          - description: Geoproperty. Geojson reference to the item. MultiPoint
+            properties:
+              bbox:
+                items:
+                  type: number
+                minItems: 4
+                type: array
+              coordinates:
+                items:
+                  items:
+                    type: number
+                  minItems: 2
+                  type: array
+                type: array
+              type:
+                enum:
+                  - MultiPoint
+                type: string
+            required:
+              - type
+              - coordinates
+            title: GeoJSON MultiPoint
+            type: object
+          - description: Geoproperty. Geojson reference to the item. MultiLineString
+            properties:
+              bbox:
+                items:
+                  type: number
+                minItems: 4
+                type: array
+              coordinates:
+                items:
+                  items:
+                    items:
+                      type: number
+                    minItems: 2
+                    type: array
+                  minItems: 2
+                  type: array
+                type: array
+              type:
+                enum:
+                  - MultiLineString
+                type: string
+            required:
+              - type
+              - coordinates
+            title: GeoJSON MultiLineString
+            type: object
+          - description: Geoproperty. Geojson reference to the item. MultiLineString
+            properties:
+              bbox:
+                items:
+                  type: number
+                minItems: 4
+                type: array
+              coordinates:
+                items:
+                  items:
+                    items:
+                      items:
+                        type: number
+                      minItems: 2
+                      type: array
+                    minItems: 4
+                    type: array
+                  type: array
+                type: array
+              type:
+                enum:
+                  - MultiPolygon
+                type: string
+            required:
+              - type
+              - coordinates
+            title: GeoJSON MultiPolygon
+            type: object
+        x-ngsi:
+          type: Geoproperty
+          uri: https://schema.org/GeospatialGeometry
+          uri-prefix: https://schema.org/
 
-    f2:
-      description: FURO FACE 2 (K)
-      example: 0
-      type: number
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/f2
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      f2:
+        description: FURO FACE 2 (K)
+        example: 0
+        type: number
+        x-ngsi:
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/f2
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    f3:
-      description: FURO FACE 3 (L)
-      example: 0
-      type: number
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/f3
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      f3:
+        description: FURO FACE 3 (L)
+        example: 0
+        type: number
+        x-ngsi:
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/f3
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    f4:
-      description: FURO FACE 4 (M)
-      example: 0
-      type: number
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/f4
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      f4:
+        description: FURO FACE 4 (M)
+        example: 0
+        type: number
+        x-ngsi:
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/f4
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    f5:
-      description: FURO FACE 5 (N)
-      example: 0
-      type: number
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/f5
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      f5:
+        description: FURO FACE 5 (N)
+        example: 0
+        type: number
+        x-ngsi:
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/f5
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    groove:
-      description: Veio (O)
-      example: Y
-      type: string
-      maxLength: 256
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/veio
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      groove:
+        description: Veio (O)
+        example: Y
+        type: string
+        maxLength: 256
+        x-ngsi:
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/veio
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    image:
-      description: URL of the part image
-      example: https://schema.org/image
-      type: string
-      maxLength: 256
-      x-ngsi:
-        model: https://schema.org/URL
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/image
-        uri-prefix: https://projetww4zero.pt/dataModel/
+      image:
+        description: URL of the part image
+        example: https://schema.org/image
+        type: string
+        maxLength: 256
+        x-ngsi:
+          model: https://schema.org/URL
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/image
+          uri-prefix: https://projetww4zero.pt/dataModel/
 
-    material:
-      description: MATERIAL (C)
-      example: AG L Biscuit Nude 36W
-      type: string
-      maxLength: 256
-      x-ngsi:
-        model: https://schema.org/material
-        type: Property
-        uri: https://schema.org/material
-        uri-prefix: https://schema.org/
+      material:
+        description: MATERIAL (C)
+        example: AG L Biscuit Nude 36W
+        type: string
+        maxLength: 256
+        x-ngsi:
+          model: https://schema.org/material
+          type: Property
+          uri: https://schema.org/material
+          uri-prefix: https://schema.org/
 
-    nestingFlag:
-      description: NESTING (I)
-      example: false
-      type: boolean
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/nestingFlag
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      nestingFlag:
+        description: NESTING (I)
+        example: false
+        type: boolean
+        x-ngsi:
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/nestingFlag
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    observation:
-      description: Observation (T)
-      example: Uma forma de executar o trabalho sem perigos
-      type: string
-      maxLength: 256
-      x-ngsi:
-        model: https://schema.org/Observation
-        type: Property
-        uri: https://schema.org/Observation
-        uri-prefix: https://schema.org/
+      observation:
+        description: Observation (T)
+        example: Uma forma de executar o trabalho sem perigos
+        type: string
+        maxLength: 256
+        x-ngsi:
+          model: https://schema.org/Observation
+          type: Property
+          uri: https://schema.org/Observation
+          uri-prefix: https://schema.org/
 
-    orla2:
-      description: ORLA2 (P)
-      example: false
-      type: boolean
-      x-ngsi:
-        model: https://schema.org/Boolean
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/orla2
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      orla2:
+        description: ORLA2 (P)
+        example: false
+        type: boolean
+        x-ngsi:
+          model: https://schema.org/Boolean
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/orla2
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    orla3:
-      description: ORLA3 (Q)
-      example: false
-      type: boolean
-      x-ngsi:
-        model: https://schema.org/Boolean
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/orla3
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      orla3:
+        description: ORLA3 (Q)
+        example: false
+        type: boolean
+        x-ngsi:
+          model: https://schema.org/Boolean
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/orla3
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    orla4:
-      description: ORLA4 (R)
-      example: false
-      type: boolean
-      x-ngsi:
-        model: https://schema.org/Boolean
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/orla4
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      orla4:
+        description: ORLA4 (R)
+        example: false
+        type: boolean
+        x-ngsi:
+          model: https://schema.org/Boolean
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/orla4
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    orla5:
-      description: ORLA5 (S)
-      example: false
-      type: boolean
-      x-ngsi:
-        model: https://schema.org/Boolean
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/orla5
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      orla5:
+        description: ORLA5 (S)
+        example: false
+        type: boolean
+        x-ngsi:
+          model: https://schema.org/Boolean
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/orla5
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    partName:
-      description: REF PEÇA (A)
-      example: MC_MUEBLETV_A2_GAV_DIR_FUNDO
-      type: string
-      maxLength: 256
-      x-ngsi:
-        model: https://schema.org/name
-        type: Property
-        uri: https://schema.org/name
-        uri-prefix: https://schema.org/
+      partName:
+        description: REF PEÇA (A)
+        example: MC_MUEBLETV_A2_GAV_DIR_FUNDO
+        type: string
+        maxLength: 256
+        x-ngsi:
+          model: https://schema.org/name
+          type: Property
+          uri: https://schema.org/name
+          uri-prefix: https://schema.org/
 
-    sort:
-      description: TIPO (B)
-      example: Painel
-      type: string
-      maxLength: 256
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/sort
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      sort:
+        description: TIPO (B)
+        example: Painel
+        type: string
+        maxLength: 256
+        x-ngsi:
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/sort
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    tag:
-      description: ETIQUETA (H)
-      example: 1
-      type: number
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/tag
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      tag:
+        description: ETIQUETA (H)
+        example: 1
+        type: number
+        x-ngsi:
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/tag
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    thickness:
-      description: ESPESSURA (G)
-      example: 10
-      type: number
-      x-ngsi:
-        model: https://schema.org/size
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/thickness
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      thickness:
+        description: ESPESSURA (G)
+        example: 10
+        type: number
+        x-ngsi:
+          model: https://schema.org/size
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/thickness
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    tupia:
-      description: TUPIA
-      example: false
-      type: boolean
-      x-ngsi:
-        model: https://schema.org/Boolean
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/tupia
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      tupia:
+        description: TUPIA
+        example: false
+        type: boolean
+        x-ngsi:
+          model: https://schema.org/Boolean
+          type: Property
+          uri: https://projectww4zero.pt/dataModel/tupia
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    weight:
-      description: PESO (U)
-      example: 0.8
-      type: number
-      x-ngsi:
-        model: https://schema.org/weight
-        type: Property
-        uri: https://schema.org/weight
-        uri-prefix: https://schema.org/
+      weight:
+        description: PESO (U)
+        example: 0.8
+        type: number
+        x-ngsi:
+          model: https://schema.org/weight
+          type: Property
+          uri: https://schema.org/weight
+          uri-prefix: https://schema.org/
 
-    width:
-      description: Width in mm
-      example: 0.8
-      type: number
-      x-ngsi:
-        model: https://schema.org/width
-        type: Property
-        uri: https://schema.org/width
-        uri-prefix: https://schema.org/
+      width:
+        description: Width in mm
+        example: 0.8
+        type: number
+        x-ngsi:
+          model: https://schema.org/width
+          type: Property
+          uri: https://schema.org/width
+          uri-prefix: https://schema.org/
 
-    length:
-      description: Length in mm
-      example: 0.8
-      type: number
-      x-ngsi:
-        model: https://schema.org/size
-        type: Property
-        uri: https://schema.org/size
-        uri-prefix: https://schema.org/
+      length:
+        description: Length in mm
+        example: 0.8
+        type: number
+        x-ngsi:
+          model: https://schema.org/size
+          type: Property
+          uri: https://schema.org/size
+          uri-prefix: https://schema.org/
 
-  required:
-    - id
-    - partName
-    - sort
-    - material
-    - amount
-    - belongsTo
+    required:
+      - id
+      - type
+      - partName
+      - sort
+      - material
+      - amount
+      - belongsTo

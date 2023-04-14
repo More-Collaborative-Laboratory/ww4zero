@@ -50,6 +50,15 @@ paths:
   /consumable/{id}/attrs/{attr}:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/paths/~1consumable~1{id}~1attrs~1{attr}
 
+/part:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/paths/~1part
+  /part/{id}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/paths/~1part~1{id}
+  /part/{id}/attrs:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/paths/~1part~1{id}~1attrs
+  /part/{id}/attrs/{attr}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/paths/~1part~1{id}~1attrs~1{attr}
+
   /module:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/paths/~1module
   /module/{id}:
@@ -81,7 +90,7 @@ components:
     Consumable:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/schemas/consumable"
     Part:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/part"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/schemas/part"
     Machine:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machine.yaml#/machine"
     Assembly:
