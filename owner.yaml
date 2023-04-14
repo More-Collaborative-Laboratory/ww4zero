@@ -1,254 +1,300 @@
-owner:
-  title: Owner
-  type: object
-  description: Identifies a client (owner of a project)
-  properties:
-    id:
-      description: Unique identifier of the client
-      type: string
-      maxLength: 256
-      format: uri
-      example: urn:ngsi-ld:Client:clientIdentifier
-      x-ngsi:
-        type: Property
+paths:
+  /owner:
+    get:
+      tags:
+        - Owner
+      summary: Get all the owners
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schemas/owner"
 
-    legalName:
-      description: Institution legal name
-      type: string
-      maxLength: 256
-      example: Câmara Municipal de Bragança
-      x-ngsi:
-        uri: "https://schema.org/legalName"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/legalName
-        type: Property
+  /owner/{id}:
+    get:
+      tags:
+        - Owner
+      summary: Get the details of a specific owner
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the owner to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/owner/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/owner"
 
-    givenName:
-      description: Client first name
-      type: string
-      maxLength: 256
-      example: John
-      x-ngsi:
-        uri: "https://schema.org/givenName"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/givenName
-        type: Property
+schemas:
+  owner:
+    title: Owner
+    type: object
+    description: Identifies a client (owner of a project)
+    properties:
+      id:
+        description: Unique identifier of the client
+        type: string
+        maxLength: 256
+        format: uri
+        example: urn:ngsi-ld:Client:clientIdentifier
+        x-ngsi:
+          type: Property
 
-    familyName:
-      description: Client last name
-      type: string
-      maxLength: 256
-      example: Smith
-      x-ngsi:
-        uri: "https://schema.org/familyName"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/familyName
-        type: Property
+      type:
+        description: NGSI Entity type
+        enum:
+          - Owner
+        type: string
+        x-ngsi:
+          type: Property
 
-    vat:
-      description: Client/Institution Tax ID
-      type: string
-      maxLength: 256
-      pattern: ^\d+$
-      example: 254545879
-      x-ngsi:
-        uri: "https://schema.org/vatID"
-        uri-prefix: "https://schema.org/"
-        model: "https://schema.org/vatID"
-        type: Property
+      legalName:
+        description: Institution legal name
+        type: string
+        maxLength: 256
+        example: Câmara Municipal de Bragança
+        x-ngsi:
+          uri: "https://schema.org/legalName"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/legalName
+          type: Property
 
-    isCompany:
-      description: This property aims to indicate if the owner is a Institution or not
-      type: boolean
-      example: true
-      x-ngsi:
-        uri: "https://schema.org/Boolean"
-        uri-prefix: "https://schema.org"
-        model: "https://schema.org/Boolean"
-        type: Property
+      givenName:
+        description: Client first name
+        type: string
+        maxLength: 256
+        example: John
+        x-ngsi:
+          uri: "https://schema.org/givenName"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/givenName
+          type: Property
 
-    address:
-      description: The client's address
-      type: object
-      title: Address
-      properties:
-        streetAddress:
-          description: Street name
-          type: string
-          maxLength: 256
-          example: Rua de São Bento, 55, 4º Esq.
-          x-ngsi:
-            uri: "https://schema.org/streetAddress"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/streetAddress
-            type: Property
-        postalCode:
-          description: Postal code
-          type: string
-          maxLength: 256
-          example: 1249-068
-          x-ngsi:
-            uri: "https://schema.org/postalCode"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/postalCode
-            type: Property
-        addressLocality:
-          description: Name of the city or location
-          type: string
-          maxLength: 256
-          example: Lisboa
-          x-ngsi:
-            uri: "https://schema.org/addressLocality"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/addressLocality
-            type: Property
-        addressRegion:
-          description: Region (Concelho) of the city's location
-          type: string
-          maxLength: 256
-          example: Bragança
-          x-ngsi:
-            uri: "https://schema.org/addressRegion"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/addressRegion
-            type: Property
-        addressCountry:
-          description: Country where the company has its headquarters
-          type: string
-          maxLength: 256
-          example: Portugal
-          x-ngsi:
-            uri: "https://schema.org/addressCountry"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/addressCountry
-            type: Property
-      x-ngsi:
-        uri: "https://schema.org/address"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/address
-        type: Property
+      familyName:
+        description: Client last name
+        type: string
+        maxLength: 256
+        example: Smith
+        x-ngsi:
+          uri: "https://schema.org/familyName"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/familyName
+          type: Property
 
-    addressDelivery:
-      description: The delivery address
-      type: object
-      title: Address
-      properties:
-        streetAddress:
-          description: Street name
-          type: string
-          maxLength: 256
-          example: Rua de São Bento, 55, 4º Esq.
-          x-ngsi:
-            uri: "https://schema.org/streetAddress"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/streetAddress
-            type: Property
-        postalCode:
-          description: Postal code
-          type: string
-          maxLength: 256
-          example: 1249-068
-          x-ngsi:
-            uri: "https://schema.org/postalCode"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/postalCode
-            type: Property
-        addressLocality:
-          description: Name of the city or location
-          type: string
-          maxLength: 256
-          example: Lisboa
-          x-ngsi:
-            uri: "https://schema.org/addressLocality"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/addressLocality
-            type: Property
-        addressRegion:
-          description: Region (Concelho) of the city's location
-          type: string
-          maxLength: 256
-          example: Bragança
-          x-ngsi:
-            uri: "https://schema.org/addressRegion"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/addressRegion
-            type: Property
-        addressCountry:
-          description: Country where the company has its headquarters
-          type: string
-          maxLength: 256
-          example: Portugal
-          x-ngsi:
-            uri: "https://schema.org/addressCountry"
-            uri-prefix: "https://schema.org/"
-            model: https://schema.org/addressCountry
-            type: Property
-      x-ngsi:
-        uri: "https://schema.org/address"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/address
-        type: Property
+      vat:
+        description: Client/Institution Tax ID
+        type: string
+        maxLength: 256
+        pattern: ^\d+$
+        example: 254545879
+        x-ngsi:
+          uri: "https://schema.org/vatID"
+          uri-prefix: "https://schema.org/"
+          model: "https://schema.org/vatID"
+          type: Property
 
-    email:
-      description: Contact email address
-      type: string
-      maxLength: 256
-      format: email
-      example: jose_luis@hotmail.com
-      x-ngsi:
-        uri: "https://schema.org/email"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/email
-        type: Property
+      isCompany:
+        description: This property aims to indicate if the owner is a Institution or not
+        type: boolean
+        example: true
+        x-ngsi:
+          uri: "https://schema.org/Boolean"
+          uri-prefix: "https://schema.org"
+          model: "https://schema.org/Boolean"
+          type: Property
 
-    active:
-      description: Status of an acount
-      type: boolean
-      example: true
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/active"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        model: "https://schema.org/Boolean"
-        type: Property
+      address:
+        description: The client's address
+        type: object
+        title: Address
+        properties:
+          streetAddress:
+            description: Street name
+            type: string
+            maxLength: 256
+            example: Rua de São Bento, 55, 4º Esq.
+            x-ngsi:
+              uri: "https://schema.org/streetAddress"
+              uri-prefix: "https://schema.org/"
+              model: https://schema.org/streetAddress
+              type: Property
+          postalCode:
+            description: Postal code
+            type: string
+            maxLength: 256
+            example: 1249-068
+            x-ngsi:
+              uri: "https://schema.org/postalCode"
+              uri-prefix: "https://schema.org/"
+              model: https://schema.org/postalCode
+              type: Property
+          addressLocality:
+            description: Name of the city or location
+            type: string
+            maxLength: 256
+            example: Lisboa
+            x-ngsi:
+              uri: "https://schema.org/addressLocality"
+              uri-prefix: "https://schema.org/"
+              model: https://schema.org/addressLocality
+              type: Property
+          addressRegion:
+            description: Region (Concelho) of the city's location
+            type: string
+            maxLength: 256
+            example: Bragança
+            x-ngsi:
+              uri: "https://schema.org/addressRegion"
+              uri-prefix: "https://schema.org/"
+              model: https://schema.org/addressRegion
+              type: Property
+          addressCountry:
+            description: Country where the company has its headquarters
+            type: string
+            maxLength: 256
+            example: Portugal
+            x-ngsi:
+              uri: "https://schema.org/addressCountry"
+              uri-prefix: "https://schema.org/"
+              model: https://schema.org/addressCountry
+              type: Property
+        x-ngsi:
+          uri: "https://schema.org/address"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/address
+          type: Property
 
-    telephone:
-      description: Mobile or telephone contact
-      type: string
-      maxLength: 18
-      pattern: ^\d{9,18}$
-      example: 213919596
-      x-ngsi:
-        uri: "https://schema.org/telephone"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/telephone
-        type: Property
+      addressDelivery:
+        description: The delivery address
+        type: object
+        title: Address
+        properties:
+          streetAddress:
+            description: Street name
+            type: string
+            maxLength: 256
+            example: Rua de São Bento, 55, 4º Esq.
+            x-ngsi:
+              uri: "https://schema.org/streetAddress"
+              uri-prefix: "https://schema.org/"
+              model: https://schema.org/streetAddress
+              type: Property
+          postalCode:
+            description: Postal code
+            type: string
+            maxLength: 256
+            example: 1249-068
+            x-ngsi:
+              uri: "https://schema.org/postalCode"
+              uri-prefix: "https://schema.org/"
+              model: https://schema.org/postalCode
+              type: Property
+          addressLocality:
+            description: Name of the city or location
+            type: string
+            maxLength: 256
+            example: Lisboa
+            x-ngsi:
+              uri: "https://schema.org/addressLocality"
+              uri-prefix: "https://schema.org/"
+              model: https://schema.org/addressLocality
+              type: Property
+          addressRegion:
+            description: Region (Concelho) of the city's location
+            type: string
+            maxLength: 256
+            example: Bragança
+            x-ngsi:
+              uri: "https://schema.org/addressRegion"
+              uri-prefix: "https://schema.org/"
+              model: https://schema.org/addressRegion
+              type: Property
+          addressCountry:
+            description: Country where the company has its headquarters
+            type: string
+            maxLength: 256
+            example: Portugal
+            x-ngsi:
+              uri: "https://schema.org/addressCountry"
+              uri-prefix: "https://schema.org/"
+              model: https://schema.org/addressCountry
+              type: Property
+        x-ngsi:
+          uri: "https://schema.org/address"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/address
+          type: Property
 
-    image:
-      description: Image URL
-      type: string
-      maxLength: 256
-      example: https://schema.org/image
-      x-ngsi:
-        model: "https://schema.org/URL"
-        uri: "https://projectww4zero.pt/dataModel/image"
-        uri-prefix: "https://projetww4zero.pt/dataModel/"
-        type: Property
+      email:
+        description: Contact email address
+        type: string
+        maxLength: 256
+        format: email
+        example: jose_luis@hotmail.com
+        x-ngsi:
+          uri: "https://schema.org/email"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/email
+          type: Property
 
-    tos:
-      description: Saves date and time information when the start button is pressed
-      type: string
-      maxLength: 256
-      format: DateTime
-      example: 25-03-2022 10:00
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/tos"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+      active:
+        description: Status of an acount
+        type: boolean
+        example: true
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/active"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          model: "https://schema.org/Boolean"
+          type: Property
 
-  required:
-    - id
-    - vat
-    - address
-    - email
-    - active
-    - isCompany
+      telephone:
+        description: Mobile or telephone contact
+        type: string
+        maxLength: 18
+        pattern: ^\d{9,18}$
+        example: 213919596
+        x-ngsi:
+          uri: "https://schema.org/telephone"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/telephone
+          type: Property
+
+      image:
+        description: Image URL
+        type: string
+        maxLength: 256
+        example: https://schema.org/image
+        x-ngsi:
+          model: "https://schema.org/URL"
+          uri: "https://projectww4zero.pt/dataModel/image"
+          uri-prefix: "https://projetww4zero.pt/dataModel/"
+          type: Property
+
+      tos:
+        description: Saves date and time information when the start button is pressed
+        type: string
+        maxLength: 256
+        format: DateTime
+        example: 25-03-2022 10:00
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/tos"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+    required:
+      - id
+      - type
+      - vat
+      - address
+      - email
+      - active
+      - isCompany
