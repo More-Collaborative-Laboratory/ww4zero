@@ -41,6 +41,15 @@ paths:
   /worker/{id}:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml#/paths/~1worker~1{id}
 
+  /consumable:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/paths/~1consumable
+  /consumable/{id}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/paths/~1consumable~1{id}
+  /consumable/{id}/attrs:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/paths/~1consumable~1{id}~1attrs
+  /consumable/{id}/attrs/{attr}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/paths/~1consumable~1{id}~1attrs~1{attr}
+
   /module:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/paths/~1module
   /module/{id}:
@@ -70,7 +79,7 @@ components:
     Worker:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml#/schemas/worker"
     Consumable:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/consumable"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/schemas/consumable"
     Part:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/part"
     Machine:

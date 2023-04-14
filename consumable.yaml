@@ -1,119 +1,254 @@
-consumable:
-  type: object
-  title: Consumable
-  description: Describes a consumable list associated with a project
-  properties:
-    id:
-      description: Unique identifier of the consumable
-      type: string
-      maxLength: 256
-      format: uri
-      example: urn:ngsi-ld:Consumable:[]
-      x-ngsi:
-        type: Property
+paths:
+  /consumable:
+    get:
+      tags:
+        - Consumable
+      summary: Get all the consumables
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schemas/consumable"
+    post:
+      tags:
+        - Consumable
+      summary: Register a consumable
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/schemas/consumable"
+        required: true
+      responses:
+        "201":
+          description: Success
+          content:
+            application/json: {}
 
-    name:
-      description: Identify the consumable name
-      type: string
-      maxLength: 256
-      example: corrediça
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/name"
-        uri-prefix: "https://projetww4zero.pt/dataModel/"
-        type: Property
+  /consumable/{id}:
+    get:
+      tags:
+        - Consumable
+      summary: Get the details of a specific consumable
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the consumable to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/consumable/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/consumable"
+    delete:
+      tags:
+        - Consumable
+      summary: Delete a consumable
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the consumable to delete
+          required: true
+          schema:
+            $ref: "#/schemas/consumable/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    tag:
-      description: ETIQUETA (H)
-      type: number
-      example: 1
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/tag"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+  /consumable/{id}/attrs:
+    patch:
+      tags:
+        - Consumable
+      summary: Update multiple attributes of a consumable
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the consumable to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/consumable/properties/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name:
+                  type: string
+                  value: Dobradiça inox
+                amount:
+                  type: number
+                  value: 2
 
-    material:
-      description: MATERIAL (C)
-      type: string
-      maxLength: 256
-      example: AG L Biscuit Nude 36W
-      x-ngsi:
-        uri: https://schema.org/material
-        uri-prefix: https://schema.org/
-        model: https://schema.org/material
-        type: Property
+  /consumable/{id}/attrs/{attr}:
+    patch:
+      tags:
+        - Consumable
+      summary: Update a single attribute of the consumable
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the consumable to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/consumable/properties/id"
+        - name: attr
+          in: path
+          description: Attribute to be changed.
+          required: true
+          schema:
+            type: string
+            enum:
+              - name
+              - tag
+              - material
+              - amount
+              - status
+              - image
+              - belongsTo
+              - orderBy
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    amount:
-      description: Identifier the consumable amount
-      type: number
-      example: 5
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/amount"
-        uri-prefix: "https://projetww4zero.pt/dataModel/"
-        type: Property
+schemas:
+  consumable:
+    type: object
+    title: Consumable
+    description: Describes a consumable list associated with a project
+    properties:
+      id:
+        description: Unique identifier of the consumable
+        type: string
+        maxLength: 256
+        format: uri
+        example: urn:ngsi-ld:Consumable:[]
+        x-ngsi:
+          type: Property
 
-    status:
-      description: Indicates the status of the order
-        * '1' - waits for separation order
-        * '2' - In separating fase
-        * '3' - waits for someone from factory-flor to take the separeted order
-        * '4' - Already on flor-factory
-      type: number
-      enum:
-        - 1
-        - 2
-        - 3
-        - 4
-      example: 2
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/status"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+      type:
+        description: NGSI Entity type
+        enum:
+          - Consumable
+        type: string
+        x-ngsi:
+          type: Property
 
-    image:
-      description: Image URL
-      type: string
-      maxLength: 256
-      example: https://schema.org/image
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/image"
-        uri-prefix: "https://projetww4zero.pt/dataModel/"
-        type: Property
+      name:
+        description: Identify the consumable name
+        type: string
+        maxLength: 256
+        example: corrediça
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/name"
+          uri-prefix: "https://projetww4zero.pt/dataModel/"
+          type: Property
 
-    belongsTo:
-      description: Identification of the projet name that this consumables will attached to
-      anyOf:
-        #por este caminho consegue-se saber-se o nome do owner?
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/belongsTo"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
+      tag:
+        description: ETIQUETA (H)
+        type: number
+        example: 1
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/tag"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
 
-    orderBy:
-      description: Identification of the owner name associated to the project with status in execution
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/orderBy"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
+      material:
+        description: MATERIAL (C)
+        type: string
+        maxLength: 256
+        example: AG L Biscuit Nude 36W
+        x-ngsi:
+          uri: https://schema.org/material
+          uri-prefix: https://schema.org/
+          model: https://schema.org/material
+          type: Property
 
-  required:
-    - id
-    - belongsTo
+      amount:
+        description: Identifier the consumable amount
+        type: number
+        example: 5
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/amount"
+          uri-prefix: "https://projetww4zero.pt/dataModel/"
+          type: Property
+
+      status:
+        description: Indicates the status of the order
+          * '1' - waits for separation order
+          * '2' - In separating fase
+          * '3' - waits for someone from factory-flor to take the separeted order
+          * '4' - Already on flor-factory
+        type: number
+        enum:
+          - 1
+          - 2
+          - 3
+          - 4
+        example: 2
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/status"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+      image:
+        description: Image URL
+        type: string
+        maxLength: 256
+        example: https://schema.org/image
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/image"
+          uri-prefix: "https://projetww4zero.pt/dataModel/"
+          type: Property
+
+      belongsTo:
+        description: Identification of the projet name that this consumables will attached to
+        anyOf:
+          #por este caminho consegue-se saber-se o nome do owner?
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/belongsTo"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship
+
+      orderBy:
+        description: Identification of the owner name associated to the project with status in execution
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/orderBy"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship
+
+    required:
+      - id
+      - type
+      - belongsTo
