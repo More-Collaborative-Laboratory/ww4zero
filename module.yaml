@@ -1,3 +1,124 @@
+paths:
+  /module:
+    get:
+      tags:
+        - Module
+      summary: Get all the modules
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schemas/module"
+    post:
+      tags:
+        - Module
+      summary: Register a module
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/schemas/module"
+        required: true
+      responses:
+        "201":
+          description: Success
+          content:
+            application/json: {}
+
+  /module/{id}:
+    get:
+      tags:
+        - Module
+      summary: Get the details of a specific module
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the module to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/module/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/module"
+    delete:
+      tags:
+        - Module
+      summary: Delete a module
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the module to delete
+          required: true
+          schema:
+            $ref: "#/schemas/module/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
+
+  /module/{id}/attrs:
+    patch:
+      tags:
+        - Module
+      summary: Update multiple attributes of a module
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the module to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/module/properties/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name:
+                  type: string
+                  value: MC_MUEBLETV_A
+                startTime:
+                  type: string
+                  value: 25-03-2022 11:00
+
+  /module/{id}/attrs/{attr}:
+    patch:
+      tags:
+        - Module
+      summary: Update a single attribute of the module
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the module to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/module/properties/id"
+        - name: attr
+          in: path
+          description: Attribute to be changed.
+          required: true
+          schema:
+            type: string
+            enum:
+              - name
+              - belongsToFurniture
+              - startTime
+              - finishTime
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
+
 module:
   title: Module
   type: object
@@ -12,6 +133,25 @@ module:
       maxLength: 256
       x-ngsi:
         type: Property
+
+    type:
+      description: NGSI Entity type
+      enum:
+        - Module
+      type: string
+      x-ngsi:
+        type: Property
+
+    name:
+      description: Module name (name-project_module-name)
+      example: MC_MUEBLETV_A
+      type: string
+      maxLength: 256
+      x-ngsi:
+        model: https://schema.org/name
+        type: Property
+        uri: https://schema.org/name
+        uri-prefix: https://schema.org/
 
     belongsToFurniture:
       description: Identification of the assembly to which this module belongs
@@ -30,6 +170,17 @@ module:
         uri: https://projectww4zero.pt/dataModel/belongsToFurniture
         uri-prefix: https://projectww4zero.pt/dataModel/
 
+    startTime:
+      description: Saves date and time information when the start button is pressed
+      example: 25-03-2022 10:00
+      format: DateTime
+      type: string
+      maxLength: 256
+      x-ngsi:
+        type: Property
+        uri: https://projectww4zero.pt/dataModel/startTime
+        uri-prefix: https://projectww4zero.pt/dataModel/
+
     finishTime:
       description: Saves date and time information when the finish button is pressed
       example: 27-03-2022 10:00
@@ -41,28 +192,7 @@ module:
         uri: https://projectww4zero.pt/dataModel/finishTime
         uri-prefix: https://projectww4zero.pt/dataModel/
 
-    name:
-      description: Module name (name-project_module-name)
-      example: MC_MUEBLETV_A
-      type: string
-      maxLength: 256
-      x-ngsi:
-        model: https://schema.org/name
-        type: Property
-        uri: https://schema.org/name
-        uri-prefix: https://schema.org/
-
-    startTime:
-      description: Saves date and time information when the start button is pressed
-      example: 25-03-2022 10:00
-      format: DateTime
-      type: string
-      maxLength: 256
-      x-ngsi:
-        type: Property
-        uri: https://projectww4zero.pt/dataModel/startTime
-        uri-prefix: https://projectww4zero.pt/dataModel/
   required:
     - id
-    - status
+    - type
     - belongsToFurniture

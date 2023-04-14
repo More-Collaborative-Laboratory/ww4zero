@@ -103,6 +103,7 @@ organization:
 
   required:
     - id
+    - type
     - legalName
     - vat
     - email

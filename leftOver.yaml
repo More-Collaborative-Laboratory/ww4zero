@@ -420,4 +420,5 @@ schemas:
 
     required:
       - id
+      - type
       - material
