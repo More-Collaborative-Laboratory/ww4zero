@@ -1,58 +1,188 @@
-expedition:
-  title: Expedition
-  type: object
-  description: Indicates when an order has been shiped
+paths:
+  /expedition:
+    get:
+      tags:
+        - Expedition
+      summary: Get all the expeditions
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schemas/expedition"
+    post:
+      tags:
+        - Expedition
+      summary: Register a expedition
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/schemas/expedition"
+        required: true
+      responses:
+        "201":
+          description: Success
+          content:
+            application/json: {}
 
-  properties:
-    id:
-      description: Unique identifier of the shipping order
-      type: string
-      maxLength: 256
-      format: uri
-      example: urn:ngsi-ld:Expedition:[]
-      x-ngsi:
-        type: Property
+  /expedition/{id}:
+    get:
+      tags:
+        - Expedition
+      summary: Get the details of a specific expedition
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the expedition to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/expedition/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/expedition"
+    delete:
+      tags:
+        - Expedition
+      summary: Delete a expedition
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the expedition to delete
+          required: true
+          schema:
+            $ref: "#/schemas/expedition/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    expeditionTime:
-      description: Date and hour when the order left the factory in direction to the Owner
-      type: string
-      maxLength: 256
-      format: DateTime
-      example: "2022-04-06T00:00:00.000Z"
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/expeditionTime"
-        model: https://schema.org/Time
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+  /expedition/{id}/attrs:
+    patch:
+      tags:
+        - Expedition
+      summary: Update multiple attributes of a expedition
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the expedition to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/expedition/properties/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                expeditionTime:
+                  type: string
+                  value: "2022-04-05T00:00:00.000Z"
+                deliveryFlag:
+                  type: boolean
+                  value: true
 
-    deliveryFlag:
-      description: Indicates if the order arrived to the destination
-      type: boolean
-      example: false #0- on going, 1- arrived to destination
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/deliveryFlag"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        model: https://schema.org/Boolean
-        type: Property
+  /expedition/{id}/attrs/{attr}:
+    patch:
+      tags:
+        - Expedition
+      summary: Update a single attribute of the expedition
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the expedition to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/expedition/properties/id"
+        - name: attr
+          in: path
+          description: Attribute to be changed.
+          required: true
+          schema:
+            type: string
+            enum:
+              - expeditionTime
+              - deliveryFlag
+              - belongsTo
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    belongsTo:
-      description: Identification of the project to which this expedition relates
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/belongsTo"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
+schemas:
+  expedition:
+    title: Expedition
+    type: object
+    description: Indicates when an order has been shiped
 
-  required:
-    - id
-    - expeditionTime
-    - belongsTo
+    properties:
+      id:
+        description: Unique identifier of the shipping order
+        type: string
+        maxLength: 256
+        format: uri
+        example: urn:ngsi-ld:Expedition:[]
+        x-ngsi:
+          type: Property
+
+      type:
+        description: NGSI Entity type
+        enum:
+          - Expedition
+        type: string
+        x-ngsi:
+          type: Property
+
+      expeditionTime:
+        description: Date and hour when the order left the factory in direction to the Owner
+        type: string
+        maxLength: 256
+        format: DateTime
+        example: "2022-04-06T00:00:00.000Z"
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/expeditionTime"
+          model: https://schema.org/Time
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+      deliveryFlag:
+        description: Indicates if the order arrived to the destination
+        type: boolean
+        example: false #0- on going, 1- arrived to destination
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/deliveryFlag"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          model: https://schema.org/Boolean
+          type: Property
+
+      belongsTo:
+        description: Identification of the project to which this expedition relates
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/belongsTo"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship
+
+    required:
+      - id
+      - type
+      - expeditionTime
+      - belongsTo

@@ -1,180 +1,321 @@
-furniture:
-  title: Furniture
-  type: object
-  description: Describes a piece of furniture from a project under assembly
+paths:
+  /furniture:
+    get:
+      tags:
+        - Furniture
+      summary: Get all the furniture pieces
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schemas/furniture"
+    post:
+      tags:
+        - Furniture
+      summary: Register a piece of furniture
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/schemas/furniture"
+        required: true
+      responses:
+        "201":
+          description: Success
+          content:
+            application/json: {}
 
-  properties:
-    id:
-      description: Unique identifier of the piece of furniture
-      type: string
-      maxLength: 256
-      format: uri
-      example: urn:ngsi-ld:Furniture:[]
-      x-ngsi:
-        type: Property
+  /furniture/{id}:
+    get:
+      tags:
+        - Furniture
+      summary: Get the details of a specific piece of furniture
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the piece of furniture to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/furniture/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/furniture"
+    delete:
+      tags:
+        - Furniture
+      summary: Delete a piece of furniture
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the piece of furniture to be deleted
+          required: true
+          schema:
+            $ref: "#/schemas/furniture/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    lineNumber:
-      description: Line number
-      type: number
-      example: 12345
-      x-ngsi:
-        uri: "https://schema.org/Number"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/Number
-        type: Property
+  /furniture/{id}/attrs:
+    patch:
+      tags:
+        - Furniture
+      summary: Update multiple attributes of a piece of furniture
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the piece of furniture to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/furniture/properties/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                amount:
+                  type: number
+                  value: 16
+                price:
+                  type: number
+                  value: 900
 
-    category:
-      description: Type of the piece of furniture
-      type: string
-      maxLength: 256
-      example: Movel cozinha
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/category"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+  /furniture/{id}/attrs/{attr}:
+    patch:
+      tags:
+        - Furniture
+      summary: Update a single attribute of a piece of furniture
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the piece of furniture to be changed.
+          required: true
+          schema:
+            $ref: "#/schemas/furniture/properties/id"
+        - name: attr
+          in: path
+          description: Attribute to be changed.
+          required: true
+          schema:
+            type: string
+            enum:
+              - lineNumber
+              - category
+              - amount
+              - startTime
+              - finishTime
+              - name
+              - belongsToAssembly
+              - hasBudget
+              - price
+              - furnitureType
+              - width
+              - length
+              - depth
+              - observation
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    amount:
-      description: Quantity of elements
-      type: number
-      example: 15
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/amount"
-        uri-prefix: "https://projetww4zero.pt/dataModel/"
-        type: Property
+schemas:
+  furniture:
+    title: Furniture
+    type: object
+    description: Describes a piece of furniture from a project under assembly
 
-    startTime:
-      description: Saves date and time information when the start button is pressed
-      type: string
-      maxLength: 256
-      format: DateTime
-      example: 25-03-2022 10:00
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/startTime"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+    properties:
+      id:
+        description: Unique identifier of the piece of furniture
+        type: string
+        maxLength: 256
+        format: uri
+        example: urn:ngsi-ld:Furniture:[]
+        x-ngsi:
+          type: Property
 
-    finishTime:
-      description: Saves date and time information when the finish button is pressed
-      type: string
-      maxLength: 256
-      format: DateTime
-      example: 27-03-2022 10:00
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/finishTime"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+      type:
+        description: NGSI Entity type
+        enum:
+          - Furniture
+        type: string
+        x-ngsi:
+          type: Property
 
-    name:
-      description: Name of the piece of furniture
-      type: string
-      example: MC_MUEBLETV_A
-      x-ngsi:
-        model: https://schema.org/name
-        type: Property
-        uri: https://schema.org/name
-        uri-prefix: https://schema.org/
+      lineNumber:
+        description: Line number
+        type: number
+        example: 12345
+        x-ngsi:
+          uri: "https://schema.org/Number"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/Number
+          type: Property
 
-    belongsToAssembly:
-      description: Identification of the assembly affected to the furniture.
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        type: Relationship
-        uri: "https://projectww4zero.pt/dataModel/belongsToAssembly"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+      category:
+        description: Type of the piece of furniture
+        type: string
+        maxLength: 256
+        example: Movel cozinha
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/category"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
 
-    hasBudget:
-      description: Identifies the budget related
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        type: Relationship
-        uri: https://projectww4zero.pt/dataModel/hasBudget
-        uri-prefix: https://projectww4zero.pt/dataModel/
+      amount:
+        description: Quantity of elements
+        type: number
+        example: 15
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/amount"
+          uri-prefix: "https://projetww4zero.pt/dataModel/"
+          type: Property
 
-    price:
-      description: Price in euros
-      type: number
-      example: 15000
-      x-ngsi:
-        uri: "https://schema.org/price"
-        uri-prefix: "https://schema.org/"
-        type: Property
+      startTime:
+        description: Saves date and time information when the start button is pressed
+        type: string
+        maxLength: 256
+        format: DateTime
+        example: 25-03-2022 10:00
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/startTime"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
 
-    furnitureType:
-      description: Type of line
-        * furniture -> initial budget value, which is pre-budget, where the necessary data for budget development is collected
-        * group
-        * accessory - (Ex robinet, ...)
-      type: string
-      enum:
-        - furniture
-        - group
-        - accessory
-      example: accessory
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/furnitureType"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+      finishTime:
+        description: Saves date and time information when the finish button is pressed
+        type: string
+        maxLength: 256
+        format: DateTime
+        example: 27-03-2022 10:00
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/finishTime"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
 
-    width:
-      description: Width in mm
-      example: 0.8
-      type: number
-      x-ngsi:
-        model: https://schema.org/width
-        type: Property
-        uri: https://schema.org/width
-        uri-prefix: https://schema.org/
+      name:
+        description: Name of the piece of furniture
+        type: string
+        example: MC_MUEBLETV_A
+        x-ngsi:
+          model: https://schema.org/name
+          type: Property
+          uri: https://schema.org/name
+          uri-prefix: https://schema.org/
 
-    length:
-      description: Length in mm
-      example: 0.8
-      type: number
-      x-ngsi:
-        model: https://schema.org/size
-        type: Property
-        uri: https://schema.org/size
-        uri-prefix: https://schema.org/
+      belongsToAssembly:
+        description: Identification of the assembly affected to the furniture.
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          type: Relationship
+          uri: "https://projectww4zero.pt/dataModel/belongsToAssembly"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
 
-    depth:
-      description: Depth in mm
-      example: 0.8
-      type: number
-      x-ngsi:
-        model: https://schema.org/depth
-        type: Property
-        uri: https://schema.org/depth
-        uri-prefix: https://schema.org/
+      hasBudget:
+        description: Identifies the budget related
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          type: Relationship
+          uri: https://projectww4zero.pt/dataModel/hasBudget
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
-    observation:
-      description: Observation (T)
-      example: Uma forma de executar o trabalho sem perigos
-      type: string
-      maxLength: 256
-      x-ngsi:
-        model: https://schema.org/Observation
-        type: Property
-        uri: https://schema.org/Observation
-        uri-prefix: https://schema.org/
+      price:
+        description: Price in euros
+        type: number
+        example: 15000
+        x-ngsi:
+          uri: "https://schema.org/price"
+          uri-prefix: "https://schema.org/"
+          type: Property
 
-  required:
-    - id
-    - furnitureType
-    - hasBudget
+      furnitureType:
+        description: Type of line
+          * furniture -> initial budget value, which is pre-budget, where the necessary data for budget development is collected
+          * group
+          * accessory - (Ex robinet, ...)
+        type: string
+        enum:
+          - furniture
+          - group
+          - accessory
+        example: accessory
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/furnitureType"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+      width:
+        description: Width in mm
+        example: 0.8
+        type: number
+        x-ngsi:
+          model: https://schema.org/width
+          type: Property
+          uri: https://schema.org/width
+          uri-prefix: https://schema.org/
+
+      length:
+        description: Length in mm
+        example: 0.8
+        type: number
+        x-ngsi:
+          model: https://schema.org/size
+          type: Property
+          uri: https://schema.org/size
+          uri-prefix: https://schema.org/
+
+      depth:
+        description: Depth in mm
+        example: 0.8
+        type: number
+        x-ngsi:
+          model: https://schema.org/depth
+          type: Property
+          uri: https://schema.org/depth
+          uri-prefix: https://schema.org/
+
+      observation:
+        description: Observation (T)
+        example: Uma forma de executar o trabalho sem perigos
+        type: string
+        maxLength: 256
+        x-ngsi:
+          model: https://schema.org/Observation
+          type: Property
+          uri: https://schema.org/Observation
+          uri-prefix: https://schema.org/
+
+    required:
+      - id
+      - type
+      - furnitureType
+      - hasBudget

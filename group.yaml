@@ -1,67 +1,198 @@
-group:
-  title: Group
-  type: object
-  description: Identifies a group associated with a module
-  properties:
-    id:
-      description: Unique identifier of the group
-      type: string
-      maxLength: 256
-      format: uri
-      example: urn:ngsi-ld:Group:[]
-      x-ngsi:
-        type: Property
+paths:
+  /group:
+    get:
+      tags:
+        - Group
+      summary: Get all the groups
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schemas/group"
+    post:
+      tags:
+        - Group
+      summary: Register a group
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/schemas/group"
+        required: true
+      responses:
+        "201":
+          description: Success
+          content:
+            application/json: {}
 
-    startTime:
-      description: Saves date and time information when the start button is pressed
-      type: string
-      maxLength: 256
-      format: DateTime
-      example: 25-03-2022 10:00
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/startTime"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+  /group/{id}:
+    get:
+      tags:
+        - Group
+      summary: Get the details of a specific group
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the group to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/group/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/group"
+    delete:
+      tags:
+        - Group
+      summary: Delete a group
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the group to delete
+          required: true
+          schema:
+            $ref: "#/schemas/group/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    finishTime:
-      description: Saves date and time information when the finish button is pressed
-      type: string
-      maxLength: 256
-      format: DateTime
-      example: "27-03-2022 10:00"
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/finishTime"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+  /group/{id}/attrs:
+    patch:
+      tags:
+        - Group
+      summary: Update multiple attributes of a group
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the group to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/group/properties/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                startTime:
+                  type: string
+                  value: 24-03-2022 10:00
+                finishTime:
+                  type: string
+                  value: 26-03-2022 10:00
 
-    name:
-      description: Group name
-      type: string
-      example: _A
-      x-ngsi:
-        model: https://schema.org/name
-        type: Property
-        uri: https://schema.org/name
-        uri-prefix: https://schema.org/
+  /group/{id}/attrs/{attr}:
+    patch:
+      tags:
+        - Group
+      summary: Update a single attribute of the group
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the group to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/group/properties/id"
+        - name: attr
+          in: path
+          description: Attribute to be changed.
+          required: true
+          schema:
+            type: string
+            enum:
+              - startTime
+              - finishTime
+              - name
+              - belongsToModule
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    belongsToModule:
-      description: Identifies the module that is associated with this group
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        type: Relationship
-        uri: "https://projectww4zero.pt/dataModel/belongsToModule"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+schemas:
+  group:
+    title: Group
+    type: object
+    description: Identifies a group associated with a module
+    properties:
+      id:
+        description: Unique identifier of the group
+        type: string
+        maxLength: 256
+        format: uri
+        example: urn:ngsi-ld:Group:[]
+        x-ngsi:
+          type: Property
 
-  required:
-    - id
-    - name
-    - belongsToModule
+      type:
+        description: NGSI Entity type
+        enum:
+          - Group
+        type: string
+        x-ngsi:
+          type: Property
+
+      startTime:
+        description: Saves date and time information when the start button is pressed
+        type: string
+        maxLength: 256
+        format: DateTime
+        example: 25-03-2022 10:00
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/startTime"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+      finishTime:
+        description: Saves date and time information when the finish button is pressed
+        type: string
+        maxLength: 256
+        format: DateTime
+        example: "27-03-2022 10:00"
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/finishTime"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+      name:
+        description: Group name
+        type: string
+        example: _A
+        x-ngsi:
+          model: https://schema.org/name
+          type: Property
+          uri: https://schema.org/name
+          uri-prefix: https://schema.org/
+
+      belongsToModule:
+        description: Identifies the module that is associated with this group
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          type: Relationship
+          uri: "https://projectww4zero.pt/dataModel/belongsToModule"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+
+    required:
+      - id
+      - type
+      - name
+      - belongsToModule

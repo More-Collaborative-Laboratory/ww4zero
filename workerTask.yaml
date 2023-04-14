@@ -1,66 +1,203 @@
-workerTask:
-  title: WorkerTask
-  type: object
-  description: This entity creates a bridge table between the Worker and Part entities.
-  properties:
-    id:
-      description: Unique identifier
-      type: string
-      format: uri
-      example: urn:ngsi-ld:Module:[]
-      x-ngsi:
-        type: Property
+paths:
+  /workerTask:
+    get:
+      tags:
+        - WorkerTask
+      summary: Get all the workers' tasks
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schemas/workerTask"
+    post:
+      tags:
+        - WorkerTask
+      summary: Register a workerTask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/schemas/workerTask"
+        required: true
+      responses:
+        "201":
+          description: Success
+          content:
+            application/json: {}
 
-    executedBy:
-      description: Identifies the worker who processed the part
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/executedBy"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+  /workerTask/{id}:
+    get:
+      tags:
+        - WorkerTask
+      summary: Get the details of a specific workerTask
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the workerTask to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/workerTask/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/workerTask"
+    delete:
+      tags:
+        - WorkerTask
+      summary: Delete a workerTask
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the workerTask to delete
+          required: true
+          schema:
+            $ref: "#/schemas/workerTask/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    executedIn:
-      description: Identifies the part processed by the worker
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/executedIn"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+  /workerTask/{id}/attrs:
+    patch:
+      tags:
+        - WorkerTask
+      summary: Update multiple attributes of a workerTask
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the workerTask to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/workerTask/properties/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                startTime:
+                  type: string
+                  value: 24-03-2022 10:00
+                finishTime:
+                  type: string
+                  value: 26-03-2022 10:00
 
-    startTime:
-      description: Saves date and time information when the start button is pressed
-      type: string
-      maxLength: 256
-      format: DateTime
-      example: 25-03-2022 10:00
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/startTime"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+  /workerTask/{id}/attrs/{attr}:
+    patch:
+      tags:
+        - WorkerTask
+      summary: Update a single attribute of the workerTask
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the workerTask to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/workerTask/properties/id"
+        - name: attr
+          in: path
+          description: Attribute to be changed.
+          required: true
+          schema:
+            type: string
+            enum:
+              - executedBy
+              - executedIn
+              - startTime
+              - finishTime
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    finishTime:
-      description: Saves date and time information when the finish button is pressed
-      type: string
-      maxLength: 256
-      format: DateTime
-      example: 27-03-2022 10:00
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/finishTime"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+schemas:
+  workerTask:
+    title: WorkerTask
+    type: object
+    description: This entity creates a bridge table between the Worker and Part entities.
+    properties:
+      id:
+        description: Unique identifier
+        type: string
+        format: uri
+        example: urn:ngsi-ld:Module:[]
+        x-ngsi:
+          type: Property
+
+      type:
+        description: NGSI Entity type
+        enum:
+          - WorkerTask
+        type: string
+        x-ngsi:
+          type: Property
+
+      executedBy:
+        description: Identifies the worker who processed the part
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/executedBy"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+
+      executedIn:
+        description: Identifies the part processed by the worker
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/executedIn"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+
+      startTime:
+        description: Saves date and time information when the start button is pressed
+        type: string
+        maxLength: 256
+        format: DateTime
+        example: 25-03-2022 10:00
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/startTime"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+      finishTime:
+        description: Saves date and time information when the finish button is pressed
+        type: string
+        maxLength: 256
+        format: DateTime
+        example: 27-03-2022 10:00
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/finishTime"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+    required:
+      - id
+      - type
+      - executedBy
+      - executedIn
+      - startTime

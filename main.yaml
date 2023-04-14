@@ -77,6 +77,24 @@ paths:
   /assembly/{id}/attrs/{attr}:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml#/paths/~1assembly~1{id}~1attrs~1{attr}
 
+  /budget:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml#/paths/~1budget
+  /budget/{id}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml#/paths/~1budget~1{id}
+  /budget/{id}/attrs:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml#/paths/~1budget~1{id}~1attrs
+  /budget/{id}/attrs/{attr}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml#/paths/~1budget~1{id}~1attrs~1{attr}
+
+  /expedition:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/paths/~1expedition
+  /expedition/{id}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/paths/~1expedition~1{id}
+  /expedition/{id}/attrs:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/paths/~1expedition~1{id}~1attrs
+  /expedition/{id}/attrs/{attr}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/paths/~1expedition~1{id}~1attrs~1{attr}
+
   /module:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/paths/~1module
   /module/{id}:
@@ -85,6 +103,42 @@ paths:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/paths/~1module~1{id}~1attrs
   /module/{id}/attrs/{attr}:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/paths/~1module~1{id}~1attrs~1{attr}
+
+  /furniture:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/furniture.yaml#/paths/~1furniture
+  /furniture/{id}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/furniture.yaml#/paths/~1furniture~1{id}
+  /furniture/{id}/attrs:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/furniture.yaml#/paths/~1furniture~1{id}~1attrs
+  /furniture/{id}/attrs/{attr}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/furniture.yaml#/paths/~1furniture~1{id}~1attrs~1{attr}
+
+  /group:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/group.yaml#/paths/~1group
+  /group/{id}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/group.yaml#/paths/~1group~1{id}
+  /group/{id}/attrs:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/group.yaml#/paths/~1group~1{id}~1attrs
+  /group/{id}/attrs/{attr}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/group.yaml#/paths/~1group~1{id}~1attrs~1{attr}
+
+  /machineTask:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machineTask.yaml#/paths/~1machineTask
+  /machineTask/{id}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machineTask.yaml#/paths/~1machineTask~1{id}
+  /machineTask/{id}/attrs:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machineTask.yaml#/paths/~1machineTask~1{id}~1attrs
+  /machineTask/{id}/attrs/{attr}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machineTask.yaml#/paths/~1machineTask~1{id}~1attrs~1{attr}
+
+  /workerTask:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/paths/~1workerTask
+  /workerTask/{id}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/paths/~1workerTask~1{id}
+  /workerTask/{id}/attrs:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/paths/~1workerTask~1{id}~1attrs
+  /workerTask/{id}/attrs/{attr}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/paths/~1workerTask~1{id}~1attrs~1{attr}
 
   /leftover:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/paths/~1leftover
@@ -114,18 +168,18 @@ components:
     Assembly:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml#/schemas/assembly"
     Budget:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml#/budget"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml#/schemas/budget"
     Expedition:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/expedition"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/expedition.yaml#/schemas/expedition"
     Module:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/schemas/module
     Furniture:
-      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/furniture.yaml#/furniture
+      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/furniture.yaml#/schemas/furniture
     Group:
-      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/group.yaml#/group
+      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/group.yaml#/schemas/group
     MachineTask:
-      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machineTask.yaml#/machineTask
+      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machineTask.yaml#/schemas/machineTask
     WorkerTask:
-      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/workerTask
+      $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/schemas/workerTask
     LeftOver:
       $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/schemas/leftover

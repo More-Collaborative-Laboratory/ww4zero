@@ -1,68 +1,205 @@
-machineTask:
-  title: MachineTask
-  type: object
-  description: This entity creates a bridge table between the Machine and Part entities.
+paths:
+  /machineTask:
+    get:
+      tags:
+        - MachineTask
+      summary: Get all machine tasks
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schemas/machineTask"
+    post:
+      tags:
+        - MachineTask
+      summary: Register a machineTask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/schemas/machineTask"
+        required: true
+      responses:
+        "201":
+          description: Success
+          content:
+            application/json: {}
 
-  properties:
-    id:
-      description: Unique identifier
-      type: string
-      maxLength: 256
-      format: uri
-      example: urn:ngsi-ld:MachineTask:[]
-      x-ngsi:
-        type: Property
+  /machineTask/{id}:
+    get:
+      tags:
+        - MachineTask
+      summary: Get the details of a specific machineTask
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the machineTask to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/machineTask/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/machineTask"
+    delete:
+      tags:
+        - MachineTask
+      summary: Delete a machineTask
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the machineTask to delete
+          required: true
+          schema:
+            $ref: "#/schemas/machineTask/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    performedOn:
-      description: Identifies the part processed by the machine
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/performedOn"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+  /machineTask/{id}/attrs:
+    patch:
+      tags:
+        - MachineTask
+      summary: Update multiple attributes of a machineTask
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the machineTask to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/machineTask/properties/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                startTime:
+                  type: string
+                  value: 24-03-2022 10:00
+                finishTime:
+                  type: string
+                  value: 26-03-2022 10:00
 
-    byMachine:
-      description: Identifies the machine that processed the part
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/producedBy"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
+  /machineTask/{id}/attrs/{attr}:
+    patch:
+      tags:
+        - MachineTask
+      summary: Update a single attribute of the machineTask
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the machineTask to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/machineTask/properties/id"
+        - name: attr
+          in: path
+          description: Attribute to be changed.
+          required: true
+          schema:
+            type: string
+            enum:
+              - performedOn
+              - byMachine
+              - startTime
+              - finishTime
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    startTime:
-      description: Saves date and time information when the start button is pressed
-      type: string
-      maxLength: 256
-      format: DateTime
-      example: 25-03-2022 10:00
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/startTime"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+schemas:
+  machineTask:
+    title: MachineTask
+    type: object
+    description: This entity creates a bridge table between the Machine and Part entities.
 
-    finishTime:
-      description: Saves date and time information when the finish button is pressed
-      type: string
-      maxLength: 256
-      format: DateTime
-      example: 27-03-2022 10:00
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/finishTime"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+    properties:
+      id:
+        description: Unique identifier
+        type: string
+        maxLength: 256
+        format: uri
+        example: urn:ngsi-ld:MachineTask:[]
+        x-ngsi:
+          type: Property
+
+      type:
+        description: NGSI Entity type
+        enum:
+          - MachineTask
+        type: string
+        x-ngsi:
+          type: Property
+
+      performedOn:
+        description: Identifies the part processed by the machine
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/performedOn"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+
+      byMachine:
+        description: Identifies the machine that processed the part
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/producedBy"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+
+      startTime:
+        description: Saves date and time information when the start button is pressed
+        type: string
+        maxLength: 256
+        format: DateTime
+        example: 25-03-2022 10:00
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/startTime"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+      finishTime:
+        description: Saves date and time information when the finish button is pressed
+        type: string
+        maxLength: 256
+        format: DateTime
+        example: 27-03-2022 10:00
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/finishTime"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+    required:
+      - id
+      - type
+      - performedOn
+      - byMachine
+      - startTime
