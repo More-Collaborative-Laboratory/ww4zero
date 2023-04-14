@@ -25,6 +25,10 @@ paths:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/paths/~1leftover~1{id}~1attrs
   /leftover/{id}/attrs/{attr}:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/paths/~1leftover~1{id}~1attrs~1{attr}
+  /organization:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/organization.yaml#/paths/~1organization
+  /organization/{id}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/organization.yaml#/paths/~1organization~1{id}
 
 components:
   schemas:

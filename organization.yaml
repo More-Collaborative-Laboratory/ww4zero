@@ -1,3 +1,39 @@
+paths:
+  /organization:
+    get:
+      tags:
+        - Organization
+      summary: Get all the organizations
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schemas/organization"
+
+  /organization/{id}:
+    get:
+      tags:
+        - Organization
+      summary: Get the details of a specific organization
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the organization to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/organization/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/organization"
+
 organization:
   title: Organization
   type: object
@@ -9,6 +45,14 @@ organization:
       maxLength: 256
       format: uri
       example: urn:ngsi-ld:Organization:[taxId]
+      x-ngsi:
+        type: Property
+
+    type:
+      description: NGSI Entity type
+      enum:
+        - Organization
+      type: string
       x-ngsi:
         type: Property
 
