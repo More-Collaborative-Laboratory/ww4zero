@@ -1,71 +1,201 @@
-machine:
-  title: Machine
-  type: object
-  description: Identifies the attributes of a machine in the organization #tambem assemblagem das partes e envio da encomenda?
+paths:
+  /machine:
+    get:
+      tags:
+        - Machine
+      summary: Get all the machines
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schemas/machine"
+    post:
+      tags:
+        - Machine
+      summary: Register a machine
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/schemas/machine"
+        required: true
+      responses:
+        "201":
+          description: Success
+          content:
+            application/json: {}
 
-  properties:
-    id:
-      description: Unique identifier of the machine
-      type: string
-      maxLength: 256
-      format: uri
-      example: urn:ngsi-ld:Machine:<machine_name>
-      x-ngsi:
-        type: Property
+  /machine/{id}:
+    get:
+      tags:
+        - Machine
+      summary: Get the details of a specific machine
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the machine to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/machine/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/machine"
+    delete:
+      tags:
+        - Machine
+      summary: Delete a machine
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the machine to delete
+          required: true
+          schema:
+            $ref: "#/schemas/machine/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    name:
-      description: Machine name
-      example: Tupia
-      type: string
-      maxLength: 256
-      x-ngsi:
-        model: https://schema.org/name
-        type: Property
-        uri: https://schema.org/name
-        uri-prefix: https://schema.org/
+  /machine/{id}/attrs:
+    patch:
+      tags:
+        - Machine
+      summary: Update multiple attributes of a machine
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the machine to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/machine/properties/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name:
+                  type: string
+                  value: Plaina
+                machineType:
+                  type: string
+                  value: manualcut1
 
-    machineType:
-      description:
-        Indicates in wich stage are the parts of corresponding machine type
-        * `cnc1` - indicates cnc1 station is working
-        * `nesting1` - indicates nesting1 station is working
-        * `manualcut1` - indicates manualcut1 station is working
-        * `receiving_material` - indicates that raw material is entering the factory
-        * `organizing_material` - indicates that raw material is being put away at the factory
-        * `assembly` - indicates that assembly station is on use
-        * `shipping` - indicates the order is shipping
-      type: string
-      enum:
-        - cnc1
-        - nesting1
-        - manualcut1
-        - receiving_material
-        - organizing_material
-        - assembly
-        - shipping
-      example: cnc1
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/machineType"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+  /machine/{id}/attrs/{attr}:
+    patch:
+      tags:
+        - Machine
+      summary: Update a single attribute of the machine
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the machine to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/machine/properties/id"
+        - name: attr
+          in: path
+          description: Attribute to be changed.
+          required: true
+          schema:
+            type: string
+            enum:
+              - name
+              - machineType
+              - allocatedIn
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    allocatedIn:
-      description: Identifier the organization the machine is allocated
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/executedIn"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
+schemas:
+  machine:
+    title: Machine
+    type: object
+    description: Identifies the attributes of a machine in the organization #tambem assemblagem das partes e envio da encomenda?
 
-  required:
-    - id
-    - belongsTo
+    properties:
+      id:
+        description: Unique identifier of the machine
+        type: string
+        maxLength: 256
+        format: uri
+        example: urn:ngsi-ld:Machine:<machine_name>
+        x-ngsi:
+          type: Property
+
+      type:
+        description: NGSI Entity type
+        enum:
+          - Machine
+        type: string
+        x-ngsi:
+          type: Property
+
+      name:
+        description: Machine name
+        example: Tupia
+        type: string
+        maxLength: 256
+        x-ngsi:
+          model: https://schema.org/name
+          type: Property
+          uri: https://schema.org/name
+          uri-prefix: https://schema.org/
+
+      machineType:
+        description:
+          Indicates in wich stage are the parts of corresponding machine type
+          * `cnc1` - indicates cnc1 station is working
+          * `nesting1` - indicates nesting1 station is working
+          * `manualcut1` - indicates manualcut1 station is working
+          * `receiving_material` - indicates that raw material is entering the factory
+          * `organizing_material` - indicates that raw material is being put away at the factory
+          * `assembly` - indicates that assembly station is on use
+          * `shipping` - indicates the order is shipping
+        type: string
+        enum:
+          - cnc1
+          - nesting1
+          - manualcut1
+          - receiving_material
+          - organizing_material
+          - assembly
+          - shipping
+        example: cnc1
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/machineType"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+      allocatedIn:
+        description: Identifier the organization the machine is allocated
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/executedIn"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship
+
+    required:
+      - id
+      - type
+      - allocatedIn
