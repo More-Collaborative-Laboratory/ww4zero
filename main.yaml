@@ -36,6 +36,11 @@ paths:
   /owner/{id}:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/owner.yaml#/paths/~1owner~1{id}
 
+  /worker:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml#/paths/~1worker
+  /worker/{id}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml#/paths/~1worker~1{id}
+
   /module:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/paths/~1module
   /module/{id}:
@@ -44,6 +49,7 @@ paths:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/paths/~1module~1{id}~1attrs
   /module/{id}/attrs/{attr}:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/paths/~1module~1{id}~1attrs~1{attr}
+
   /leftover:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/paths/~1leftover
   /leftover/{id}:
@@ -62,7 +68,7 @@ components:
     Owner:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/owner.yaml#/schemas/owner"
     Worker:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml#/worker"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/worker.yaml#/schemas/worker"
     Consumable:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/consumable"
     Part:

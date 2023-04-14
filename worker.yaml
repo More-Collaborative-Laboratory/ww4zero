@@ -1,120 +1,166 @@
-worker:
-  type: object
-  title: Worker
-  description: Identifies a worker within an organization
-  properties:
-    id:
-      description: Unique identifier of the worker
-      type: string
-      maxLength: 256
-      format: uri
-      example: urn:ngsi-ld:Worker:workerNbr
-      x-ngsi:
-        type: Property
+paths:
+  /worker:
+    get:
+      tags:
+        - Worker
+      summary: Get all the workers
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schemas/worker"
 
-    givenName:
-      description: Worker first name
-      type: string
-      maxLength: 256
-      example: Keanu
-      x-ngsi:
-        uri: "https://schema.org/givenName"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/Person
-        type: Property
+  /worker/{id}:
+    get:
+      tags:
+        - Worker
+      summary: Get the details of a specific worker
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the worker to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/worker/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/worker"
 
-    familyName:
-      description: Worker last name
-      type: string
-      maxLength: 256
-      example: Reeves
-      x-ngsi:
-        uri: "https://schema.org/familyName"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/Person
-        type: Property
+schemas:
+  worker:
+    type: object
+    title: Worker
+    description: Identifies a worker within an organization
+    properties:
+      id:
+        description: Unique identifier of the worker
+        type: string
+        maxLength: 256
+        format: uri
+        example: urn:ngsi-ld:Worker:workerNbr
+        x-ngsi:
+          type: Property
 
-    email:
-      description: Contact email address
-      type: string
-      maxLength: 256
-      format: email
-      example: worker@mofreita.gmail.com
-      x-ngsi:
-        uri: "https://schema.org/email"
-        uri-prefix: "https://schema.org/"
-        model: https://schema.org/email
-        type: Property
+      type:
+        description: NGSI Entity type
+        enum:
+          - Worker
+        type: string
+        x-ngsi:
+          type: Property
 
-    active:
-      description: If the work is an active user or not
-      type: boolean
-      example: true
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/active"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        model: "https://schema.org/Boolean"
-        type: Property
+      givenName:
+        description: Worker first name
+        type: string
+        maxLength: 256
+        example: Keanu
+        x-ngsi:
+          uri: "https://schema.org/givenName"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/Person
+          type: Property
 
-    performanceRole:
-      description: Indicates the actual worker's station
-        * `CNC` - CNC Operator
-        * `Nesting` - Nesting Operator
-        * `Manual-Cut` - Manual Cut Operator
-        * `Assembly` - Assembly Operator
-        * `Manager` - Factory manager
-        * `Office` - Office Department
-        * `Warehouse` - Warehouse Department (consumables and wood's stock)
-        * `Other` - Other Operation, like merchandise distributor
-      type: string
-      enum:
-        - CNC
-        - Nesting
-        - Manual Cut
-        - Assembly
-        - Manager
-        - Office
-        - Warehouse
-        - Other
-      example: Designer
-      x-ngsi:
-        uri: "https://schema.org/PerformanceRole"
-        uri-prefix: "https://schema.org/"
-        type: Property
-        model: https://schema.org/PerformanceRole
+      familyName:
+        description: Worker last name
+        type: string
+        maxLength: 256
+        example: Reeves
+        x-ngsi:
+          uri: "https://schema.org/familyName"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/Person
+          type: Property
 
-    image:
-      description: Image URL
-      type: string
-      maxLength: 256
-      example: https://schema.org/image
-      x-ngsi:
-        model: "https://schema.org/URL"
-        uri: "https://projectww4zero.pt/dataModel/image"
-        uri-prefix: "https://projetww4zero.pt/dataModel/"
-        type: Property
+      email:
+        description: Contact email address
+        type: string
+        maxLength: 256
+        format: email
+        example: worker@mofreita.gmail.com
+        x-ngsi:
+          uri: "https://schema.org/email"
+          uri-prefix: "https://schema.org/"
+          model: https://schema.org/email
+          type: Property
 
-    hasOrganization:
-      description: Identification of the Organization where the Worker is currently employed.
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        model: https://schema.org/Organization
-        uri: "https://projectww4zero.pt/dataModel/hasOrganization"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
+      active:
+        description: If the work is an active user or not
+        type: boolean
+        example: true
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/active"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          model: "https://schema.org/Boolean"
+          type: Property
 
-required:
-  - id
-  - givenName
-  - active
-  - email
-  - hasOrganization
+      performanceRole:
+        description: Indicates the actual worker's station
+          * `CNC` - CNC Operator
+          * `Nesting` - Nesting Operator
+          * `Manual-Cut` - Manual Cut Operator
+          * `Assembly` - Assembly Operator
+          * `Manager` - Factory manager
+          * `Office` - Office Department
+          * `Warehouse` - Warehouse Department (consumables and wood's stock)
+          * `Other` - Other Operation, like merchandise distributor
+        type: string
+        enum:
+          - CNC
+          - Nesting
+          - Manual Cut
+          - Assembly
+          - Manager
+          - Office
+          - Warehouse
+          - Other
+        example: Designer
+        x-ngsi:
+          uri: "https://schema.org/PerformanceRole"
+          uri-prefix: "https://schema.org/"
+          type: Property
+          model: https://schema.org/PerformanceRole
+
+      image:
+        description: Image URL
+        type: string
+        maxLength: 256
+        example: https://schema.org/image
+        x-ngsi:
+          model: "https://schema.org/URL"
+          uri: "https://projectww4zero.pt/dataModel/image"
+          uri-prefix: "https://projetww4zero.pt/dataModel/"
+          type: Property
+
+      hasOrganization:
+        description: Identification of the Organization where the Worker is currently employed.
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          model: https://schema.org/Organization
+          uri: "https://projectww4zero.pt/dataModel/hasOrganization"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship
+
+  required:
+    - id
+    - type
+    - givenName
+    - active
+    - email
+    - hasOrganization
