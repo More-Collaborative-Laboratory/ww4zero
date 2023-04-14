@@ -50,7 +50,7 @@ paths:
   /consumable/{id}/attrs/{attr}:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/consumable.yaml#/paths/~1consumable~1{id}~1attrs~1{attr}
 
-/part:
+  /part:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/paths/~1part
   /part/{id}:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/part.yaml#/paths/~1part~1{id}
