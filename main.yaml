@@ -68,6 +68,15 @@ paths:
   /machine/{id}/attrs/{attr}:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machine.yaml#/paths/~1machine~1{id}~1attrs~1{attr}
 
+  /assembly:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml#/paths/~1assembly
+  /assembly/{id}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml#/paths/~1assembly~1{id}
+  /assembly/{id}/attrs:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml#/paths/~1assembly~1{id}~1attrs
+  /assembly/{id}/attrs/{attr}:
+    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml#/paths/~1assembly~1{id}~1attrs~1{attr}
+
   /module:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/module.yaml#/paths/~1module
   /module/{id}:
@@ -103,7 +112,7 @@ components:
     Machine:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machine.yaml#/schemas/machine"
     Assembly:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml#/assembly"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/assembly.yaml#/schemas/assembly"
     Budget:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/budget.yaml#/budget"
     Expedition:

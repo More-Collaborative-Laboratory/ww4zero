@@ -1,76 +1,206 @@
-assembly:
-  title: Assembly
-  type: object
-  description: Indicates when a assembly process is completed
-  properties:
-    id:
-      description: Unique identifier for the assembly process of a project
-      type: string
-      maxLength: 256
-      format: uri
-      example: urn:ngsi-ld:Assembly:<project_name>
-      x-ngsi:
-        type: Property
+paths:
+  /assembly:
+    get:
+      tags:
+        - Leftover
+      summary: Get all the assemblies
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/schemas/assembly"
+    post:
+      tags:
+        - Leftover
+      summary: Register a assembly
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/schemas/assembly"
+        required: true
+      responses:
+        "201":
+          description: Success
+          content:
+            application/json: {}
 
-    startTime:
-      description: Saves date and time information when the start button is pressed
-      type: string
-      maxLength: 256
-      format: DateTime
-      example: 25-03-2022 10:00
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/startTime"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+  /assembly/{id}:
+    get:
+      tags:
+        - Leftover
+      summary: Get the details of a specific assembly
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the assembly to be queried
+          required: true
+          schema:
+            $ref: "#/schemas/assembly/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/schemas/assembly"
+    delete:
+      tags:
+        - Leftover
+      summary: Delete a assembly
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the assembly to delete
+          required: true
+          schema:
+            $ref: "#/schemas/assembly/properties/id"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    finishTime:
-      description: Saves date and time information when the finish button is pressed
-      type: string
-      maxLength: 256
-      format: DateTime
-      example: 27-03-2022 10:00
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/finishTime"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+  /assembly/{id}/attrs:
+    patch:
+      tags:
+        - Leftover
+      summary: Update multiple attributes of a assembly
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the assembly to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/assembly/properties/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                startTime:
+                  type: string
+                  value: 25-03-2022 11:00
+                finishTime:
+                  type: string
+                  value: 27-03-2022 11:00
 
-    statusAssembly:
-      description: Indicates the actual workers station
-        * 0 - Waiting
-        * 1 - Assembling
-        * 2 - Testing
-        * 3 - Packed
-      type: number
-      enum:
-        - 0
-        - 1
-        - 2
-        - 3
-      example: 0
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/statusAssembly"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Property
+  /assembly/{id}/attrs/{attr}:
+    patch:
+      tags:
+        - Leftover
+      summary: Update a single attribute of the assembly
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the assembly to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/assembly/properties/id"
+        - name: attr
+          in: path
+          description: Attribute to be changed.
+          required: true
+          schema:
+            type: string
+            enum:
+              - startTime
+              - finishTime
+              - statusAssembly
+              - belongsTo
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
-    belongsTo:
-      description: Identification of the project to which this assembly corresponds
-      anyOf:
-        - description: Property. Identifier format of any NGSI entity
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: Property. Identifier format of any NGSI entity
-          format: uri
-          type: string
-          maxLength: 256
-      x-ngsi:
-        uri: "https://projectww4zero.pt/dataModel/belongsTo"
-        uri-prefix: "https://projectww4zero.pt/dataModel/"
-        type: Relationship
+schemas:
+  assembly:
+    title: Assembly
+    type: object
+    description: Indicates when a assembly process is completed
+    properties:
+      id:
+        description: Unique identifier for the assembly process of a project
+        type: string
+        maxLength: 256
+        format: uri
+        example: urn:ngsi-ld:Assembly:<project_name>
+        x-ngsi:
+          type: Property
 
-  required:
-    - id
-    - status
-    - belongsTo
-    - orderBy
+      type:
+        description: NGSI Entity type
+        enum:
+          - Assembly
+        type: string
+        x-ngsi:
+          type: Property
+
+      startTime:
+        description: Saves date and time information when the start button is pressed
+        type: string
+        maxLength: 256
+        format: DateTime
+        example: 25-03-2022 10:00
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/startTime"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+      finishTime:
+        description: Saves date and time information when the finish button is pressed
+        type: string
+        maxLength: 256
+        format: DateTime
+        example: 27-03-2022 10:00
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/finishTime"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+      statusAssembly:
+        description: Indicates the actual workers station
+          * 0 - Waiting
+          * 1 - Assembling
+          * 2 - Testing
+          * 3 - Packed
+        type: number
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        example: 0
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/statusAssembly"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Property
+
+      belongsTo:
+        description: Identification of the project to which this assembly corresponds
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          uri: "https://projectww4zero.pt/dataModel/belongsTo"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          type: Relationship
+
+    required:
+      - id
+      - type
+      - statusAssembly
+      - belongsTo
