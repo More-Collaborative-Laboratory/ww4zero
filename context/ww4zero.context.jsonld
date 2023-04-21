@@ -23,6 +23,10 @@
         "Project": "fiware:Project",
         "Worker": "fiware:Worker",
         "WorkerTask": "fiware:WorkerTask",
+        "action": {
+            "@id": "https://projectww4zero.pt/dataModel/action",
+            "@type": "xsd:undefined"
+        },
         "active": {
             "@id": "https://projectww4zero.pt/dataModel/active",
             "@type": "xsd:boolean"
@@ -116,11 +120,11 @@
         },
         "executedBy": {
             "@id": "https://projectww4zero.pt/dataModel/executedBy",
-            "@type": "xsd:undefined"
+            "@type": "@id"
         },
         "executedIn": {
             "@id": "https://projectww4zero.pt/dataModel/executedIn",
-            "@type": "xsd:undefined"
+            "@type": "@id"
         },
         "expeditionTime": {
             "@id": "https://projectww4zero.pt/dataModel/expeditionTime",
@@ -198,6 +202,10 @@
             "@id": "schema:location",
             "@type": "xsd:string"
         },
+        "machine": {
+            "@id": "https://projectww4zero.pt/dataModel/machine",
+            "@type": "@id"
+        },
         "machineType": {
             "@id": "https://projectww4zero.pt/dataModel/machineType",
             "@type": "xsd:string"
@@ -221,6 +229,10 @@
         "observation": {
             "@id": "schema:Observation",
             "@type": "xsd:string"
+        },
+        "onProject": {
+            "@id": "https://projectww4zero.pt/dataModel/onProject",
+            "@type": "@id"
         },
         "orderBy": {
             "@id": "https://projectww4zero.pt/dataModel/orderBy",
@@ -261,6 +273,10 @@
         "price": {
             "@id": "schema:price",
             "@type": "xsd:number"
+        },
+        "projectStatus": {
+            "@id": "https://projectww4zero.pt/dataModel/projectStatus",
+            "@type": "xsd:string"
         },
         "requestDate": {
             "@id": "https://projectww4zero.pt/dataModel/requestDate",
@@ -2097,38 +2113,6 @@
             ]
         },
         {
-            "@id": "https://projectww4zero.pt/dataModel/belongsToFurniture",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Identification of the assembly to which this module belongs"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "belongsToFurniture"
-                }
-            ]
-        },
-        {
-            "@id": "https://projectww4zero.pt/dataModel/finishTime",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Saves date and time information when the finish button is pressed"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "finishTime"
-                }
-            ]
-        },
-        {
             "@id": "schema:name",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -2145,6 +2129,22 @@
             ]
         },
         {
+            "@id": "https://projectww4zero.pt/dataModel/belongsToFurniture",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identification of the assembly to which this module belongs"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "belongsToFurniture"
+                }
+            ]
+        },
+        {
             "@id": "https://projectww4zero.pt/dataModel/startTime",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -2157,6 +2157,22 @@
                 {
                     "@language": "en",
                     "@value": "startTime"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/finishTime",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Saves date and time information when the finish button is pressed"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "finishTime"
                 }
             ]
         },
@@ -2562,7 +2578,7 @@
         },
         {
             "@id": "https://projectww4zero.pt/dataModel/executedBy",
-            "@type": "ngsi-ld:Property",
+            "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
@@ -2578,7 +2594,7 @@
         },
         {
             "@id": "https://projectww4zero.pt/dataModel/executedIn",
-            "@type": "ngsi-ld:Property",
+            "@type": "ngsi-ld:Relationship",
             "rdfs:comment": [
                 {
                     "@language": "en",
@@ -2589,6 +2605,54 @@
                 {
                     "@language": "en",
                     "@value": "executedIn"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/machine",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the part processed by the worker"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "machine"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/action",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the part processed by the worker"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "action"
+                }
+            ]
+        },
+        {
+            "@id": "https://projectww4zero.pt/dataModel/onProject",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Identifies the part processed by the worker"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "onProject"
                 }
             ]
         },

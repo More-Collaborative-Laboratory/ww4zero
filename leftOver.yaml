@@ -89,6 +89,12 @@ paths:
                 length:
                   type: number
                   value: 0.5
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
+
 
   /leftover/{id}/attrs/{attr}:
     patch:

@@ -4,6 +4,9 @@ Describes the organization entity
 -  `id`: Unique identifier of the organization
    -  Attribute type: **Property**. 
    -  Required
+-  `type`: NGSI Entity type. One of : `Organization`.
+   -  Attribute type: **Property**. 
+   -  Required
 -  `legalName`: Organization's legal name
    -  Attribute type: **Property**. [legalName](https://schema.org/legalName)
    -  Required
@@ -25,6 +28,9 @@ Contains the information of a project
 -  `id`: Unique identifier of the project
    -  Attribute type: **Property**. 
    -  Required
+-  `type`: NGSI Entity type. One of : `Project`.
+   -  Attribute type: **Property**. 
+   -  Required
 -  `hasBudget`: Relationship property: Identifies the budget related
    -  Attribute type: **Relationship**. 
    -  Required
@@ -37,7 +43,7 @@ Contains the information of a project
 -  `orderBy`: Identification of the owner name associated to the project with status in execution
    -  Attribute type: **Relationship**. 
    -  Required
--  `status`: Indicates the actual workers station * drawing - Initial state of a project, in which CAD drawings are being developed... * production - While in the production phase on the factory floor... * testing - While in the assembly and testing phase... * transport - While in the transportation phase, which begins after the completion of assembly... * finished - When installed at the site.. One of : `drawing`, `production`, `testing`, `transport`, `finished`.
+-  `projectStatus`: Indicates the actual project status * drawing - Initial state of a project, in which CAD drawings are being developed... * production - While in the production phase on the factory floor... * testing - While in the assembly and testing phase... * transport - While in the transportation phase, which begins after the completion of assembly... * finished - When installed at the site.. One of : `drawing`, `production`, `testing`, `transport`, `finished`.
    -  Attribute type: **Property**. 
    -  Optional
 
@@ -47,6 +53,9 @@ Contains the information of a project
 
 Identifies a client (owner of a project)
 -  `id`: Unique identifier of the client
+   -  Attribute type: **Property**. 
+   -  Required
+-  `type`: NGSI Entity type. One of : `Owner`.
    -  Attribute type: **Property**. 
    -  Required
 -  `legalName`: Institution legal name
@@ -94,6 +103,9 @@ Identifies a worker within an organization
 -  `id`: Unique identifier of the worker
    -  Attribute type: **Property**. 
    -  Optional
+-  `type`: NGSI Entity type. One of : `Worker`.
+   -  Attribute type: **Property**. 
+   -  Optional
 -  `givenName`: Worker first name
    -  Attribute type: **Property**. [Person](https://schema.org/Person)
    -  Optional
@@ -122,6 +134,9 @@ Identifies a worker within an organization
 
 Describes a consumable list associated with a project
 -  `id`: Unique identifier of the consumable
+   -  Attribute type: **Property**. 
+   -  Required
+-  `type`: NGSI Entity type. One of : `Consumable`.
    -  Attribute type: **Property**. 
    -  Required
 -  `name`: Identify the consumable name
@@ -155,6 +170,9 @@ Describes a consumable list associated with a project
 
 Identifies the part-name atributes that belongs to a specific project - Lista de Corte
 -  `id`: Unique identifier of the part of a project.
+   -  Attribute type: **Property**. 
+   -  Required
+-  `type`: NGSI Entity type. One of : `Part`.
    -  Attribute type: **Property**. 
    -  Required
 -  `amount`: QUANTIDADE (D)
@@ -250,6 +268,9 @@ Identifies the attributes of a machine in the organization
 -  `id`: Unique identifier of the machine
    -  Attribute type: **Property**. 
    -  Required
+-  `type`: NGSI Entity type. One of : `Machine`.
+   -  Attribute type: **Property**. 
+   -  Required
 -  `name`: Machine name
    -  Attribute type: **Property**. [name](https://schema.org/name)
    -  Optional
@@ -258,7 +279,7 @@ Identifies the attributes of a machine in the organization
    -  Optional
 -  `allocatedIn`: Identifier the organization the machine is allocated
    -  Attribute type: **Relationship**. 
-   -  Optional
+   -  Required
 
 
 
@@ -266,6 +287,9 @@ Identifies the attributes of a machine in the organization
 
 Indicates when a assembly process is completed
 -  `id`: Unique identifier for the assembly process of a project
+   -  Attribute type: **Property**. 
+   -  Required
+-  `type`: NGSI Entity type. One of : `Assembly`.
    -  Attribute type: **Property**. 
    -  Required
 -  `startTime`: Saves date and time information when the start button is pressed
@@ -276,7 +300,7 @@ Indicates when a assembly process is completed
    -  Optional
 -  `statusAssembly`: Indicates the actual workers station * 0 - Waiting * 1 - Assembling * 2 - Testing * 3 - Packed. One of : ``, ``, ``, ``.
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `belongsTo`: Identification of the project to which this assembly corresponds
    -  Attribute type: **Relationship**. 
    -  Required
@@ -287,6 +311,9 @@ Indicates when a assembly process is completed
 
 Clients Budget
 -  `id`: Unique identifier of a budget
+   -  Attribute type: **Property**. 
+   -  Required
+-  `type`: NGSI Entity type. One of : `Budget`.
    -  Attribute type: **Property**. 
    -  Required
 -  `number`: Budget number
@@ -337,6 +364,9 @@ Indicates when an order has been shiped
 -  `id`: Unique identifier of the shipping order
    -  Attribute type: **Property**. 
    -  Required
+-  `type`: NGSI Entity type. One of : `Expedition`.
+   -  Attribute type: **Property**. 
+   -  Required
 -  `expeditionTime`: Date and hour when the order left the factory in direction to the Owner
    -  Attribute type: **Property**. [Time](https://schema.org/Time)
    -  Required
@@ -355,16 +385,19 @@ Indicates a corresponding module of a project under assembly
 -  `id`: Unique identifier of a module of a project under assembly.
    -  Attribute type: **Property**. 
    -  Required
--  `belongsToFurniture`: Identification of the assembly to which this module belongs
-   -  Attribute type: **Relationship**. 
-   -  Required
--  `finishTime`: Saves date and time information when the finish button is pressed
+-  `type`: NGSI Entity type. One of : `Module`.
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `name`: Module name (name-project_module-name)
    -  Attribute type: **Property**. [name](https://schema.org/name)
    -  Optional
+-  `belongsToFurniture`: Identification of the assembly to which this module belongs
+   -  Attribute type: **Relationship**. 
+   -  Required
 -  `startTime`: Saves date and time information when the start button is pressed
+   -  Attribute type: **Property**. 
+   -  Optional
+-  `finishTime`: Saves date and time information when the finish button is pressed
    -  Attribute type: **Property**. 
    -  Optional
 
@@ -374,6 +407,9 @@ Indicates a corresponding module of a project under assembly
 
 Describes a piece of furniture from a project under assembly
 -  `id`: Unique identifier of the piece of furniture
+   -  Attribute type: **Property**. 
+   -  Required
+-  `type`: NGSI Entity type. One of : `Furniture`.
    -  Attribute type: **Property**. 
    -  Required
 -  `lineNumber`: Line number
@@ -405,7 +441,7 @@ Describes a piece of furniture from a project under assembly
    -  Optional
 -  `furnitureType`: Type of line * furniture -> initial budget value, which is pre-budget, where the necessary data for budget development is collected * group * accessory - (Ex robinet, ...). One of : `furniture`, `group`, `accessory`.
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `width`: Width in mm
    -  Attribute type: **Property**. [width](https://schema.org/width)
    -  Optional
@@ -425,6 +461,9 @@ Describes a piece of furniture from a project under assembly
 
 Identifies a group associated with a module
 -  `id`: Unique identifier of the group
+   -  Attribute type: **Property**. 
+   -  Required
+-  `type`: NGSI Entity type. One of : `Group`.
    -  Attribute type: **Property**. 
    -  Required
 -  `startTime`: Saves date and time information when the start button is pressed
@@ -447,16 +486,19 @@ Identifies a group associated with a module
 This entity creates a bridge table between the Machine and Part entities.
 -  `id`: Unique identifier
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
+-  `type`: NGSI Entity type. One of : `MachineTask`.
+   -  Attribute type: **Property**. 
+   -  Required
 -  `performedOn`: Identifies the part processed by the machine
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `byMachine`: Identifies the machine that processed the part
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `startTime`: Saves date and time information when the start button is pressed
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `finishTime`: Saves date and time information when the finish button is pressed
    -  Attribute type: **Property**. 
    -  Optional
@@ -468,16 +510,28 @@ This entity creates a bridge table between the Machine and Part entities.
 This entity creates a bridge table between the Worker and Part entities.
 -  `id`: Unique identifier
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
+-  `type`: NGSI Entity type. One of : `WorkerTask`.
+   -  Attribute type: **Property**. 
+   -  Required
 -  `executedBy`: Identifies the worker who processed the part
+   -  Attribute type: **Relationship**. 
+   -  Required
+-  `executedIn`: Identifies the part processed by the worker
+   -  Attribute type: **Relationship**. 
+   -  Required
+-  `machine`: Identifies the part processed by the worker
+   -  Attribute type: **Relationship**. 
+   -  Optional
+-  `action`: Identifies the part processed by the worker
    -  Attribute type: **Property**. 
    -  Optional
--  `executedIn`: Identifies the part processed by the worker
-   -  Attribute type: **Property**. 
+-  `onProject`: Identifies the part processed by the worker
+   -  Attribute type: **Relationship**. 
    -  Optional
 -  `startTime`: Saves date and time information when the start button is pressed
    -  Attribute type: **Property**. 
-   -  Optional
+   -  Required
 -  `finishTime`: Saves date and time information when the finish button is pressed
    -  Attribute type: **Property**. 
    -  Optional
@@ -488,6 +542,9 @@ This entity creates a bridge table between the Worker and Part entities.
 
 Identifies the attributes of a leftover that belongs to an organization
 -  `id`: Unique identifier of the leftover
+   -  Attribute type: **Property**. 
+   -  Required
+-  `type`: NGSI Entity type. One of : `Leftover`.
    -  Attribute type: **Property**. 
    -  Required
 -  `sort`: Type (B)
@@ -525,6 +582,122 @@ Identifies the attributes of a leftover that belongs to an organization
 
 ## Examples
 
-### OK
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
+
+
+
+### Success
 
 
