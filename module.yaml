@@ -89,6 +89,11 @@ paths:
                 startTime:
                   type: string
                   value: 25-03-2022 11:00
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
   /module/{id}/attrs/{attr}:
     patch:

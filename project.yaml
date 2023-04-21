@@ -89,7 +89,11 @@ paths:
                 projectStatus:
                   type: string
                   value: drawing
-
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
   /project/{id}/attrs/{attr}:
     patch:
       tags:

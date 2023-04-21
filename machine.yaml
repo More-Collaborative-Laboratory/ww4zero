@@ -89,6 +89,11 @@ paths:
                 machineType:
                   type: string
                   value: manualcut1
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
   /machine/{id}/attrs/{attr}:
     patch:
