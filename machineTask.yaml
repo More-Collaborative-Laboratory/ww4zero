@@ -89,6 +89,11 @@ paths:
                 finishTime:
                   type: string
                   value: 26-03-2022 10:00
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
   /machineTask/{id}/attrs/{attr}:
     patch:
