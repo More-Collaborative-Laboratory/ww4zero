@@ -95,7 +95,34 @@ paths:
           content:
             application/json: {}
 
-
+  /group/{id}/attrs/{attr}:
+    patch:
+      tags:
+        - Group
+      summary: Update a single attribute of the group
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the group to be changed
+          required: true
+          schema:
+            $ref: "#/schemas/group/properties/id"
+        - name: attr
+          in: path
+          description: Attribute to be changed.
+          required: true
+          schema:
+            type: string
+            enum:
+              - startTime
+              - finishTime
+              - name
+              - belongsToModule
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
 schemas:
   group:
