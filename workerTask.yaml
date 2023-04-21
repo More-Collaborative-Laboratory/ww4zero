@@ -154,6 +154,7 @@ schemas:
             type: string
             maxLength: 256
         x-ngsi:
+          type: Relationship
           uri: "https://projectww4zero.pt/dataModel/executedBy"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
 
@@ -170,7 +171,58 @@ schemas:
             type: string
             maxLength: 256
         x-ngsi:
+          type: Relationship
           uri: "https://projectww4zero.pt/dataModel/executedIn"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+
+      machine: 
+        description: Identifies the part processed by the worker
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          type: Relationship
+          uri: "https://projectww4zero.pt/dataModel/machine"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+      action: 
+        description: Identifies the part processed by the worker
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          type: Property
+          uri: "https://projectww4zero.pt/dataModel/action"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
+          
+      onProject: 
+        description: Identifies the part processed by the worker
+        anyOf:
+          - description: Property. Identifier format of any NGSI entity
+            maxLength: 256
+            minLength: 1
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+            type: string
+          - description: Property. Identifier format of any NGSI entity
+            format: uri
+            type: string
+            maxLength: 256
+        x-ngsi:
+          type: Relationship
+          uri: "https://projectww4zero.pt/dataModel/onProject"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
 
       startTime:

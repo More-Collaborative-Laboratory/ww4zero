@@ -131,14 +131,14 @@ paths:
   /machineTask/{id}/attrs/{attr}:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/machineTask.yaml#/paths/~1machineTask~1{id}~1attrs~1{attr}
 
-  /workerTask:
-    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/paths/~1workerTask
-  /workerTask/{id}:
-    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/paths/~1workerTask~1{id}
-  /workerTask/{id}/attrs:
-    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/paths/~1workerTask~1{id}~1attrs
-  /workerTask/{id}/attrs/{attr}:
-    $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/paths/~1workerTask~1{id}~1attrs~1{attr}
+  # /workerTask:
+  #   $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/paths/~1workerTask
+  # /workerTask/{id}:
+  #   $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/paths/~1workerTask~1{id}
+  # /workerTask/{id}/attrs:
+  #   $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/paths/~1workerTask~1{id}~1attrs
+  # /workerTask/{id}/attrs/{attr}:
+  #   $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/workerTask.yaml#/paths/~1workerTask~1{id}~1attrs~1{attr}
 
   /leftover:
     $ref: https://raw.githubusercontent.com/More-Collaborative-Laboratory/ww4zero/main/leftOver.yaml#/paths/~1leftover
