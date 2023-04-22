@@ -89,6 +89,11 @@ paths:
                 price:
                   type: number
                   value: 900
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
   /furniture/{id}/attrs/{attr}:
     patch:

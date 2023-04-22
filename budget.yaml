@@ -89,6 +89,11 @@ paths:
                 name:
                   type: string
                   value: António
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
   /budget/{id}/attrs/{attr}:
     patch:

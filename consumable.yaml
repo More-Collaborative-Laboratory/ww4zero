@@ -89,6 +89,11 @@ paths:
                 amount:
                   type: number
                   value: 2
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
   /consumable/{id}/attrs/{attr}:
     patch:

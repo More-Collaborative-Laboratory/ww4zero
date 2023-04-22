@@ -89,6 +89,11 @@ paths:
                 finishTime:
                   type: string
                   value: 27-03-2022 11:00
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json: {}
 
   /assembly/{id}/attrs/{attr}:
     patch:
