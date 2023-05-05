@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        #markdown-container {
+            width: 100%;
+            height: 100%;
+            /* set a fixed height */
+            overflow: auto;
+            /* add a scrollbar if necessary */
+            padding: 10px;
+            /* add some padding for readability */
+            font-family: sans-serif;
+            /* choose a font */
+            color: #28ff28;
+            background-color: #080808;
+        }
+
+        a:any-link {
+            color: #00FF00;
+        }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model</title>
+</head>
+
+<body>
+    <div id="markdown-container">
+        <img src="./WoodWork.svg" alt="Image of Model">
+    </div>
+    <script>
+        fetch('ww4zero.md')
+            .then(response => response.text())
+            .then(markdownContent => {
+                console.log(markdownContent)
+                const htmlContent = marked.parse(markdownContent);
+                document.getElementById('markdown-container').innerHTML += htmlContent;
+            });
+    </script>
+</body>
+
+</html>
