@@ -117,7 +117,7 @@ paths:
               - startTime
               - finishTime
               - name
-              - belongsToModule
+              - belongsTo
       responses:
         "200":
           description: Success
@@ -179,7 +179,7 @@ schemas:
           uri: https://schema.org/name
           uri-prefix: https://schema.org/
 
-      belongsToModule:
+      belongsTo:
         description: Identifies the module that is associated with this group
         anyOf:
           - description: Property. Identifier format of any NGSI entity
@@ -193,7 +193,7 @@ schemas:
             maxLength: 256
         x-ngsi:
           type: Relationship
-          uri: "https://projectww4zero.pt/dataModel/belongsToModule"
+          uri: "https://projectww4zero.pt/dataModel/belongsTo"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
 
     required:

@@ -353,7 +353,7 @@ Clients Budget
    -  Attribute type: **Relationship**. 
    -  Optional
 -  `deliveryAddress`: The delivery address
-   -  Attribute type: **Property**. [address](https://schema.org/address)
+   -  Attribute type: **Property**. 
    -  Optional
 
 
@@ -413,7 +413,7 @@ Describes a piece of furniture from a project under assembly
    -  Attribute type: **Property**. 
    -  Required
 -  `lineNumber`: Line number
-   -  Attribute type: **Property**. [Number](https://schema.org/Number)
+   -  Attribute type: **Property**. 
    -  Optional
 -  `category`: Type of the piece of furniture
    -  Attribute type: **Property**. 
