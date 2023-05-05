@@ -160,8 +160,8 @@ schemas:
 
       lineNumber:
         description: Line number
-        type: number
-        example: 12345
+        type: string
+        example: "12345"
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/lineNumber"
           uri-prefix: "https://projectww4zero.pt/"
