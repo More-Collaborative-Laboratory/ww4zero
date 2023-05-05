@@ -163,8 +163,8 @@ schemas:
         type: number
         example: 12345
         x-ngsi:
-          uri: "https://schema.org/Number"
-          uri-prefix: "https://schema.org/"
+          uri: "https://projectww4zero.pt/dataModel/lineNumber"
+          uri-prefix: "https://projectww4zero.pt/"
           model: https://schema.org/Number
           type: Property
 
@@ -295,8 +295,8 @@ schemas:
         x-ngsi:
           model: https://schema.org/size
           type: Property
-          uri: https://schema.org/size
-          uri-prefix: https://schema.org/
+          uri: https://projectww4zero.pt/dataModel/lenght
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
       depth:
         description: Depth in mm
@@ -316,8 +316,8 @@ schemas:
         x-ngsi:
           model: https://schema.org/Observation
           type: Property
-          uri: https://schema.org/Observation
-          uri-prefix: https://schema.org/
+          uri: https://projectww4zero.pt/dataModel/observation
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
     required:
       - id

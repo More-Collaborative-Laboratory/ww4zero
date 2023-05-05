@@ -215,8 +215,8 @@ schemas:
         x-ngsi:
           model: https://schema.org/Observation
           type: Property
-          uri: https://schema.org/Observation
-          uri-prefix: https://schema.org/
+          uri: "https://projectww4zero.pt/dataModel/budgetStatus"
+          uri-prefix: "https://projectww4zero.pt/"
 
       approvedDate:
         description: Saves date and time information when the start button is pressed
@@ -368,9 +368,10 @@ schemas:
               model: https://schema.org/addressCountry
               type: Property
         x-ngsi:
-          uri: "https://schema.org/address"
-          uri-prefix: "https://schema.org/"
+          uri: "https://projectww4zero.pt/dataModel/deliveryAddress"
+          uri-prefix: "https://projectww4zero.pt/dataModel/"
           model: https://schema.org/address
+          
 
     required:
       - id

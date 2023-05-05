@@ -637,8 +637,8 @@ schemas:
         x-ngsi:
           model: https://schema.org/size
           type: Property
-          uri: https://schema.org/size
-          uri-prefix: https://schema.org/
+          uri: https://projectww4zero.pt/dataModel/length
+          uri-prefix: https://projectww4zero.pt/dataModel/
 
     required:
       - id

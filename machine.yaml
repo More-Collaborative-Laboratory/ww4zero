@@ -196,7 +196,7 @@ schemas:
             type: string
             maxLength: 256
         x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/executedIn"
+          uri: "https://projectww4zero.pt/dataModel/allocatedIn"
           uri-prefix: "https://projectww4zero.pt/dataModel/"
           type: Relationship
 
