@@ -46,7 +46,7 @@
             "@type": "xsd:string"
         },
         "allocatedIn": {
-            "@id": "https://projectww4zero.pt/dataModel/executedIn",
+            "@id": "https://projectww4zero.pt/dataModel/allocatedIn",
             "@type": "@id"
         },
         "amount": {
@@ -97,7 +97,7 @@
             "@id": "https://projectww4zero.pt/dataModel/cncFlag",
             "@type": "xsd:boolean"
         },
-        "deliveryAddress": "schema:address",
+        "deliveryAddress": "https://projectww4zero.pt/dataModel/deliveryAddress",
         "deliveryAgreementDate": {
             "@id": "https://projectww4zero.pt/dataModel/deliveryAgreementDate",
             "@type": "xsd:string"
@@ -191,11 +191,11 @@
             "@type": "xsd:string"
         },
         "length": {
-            "@id": "schema:size",
+            "@id": "https://projectww4zero.pt/dataModel/length",
             "@type": "xsd:number"
         },
         "lineNumber": {
-            "@id": "schema:Number",
+            "@id": "https://projectww4zero.pt/dataModel/lineNumber",
             "@type": "xsd:number"
         },
         "location": {
@@ -227,7 +227,7 @@
             "@type": "xsd:number"
         },
         "observation": {
-            "@id": "schema:Observation",
+            "@id": "https://projectww4zero.pt/dataModel/observation",
             "@type": "xsd:string"
         },
         "onProject": {
@@ -1697,7 +1697,7 @@
             ]
         },
         {
-            "@id": "schema:length",
+            "@id": "https://projectww4zero.pt/dataModel/length",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -1889,7 +1889,7 @@
             ]
         },
         {
-            "@id": "schema:observation",
+            "@id": "https://projectww4zero.pt/observation",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -2017,7 +2017,7 @@
             ]
         },
         {
-            "@id": "schema:deliveryAddress",
+            "@id": "https://projectww4zero.pt/dataModel/deliveryAddress",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -2193,7 +2193,7 @@
             ]
         },
         {
-            "@id": "schema:lineNumber",
+            "@id": "https://projectww4zero.pt/lineNumber",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -2353,7 +2353,7 @@
             ]
         },
         {
-            "@id": "schema:length",
+            "@id": "https://projectww4zero.pt/dataModel/length",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -2385,7 +2385,7 @@
             ]
         },
         {
-            "@id": "schema:observation",
+            "@id": "https://projectww4zero.pt/dataModel/observation",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -2849,7 +2849,7 @@
             ]
         },
         {
-            "@id": "schema:length",
+            "@id": "https://projectww4zero.pt/dataModel/length",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {

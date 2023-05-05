@@ -477,7 +477,7 @@ Identifies a group associated with a module
    -  Required
 -  `belongsToModule`: Identifies the module that is associated with this group
    -  Attribute type: **Relationship**. 
-   -  Required
+   -  Optional
 
 
 
