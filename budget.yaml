@@ -368,9 +368,8 @@ schemas:
               model: https://schema.org/addressCountry
               type: Property
         x-ngsi:
-          uri: "https://projectww4zero.pt/dataModel/deliveryAddress"
-          uri-prefix: "https://projectww4zero.pt/dataModel/"
-          model: https://schema.org/address
+          uri: https://projectww4zero.pt/dataModel/deliveryAddress
+          uri-prefix: https://projectww4zero.pt/dataModel/
           
 
     required:

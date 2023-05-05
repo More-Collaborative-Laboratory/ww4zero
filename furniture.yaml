@@ -165,7 +165,6 @@ schemas:
         x-ngsi:
           uri: "https://projectww4zero.pt/dataModel/lineNumber"
           uri-prefix: "https://projectww4zero.pt/"
-          model: https://schema.org/Number
           type: Property
 
       category:
